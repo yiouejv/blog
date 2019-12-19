@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>HttpRequest对象 - 杨小哥博客</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HttpRequest\u5bf9\u8c61";
+    var mkdocs_page_input_path = "django\\3_django\u4e2d\u7684HttpRequest\u5bf9\u8c61.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 杨小哥博客</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../1_django介绍及安装/">django介绍及安装</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../2_django中的路由/">django中的路由</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">HttpRequest对象</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#djangohttprequest">django中的HttpRequest对象</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#httprequest">什么是HttpRequest</a></li>
+        
+            <li><a class="toctree-l4" href="#httprequest_1">HttpRequest 中的主要内容</a></li>
+        
+            <li><a class="toctree-l4" href="#_1">获取请求提交的数据</a></li>
+        
+            <li><a class="toctree-l4" href="#requestmeta">request.META</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../4_django中的session和cookie/">session和cookie</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../5_django中的模板/">django中的模板</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../6_django中的模型/">django中的模型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../7_django模型中的关系映射/">模型中的关系映射</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../8_django自带的后台管理/">自带的后台管理</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django restframework</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">杨小哥博客</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>django &raquo;</li>
+        
+      
+    
+    <li>HttpRequest对象</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="djangohttprequest">django中的HttpRequest对象</h1>
+<h2 id="httprequest">什么是HttpRequest</h2>
+<p>HttpRequest 对请求对象的封装， 里面封装的是请求过程中的所有信息，在Django中HttpRequest 被封装成<code>request</code>对象并封装到视图处理函数中，在调用视图时自动导入</p>
+<h2 id="httprequest_1">HttpRequest 中的主要内容</h2>
+<pre><code class="python">1. request.scheme: 表示请求方案（http或https 通常）的字符串
+2. request.post: 请求主体
+3. request.path: 请求路径
+4. request.get_full_path: 请求完整路径
+5. request.get_host(): 请求主机地址 / 域名
+6. request.method: 请求方法
+7. request.GET: 封裝了get請求方式提交的數據
+8. request.POST: 封裝了POST請求方式提交的數據
+9. request.cookies: 封裝了 cookies中的所有數據
+10. request.META: 封裝了請求的元數據
+    request.META.HTTP_REFERER: 封裝了請求的源地址
+11. request.FILES: 上传文件的类字典对象
+12. request.is_secure(): True如果请求是安全的，则返回; 也就是说，如果它是用HTTPS制作的
+13. request.is_ajax(): 返回True如果请求被经由制成XMLHttpRequest
+</code></pre>
+
+<h2 id="_1">获取请求提交的数据</h2>
+<h3 id="get">get 请求</h3>
+<ul>
+<li>获取数据</li>
+</ul>
+<p><code>python
+  request.GET['名称']
+  request.GET.get('名称')
+  request.GET.getlist('名称')</code></p>
+<h3 id="post">POST请求</h3>
+<ul>
+<li>获取数据</li>
+</ul>
+<p><code>python
+  request.GET['名称']
+  request.GET.get('名称')
+  request.GET.getlist('名称')</code></p>
+<h2 id="requestmeta">request.META</h2>
+<p>包含所有可用HTTP标头的字典。可用的标头取决于客户端和服务器，以下是一些示例</p>
+<p>CONTENT_LENGTH - 请求正文的长度（作为字符串）。</p>
+<p>CONTENT_TYPE - 请求正文的MIME类型。</p>
+<p>HTTP_ACCEPT - 响应的可接受内容类型。</p>
+<p>HTTP_ACCEPT_ENCODING - 可接受的响应编码。</p>
+<p>HTTP_ACCEPT_LANGUAGE - 响应的可接受语言。</p>
+<p>HTTP_HOST - 客户端发送的HTTP主机头。</p>
+<p>HTTP_REFERER - 引用页面，如果有的话。</p>
+<p>HTTP_USER_AGENT - 客户端的用户代理字符串。</p>
+<p>QUERY_STRING - 查询字符串，作为单个（未解析的）字符串。</p>
+<p>REMOTE_ADDR - 客户端的IP地址。</p>
+<p>REMOTE_HOST - 客户端的主机名。</p>
+<p>REMOTE_USER - Web服务器验证的用户（如果有）。</p>
+<p>REQUEST_METHOD- 一个字符串，如"GET"或"POST"。</p>
+<p>SERVER_NAME - 服务器的主机名。</p>
+<p>SERVER_PORT - 服务器的端口（作为字符串）。</p>
+<p>除了CONTENT_LENGTH和之外CONTENT_TYPE，如上所述，请求中的任何HTTP头都将转换为META键，方法是将所有字符转换为大写，用下划线替换任何连字符并HTTP_在名称中添加前缀。因此，例如，调用的标头X-Bender将映射到META密钥 HTTP_X_BENDER。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../4_django中的session和cookie/" class="btn btn-neutral float-right" title="session和cookie">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../2_django中的路由/" class="btn btn-neutral" title="django中的路由"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../2_django中的路由/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../4_django中的session和cookie/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

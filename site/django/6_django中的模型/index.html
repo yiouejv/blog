@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>django中的模型 - 杨小哥博客</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "django\u4e2d\u7684\u6a21\u578b";
+    var mkdocs_page_input_path = "django\\6_django\u4e2d\u7684\u6a21\u578b.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 杨小哥博客</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../1_django介绍及安装/">django介绍及安装</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../2_django中的路由/">django中的路由</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../3_django中的HttpRequest对象/">HttpRequest对象</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../4_django中的session和cookie/">session和cookie</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../5_django中的模板/">django中的模板</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">django中的模型</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#django">Django中的模型</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#orm">ORM</a></li>
+        
+            <li><a class="toctree-l4" href="#_1">数据库配置</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">创建模型</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">创建好模型之后需要同步数据库</a></li>
+        
+            <li><a class="toctree-l4" href="#crud-create-read-update-delete">模型中的CRUD (create read update delete)</a></li>
+        
+            <li><a class="toctree-l4" href="#f-q">F查询  Q查询</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">原生的数据库操作方法</a></li>
+        
+            <li><a class="toctree-l4" href="#-objects">自定义查询对象 - objects</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../7_django模型中的关系映射/">模型中的关系映射</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../8_django自带的后台管理/">自带的后台管理</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django restframework</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">杨小哥博客</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>django &raquo;</li>
+        
+      
+    
+    <li>django中的模型</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="django">Django中的模型</h1>
+<h2 id="orm">ORM</h2>
+<p>对象关系映射（Object Relational Mapping）：通过使用描述对象和数据库之间映射的元数据，将面向对象语言程序中的对象自动持久化到关系数据库中。</p>
+<p>映射关系</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>db</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实体类</td>
+<td>表名</td>
+</tr>
+<tr>
+<td>类属性</td>
+<td>表字段</td>
+</tr>
+<tr>
+<td>类实例</td>
+<td>表记录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">数据库配置</h2>
+<p>在<code>setting.py</code>中配置数据库信息</p>
+<pre><code class="python">DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_name',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
+    }
+}
+</code></pre>
+
+<p>参数说明：</p>
+<p><code>ENGINE</code>： </p>
+<pre><code># 可选值有，分别对应不同的数据库
+django.db.backends.sqlite3
+django.db.backends.postgresql
+django.db.backends.mysql
+django.db.backends.oracle
+</code></pre>
+
+<p><code>NAME</code>：数据库的名称。如果使用的是 SQLite，数据库将是你电脑上的一个文件，在这种情况下， NAME 应该是此文件的绝对路径，包括文件名。</p>
+<p>如果你不使用 SQLite，则必须添加一些额外设置，比如 USER 、 PASSWORD 、 HOST 等等。</p>
+<p>想了解更多数据库设置方面的内容，请看文档：<a href="https://docs.djangoproject.com/zh-hans/2.2/ref/settings/#std:setting-DATABASES"><code>DATABASES</code></a> </p>
+<h2 id="_2">创建模型</h2>
+<p>语法：</p>
+<pre><code class="python">class ModelName(models.Model):
+    属性名 = models.字段类型(字段选项)
+</code></pre>
+
+<p>字段类型:  </p>
+<p>​                                                           分别对应数据库中的数据类型</p>
+<pre><code class="python">CharField()                 varchar()
+EmailField()                varchar()
+URLField()                  varchar()
+ImageField()                varchar()   
+IntegerField()              int
+FloatField()                float
+DecimalField()              decimal
+BolleanField()              boolean
+DateField()                 data
+DateTimeField()             datetime
+TextField()                 text
+</code></pre>
+
+<p>字段选项:</p>
+<pre><code>1. default
+2. null: True 或 False
+3. db_column: 指定列名
+4. db_index: True 或 False 创建索引
+5. max_length: 最大长度
+</code></pre>
+
+<pre><code class="python"># models.py  
+from django.db import models
+from django.db.models import CharField
+
+class TestModel(models.Model):
+    name = CharField(max_length=50)
+</code></pre>
+
+<h2 id="_3">创建好模型之后需要同步数据库</h2>
+<pre><code class="python"># 1. 将models.py中的内容生成中间文件
+python manage.py makemigrations
+
+# 2. 将中间文件映射到数据库中
+python manage.py migrate
+</code></pre>
+
+<p>执行完第一条之后会发现应用目录下多了一个中间文件。(遇到问题可以看这篇文章： https://kongping.net/blog/post/5538/ )</p>
+<p><img alt="mig" src="../images/mig.png" /></p>
+<p>此时只是生成了中间文件，数据库中是没有表的（因为还没有同步到数据库）</p>
+<p>执行第二条语句：python manage.py migrate</p>
+<p>成功同步到数据库中，看下图。</p>
+<p><img alt="tables" src="../images/tables.png" /></p>
+<p>tips: 每次修改模型都要同步一下！</p>
+<h3 id="_4">版本的切换指令</h3>
+<p>0001-initial.py</p>
+<p>0002-xxxx.py</p>
+<p>0003-xxxx.py</p>
+<p>python manage.py migrate 应用的名称 版本号</p>
+<h2 id="crud-create-read-update-delete">模型中的CRUD (create read update delete)</h2>
+<h3 id="create">增加数据 create</h3>
+<ol>
+<li>Entry.objects.create(属性=值，属性=值)</li>
+</ol>
+<p>返回值</p>
+<p>​    插入成功：返回创建好的实体对象</p>
+<p>​    插入失败：返回None，产生异常</p>
+<ol>
+<li>创建一个Entry对象，并通过save()进行保存</li>
+</ol>
+<p>obj = Entry(属性=值, 属性=值)</p>
+<p>obj.属性 = 值</p>
+<p>obj.save()</p>
+<p>无返回值，保存成功后，obj会被重新赋值<strong>(obj多了一个id属性)</strong></p>
+<p>```python
+   def index_view(request):
+       obj = TestModel()
+       obj.name = 'xxx'
+       print(obj.id)</p>
+<pre><code>   obj.save()
+   print(obj.id)
+   return HttpResponse('index')
+</code></pre>
+<p># 执行结果
+   None
+   1
+   ```</p>
+<h3 id="read">查询数据 read</h3>
+<p>通过Entry.objects 调用查询接口函数</p>
+<p>Entry.objects 提供了对该实体的所有的数据的查询</p>
+<ol>
+<li>获取所有查询结果的方法</li>
+</ol>
+<p>方法：<code>all()</code></p>
+<p><code>python
+   Enrty.objects.all()</code></p>
+<p>返回：QuerySet(查询结果集，本质是一个封装了若干对象的列表)</p>
+<ol>
+<li>查询返回指定列</li>
+</ol>
+<p>方法：<code>values()</code> 或 <code>values('列名1', '列名2')</code></p>
+<p>作用： 查询表中数据的部分列，封装到字典中，再封装到QuerySet中 </p>
+<p>返回：QuerySet(查询结果集，本质是一个封装了若干字段的列表)</p>
+<ol>
+<li>查询返回指定列</li>
+</ol>
+<p>方法: <code>values_list()</code></p>
+<p>作用：将数据封装到元组中再封装到列表中</p>
+<ol>
+<li>排序方法</li>
+</ol>
+<p>方法：<code>order_by()</code></p>
+<p>语法：</p>
+<p><code>Entry.objects.order_by('col1', '-col2')</code></p>
+<p>默认是升序排序，列名前加-，则表示降序排序</p>
+<ol>
+<li>查询只返回一条数据</li>
+</ol>
+<p>方法：<code>get(条件)</code></p>
+<p>返回：单个实体对象</p>
+<p>注意：</p>
+<p>​    该方法只使用于只能查询出一条结果的场合
+   ​    如果查询多于一条数据或没查询出结果都会抛出异常</p>
+<ol>
+<li>根据条件查询部分行</li>
+</ol>
+<p>方法：<code>filter(条件)</code></p>
+<p>返回： QuerySet </p>
+<p><code>python
+   # 查询Author实体中id=1的信息
+   authors = Author.objects.filter(id=1)</code></p>
+<p><strong>非等值条件需要使用查询谓词 Field Lookup</strong> </p>
+<p>语法：</p>
+<p>​    Entry.objects.filter(属性__查询谓词=值)</p>
+<p>注意：</p>
+<p><code>python
+   # 每个查询谓词都是一个独立的功能条件
+       __exact: 等值条件判断
+       __gt: 大于条件判断
+       __year: 得到日期中的年份再进一步判断
+       __contains: 模糊查询'%xxx%'
+       __range: 模糊查询 between add
+       ... ...
+   # 所有支持条件查询的位置处都支持查询谓词
+    filter() get() exclude()</code></p>
+<ol>
+<li>对条件取反</li>
+</ol>
+<p>方法：<code>exclude(条件)</code></p>
+<p><code>python
+   Author.objects.exclude(id=1)
+   select * from author where not(id=1)</code></p>
+<ol>
+<li>聚合查询（不带分组）</li>
+</ol>
+<p>方法：<code>aggregate(列名=聚合函数('列'))</code></p>
+<p><code>python
+   Author.objects.aggregate(sumAge=Avg('age'))</code></p>
+<p>聚合函数:</p>
+<pre><code> 1. Avg(): 平均值
+       2. Count(): 数量
+           3. Sum(): 求和
+               4. Min(): 求最小值
+                   5. Max(): 求最大值
+</code></pre>
+<ol>
+<li>聚合查询（带分组）</li>
+</ol>
+<p>方法：<code>nnotate(名字=聚合函数('列'))</code></p>
+<p>```python
+   # 按id分组查询平均年龄
+   Author.objects.values('id').annotate(avg_age=Avg('age'))</p>
+<p>集结 where，分组查询，having 于一体的查询接口
+       Author.objects
+       .filter(id__gte=3)  # where子句
+       .values('age')  # group by
+       .annotate(avgAge=Avg('age'))  # 查询聚合函数
+       .filter(avgAge__gte&gt;20)  # having子句
+       .order_by('')  # 子句
+   ```</p>
+<p>所有的查询接口函数都可以通过query属性来得到对应的sql语句</p>
+<pre><code>例如： Entry.objects.all().query
+</code></pre>
+
+<h3 id="update">修改数据 update</h3>
+<ol>
+<li>修改单个实体 </li>
+</ol>
+<p><code>python
+   # 查， 改， 保存 
+   obj = TestModel.objects.filter(id=1).first()
+   obj.name = 'wwww'
+   obj.save()</code></p>
+<ol>
+<li>批量修改数据</li>
+</ol>
+<p><code>python
+   # 调用QuerySet的update(属性=值, 属性=值)实现批量修改 
+   objs = TestModel.objects.all()
+   objs.update(name='xxx')</code></p>
+<h3 id="delete">删除数据 delete</h3>
+<p>调用实体对象或查询结果集的delete()方法来完成删除</p>
+<ol>
+<li>删除单个对象 </li>
+</ol>
+<p><code>python
+   au = Author.objects.get(id=1)
+   au.delete()</code></p>
+<ol>
+<li>批量删除 </li>
+</ol>
+<p><code>python
+   Author.objects.all().delete()</code></p>
+<h2 id="f-q">F查询  Q查询</h2>
+<h3 id="f">F():</h3>
+<p>作用：在执行过程中获取某列的值</p>
+<p>语法：</p>
+<p>​          from django.db.models import F
+​           F('列名'): 得到某列的值</p>
+<pre><code class="python"># 把所有的Author的age增加10
+Author.objects.all().update(age=F('age')+10)
+</code></pre>
+
+<h3 id="q">Q()</h3>
+<p>作用：在查询条件中可以完成or操作</p>
+<p>语法：</p>
+<p>​          from django.db.models import Q
+​           Q(条件1)|Q(条件2)</p>
+<pre><code class="python"># 查询id&gt;=3 或 年龄小于60的信息
+authors = Author.objects.filter(Q(id__gte=3)|Q(age__lt=60)).all()
+</code></pre>
+
+<h2 id="_5">原生的数据库操作方法</h2>
+<ol>
+<li>查询</li>
+</ol>
+<p><code>python
+   Entry.objects.raw(sql)</code></p>
+<p>返回值:QuerySet()</p>
+<ol>
+<li>增删改</li>
+</ol>
+<p><code>python
+   from django.db import connection
+   def do_sql(request):
+       with connection.curso() as cursor:
+           sql = '...';
+           cursor.execute(sql)  # 影响的行数
+           return xx</code></p>
+<h2 id="-objects">自定义查询对象 - objects</h2>
+<p>objects 的 属性的类型为 models.Manager</p>
+<ol>
+<li>声明 EntryManager 类，继承自models.Manager, 允许在 EntryManager 中增加自定义函数</li>
+</ol>
+<p><code>python
+   class EntryManager(models.Manager):
+       def 函数名(self):
+           ... ...
+           return ...</code></p>
+<ol>
+<li>使用给EntryManager 覆盖Models类中覆盖原有的objects</li>
+</ol>
+<p><code>python
+   class Entry(models.Model):
+    objects = EntryManager()</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../7_django模型中的关系映射/" class="btn btn-neutral float-right" title="模型中的关系映射">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../5_django中的模板/" class="btn btn-neutral" title="django中的模板"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../5_django中的模板/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../7_django模型中的关系映射/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>自带的后台管理 - 杨小哥博客</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u81ea\u5e26\u7684\u540e\u53f0\u7ba1\u7406";
+    var mkdocs_page_input_path = "django\\8_django\u81ea\u5e26\u7684\u540e\u53f0\u7ba1\u7406.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 杨小哥博客</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../1_django介绍及安装/">django介绍及安装</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../2_django中的路由/">django中的路由</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../3_django中的HttpRequest对象/">HttpRequest对象</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../4_django中的session和cookie/">session和cookie</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../5_django中的模板/">django中的模板</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../6_django中的模型/">django中的模型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../7_django模型中的关系映射/">模型中的关系映射</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">自带的后台管理</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">后台管理系统</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">后台配置</a></li>
+        
+            <li><a class="toctree-l4" href="#models">Models 的基本管理</a></li>
+        
+            <li><a class="toctree-l4" href="#models_1">Models 的高级管理</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django restframework</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">杨小哥博客</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>django &raquo;</li>
+        
+      
+    
+    <li>自带的后台管理</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">后台管理系统</h1>
+<h2 id="_2">后台配置</h2>
+<ol>
+<li>
+<p>登陆地址： /admin/</p>
+</li>
+<li>
+<p>创建后台管理员（超级用户）</p>
+</li>
+</ol>
+<p><code>python
+   python manage.py createsuperuser</code></p>
+<h2 id="models">Models 的基本管理</h2>
+<ol>
+<li>在应用中的<code>admin.py</code>中注册要管理的实体类</li>
+</ol>
+<p><code>admin.py作用：
+    注册要管理的Models类，只有注册之后才能管理
+   注册Models
+    admin.site.register()</code></p>
+<ol>
+<li>类设置</li>
+</ol>
+<p>重写每个实体类中的<code>__str__()</code>方法，后台显示的将以<code>__str__()</code>的返回值为准</p>
+<p>为实体类中的属性们添加字段选项 verbose_name，用于修改显示的字段名</p>
+<ol>
+<li>通过Model类的内部类Meta定义其展现形式</li>
+</ol>
+<p>```python
+   class Author(models.Model):
+       name = models.CharField(max_length=20)</p>
+<pre><code>   class Meta():
+       1. db_table = ''  # 指定该实体类映射到表的名称，该属性设置完成后需要同步回数据库
+       2. verbose_name = ''
+       # 定义类在admin中显示的名字(单数)
+       3. varbose_name_plural
+       # 定义类在admin中显示的名字(复数)
+       4. ordering
+       # 指定数据在后台管理中的排序方式
+       # 取值一个列表，指定排序列，默认升序，降序使用
+</code></pre>
+<p>```</p>
+<h2 id="models_1">Models 的高级管理</h2>
+<ol>
+<li>在admin.py中创建高级管理类并注册</li>
+</ol>
+<p><code>python
+   # 创建 EntryAdmin类，继承自admin.ModelAdmin
+   class AuthorAdmin(admin.ModelAdmin):
+    pass
+   # 注册高级管理类
+   admin.site.register(Entry, EntryAdmin)
+   # ex:
+   admin.site.register(Author, AuthorAdmin)</code></p>
+<ol>
+<li>允许在EntryAdmin中增加的属性</li>
+</ol>
+<p>```python
+   # list_display
+      作用
+          定义在列表也上显示的字段们
+      取值：
+          由模型类中对象的属性名组成的元组或列表
+   # list_display_links
+       作用
+           定义在列表页上也能够链接到详情页的字段们
+   # list_editable
+       作用
+           定义在列表页上就能够修改的字段们
+       取值
+           只能出现在list_display中，不能出现在list_display_links中
+   # search_fields
+       作用
+           在列表页的偏上添加一个搜索栏，、
+           定义搜索栏中允许搜索的字段值们
+   # list_filter
+       作用
+           在列表页的右侧增加过滤器来实现快速筛选
+   # date_hierarchy
+       作用
+           在列表页的顶部会增加一个时间选择器，取值属性必须是DateField 或 DateTimeField的列
+   # fields
+       作用
+           在详情页面中，指定要显示那些字段并按照什么顺序显示
+   # fieldsets
+       作用
+           在详情页中对字段们进行分组显示
+       注意
+           fieldssets 与 fields 不能共存
+       取值
+           fieldssets = [
+               # 分组1
+               ('分组名称', {
+                   'fields': ('属性1', '属性2'),
+                   'classes': ('collapse',)  # collapse 折叠
+               }),</p>
+<pre><code>           # 分组2
+       ]
+</code></pre>
+<p>```</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../drf/1.django视图之CBV的基本使用/" class="btn btn-neutral float-right" title="django视图之CBV的基本使用">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../7_django模型中的关系映射/" class="btn btn-neutral" title="模型中的关系映射"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../7_django模型中的关系映射/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../drf/1.django视图之CBV的基本使用/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

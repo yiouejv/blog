@@ -1,0 +1,20 @@
+site_name: 杨小哥博客
+
+
+theme: readthedocs
+
+
+nav:
+  - django: 
+    - django介绍及安装: django/1_django介绍及安装.md
+    - django中的路由: django/2_django中的路由.md
+    - HttpRequest对象: django/3_django中的HttpRequest对象.md
+    - session和cookie: django/4_django中的session和cookie.md
+    - django中的模板: django/5_django中的模板.md
+    - django中的模型: django/6_django中的模型.md
+    - 模型中的关系映射: django/7_django模型中的关系映射.md
+    - 自带的后台管理: django/8_django自带的后台管理.md
+  - django restframework:
+    - django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
+    - CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
+

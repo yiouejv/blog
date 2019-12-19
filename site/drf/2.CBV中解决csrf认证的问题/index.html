@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>CBV中解决csrf认证的问题 - 杨小哥博客</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CBV\u4e2d\u89e3\u51b3csrf\u8ba4\u8bc1\u7684\u95ee\u9898";
+    var mkdocs_page_input_path = "drf\\2.CBV\u4e2d\u89e3\u51b3csrf\u8ba4\u8bc1\u7684\u95ee\u9898.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 杨小哥博客</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../django/1_django介绍及安装/">django介绍及安装</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/2_django中的路由/">django中的路由</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/3_django中的HttpRequest对象/">HttpRequest对象</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/4_django中的session和cookie/">session和cookie</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/5_django中的模板/">django中的模板</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/6_django中的模型/">django中的模型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/7_django模型中的关系映射/">模型中的关系映射</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../django/8_django自带的后台管理/">自带的后台管理</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django restframework</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">CBV中解决csrf认证的问题</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#cbvcsrf">CBV中解决csrf认证的问题</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</a></li>
+        
+            <li><a class="toctree-l4" href="#djangocsrf">django是防御csrf的？</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">杨小哥博客</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>django restframework &raquo;</li>
+        
+      
+    
+    <li>CBV中解决csrf认证的问题</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cbvcsrf">CBV中解决csrf认证的问题</h1>
+<h2 id="csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</h2>
+<p>具体是利用什么攻击的可以看看百度百科：<a href="https://baike.baidu.com/item/CSRF/2735433?fr=aladdin">csrf百科</a></p>
+<p><strong>防御：</strong>服务器给客户端发送一个随机的字符串，客户端和服务器交互的时候需要带上这个字符串，否则就是违法的用户，因为每次字符串都是随机的，从而避免了黑客利用的风险。</p>
+<h2 id="djangocsrf">django是防御csrf的？</h2>
+<p>django默认全局开启csrf认证，只要是post请求就必须带上csrf的字符串。</p>
+<p>在<code>setting.py</code>中设置中间件。<code>django.middleware.csrf.CsrfViewMiddleware</code></p>
+<pre><code class="python">MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',  # 全局开启
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+</code></pre>
+
+<p>也可以把中间件注释掉，就全局关闭了，但是存在被利用漏洞的风险。</p>
+<h3 id="csrfpost">开启csrf验证发送post未带随机字符串</h3>
+<p><img alt="csrf" src="../images/csrf.png" /></p>
+<h3 id="ajaxpost">ajax提交post请求</h3>
+<ol>
+<li>在网页中任意一个位置增加 {% csrf_token %} </li>
+</ol>
+<p>在模板中增加了 {% csrf_token %} 后，前端模板中会生成一个input标签。就是下面这样</p>
+<p><code>html
+   &lt;input type="hidden" name="csrfmiddlewaretoken" value="YcT8OPwJxCzwyspr0zDeoU6jSBv65EbhT5oBf2LMV603Qs2joTROB6YIlHvV6E4K"&gt;</code></p>
+<ol>
+<li>在ajax post请求中提交参数时，需要将csrf的键和值也提交给服务器。</li>
+</ol>
+<p>把随机字符串设置到请求头里。jquery示例。</p>
+<p><code>js
+   var csrftoken = $('input[name=csrfmiddlewaretoken]').attr('value');
+   xhr.setRequestHeader("X-CSRFtoken", csrftoken);</code></p>
+<h3 id="csrf">全局开启了，怎么让单个视图函数不开启csrf保护呢？</h3>
+<h4 id="_1">装饰器</h4>
+<pre><code class="python"># 关闭csrf保护
+from django.views.decorators.csrf import csrf_exempt
+# 开启csrf保护
+from django.views.decorators.csrf import csrf_protect
+</code></pre>
+
+<h4 id="fbv">FBV</h4>
+<p>​   只需要在需要开启/关闭的函数上使用装饰器。</p>
+<h4 id="cbv">CBV</h4>
+<p>​   需要借助<code>method_decorator</code>装饰器</p>
+<pre><code class="python">from django.utils.decorators import method_decorator
+</code></pre>
+
+<ol>
+<li>方式一：在dispatch方法上使用装饰器</li>
+</ol>
+<p>```python
+   from django.views.decorators.csrf import csrf_exempt, csrf_protect
+   from django.utils.decorators import method_decorator</p>
+<p>class StutentsView(View):
+       method_descrator(csrf_exempt)
+       def dispatch(csrf_exempt):
+           return super(StudentsView, self).dispatch(request, <em>args, </em>*kwargs)</p>
+<pre><code>   def get(self, request, *args, **kwargs):
+       return HttpResponse('GET')
+</code></pre>
+<p>```</p>
+<ol>
+<li>方式二：在类上使用装饰器</li>
+</ol>
+<p>```python
+   from django.views.decorators.csrf import csrf_exempt, csrf_protect
+   from django.utils.decorators import method_decorator</p>
+<p>@method_decorator(csrf_exempt, name="dispatch")
+   class StutentsView(View):
+       def get(self, request, <em>args, </em>*kwargs):
+           return HttpResponse('GET')
+   ```</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../1.django视图之CBV的基本使用/" class="btn btn-neutral" title="django视图之CBV的基本使用"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../1.django视图之CBV的基本使用/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

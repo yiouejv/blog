@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>django中的路由 - 杨小哥博客</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "django\u4e2d\u7684\u8def\u7531";
+    var mkdocs_page_input_path = "django\\2_django\u4e2d\u7684\u8def\u7531.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 杨小哥博客</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../1_django介绍及安装/">django介绍及安装</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">django中的路由</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#django">django框架的使用</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">创建项目</a></li>
+        
+            <li><a class="toctree-l4" href="#url">url的使用</a></li>
+        
+            <li><a class="toctree-l4" href="#django_2">Django中的应用</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../3_django中的HttpRequest对象/">HttpRequest对象</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../4_django中的session和cookie/">session和cookie</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../5_django中的模板/">django中的模板</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../6_django中的模型/">django中的模型</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../7_django模型中的关系映射/">模型中的关系映射</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../8_django自带的后台管理/">自带的后台管理</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">django restframework</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">杨小哥博客</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>django &raquo;</li>
+        
+      
+    
+    <li>django中的路由</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <hr />
+<hr />
+<h1 id="django">django框架的使用</h1>
+<h2 id="_1">创建项目</h2>
+<pre><code>使用 django-admin 创建 Django 项目 ，在控制台输入。
+</code></pre>
+<p>​   语法： </p>
+<pre><code class="python">django-admin startproject 项目名称
+</code></pre>
+
+<p>​   如:</p>
+<pre><code class="python">django-admin startproject django_test
+</code></pre>
+
+<p><img alt="创建项目" src="../images/startproject.png" /></p>
+<h3 id="django_1">Django项目结构</h3>
+<p><img alt="结构树" src="../images/projecttree.png" /></p>
+<ol>
+<li><strong>manage.py</strong> </li>
+</ol>
+<p>功能： 包含执行django中的各项操作的指令 </p>
+<p>如： 启动服务 runserver </p>
+<ol>
+<li>
+<p><strong>主目录 django_test/django_test</strong></p>
+</li>
+<li>
+<p><code>__init__.py</code></p>
+<p>项目的初始化文件，自动运行 </p>
+</li>
+<li>
+<p>urls.py  </p>
+<p>项目的基础路由配置文件</p>
+</li>
+<li>
+<p>wsgi.py </p>
+<p>Web Server Gateway Interface
+  Web 服务网关接口</p>
+</li>
+<li>
+<p>settings.py </p>
+<p>项目的配置文件</p>
+<p><code>python
+   1. BASE_DIR
+     项目根目录
+   2. ALLOWED_HOSTS
+       设置允许访问到本项目的地址列表
+       如果允许在网络中被其他的机器访问到的话
+       推荐写["*"], 表示任何能够表示该机器的地址都能访问到该项目
+       同时在启动服务时还需要指定地址和端口
+       python3 manage.py runserver 0.0.0.0:8000
+   3. INSTALLED_APPS
+    指定已安装的应用，如果由自定义的应用的话需要在此注册
+   4. MIDDLEWARE
+    中间件，如果有自定义的中间件，需要在此注册
+   5. ROOT_URLCONF
+    指定项目的基础路由配置文件
+   6. TEMPLATES
+    配置模板的相应信息
+   7. DATABASES
+    配置数据库的信息
+   8. LANGUAGE_CODE
+    设置语言，主要设置中文的话，允许将值改为'zh-Hans'
+  9. TIME_ZONE
+       指定时区，默认时区，允许将值更改为"Asia/Shanghai"</code></p>
+</li>
+</ol>
+<h2 id="url">url的使用</h2>
+<ol>
+<li>
+<p><code>urls.py</code> </p>
+<p>默认在主目录中，主路由配置文件，会包含最基本的地址映射，每个地址访问都必须要先经过该文件</p>
+<p>作用：通过urls中定义好的地址找到对应的视图处理函数</p>
+<p><code>python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]</code></p>
+</li>
+<li>
+<p><code>path()</code></p>
+<p>作用：为了匹配用户的访问路径 </p>
+<p>语法: </p>
+</li>
+</ol>
+<p>```
+   from django.urls import path</p>
+<p>path(route, view, kwargs=None, name=None)
+       route: 匹配请求的url
+       view: 地址匹配上之后要执行操作的视图处理函数
+       kwargs: 字典，用来想view传参的，可以省略
+       name: 为url起别名, 在地址反向解析时使用
+   ```</p>
+<ol>
+<li>向url传递参数</li>
+</ol>
+<p>方式一：通过path的参数kwargs的方式传递，不推荐，这里依赖了django框架，不通用。</p>
+<p>方式二：通过http协议进行传参</p>
+<ul>
+<li>
+<p>get请求</p>
+<p>http:// xxxx.com/login?id=1&amp;token=xxx</p>
+</li>
+<li>
+<p>post请求</p>
+<p>http:// xxx.com/login</p>
+<p>数据放在 form-data里，详细一点的话就是放在http请求的请求体里（可以去看看http协议的内容）</p>
+</li>
+</ul>
+<p><strong>数据怎么取？？</strong></p>
+<p>后面的教程会讲到。</p>
+<h2 id="django_2">Django中的应用</h2>
+<ol>
+<li>什么是应用 ？
+       应用就是网站中的一个独立的模块
+       如: 网易网站可分为若干应用组成</li>
+</ol>
+<p>​        新闻应用: 与新闻相关的内容
+   ​        车应用: 与汽车相关的内容</p>
+<p>​        科技应用: 与科技相关的内容</p>
+<p>在django中, 主目录一般不处理具体的请求, 主目录一般处理的是项目的初始化操作
+   处理的是初始化操作, 以及请求的分发(分布式请求处理), 而具体的请求是由各个应用去处理.</p>
+<ol>
+<li>
+<p>创建应用</p>
+</li>
+<li>
+<p>命令</p>
+<p><code>python
+  python manage.py startapp 应用的名称</code></p>
+</li>
+<li>
+<p>需要在settings.py 中进行注册 ， 在INSTALLED_APPS 中追加应用的名称来注册应用 </p>
+<p><code>python
+  INSTALLED_APPS = [
+      'django.contrib.admin',
+      ... ...
+      '自定义的应用名称'
+  ]</code></p>
+</li>
+<li>
+<p>应用的解析组成</p>
+</li>
+<li>migrations 文件夹 : 存放数据库的中间文件</li>
+<li><code>__init__.py</code> :  应用的初始化文件 </li>
+<li><code>admin.py</code> :  应用的后台管理配置文件 </li>
+<li><code>apps.py</code> :  和应用的属性配置文件 </li>
+<li><code>models.py</code> :  Models 与 模型相关的映射文件 </li>
+<li><code>tests.py</code> :  应用的单元测试文件 </li>
+<li>
+<p><code>views.py</code> :  视图处理函数的文件 </p>
+</li>
+<li>
+<p>分部式的路由系统 </p>
+<p>在每个应用中分别创建urls.py, 格式参考主路由文件 </p>
+<p>目的: 为了处理各个应用中的请求路由</p>
+<p>用法: </p>
+<pre><code>(这里直接引用django官方的例子)
+</code></pre>
+<ol>
+<li>创建一个polls应用：</li>
+</ol>
+<p><code>python
+  python manage.py startapp polls</code></p>
+<p><img alt="polls应用的目录结构" src="../images/polls.png" /></p>
+</li>
+<li>
+<p><code>django_test/setting.py</code> 声明polls模块</p>
+<p><code>INSTALLED_APPS = [
+      'django.contrib.admin',
+      'django.contrib.auth',
+      'django.contrib.contenttypes',
+      'django.contrib.sessions',
+      'django.contrib.messages',
+      'django.contrib.staticfiles',
+   'polls'   # &lt;- 这里
+  ]</code></p>
+</li>
+<li>
+<p>在polls包下创建<code>urls.py</code> 模块，并定义一个http://127.0.0.1:8000/
+   路由。</p>
+<p>```python
+  from django.urls import path
+  from .views import index_view</p>
+<p>urlpatterns = [
+      path('', index_view, name='index'),
+  ]
+  ```</p>
+</li>
+<li>
+<p>编写试图函数 <code>polls/views.py</code></p>
+<p>```python
+  from django.http import HttpResponse
+  from django.shortcuts import render</p>
+<p># Create your views here.
+  def index_view(request):
+      return HttpResponse('index')
+  ```</p>
+</li>
+<li>
+<p>将polls应用的urls注册到主路由系统中，<code>django_test/urls.py</code></p>
+<p>```python
+  from django.contrib import admin
+  from django.urls import path, include</p>
+<p>urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', include("polls.urls")),
+  ]
+  ```</p>
+</li>
+<li>
+<p>启动服务，访问主页：http://127.0.0.1:8000/ </p>
+<p><img alt="主页" src="../images/index.png" /></p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../3_django中的HttpRequest对象/" class="btn btn-neutral float-right" title="HttpRequest对象">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../1_django介绍及安装/" class="btn btn-neutral" title="django介绍及安装"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../1_django介绍及安装/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../3_django中的HttpRequest对象/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
