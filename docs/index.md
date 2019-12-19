@@ -4,7 +4,7 @@
 
 
 ### 本电子书制作和写作方式
-使用 mkdocs 和 markdown 构建。
+使用 mkdocs 和 markdown 构建。  
 markdown 语法参考：http://xianbai.me/learn-md/article/about/readme.html
 
 安装依赖：
