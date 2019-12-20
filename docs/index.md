@@ -1,4 +1,4 @@
-# yiouejv 的博客记录
+## yiouejv 的博客记录
 
 > Stay Hungry Stay Foolish.
 
@@ -25,6 +25,6 @@ mkdocs serve     # 修改自动更新，浏览器打开 http://localhost:8000 �
 mkdocs gh-deploy    # 部署到自己的 github pages, 如果是 readthedocs 会自动触发构建
 ```
 
-### 访问:
+### 访问
 
-[https://yiouejv.github.io/blog/](https://yiouejv.github.io/blog/)
+[https://yiouejv.github.io/](https://yiouejv.github.io/)
