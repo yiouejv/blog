@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CBV中解决csrf认证的问题 - 杨小哥博客</title>
+        <title>skynet 基于 Actor 模式的开源框架 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -83,16 +83,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">django restframework <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+    <a href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
 </li>
                                     
-<li class="active">
-    <a href="./">CBV中解决csrf认证的问题</a>
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
 </li>
                                 </ul>
                             </li>
@@ -121,16 +121,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../skynet/并发编程和并行编程/">并发编程和并行编程</a>
+    <a href="../并发编程和并行编程/">并发编程和并行编程</a>
 </li>
                                     
-<li >
-    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">skynet 基于 Actor 模式的开源框架</a>
+<li class="active">
+    <a href="./">skynet 基于 Actor 模式的开源框架</a>
 </li>
                                 </ul>
                             </li>
@@ -143,12 +143,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../1.django视图之CBV的基本使用/">
+                                <a rel="next" href="../并发编程和并行编程/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../lua/表的构造/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -160,88 +160,93 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#cbvcsrf">CBV中解决csrf认证的问题</a></li>
-            <li><a href="#csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</a></li>
-            <li><a href="#djangocsrf">django是防御csrf的？</a></li>
+        <li class="main active"><a href="#skynet-actor">skynet: 基于 Actor 模式的开源框架</a></li>
+        <li class="main "><a href="#_1">消息调度模块</a></li>
+        <li class="main "><a href="#_2">异步编程</a></li>
+        <li class="main "><a href="#actor">Actor 沙盒</a></li>
+        <li class="main "><a href="#_3">通讯协议</a></li>
+        <li class="main "><a href="#_4">分布式解决方案</a></li>
+        <li class="main "><a href="#mmoprg">MMOPRG</a></li>
+        <li class="main "><a href="#_5">典型手游集群</a></li>
+        <li class="main "><a href="#_6">调优和优化</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="cbvcsrf">CBV中解决csrf认证的问题</h1>
-<h2 id="csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</h2>
-<p>具体是利用什么攻击的可以看看百度百科：<a href="https://baike.baidu.com/item/CSRF/2735433?fr=aladdin">csrf百科</a></p>
-<p><strong>防御：</strong>服务器给客户端发送一个随机的字符串，客户端和服务器交互的时候需要带上这个字符串，否则就是违法的用户，因为每次字符串都是随机的，从而避免了黑客利用的风险。</p>
-<h2 id="djangocsrf">django是防御csrf的？</h2>
-<p>django默认全局开启csrf认证，只要是post请求就必须带上csrf的字符串。</p>
-<p>在<code>setting.py</code>中设置中间件。<code>django.middleware.csrf.CsrfViewMiddleware</code></p>
-<pre><code class="python">MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',  # 全局开启
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-</code></pre>
-
-<p>也可以把中间件注释掉，就全局关闭了，但是存在被利用漏洞的风险。</p>
-<h3 id="csrfpost">开启csrf验证发送post未带随机字符串</h3>
-<p><img alt="csrf" src="../images/csrf.png" /></p>
-<h3 id="ajaxpost">ajax提交post请求</h3>
-<ol>
-<li>在网页中任意一个位置增加 {% csrf_token %} </li>
-</ol>
-<p>在模板中增加了 {% csrf_token %} 后，前端模板中会生成一个input标签。就是下面这样</p>
-<p><code>html
-   &lt;input type="hidden" name="csrfmiddlewaretoken" value="YcT8OPwJxCzwyspr0zDeoU6jSBv65EbhT5oBf2LMV603Qs2joTROB6YIlHvV6E4K"&gt;</code></p>
-<ol>
-<li>在ajax post请求中提交参数时，需要将csrf的键和值也提交给服务器。</li>
-</ol>
-<p>把随机字符串设置到请求头里。jquery示例。</p>
-<p><code>js
-   var csrftoken = $('input[name=csrfmiddlewaretoken]').attr('value');
-   xhr.setRequestHeader("X-CSRFtoken", csrftoken);</code></p>
-<h3 id="csrf">全局开启了，怎么让单个视图函数不开启csrf保护呢？</h3>
-<h4 id="_1">装饰器</h4>
-<pre><code class="python"># 关闭csrf保护
-from django.views.decorators.csrf import csrf_exempt
-# 开启csrf保护
-from django.views.decorators.csrf import csrf_protect
-</code></pre>
-
-<h4 id="fbv">FBV</h4>
-<p>​   只需要在需要开启/关闭的函数上使用装饰器。</p>
-<h4 id="cbv">CBV</h4>
-<p>​   需要借助<code>method_decorator</code>装饰器</p>
-<pre><code class="python">from django.utils.decorators import method_decorator
-</code></pre>
-
-<ol>
-<li>方式一：在dispatch方法上使用装饰器</li>
-</ol>
-<p>```python
-   from django.views.decorators.csrf import csrf_exempt, csrf_protect
-   from django.utils.decorators import method_decorator</p>
-<p>class StutentsView(View):
-       method_descrator(csrf_exempt)
-       def dispatch(csrf_exempt):
-           return super(StudentsView, self).dispatch(request, <em>args, </em>*kwargs)</p>
-<pre><code>   def get(self, request, *args, **kwargs):
-       return HttpResponse('GET')
-</code></pre>
-<p>```</p>
-<ol>
-<li>方式二：在类上使用装饰器</li>
-</ol>
-<p>```python
-   from django.views.decorators.csrf import csrf_exempt, csrf_protect
-   from django.utils.decorators import method_decorator</p>
-<p>@method_decorator(csrf_exempt, name="dispatch")
-   class StutentsView(View):
-       def get(self, request, <em>args, </em>*kwargs):
-           return HttpResponse('GET')
-   ```</p></div>
+<h2 id="skynet-actor">skynet: 基于 Actor 模式的开源框架</h2>
+<p>Skynet 是一个基于C跟lua的开源服务端并行框架， 作者：云风（ 简悦科技 云风）。</p>
+<p>作者视频解说skynet： http://gad.qq.com/content/coursedetail?id=467 </p>
+<p>skynet设计综述： https://blog.codingnow.com/2012/09/the_design_of_skynet.html </p>
+<p>先阅读完设计综述再看下面的内容。</p>
+<p>Code Base</p>
+<ul>
+<li>1000行C核心服务代码</li>
+<li>1000行lua核心库</li>
+<li>5000行lua外围库</li>
+<li>redis/mysql/mongodb driver</li>
+<li>crypt, sproto, sharedata, etc</li>
+</ul>
+<h2 id="_1">消息调度模块</h2>
+<p>按照cpu的核心配置工作线程，actor的数量是远大于工作线程的数量的，一个actor向另一个actor发消息，actor拿到消息之后再去处理。</p>
+<p>skynet维护一个全局的消息队列，每个消息队列里包含所有actor（含有待处理消息的actor），每个actor有自己的消息队列，所有的工作线程去消息队列里去拿到actor，再从actor里拿到消息再丢给actor去处理。线程会一直去拿消息处理，除非全局消息队列为空，线程才会休息。</p>
+<h2 id="_2">异步编程</h2>
+<p><strong>coroutine vs callback</strong></p>
+<p>callback：异常传播困难。</p>
+<p>coroutine(协程)：有自己的调用栈，协程间切换由程序员控制，而线程间切换受系统控制。</p>
+<p>--协程切换内存开发小，异常传播很容易。</p>
+<p>--复用coroutine避免过频的GC(垃圾回收)</p>
+<h2 id="actor">Actor 沙盒</h2>
+<p>actor 模式保证单独的actor出问题尽量把产生的影响变得最小。</p>
+<p><strong>传统模式</strong>下的理念是代码尽量不要出错，代码上线前多测试。</p>
+<p><strong>Actor模式</strong>是代码不可避免的会出错，出错尽量把出错的范围降到最小，不要影响到其他的服务。如果有严重的错误，可以从严重的错误里恢复起来。</p>
+<h2 id="_3">通讯协议</h2>
+<p><strong>进程内消息传递</strong></p>
+<p>通过文本协议序列化发送到其他的服务，收到消息的服务在反序列化回来。</p>
+<ul>
+<li>文本协议(C服务)</li>
+<li>自定义序列化库(Lua服务)</li>
+<li>内存数据结构(自定义)</li>
+</ul>
+<p><strong>跨进程消息传递</strong></p>
+<p>通过现有的协议进行传递。</p>
+<ul>
+<li>自定义协议</li>
+<li>世面上的协议：sproto, google proto buffers, json, etc...</li>
+</ul>
+<p><strong>广播和组播</strong></p>
+<p>​   ...</p>
+<h2 id="_4">分布式解决方案</h2>
+<p><strong>skynet支持两种分布式方案</strong></p>
+<p>-- harbor 模式用于扩展计算能力的不足</p>
+<p>--cluster 模式提供弹性</p>
+<p>--可以一起使用</p>
+<p><strong>如果没有必要，请在一台机器解决，使用cluster做弱关联</strong></p>
+<p><strong>不做热更新，只做热修复</strong></p>
+<p>--A/B滚服, 定期维护，减少复杂度。</p>
+<h2 id="mmoprg">MMOPRG</h2>
+<p>MMORPG: Massive Muti-player Online RPG 多人在线RPG </p>
+<p>魔兽 传奇 都是MMO </p>
+<p>RPG:Role Playing Game角色扮演游戏 </p>
+<p><img alt="" src="../images/mmorpg.png" /></p>
+<p>agent 玩家的代理，所有的玩家操作通过agent和其他的服务打交代，不需要交互的操作通过agent自己解决。</p>
+<h2 id="_5">典型手游集群</h2>
+<p><img alt="" src="../images/hgame.png" /></p>
+<h2 id="_6">调优和优化</h2>
+<ul>
+<li>内建性能分析模块</li>
+<li>Lua模块内建监控协议</li>
+<li>替换CRT内存管理库(jemalloc)</li>
+<li>进程内消息传递减少拷贝</li>
+<li>优化向自身发送的消息</li>
+<li>合并timer请求</li>
+<li>高性能要求的服务使用C/C++编写(慎用)</li>
+<li>为Lua线程C模块</li>
+<li>AOI</li>
+<li>寻路</li>
+<li>组播</li>
+<li>公式计算</li>
+<li>优化登陆，找到热点，避免单点</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

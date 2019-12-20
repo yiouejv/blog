@@ -14,7 +14,6 @@ nav:
     - django中的模型: django/6_django中的模型.md
     - 模型中的关系映射: django/7_django模型中的关系映射.md
     - 自带的后台管理: django/8_django自带的后台管理.md
-  - django restframework:
     - django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
     - CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
   - lua:
@@ -26,3 +25,10 @@ nav:
   - skynet:
     - 并发编程和并行编程: skynet/并发编程和并行编程.md
     - skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
+  - python:
+    - python 相关介绍: python/python相关介绍.md
+  - 工具:
+    - linux操作系统: tools/linux操作系统.md
+  - 理财:
+    - 基金理财: skynet/并.md
+  

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CBV中解决csrf认证的问题 - 杨小哥博客</title>
+        <title>并发编程和并行编程 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -83,16 +83,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">django restframework <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
+    <a href="../../drf/1.django视图之CBV的基本使用/">django视图之CBV的基本使用</a>
 </li>
                                     
-<li class="active">
-    <a href="./">CBV中解决csrf认证的问题</a>
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">CBV中解决csrf认证的问题</a>
 </li>
                                 </ul>
                             </li>
@@ -121,16 +121,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../skynet/并发编程和并行编程/">并发编程和并行编程</a>
+<li class="active">
+    <a href="./">并发编程和并行编程</a>
 </li>
                                     
 <li >
-    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">skynet 基于 Actor 模式的开源框架</a>
+    <a href="../skynet 基于 Actor 模式的开源框架/">skynet 基于 Actor 模式的开源框架</a>
 </li>
                                 </ul>
                             </li>
@@ -143,12 +143,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../1.django视图之CBV的基本使用/">
+                                <a rel="next" href="../../lua/协程实现生产者消费者/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../lua/表的构造/">
+                                <a rel="prev" href="../skynet 基于 Actor 模式的开源框架/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -160,88 +160,48 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#cbvcsrf">CBV中解决csrf认证的问题</a></li>
-            <li><a href="#csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</a></li>
-            <li><a href="#djangocsrf">django是防御csrf的？</a></li>
+        <li class="main active"><a href="#_1">并发编程和并行编程</a></li>
+            <li><a href="#_2">为什么并发程序这么难?</a></li>
+            <li><a href="#thread">线程（Thread）</a></li>
+            <li><a href="#actor">Actor模型（并行编程）</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="cbvcsrf">CBV中解决csrf认证的问题</h1>
-<h2 id="csrfcross-site-request-forgery">CSRF（cross site request  forgery）跨站请求伪造</h2>
-<p>具体是利用什么攻击的可以看看百度百科：<a href="https://baike.baidu.com/item/CSRF/2735433?fr=aladdin">csrf百科</a></p>
-<p><strong>防御：</strong>服务器给客户端发送一个随机的字符串，客户端和服务器交互的时候需要带上这个字符串，否则就是违法的用户，因为每次字符串都是随机的，从而避免了黑客利用的风险。</p>
-<h2 id="djangocsrf">django是防御csrf的？</h2>
-<p>django默认全局开启csrf认证，只要是post请求就必须带上csrf的字符串。</p>
-<p>在<code>setting.py</code>中设置中间件。<code>django.middleware.csrf.CsrfViewMiddleware</code></p>
-<pre><code class="python">MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',  # 全局开启
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-</code></pre>
-
-<p>也可以把中间件注释掉，就全局关闭了，但是存在被利用漏洞的风险。</p>
-<h3 id="csrfpost">开启csrf验证发送post未带随机字符串</h3>
-<p><img alt="csrf" src="../images/csrf.png" /></p>
-<h3 id="ajaxpost">ajax提交post请求</h3>
-<ol>
-<li>在网页中任意一个位置增加 {% csrf_token %} </li>
-</ol>
-<p>在模板中增加了 {% csrf_token %} 后，前端模板中会生成一个input标签。就是下面这样</p>
-<p><code>html
-   &lt;input type="hidden" name="csrfmiddlewaretoken" value="YcT8OPwJxCzwyspr0zDeoU6jSBv65EbhT5oBf2LMV603Qs2joTROB6YIlHvV6E4K"&gt;</code></p>
-<ol>
-<li>在ajax post请求中提交参数时，需要将csrf的键和值也提交给服务器。</li>
-</ol>
-<p>把随机字符串设置到请求头里。jquery示例。</p>
-<p><code>js
-   var csrftoken = $('input[name=csrfmiddlewaretoken]').attr('value');
-   xhr.setRequestHeader("X-CSRFtoken", csrftoken);</code></p>
-<h3 id="csrf">全局开启了，怎么让单个视图函数不开启csrf保护呢？</h3>
-<h4 id="_1">装饰器</h4>
-<pre><code class="python"># 关闭csrf保护
-from django.views.decorators.csrf import csrf_exempt
-# 开启csrf保护
-from django.views.decorators.csrf import csrf_protect
-</code></pre>
-
-<h4 id="fbv">FBV</h4>
-<p>​   只需要在需要开启/关闭的函数上使用装饰器。</p>
-<h4 id="cbv">CBV</h4>
-<p>​   需要借助<code>method_decorator</code>装饰器</p>
-<pre><code class="python">from django.utils.decorators import method_decorator
-</code></pre>
-
-<ol>
-<li>方式一：在dispatch方法上使用装饰器</li>
-</ol>
-<p>```python
-   from django.views.decorators.csrf import csrf_exempt, csrf_protect
-   from django.utils.decorators import method_decorator</p>
-<p>class StutentsView(View):
-       method_descrator(csrf_exempt)
-       def dispatch(csrf_exempt):
-           return super(StudentsView, self).dispatch(request, <em>args, </em>*kwargs)</p>
-<pre><code>   def get(self, request, *args, **kwargs):
-       return HttpResponse('GET')
-</code></pre>
-<p>```</p>
-<ol>
-<li>方式二：在类上使用装饰器</li>
-</ol>
-<p>```python
-   from django.views.decorators.csrf import csrf_exempt, csrf_protect
-   from django.utils.decorators import method_decorator</p>
-<p>@method_decorator(csrf_exempt, name="dispatch")
-   class StutentsView(View):
-       def get(self, request, <em>args, </em>*kwargs):
-           return HttpResponse('GET')
-   ```</p></div>
+<h1 id="_1">并发编程和并行编程</h1>
+<p><strong>并发</strong>: 同一时刻只有单任务执行，通过时间片切换不同的任务。</p>
+<p><strong>并行</strong>: 多个任务在同一时刻执行，同时执行。</p>
+<h2 id="_2">为什么并发程序这么难?</h2>
+<p>​        拿我们从最开始梳理下程序的抽象。开始我们的程序是面向过程的，数据结构+func。后来有了面向对象，对象组合了数结构和func，我们想用模拟现实世界的方式，抽象出对象，有状态和行为。但无论是面向过程的func还是面向对象的func，本质上都是代码块的组织单元，本身并没有包含代码块的并发策略的定义。于是为了解决并发的需求，引入了Thread（线程）的概念。</p>
+<h2 id="thread">线程（Thread）</h2>
+<ul>
+<li>CPU调度的最小单位</li>
+<li>同一进程下的多个线程可共享资源</li>
+</ul>
+<p>线程的出现解决了两个问题，一个是GUI出现后急切需要并发机制来保证用户界面的响应。第二是互联网发展后带来的多用户问题。最早的CGI程序很简单，将通过脚本将原来单机版的程序包装在一个进程里，来一个用户就启动一个进程。但明显这样承载不了多少用户，并且如果进程间需要共享资源还得通过进程间的通信机制，线程的出现缓解了这个问题。</p>
+<p>线程的使用比较简单，如果你觉得这块代码需要并发，就把它放在单独的线程里执行，由系统负责调度，具体什么时候使用线程，要用多少个线程，由调用方决定。但由此带来便利的同时也带来复杂度：</p>
+<ul>
+<li><strong>竞态条件（race conditions）</strong>  如果每个任务都是独立的，不需要共享任何资源，那线程也就非常简单。但世界往往是复杂的，总有一些资源需要共享。 </li>
+<li><strong>依赖关系以及执行顺序</strong> 如果线程之间的任务有依赖关系，需要等待以及通知机制来进行协调。 </li>
+</ul>
+<p>为了解决上述问题，我们引入了许多复杂机制来保证。</p>
+<p>系统里到底需要多少线程？</p>
+<p>这个问题我们先从硬件资源入手，考虑下线程的成本：</p>
+<ul>
+<li><strong>内存（线程的栈空间）</strong>   每个线程都需要一个栈（Stack）空间来保存挂起（suspending）时的状态。Java的栈空间（64位VM）默认是1024k，不算别的内存，只是栈空间，启动1024个线程就要1G内存。虽然可以用-Xss参数控制，但由于线程是本质上也是进程，系统假定是要长期运行的，栈空间太小会导致稍复杂的递归调用（比如复杂点的正则表达式匹配）导致栈溢出。所以调整参数治标不治本。 </li>
+<li><strong>调度成本（context-switch）</strong>模拟两个线程互相唤醒轮流挂起，线程切换成本大约6000纳秒/次。这个还没考虑栈空间大小的影响。国外一篇论文专门分析线程切换的成本，基本上得出的结论是切换成本和栈空间使用大小直接相关。 </li>
+<li><strong>CPU使用率</strong>  并发/并行最主要的一个目标就是我们有了多核，想提高CPU利用率，最大限度的压榨硬件资源，cpu能撑得住，那其他的资源呢？</li>
+</ul>
+<h2 id="actor">Actor模型（并行编程）</h2>
+<p>并行的面向对象模式，比面向对象更加贴近现实。</p>
+<p>面对对象编程对现实的抽象是对象=属性+行为（method），但当使用方调用对象行为（method）的时候，其实占用的是调用方的CPU时间片，是否并发也是由调用方决定的。 </p>
+<p><strong>消息驱动</strong>：现实世界更像Actor的抽象，互相都是通过消息通信的。比如你对一个美女say hi，美女是否回应，如何回应是由美女自己决定的，运行在美女自己的大脑里，并不会占用发送者的大脑。</p>
+<p>当消息发送出去之后，发送的消息和发送者<strong>解耦</strong>，其他的actor收到消息之后可以处理也可以发送给其他的actor。</p>
+<p><strong>异步</strong>： 拿邮件举例，每个actor都有一个专用的邮箱来接收消息，当一个actor实例向另外一个actor发消息的时候，并非直接调用actor的方法，而是把消息传递到对应的邮箱里，就好像邮递员，并不是把邮件直接送到收信人手里，而是放进每家的邮箱，这样邮递员就可以快速的进行下一项工作。所以在actor系统里，actor发送一条消息是非常快的。 </p>
+<p><strong>隔离</strong>: 每个actor的实例都维护这自己的状态，与其他actor实例处于物理隔离状态，并非像 多线程+锁 模式那样基于共享数据。actor通过消息的模式与其他actor进行通信，与OO式的消息传递方式不同，actor之间消息的传递是真正物理上的消息传递。</p>
+<p><strong>天生分布式</strong>: 每个actor实例的位置透明，无论actor地址是在本地还是在远程机器上对于代码来说都是一样的。每个actor的实例非常小，最多几百字节，所以单机几十万的actor的实例很轻松。</p>
+<p><strong>容错</strong>:  传统的编程方式都是在将来可能出现异常的地方去捕获异常来保证系统的稳定性，系统可能还是会崩溃，这样就影响了整个系统，actor模式的话，每一个actor出现问题，不会影响到其他的actor。</p>
+<p>更细节的说明在后面的skynet框架说明里。</p></div>
         </div>
 
         <footer class="col-md-12">
