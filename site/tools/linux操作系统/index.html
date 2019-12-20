@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>session和cookie - 杨小哥博客</title>
+        <title>linux操作系统 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -46,40 +46,40 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">django <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../1_django介绍及安装/">django介绍及安装</a>
+    <a href="../../django/1_django介绍及安装/">django介绍及安装</a>
 </li>
                                     
 <li >
-    <a href="../2_django中的路由/">django中的路由</a>
+    <a href="../../django/2_django中的路由/">django中的路由</a>
 </li>
                                     
 <li >
-    <a href="../3_django中的HttpRequest对象/">HttpRequest对象</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">session和cookie</a>
+    <a href="../../django/3_django中的HttpRequest对象/">HttpRequest对象</a>
 </li>
                                     
 <li >
-    <a href="../5_django中的模板/">django中的模板</a>
+    <a href="../../django/4_django中的session和cookie/">session和cookie</a>
 </li>
                                     
 <li >
-    <a href="../6_django中的模型/">django中的模型</a>
+    <a href="../../django/5_django中的模板/">django中的模板</a>
 </li>
                                     
 <li >
-    <a href="../7_django模型中的关系映射/">模型中的关系映射</a>
+    <a href="../../django/6_django中的模型/">django中的模型</a>
 </li>
                                     
 <li >
-    <a href="../8_django自带的后台管理/">自带的后台管理</a>
+    <a href="../../django/7_django模型中的关系映射/">模型中的关系映射</a>
+</li>
+                                    
+<li >
+    <a href="../../django/8_django自带的后台管理/">自带的后台管理</a>
 </li>
                                     
 <li >
@@ -138,12 +138,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../tools/linux操作系统/">linux操作系统</a>
+<li class="active">
+    <a href="./">linux操作系统</a>
 </li>
                                 </ul>
                             </li>
@@ -165,12 +165,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../3_django中的HttpRequest对象/">
+                                <a rel="next" href="../../python/python相关介绍/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../5_django中的模板/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -182,79 +182,213 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#session-cookie">session 和 cookie</a></li>
-            <li><a href="#django-cookies">django 中使用 cookies</a></li>
-            <li><a href="#django-session">django 中使用 session</a></li>
+        <li class="main active"><a href="#_1">现在三大操作系统</a></li>
+        <li class="main "><a href="#_2">打开终端</a></li>
+        <li class="main "><a href="#_3">退出终端</a></li>
+        <li class="main "><a href="#_4">文件和目录相关的命令</a></li>
+        <li class="main "><a href="#linux">Linux下的路径</a></li>
+        <li class="main "><a href="#_5">通配符</a></li>
+        <li class="main "><a href="#_6">文件管理命令</a></li>
+        <li class="main "><a href="#_7">压缩解压缩的命令</a></li>
+        <li class="main "><a href="#_8">打包解包的命令</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="session-cookie">session 和 cookie</h1>
-<h2 id="django-cookies">django 中使用 cookies</h2>
-<ul>
-<li>设置cookies 的值（将数据保存到客户端）</li>
-</ul>
-<p>语法：<strong>响应对象.set_cookie(key, value, expires)</strong></p>
-<p>```python
-  # 不使用模板
-  resp = HttpResponse('xxx')
-  resp.set_cookie(key, value, expires)
-  return resp</p>
-<p># 使用模板
-  resp = render(request, 'xxx.html', context)
-  resp.set_cookie(key, value, expires)
-  return resp</p>
-<p># 使用重定向
-  resp = redirect(request, 'xxx.html')
-  resp.set_cookie(key, value, expires)
-  return resp
-  ```</p>
-<ul>
-<li>获取cookies 的值</li>
-</ul>
-<p>伴随请求对象到达服务器后再获取cookie的值
-  request.COOKIES:  封装了当前访问站点下所有cookie的信息</p>
-<ul>
-<li>
-<p>删除cookie 的值</p>
-</li>
-<li>
-<p>客户端：清除浏览器cookie</p>
-</li>
-<li>服务端：resp.delete_cookie(key)</li>
-</ul>
-<h2 id="django-session">django 中使用 session</h2>
-<ul>
-<li>设置session的值（将数据保存到服务端）</li>
-</ul>
-<p>语法：<strong>request.session['key'] = value</strong></p>
-<ul>
-<li>获取session 的值</li>
-</ul>
-<p><code>python
-  request.session['key']
-  request.session.get('key')</code></p>
-<ul>
-<li>删除session的值</li>
-</ul>
-<p><code>python
-  del request.session['key']</code></p>
-<ul>
-<li>有关 session 的配置</li>
-</ul>
-<p>在 <code>settings.py</code> 中有关session的设置 </p>
-<ul>
-<li>
-<p><code>SESSION_COOKIE_AGE</code>  设置sessionID在cookies中的存活时间</p>
-<p><code>python
-SESSION_COOKIE_AGE = 60*30  # 30s</code></p>
-</li>
-<li>
-<p><code>SESSION_EXPIRE_AT_BROWSER_CLOSE</code>  设置浏览器关闭时则清除服务器上对应的session空间</p>
-<p><code>python
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True</code></p>
-</li>
-</ul></div>
+<h4 id="_1">现在三大操作系统</h4>
+<p>Unix(IOS/Mac OS X ,AIX,Solaris)<br />
+    Windows<br />
+    Linux(用来学习的)<br />
+        Ubuntu<br />
+        Redhat<br />
+        ...<br />
+        Android   </p>
+<h4 id="_2">打开终端</h4>
+<p>​   点击图标<br />
+​   搜索：term  </p>
+<h4 id="_3">退出终端</h4>
+<p>​   $exit<br />
+​   Ctrl+d  </p>
+<h4 id="_4">文件和目录相关的命令</h4>
+<p>格式： 命令名 [选项] [参数]</p>
+<pre><code>    【pwd】
+    作用: 用于显示当前操作的路径（当前工作文件夹）
+
+    【ls】
+    作用：显示指定目录的文件或文件夹
+
+    常用选项：
+        -l 列表显示文件的 详细信息
+        -a 显示全部文件 /文件夹
+
+    示例：ls -l core
+    -rw------- 1 tarena tarena    5943296         7月28 2017 core
+    文件权限    属主  属组   文件大小（字节）  修改日期  文件名
+
+    【cd】
+    作用：改变当前的工作目录（进入某个文件夹）
+
+    格式：
+        cd 目录名
+    示例：
+        cd /home/tarena 进入到/home/tarena文件夹
+        cd /  进入到根目录下
+        cd    返回到用户组目录
+        cd .. 返回上一级目录
+        cd ~  返回到用户组目录（同cd）
+
+
+
+    【mkdir】
+    作用：创建一个或多个文件夹
+
+    【rmdir】
+    作用：删除一个或多个文件夹
+
+    说明：文件夹内必须为空
+
+    【touch】
+    作用：
+        1/ 如果文件不存在，则创建一个空文件
+        2/ 如果文件或目录存在，则用系统时间更新它的修改时间
+    格式：
+        touch 文件名
+    示例：
+        touch newfile
+    【rm】
+    作用：删除文件或文件夹
+    常用选项：
+        -r 递归删除文件夹内部的文件或文件夹
+        -i 删除前给出提示
+        -f 强制删除，不给出任何提示
+    示例：
+        rm newfile
+
+
+    【tree】
+    作用：显示一个文件夹的结构
+    格式：tree [文件夹]
+
+    【help】帮助选项：
+    格式: 命令 --help
+    例：ls --help
+
+    【man】命令帮助
+    格式：man 命令
+    作用：查看命令所对应的帮助文档
+</code></pre>
+
+<h4 id="linux">Linux下的路径</h4>
+<pre><code>    根（root）  /
+
+    路径分两种：
+        绝对路径：以‘/’字符开头的路径
+        相对路径：不以‘/’字符开头的路径
+    开始符号：
+        文件/文件夹名称
+        .当前文件夹（目录）
+        ..上一级文件夹（目录）
+        ~用户主目录（家目录）
+</code></pre>
+
+<h4 id="_5">通配符</h4>
+<p>​   *代表0个，1个或多个任意字符<br />
+​   ？代表1个任意字符  </p>
+<table>
+<thead>
+<tr>
+<th>示例：</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>touch  a ab ac abc aabb bc cd</td>
+</tr>
+<tr>
+<td></td>
+<td>ls a*</td>
+</tr>
+<tr>
+<td></td>
+<td>ls *c</td>
+</tr>
+<tr>
+<td></td>
+<td>rm a*b</td>
+</tr>
+<tr>
+<td></td>
+<td>ls ??    显示只有两个字符构成的文件</td>
+</tr>
+<tr>
+<td></td>
+<td>ls a??</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_6">文件管理命令</h4>
+<pre><code>    【cp】
+    作用：复制文件或文件夹
+    格式：cp [选项] 源文件或文件夹  目标文件或文件夹
+    示例：
+        cp a.txt ~/b.txt
+        cp -a /home/tarena/yiouejv  ~/
+    常用选项：
+        -a 可以复制文件夹及其内部的全部内容
+
+    【mv】
+    作用：文件搬移或更名
+    格式：源文件或文件夹   目标文件或文件夹
+    示例： mv a.txt b.txt
+           mv a.txt /home/tarena
+
+
+    【find】
+    作用：根据文件名等信息查找指定的文件的位置（路径）
+    格式：find 路径 -name 文件名
+
+    示例：
+        #查找文件 passwd
+        find /etc -name 'password'
+    在etc文件夹下查找没有没passwd这个文件，如果有则列出来
+
+    【grep】
+    作用：查找文件中相应的内容，及文本信息
+    格式：
+        grep &quot;内容&quot; [选项] 文件名或路径
+    常用选项：
+        -n 显示行号
+        -r 递归搜索文件夹内的文件
+
+</code></pre>
+
+<h4 id="_7">压缩解压缩的命令</h4>
+<pre><code>    【gzip】
+    作用：用zip压缩算法对文件进行压缩，生成压缩后的.gz文件
+    格式：gzip 文件名
+
+    【gunzip】
+    作用：对用zip压缩的.gz文件进行解压缩
+    格式：gunzip  文件名
+</code></pre>
+
+<h4 id="_8">打包解包的命令</h4>
+<pre><code>    【tar】
+    作用：对文件或文件夹进行打包或解包操作
+    格式：
+        tar [选项] 文件名 [文件名或路径]
+    常用选项：
+        -c      创建包
+        -x      解包
+        -f 文件名      操作的文件名
+        -v      显示操作的文件细节
+        -z      用gzip或gunzip对包进行压缩和加压缩
+    示例：
+        打包： tar czvf a.tar.gz  [原文件路径]
+        解包： tar xzvf a.tar.gz
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

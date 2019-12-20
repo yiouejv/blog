@@ -5,17 +5,6 @@ site_name: 杨小哥博客
 
 
 nav:
-  - django: 
-    - django介绍及安装: django/1_django介绍及安装.md
-    - django中的路由: django/2_django中的路由.md
-    - HttpRequest对象: django/3_django中的HttpRequest对象.md
-    - session和cookie: django/4_django中的session和cookie.md
-    - django中的模板: django/5_django中的模板.md
-    - django中的模型: django/6_django中的模型.md
-    - 模型中的关系映射: django/7_django模型中的关系映射.md
-    - 自带的后台管理: django/8_django自带的后台管理.md
-    - django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
-    - CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
   - lua:
     - lua 表的构造: lua/表的构造.md
     - lua select 函数: lua/select函数.md
@@ -23,10 +12,22 @@ nav:
     - 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
     - 协程实现生产者消费者: lua/协程实现生产者消费者.md
   - skynet:
-    - 并发编程和并行编程: skynet/并发编程和并行编程.md
-    - skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
+    - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
+    - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
   - python:
-    - python 相关介绍: python/python相关介绍.md
+    - python 语法: 
+      - 1. python相关介绍: python/python相关介绍.md
+    - django: 
+      - 1. django介绍及安装: django/1_django介绍及安装.md
+      - 2. django中的路由: django/2_django中的路由.md
+      - 3. HttpRequest对象: django/3_django中的HttpRequest对象.md
+      - 4. session和cookie: django/4_django中的session和cookie.md
+      - 5. django中的模板: django/5_django中的模板.md
+      - 6. django中的模型: django/6_django中的模型.md
+      - 7. 模型中的关系映射: django/7_django模型中的关系映射.md
+      - 8. 自带的后台管理: django/8_django自带的后台管理.md
+      - 9. django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
+      - 10. CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
   - 理财:
