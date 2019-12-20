@@ -18,6 +18,7 @@ nav:
     - python 语法: 
       - 1. python相关介绍: python/python相关介绍.md
       - 2. python基础语法: python/python基础语法.md
+      - 3. 字符串: python/python字符串.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
       - 2. django中的路由: django/2_django中的路由.md

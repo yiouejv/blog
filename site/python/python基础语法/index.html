@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>lua 面向对象 - 杨小哥博客</title>
+        <title>2. python基础语法 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -46,28 +46,28 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../表的构造/">lua 表的构造</a>
+    <a href="../../lua/表的构造/">lua 表的构造</a>
 </li>
                                     
 <li >
-    <a href="../select函数/">lua select 函数</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">lua 面向对象</a>
+    <a href="../../lua/select函数/">lua select 函数</a>
 </li>
                                     
 <li >
-    <a href="../错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+    <a href="../../lua/opp/">lua 面向对象</a>
 </li>
                                     
 <li >
-    <a href="../协程实现生产者消费者/">协程实现生产者消费者</a>
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
 </li>
                                 </ul>
                             </li>
@@ -84,7 +84,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -93,11 +93,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+    <a href="../python相关介绍/">1. python相关介绍</a>
 </li>
             
-<li >
-    <a href="../../python/python基础语法/">2. python基础语法</a>
+<li class="active">
+    <a href="./">2. python基础语法</a>
 </li>
     </ul>
   </li>
@@ -176,12 +176,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../select函数/">
+                                <a rel="next" href="../python相关介绍/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../错误处理 pcall & xpcall/">
+                                <a rel="prev" href="../../django/1_django介绍及安装/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -193,75 +193,296 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#lua">lua 面向对象</a></li>
+        <li class="main active"><a href="#_1">复合赋值算术运算符</a></li>
+        <li class="main "><a href="#_2">比较运算符</a></li>
+        <li class="main "><a href="#_3">数址对象的构造函数（创建函数）</a></li>
+        <li class="main "><a href="#boolx">bool(x)返回假值的情况</a></li>
+        <li class="main "><a href="#1">练习1</a></li>
+        <li class="main "><a href="#_4">预置的数值型函数</a></li>
+        <li class="main "><a href="#_5">基本输入函数</a></li>
+        <li class="main "><a href="#_6">基本输出函数</a></li>
+        <li class="main "><a href="#statement">语句 statement</a></li>
+        <li class="main "><a href="#_7">显示折行</a></li>
+        <li class="main "><a href="#_8">隐式折行</a></li>
+        <li class="main "><a href="#if">if 语句</a></li>
+            <li><a href="#if_1">if 语句的真值表达式</a></li>
+        <li class="main "><a href="#_9">条件表达式</a></li>
+        <li class="main "><a href="#pass">pass 语句</a></li>
+        <li class="main "><a href="#_10">布尔运算</a></li>
+        <li class="main "><a href="#_11">正负号运算符</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="lua">lua 面向对象</h1>
-<pre><code class="lua">--    写一个农民类Peasant有方法：
---        def farm(self, plant):
---            ...
---    写一个工人类Worker
---        方法如下：
---            def work(self, that):
---                ...
---    创建一个农民工为MigrantWorker, 让此类的对象拥有上面两个类的全部方法
---    person = MigrantWorker()
---    person.farm('水稻')  # 正在种植 水稻
---    person.work('汽车')  # 正在制造 汽车
+<h3 id="_1">复合赋值算术运算符</h3>
+<pre><code>    运算符         说明
+    y+=x    -&gt;  y=y+x
+    y-=x    -&gt;  y=y-x
+    y*=x    -&gt;  y=y*x
+    y/=x    -&gt;  y=y/x
+    y//=x   -&gt;  y=y//x
+    y%=x    -&gt;  y=y%x
+    y**=x   -&gt;  y=y**x
+</code></pre>
 
--- Peasant 类
-local Peasant = {}
+<h3 id="_2">比较运算符</h3>
+<pre><code>    &lt;   小于
+    &lt;=  小于等于
+    &gt;=  大于等于
+    ==  等于
+    !=  不等于
 
-function Peasant:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
+    语法
+        左表达式 &gt; 右表达式
+    说明
+        比较运算符通常返回布尔类型的值
+    示例
+        100&lt;200   #True
+        100&gt;=200  #False
+        1+5==2+4  #True
+</code></pre>
 
-function Peasant:farm(plant)
-    print('正在种植'..plant)
-end
+<h3 id="_3">数址对象的构造函数（创建函数）</h3>
+<pre><code>    float(obj)
+    用字符串或数字转换为浮点数，如果不给出参数，则返回0.0
+        int(x,base=10)
+    或
+        int(x=0) 用数字或字符串转换为整数，如果不给出参数则返回0，
+        base为进制转换的底数
 
--- Worker 类
-Worker = {}
+    complex(r=0.0,i=0.0) 用数字创建一个复数（实部为r,虚部为i）
+    bool(x)  用x创建一个布尔值（True/False）
+</code></pre>
 
-function Worker:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
+<h3 id="boolx">bool(x)返回假值的情况</h3>
+<pre><code>    bool(x)用于显示获取x的布尔值
 
-function Worker:work(that)
-    print('正在制造'..that)
-end
+    假值情况
+        None        空值
+        False       布尔假值
+        0  0.0 0j   所有数字零
+        ----------以下后面会讲--------
+        ''      空字符串
+        []      空列表
+        ()      空元组
+        {}      空字典
+        set()       空集合
+        ....        一切空的容器对象bool(x)取值为假
+</code></pre>
 
+<h3 id="1">练习1</h3>
+<pre><code>    1/ 将数字（3.14）用变量pi绑定
+    2/ 将pi变量转化为整数用变量 i 绑定
+    3/ 将pi变量与i变量相减，结果用变量f绑定
+        1. 判断f是否等于0.14？  为什么？
+        2. 删除所有变量（用交互模式来做）
 
--- MigrantWorker 类
-MigrantWorker = {}
+    pi=3.14
+    i=int(pi)
+    f=pi-i
+</code></pre>
 
-function MigrantWorker:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    self.farm = Peasant:new().farm
-    self.work = Worker:new().work
-    return o
-end
+<h3 id="_4">预置的数值型函数</h3>
+<pre><code>    abs(x)    取x的绝对值
+    round(number[,ndigits])
+    对数值进行近似的四舍五入，ndigits是小数向右取整的位数，负数表示向左取整
+    pow(x,y,z=None) 相当于x**y 或x**y%z
 
--- 创建对象
-local peasant = Peasant:new()
-print(peasant:farm('水稻'))
+    help()查看帮助函数
+        &gt;&gt;&gt;help(函数名)
+</code></pre>
 
-local work = Worker:new()
-print(work:work('汽车'))
+<h3 id="_5">基本输入函数</h3>
+<p>input('提示字符串')      返回用户输入的字符串  </p>
+<pre><code class="python">s=input('请输入一些文字：')
+print('您刚才输入的文字是：',s)
 
-local migrant_worker = MigrantWorker:new()
-print(migrant_worker:farm('小麦'))
-print(migrant_worker:work('汽车'))
+s2=input()
+print('您第二次输入的文字是：',s2)
+
+r=int(input('请输入一个整数'))
+print(r,' / 2 = ',r/2)
+</code></pre>
+
+<h3 id="_6">基本输出函数</h3>
+<pre><code>print
+    作用
+        将一系列的值以字符串的形式输出到标准输出设备上，默认为终端
+    格式
+        print(value,...,sep=' ',end='\n')
+        选项的关键字参数为
+            sep  两个值之间的分隔符，默认为一个空格
+            end  输出完毕后在流末自动追加一个字符串，默认为换行符'\n'
+</code></pre>
+
+<h3 id="statement">语句 statement</h3>
+<pre><code>语句是由一些表达式组成，通常一条语句可以独立的运行来完成一部分事情并形成结果
+    一条语句建议写在一行内
+    多行语句写在一行内需要用分号隔开
+    示例
+        x = 100
+        y = 200
+        print(x + y)
+
+    写在一行内
+        x = 100; y = 200; print(x + y)
+</code></pre>
+
+<h3 id="_7">显示折行</h3>
+<pre><code>    折行符 \
+    折行符必须放在一行的末尾，来示意解释执行器的下一行也是本行的语句
+</code></pre>
+
+<h3 id="_8">隐式折行</h3>
+<p>所有括号的内容折行，称为隐式折行   ()  []  {}</p>
+<h3 id="if">if 语句</h3>
+<ul>
+<li>问题：<br />
+        有两条语句，print('是奇数') , print('是偶数')<br />
+            如何只让其中一条语句执行并打印出结果</li>
+<li>作用<br />
+        让程序根据条件选择性的执行某条语句或某些语句  </li>
+</ul>
+<pre><code>    语法
+        if 真值表达式1：
+            语句块1
+        elif 真值表达式2：
+            语句块2
+        elif 真值表达式3：
+            语句块3
+
+        ...
+        else:
+            语句块
+
+    说明
+        elif    语句可以有0个，1个，多个
+        else    子句可以有0个，1个，且只能放在此if语句的最后
+</code></pre>
+
+<p>示例：</p>
+<pre><code class="python"># x = int(input('输入一个整数：'))
+# if x % 2 == 0:
+#     print(x, '是偶数')
+# else:
+#     print(x, '是奇数')
+#
+#
+
+# 任意输入一个数，用程序判断这个数是正数，负数，还是0
+x = int(input('输入一个数：'))
+if x == 0:
+    print(x, '是0')
+elif x &lt; 0:
+    print(x, '是负数')
+else:
+    print(x, '是正数')
+</code></pre>
+
+<h4 id="if_1">if 语句的真值表达式</h4>
+<pre><code>    if 100:
+        print('真值')
+    等同于
+    if bool(100):
+        print('真值')
+</code></pre>
+
+<h3 id="_9">条件表达式</h3>
+<pre><code>    语法
+        表达式1  if  真值表达式2 else 表达式2
+    作用
+        根据真值表达式的取值（True/False）
+        来决定执行表达式1 或者 表达式2 并返回结果
+</code></pre>
+
+<p>示例：</p>
+<pre><code class="python"># 商场促销，满100 减 20
+money = int(input('请输入商品金额：'))
+pay = money - 20 if money &gt;= 100 else money
+print('您需要支付：', pay, '元')
+</code></pre>
+
+<h3 id="pass">pass 语句</h3>
+<pre><code>    作用
+        通常用来填充语法空白
+    语法
+        pass
+</code></pre>
+
+<p>示例：</p>
+<pre><code class="python"># 此示例为pass语句的用法
+# 输入一个学生的成绩，如果成绩不在0-100之间
+# 则提示错误
+
+score = int(input('请输入成绩：'))
+if 0 &lt;= score &lt;= 100:
+    pass
+else:
+    print('成绩不合法！')
+</code></pre>
+
+<h3 id="_10">布尔运算</h3>
+<ul>
+<li>not</li>
+</ul>
+<pre><code>        语法
+            not x
+        作用
+            对 x 进行布尔取非，如bool(x) 为True,则返回False,否则返回True
+        示例
+            not　True        #则返回False
+            not　False       #则返回True
+            not　100 &gt; 200   #则返回True
+</code></pre>
+
+<ul>
+<li>and</li>
+</ul>
+<pre><code>        语法
+            x and y     (x,y代表表达式)
+        作用
+            优先返回【假】值对象
+            当x的布尔值为False时，返回x,否则返回y
+        示例
+            True  and　True      #则返回True
+            True  and  False        #则返回False
+            False  and　True     #则返回False
+            False  and　False    #则返回False
+            1 and 2     #返回2
+            0 and 1         #返回0
+            0.0 and 0       #返回0.0
+</code></pre>
+
+<ul>
+<li>or</li>
+</ul>
+<pre><code>        语法
+            x or y      (x,y代表表达式)
+        作用
+            优先返回【真】值对象
+            当x的布尔值为True时，返回x,否则返回y
+        示例
+            True  or　True       #则返回True
+            True  or  False     #则返回True
+            False  or　True      #则返回True
+            False  or　False     #则返回False
+            1 or 2      #返回1
+            0 or 1         #返回1
+            0.0 or 0       #返回0
+</code></pre>
+
+<h3 id="_11">正负号运算符</h3>
+<pre><code>    + （正号）  -（负号）
+
+    一元运算符
+        语法
+            + 表达式
+            - 表达式
+
+        示例
+            a = 5
+            b = -a
+            c = +a
 </code></pre></div>
         </div>
 
