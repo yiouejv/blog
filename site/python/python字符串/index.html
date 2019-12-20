@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>3. 字符串 - 杨小哥博客</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">杨小哥博客</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lua/表的构造/">lua 表的构造</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/select函数/">lua select 函数</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/opp/">lua 面向对象</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并发编程和并行编程/">1. 并发编程和并行编程</a>
+</li>
+                                    
+<li >
+    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">2. skynet 基于 Actor 模式的开源框架</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">python 语法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../python相关介绍/">1. python相关介绍</a>
+</li>
+            
+<li >
+    <a href="../python基础语法/">2. python基础语法</a>
+</li>
+            
+<li class="active">
+    <a href="./">3. 字符串</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">django</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
+</li>
+            
+<li >
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
+</li>
+            
+<li >
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+</li>
+            
+<li >
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
+</li>
+            
+<li >
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
+</li>
+            
+<li >
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
+</li>
+            
+<li >
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
+</li>
+            
+<li >
+    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+</li>
+            
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tools/linux操作系统/">linux操作系统</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">理财 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并.md">基金理财</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../python基础语法/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../django/1_django介绍及安装/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#str">字符串str</a></li>
+        <li class="main "><a href="#_1">隐式字符串字面值拼接</a></li>
+        <li class="main "><a href="#_2">用转义序列代表特殊字符</a></li>
+        <li class="main "><a href="#ascii">ASCII编码</a></li>
+        <li class="main "><a href="#_3">序列的概念</a></li>
+        <li class="main "><a href="#raw">raw 字符串（原始字符串）</a></li>
+        <li class="main "><a href="#_4">字符串的运算</a></li>
+        <li class="main "><a href="#_5">字符串的比较运算</a></li>
+        <li class="main "><a href="#in-not-in">in / not in 运算符</a></li>
+        <li class="main "><a href="#_6">字符串索引</a></li>
+        <li class="main "><a href="#slice">切片操作 slice</a></li>
+        <li class="main "><a href="#python3">python3 当中能用于字符串的函数</a></li>
+        <li class="main "><a href="#_7">字符串的编码转换函数</a></li>
+        <li class="main "><a href="#_8">整数转换为字符串函数</a></li>
+        <li class="main "><a href="#_9">字符串的构造函数</a></li>
+        <li class="main "><a href="#helpxxx">帮助函数help(xxx)</a></li>
+        <li class="main "><a href="#python3_1">python3中常用的字符串方法</a></li>
+        <li class="main "><a href="#_10">空白字符</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="str">字符串str</h3>
+<pre><code class="python">    作用
+        用来记录文字信息
+    表示方法
+        在非注释当中凡是用引号括起来的部分都是字符串
+         ' '      &quot; &quot;     &quot;&quot;&quot; &quot;&quot;&quot;     '''  '''
+    空字符串字面值的表示方式
+        '' &quot;&quot;  &quot;&quot;&quot;&quot;&quot;&quot; ''''''
+        注：空字符串的布尔测试值bool(x) 为 False
+    非空字符串字面值
+        'Hello' &quot;hello&quot;  &quot;&quot;&quot;hello&quot;&quot;&quot; '''hello'''
+    单引号和双引号的区别
+        单引号内的双引号不算结束符
+        双引号内的单引号不算结束符
+        示例：
+            print(&quot;I'm a student&quot;)
+
+    三引号字符串
+        以''' 或&quot;&quot;&quot;开头  ， 以'''或&quot;&quot;&quot;结尾的字符串
+        作用
+            三引号字符串中的换行符会自动转换为'\n'
+            三引号可以包含单引号和双引号
+</code></pre>
+
+<h3 id="_1">隐式字符串字面值拼接</h3>
+<pre><code class="python">&quot;I'am Student.&quot;     'I am &quot;YangWenjun&quot;'
+# 得到的字符串等同于
+'''I'am Student.I am &quot;YangWenjun&quot;'''
+</code></pre>
+
+<h3 id="_2">用转义序列代表特殊字符</h3>
+<pre><code>    字符串字面值中用字符反斜杠\后跟一些字符代表特殊的一个字符
+    字符表
+        \'    代表一个单引号
+        \&quot;    代表一个双引号
+        \n    代表一个换行符
+        \\    代表一个反斜杠
+        \r    返回光标至行首
+        \t    水平制表符
+        \f    换页
+        \v    垂直制表符
+        \b    倒退
+        \0    字符串，字符值为0
+        \0oo  oo为两位八进制表示的字符
+        \xXX  XX为两位十六进制表示的字符
+        \uXXXX  Unicode 16的十六进制的字符
+        \UXXXXXXXX  Unicode 32的十六进制的字符
+</code></pre>
+
+<h3 id="ascii">ASCII编码</h3>
+<table>
+<thead>
+<tr>
+<th># 查看ASCII编码表</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>$ man ascii #仅linux可用</td>
+</tr>
+</tbody>
+</table>
+<pre><code>常用的ASCII编码
+        字符      十进制         十六进制
+        '0'       48            0x30
+        'A'       65            0x41
+        'a'       97            0x61
+</code></pre>
+
+<h3 id="_3">序列的概念</h3>
+<p>字符串就是序列</p>
+<pre><code class="python"># 求序列的长度函数
+len(x)  返回字符串中的字符个数
+</code></pre>
+
+<h3 id="raw">raw 字符串（原始字符串）</h3>
+<pre><code>    格式：
+        r&quot;字符串内容&quot;
+        r'字符串内容'
+        r'''字符串内存'''
+        r&quot;&quot;&quot;字符串内容&quot;&quot;&quot;
+    作用：
+        让转义字符无效
+    示例
+        a = 'C:\newfile\test.py'
+        print(a)
+
+        b = r'C:\newfile\test.py'
+        print(b)
+        print(len(a))
+        print(len(b))
+</code></pre>
+
+<h3 id="_4">字符串的运算</h3>
+<pre><code>    +   加号运算符用于拼接字符串
+    +=  用于拼接运算后改变原变量的绑定关系
+    示例
+        x = 'abcd' + 'efg'
+        print(x)    #abcdefg
+
+        x += '123'
+        print(x)    #abcdefg123
+
+
+
+    *   乘号运算符生成重复的字符串
+        x = &quot;abcd&quot;*3    #'abcdabcdabcd'
+        y = 2 * '123'   #'123123'
+
+        字符串只能和整数相乘
+    *=  生成重复的字符串并改变原变量的绑定关系
+        x = '123'
+        x *= 2      #x = '123123'
+
+        y = 3
+        y *= 'ABC'     #y = 'ABCABCABC'
+</code></pre>
+
+<h3 id="_5">字符串的比较运算</h3>
+<pre><code>    运算符
+        &lt; &lt;= &gt; &gt;= == !=
+    示例
+        'A' &lt; 'B'   #True
+        'AB' &lt;='AC' #True
+</code></pre>
+
+<h3 id="in-not-in">in / not in 运算符</h3>
+<pre><code>    作用
+        in 用于序列，字典，集合中，用于判断某个值是否存在于容器中，
+        如果存在返回True，否则返回False
+    说明
+        not in 返回结果和 in 相反
+    格式
+        对象 in 序列
+    示例
+        x = 'welcome to tarena!'
+        'to' in x           #True
+        'e t'  in x         #True
+        'hello' in x        #False
+        'hello' not in x    #True
+</code></pre>
+
+<h3 id="_6">字符串索引</h3>
+<pre><code>    python 字符串是不可以改变的序列，所有的序列都可以通过索引来获取其中的数据元素
+
+    语法
+        字符串[整数表达式]
+    说明
+          序列的正向索引是从0 开始的，第二个索引为1，最后一个
+        索引为len(s) - 1
+          序列的反向索引是从-1 开始的，-1 代表最后一个，-2代表倒数第二个，以此类推，第一个是-len(s)
+
+</code></pre>
+
+<h3 id="slice">切片操作 slice</h3>
+<pre><code>    从字符串序列中取出相应的元素重新组成一个字符串序列
+    语法
+        字符串[(开始索引b):(介绍索引e):(步长s)]
+        注：
+            小括号（）代表可省略
+    说明
+        1. 开始索引是切片切下的位置，0代表第一个元素，1代表第二个元素，
+        -1代表最后一个元素...
+        2. 结束索引是切片的终止索引（但不包含终止点）
+        3. 步长是切片每次获取完当前元素后移动的方向和偏移量
+    偏移量
+        3.1 没有步长，相应于步长为1（默认为1）
+        3.2 当步长为整数时，取正向切片，开始索引默认为0，结束索引为最后
+            一个元素的下一个位置
+        3.3 当步长为负数时，取反向切片，反向切片时，默认的起始位置为最后
+            一个元素，终止位置是第一个元素的前一个位置
+    示例
+        s = 'ABCDE'
+        # 字符串倒序
+        a = s[::-1]
+        print(a)
+
+        # 字符串复制
+        b = s[:]
+        print(b)
+</code></pre>
+
+<h3 id="python3">python3 当中能用于字符串的函数</h3>
+<pre><code>    len(s)      返回字符串的长度
+    max(x)      返回字符串中编码值最大的字符
+    min(x)      返回字符串中编码值最小的字符
+
+    示例
+        s = &quot;Hello&quot;
+        len(s)   #  5
+        max(s)   # 'o'
+        min(s)   # 'H'
+</code></pre>
+
+<h3 id="_7">字符串的编码转换函数</h3>
+<pre><code>    ord(c) 返回一个字符的Unicode值
+    chr(i) 返回i这个值所对应的 字符
+
+    示例
+        print(ord('A'))     #65
+        print(ord('中'))     #？？？
+        print(chr('65'))    #A
+        print(chr('2345'))  #???
+</code></pre>
+
+<h3 id="_8">整数转换为字符串函数</h3>
+<pre><code>    bin(i) 将整数转换为二进制字符串     (binary)
+    oct(i) 将整数转换为八进制字符串
+    hex(i) 将整数转换为十六进制字符串
+</code></pre>
+
+<h3 id="_9">字符串的构造函数</h3>
+<p>str(obj="") 将对象转为字符串</p>
+<h3 id="helpxxx">帮助函数help(xxx)</h3>
+<pre><code>&gt;&gt;&gt; help(函数名)
+&gt;&gt;&gt; help(类型名)
+</code></pre>
+<h3 id="python3_1">python3中常用的字符串方法</h3>
+<pre><code>    方法的调用语法
+        对象.方法名(参数)
+    示例
+        &quot;abc&quot;.isalpha()     #True判断'abc'是否是字母
+        123.isalpha()       #报错
+
+    S.isdigit() 判断字符串中的字符是否全为数字
+    S.isalpha() 判断字符串是否全为英文字母
+    S.islower() 判断字符串所有字符是否全为小写英文字母
+    S.isupper() 判断字符串所有字符是否全为大写英文字母
+    S.isspace() 判断字符串是否全为空白字符
+    S.center(width[,fill]) 将原字符串居中，左右默认填充空格
+        s.center(20)
+        s.center(20,&quot;#&quot;)
+    S.count(sub[, start[,end]]) 获取一个字符串中子串的个数
+        s = &quot;ABCD ABC AB A&quot;
+        s.count('AB')
+        s.count('AB',3)
+        s.count('A',3,8)
+    S.find(sub[, start[,end]]) 获取字符串中子串sub的索引,失败返回-1
+        s .find('A')
+        s .find('A',3)
+        s .find('A',3,8)
+    S.strip([chars]) 返回去掉左右char字符的字符串(默认char为空白字符)
+        s.strip()  s.strip('@')
+        s.lstrip()
+        s.rstrip()
+    S.lstrip([chars]) 返回去掉左侧char字符的字符串(默认char为空白字符)
+    S.rstrip([chars]) 返回去掉右侧char字符的字符串(默认char为空白字符)
+    S.upper() 生成将英文转换为大写的字符串
+    S.lower() 生成将英文转换为小写的字符串
+    S.replace(old, new[, count]) 将原字符串的old用new代替，生成一个新的字符串
+    S.startswith(prefix[, start[, end]]) 返回S是否是以prefix开头，如果以prefix开头返回True,否则返回False,
+    S.endswith(suffix[, start[, end]]) 返回S是否是以suffix结尾，如果以suffix结尾返回True,否则返回False
+        以下是不常用的
+    S.title() 生成每个英文单词的首字母大写字符串
+    S.isnumeric() 判断字符串是否全为数字字符
+</code></pre>
+
+<h3 id="_10">空白字符</h3>
+<p>是指空格,水平制表符(\t),换行符(\n)等不可见的字符</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
