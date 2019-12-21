@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>2. django中的路由 - 杨小哥博客</title>
+        <title>补充知识点 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -93,27 +93,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+    <a href="../python相关介绍/">1. python相关介绍</a>
 </li>
             
 <li >
-    <a href="../../python/python基础语法/">2. python基础语法</a>
+    <a href="../python基础语法/">2. python基础语法</a>
 </li>
             
 <li >
-    <a href="../../python/python字符串/">3. 字符串</a>
+    <a href="../python字符串/">3. 字符串</a>
 </li>
             
 <li >
-    <a href="../../python/python循环/">4. 循环</a>
+    <a href="../python循环/">4. 循环</a>
 </li>
             
 <li >
-    <a href="../../python/python列表/">5. 列表</a>
+    <a href="../python列表/">5. 列表</a>
 </li>
             
-<li >
-    <a href="../../python/补充知识点/">补充知识点</a>
+<li class="active">
+    <a href="./">补充知识点</a>
 </li>
     </ul>
   </li>
@@ -123,35 +123,35 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../1_django介绍及安装/">1. django介绍及安装</a>
-</li>
-            
-<li class="active">
-    <a href="./">2. django中的路由</a>
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
 </li>
             
 <li >
-    <a href="../3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
 </li>
             
 <li >
-    <a href="../4_django中的session和cookie/">4. session和cookie</a>
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
 </li>
             
 <li >
-    <a href="../5_django中的模板/">5. django中的模板</a>
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
 </li>
             
 <li >
-    <a href="../6_django中的模型/">6. django中的模型</a>
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
 </li>
             
 <li >
-    <a href="../7_django模型中的关系映射/">7. 模型中的关系映射</a>
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
 </li>
             
 <li >
-    <a href="../8_django自带的后台管理/">8. 自带的后台管理</a>
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
 </li>
             
 <li >
@@ -192,12 +192,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../1_django介绍及安装/">
+                                <a rel="next" href="../python列表/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../3_django中的HttpRequest对象/">
+                                <a rel="prev" href="../../django/1_django介绍及安装/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -209,228 +209,84 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#django">django框架的使用</a></li>
-            <li><a href="#_1">创建项目</a></li>
-            <li><a href="#url">url的使用</a></li>
-            <li><a href="#django_2">Django中的应用</a></li>
+        <li class="main active"><a href="#del">del 语句</a></li>
+        <li class="main "><a href="#python-3">python 3中常用于序列的函数</a></li>
+        <li class="main "><a href="#_1">深拷贝和浅拷贝</a></li>
+        <li class="main "><a href="#_2">列表和字符串比较</a></li>
+        <li class="main "><a href="#_3">字符串的文本解析方法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<hr />
-<hr />
-<h1 id="django">django框架的使用</h1>
-<h2 id="_1">创建项目</h2>
-<pre><code>使用 django-admin 创建 Django 项目 ，在控制台输入。
-</code></pre>
-<p>​   语法： </p>
-<pre><code class="python">django-admin startproject 项目名称
-</code></pre>
-
-<p>​   如:</p>
-<pre><code class="python">django-admin startproject django_test
+<h3 id="del">del 语句</h3>
+<pre><code>用于删除列表的元素
+  语法:
+    del 列表[索引]
+        如: del L[0]
+    del 列表[切片]
+        如: del L[1::2]
 </code></pre>
 
-<p><img alt="创建项目" src="../images/startproject.png" /></p>
-<h3 id="django_1">Django项目结构</h3>
-<p><img alt="结构树" src="../images/projecttree.png" /></p>
+<h3 id="python-3">python 3中常用于序列的函数</h3>
+<pre><code>  len(s)  返回序列的长度
+  max(x)  返回序列的最大值元素
+  min(x)  返回序列的最小值元素
+  sum(x)  返回列中所有元素的和(元素必须是数值类型)
+  any(x)  真值测试,如果列表中其中一个值为真值则返回True
+  all(x)  真值测试,如果列表中所有值为真值返回True
+</code></pre>
+
+<pre><code class="python">  L = [3, 1, 9, 7, 5]
+  print(len(L))  # 5
+  print(max(L))  # 9
+  print(min(L))  # 1
+  print(sum(L))  # 25
+</code></pre>
+
+<h3 id="_1">深拷贝和浅拷贝</h3>
+<p><strong>浅拷贝 shallow copy</strong></p>
+<p>浅拷贝是指在复制过程中，只复制一层变量，不会复制深层变量绑定的对象的复制过程</p>
+<pre><code class="python">  L = [3.1, 3.2]
+  L1 = [1, 2, L]
+  L2 = L1.copy()  # 浅拷贝
+  print(L1)  # [1, 2, [3.1, 3.2]]
+  print(L2)  # [1, 2, [3.1, 3.2]]
+  L2[2][0] = 3.14
+  print(L1)  # [1, 2, [3.14, 3.2]]
+  print(L2)  # [1, 2, [3.14, 3.2]]
+</code></pre>
+
+<p><strong>深拷贝 deep copy</strong></p>
+<p>复制对象及对象关联的对象一起复制过程叫深拷贝</p>
+<pre><code class="python">  import copy  # 导入复制模块
+  L = [3.1, 3.2]
+  L1 = [1, 2, L]
+  L2 = copy.deepcopy(L1) 　# 深拷贝
+  print(L1)  # [1, 2, [3.1, 3.2]]
+  print(L2)  # [1, 2, [3.1, 3.2]]
+  L2[2][0] = 3.14
+  print(L1)  # [1, 2, [3.1, 3.2]]　　&lt;&lt;&lt; L1不变
+  print(L2)  # [1, 2, [3.14, 3.2]]
+</code></pre>
+
+<h3 id="_2">列表和字符串比较</h3>
 <ol>
-<li><strong>manage.py</strong> </li>
+<li>都是序列，有先后顺序关系，有相同的运算操作</li>
+<li>列表是可变是，字符串是不可变的</li>
+<li>列表可以存任意类型的数据，字符串只能存字符</li>
 </ol>
-<p>功能： 包含执行django中的各项操作的指令 </p>
-<p>如： 启动服务 runserver </p>
-<ol>
-<li>
-<p><strong>主目录 django_test/django_test</strong></p>
-</li>
-<li>
-<p><code>__init__.py</code></p>
-<p>项目的初始化文件，自动运行 </p>
-</li>
-<li>
-<p>urls.py  </p>
-<p>项目的基础路由配置文件</p>
-</li>
-<li>
-<p>wsgi.py </p>
-<p>Web Server Gateway Interface
-  Web 服务网关接口</p>
-</li>
-<li>
-<p>settings.py </p>
-<p>项目的配置文件</p>
-<p><code>python
-   1. BASE_DIR
-     项目根目录
-   2. ALLOWED_HOSTS
-       设置允许访问到本项目的地址列表
-       如果允许在网络中被其他的机器访问到的话
-       推荐写["*"], 表示任何能够表示该机器的地址都能访问到该项目
-       同时在启动服务时还需要指定地址和端口
-       python3 manage.py runserver 0.0.0.0:8000
-   3. INSTALLED_APPS
-    指定已安装的应用，如果由自定义的应用的话需要在此注册
-   4. MIDDLEWARE
-    中间件，如果有自定义的中间件，需要在此注册
-   5. ROOT_URLCONF
-    指定项目的基础路由配置文件
-   6. TEMPLATES
-    配置模板的相应信息
-   7. DATABASES
-    配置数据库的信息
-   8. LANGUAGE_CODE
-    设置语言，主要设置中文的话，允许将值改为'zh-Hans'
-  9. TIME_ZONE
-       指定时区，默认时区，允许将值更改为"Asia/Shanghai"</code></p>
-</li>
-</ol>
-<h2 id="url">url的使用</h2>
-<ol>
-<li>
-<p><code>urls.py</code> </p>
-<p>默认在主目录中，主路由配置文件，会包含最基本的地址映射，每个地址访问都必须要先经过该文件</p>
-<p>作用：通过urls中定义好的地址找到对应的视图处理函数</p>
-<p><code>python
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]</code></p>
-</li>
-<li>
-<p><code>path()</code></p>
-<p>作用：为了匹配用户的访问路径 </p>
-<p>语法: </p>
-</li>
-</ol>
-<p>```
-   from django.urls import path</p>
-<p>path(route, view, kwargs=None, name=None)
-       route: 匹配请求的url
-       view: 地址匹配上之后要执行操作的视图处理函数
-       kwargs: 字典，用来想view传参的，可以省略
-       name: 为url起别名, 在地址反向解析时使用
-   ```</p>
-<ol>
-<li>向url传递参数</li>
-</ol>
-<p>方式一：通过path的参数kwargs的方式传递，不推荐，这里依赖了django框架，不通用。</p>
-<p>方式二：通过http协议进行传参</p>
+<h3 id="_3">字符串的文本解析方法</h3>
 <ul>
-<li>
-<p>get请求</p>
-<p>http:// xxxx.com/login?id=1&amp;token=xxx</p>
-</li>
-<li>
-<p>post请求</p>
-<p>http:// xxx.com/login</p>
-<p>数据放在 form-data里，详细一点的话就是放在http请求的请求体里（可以去看看http协议的内容）</p>
-</li>
+<li>S.split(sep=None) 将字符串，使用 sep作用分隔符分割S字符串，返回分割后的字符串列表，当不给定参数时，用空白字符作为分隔符分割</li>
+<li>S.join(iterable) 用可迭代对象中的字符串，返回一个中间用S进行分隔的字符串</li>
 </ul>
-<p><strong>数据怎么取？？</strong></p>
-<p>后面的教程会讲到。</p>
-<h2 id="django_2">Django中的应用</h2>
-<ol>
-<li>什么是应用 ？
-       应用就是网站中的一个独立的模块
-       如: 网易网站可分为若干应用组成</li>
-</ol>
-<p>​        新闻应用: 与新闻相关的内容
-   ​        车应用: 与汽车相关的内容</p>
-<p>​        科技应用: 与科技相关的内容</p>
-<p>在django中, 主目录一般不处理具体的请求, 主目录一般处理的是项目的初始化操作
-   处理的是初始化操作, 以及请求的分发(分布式请求处理), 而具体的请求是由各个应用去处理.</p>
-<ol>
-<li>
-<p>创建应用</p>
-</li>
-<li>
-<p>命令</p>
-<p><code>python
-  python manage.py startapp 应用的名称</code></p>
-</li>
-<li>
-<p>需要在settings.py 中进行注册 ， 在INSTALLED_APPS 中追加应用的名称来注册应用 </p>
-<p><code>python
-  INSTALLED_APPS = [
-      'django.contrib.admin',
-      ... ...
-      '自定义的应用名称'
-  ]</code></p>
-</li>
-<li>
-<p>应用的解析组成</p>
-</li>
-<li>migrations 文件夹 : 存放数据库的中间文件</li>
-<li><code>__init__.py</code> :  应用的初始化文件 </li>
-<li><code>admin.py</code> :  应用的后台管理配置文件 </li>
-<li><code>apps.py</code> :  和应用的属性配置文件 </li>
-<li><code>models.py</code> :  Models 与 模型相关的映射文件 </li>
-<li><code>tests.py</code> :  应用的单元测试文件 </li>
-<li>
-<p><code>views.py</code> :  视图处理函数的文件 </p>
-</li>
-<li>
-<p>分部式的路由系统 </p>
-<p>在每个应用中分别创建urls.py, 格式参考主路由文件 </p>
-<p>目的: 为了处理各个应用中的请求路由</p>
-<p>用法: </p>
-<pre><code>(这里直接引用django官方的例子)
-</code></pre>
-<ol>
-<li>创建一个polls应用：</li>
-</ol>
-<p><code>python
-  python manage.py startapp polls</code></p>
-<p><img alt="polls应用的目录结构" src="../images/polls.png" /></p>
-</li>
-<li>
-<p><code>django_test/setting.py</code> 声明polls模块</p>
-<p><code>INSTALLED_APPS = [
-      'django.contrib.admin',
-      'django.contrib.auth',
-      'django.contrib.contenttypes',
-      'django.contrib.sessions',
-      'django.contrib.messages',
-      'django.contrib.staticfiles',
-   'polls'   # &lt;- 这里
-  ]</code></p>
-</li>
-<li>
-<p>在polls包下创建<code>urls.py</code> 模块，并定义一个http://127.0.0.1:8000/
-   路由。</p>
-<p>```python
-  from django.urls import path
-  from .views import index_view</p>
-<p>urlpatterns = [
-      path('', index_view, name='index'),
-  ]
-  ```</p>
-</li>
-<li>
-<p>编写试图函数 <code>polls/views.py</code></p>
-<p>```python
-  from django.http import HttpResponse
-  from django.shortcuts import render</p>
-<p># Create your views here.
-  def index_view(request):
-      return HttpResponse('index')
-  ```</p>
-</li>
-<li>
-<p>将polls应用的urls注册到主路由系统中，<code>django_test/urls.py</code></p>
-<p>```python
-  from django.contrib import admin
-  from django.urls import path, include</p>
-<p>urlpatterns = [
-      path('admin/', admin.site.urls),
-      path('', include("polls.urls")),
-  ]
-  ```</p>
-</li>
-<li>
-<p>启动服务，访问主页：http://127.0.0.1:8000/ </p>
-<p><img alt="主页" src="../images/index.png" /></p>
-</li>
-</ol></div>
+<pre><code class="python">  s = 'Beijing is capital'
+  L = s.split(' ')  # L = ['hello', 'world', 'tarena']
+  s2 = &quot;hello#world#tarena&quot;
+  L = s2.split('#')  # L = ['hello', 'world', 'tarena']
+  L = ['aaa', 'bbbb', 'ccccc']
+  '$'.join(L) # 生成 'aaa$bbbb$ccccc'
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

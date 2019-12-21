@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>2. python基础语法 - 杨小哥博客</title>
+        <title>5. 列表 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -96,8 +96,8 @@
     <a href="../python相关介绍/">1. python相关介绍</a>
 </li>
             
-<li class="active">
-    <a href="./">2. python基础语法</a>
+<li >
+    <a href="../python基础语法/">2. python基础语法</a>
 </li>
             
 <li >
@@ -108,8 +108,8 @@
     <a href="../python循环/">4. 循环</a>
 </li>
             
-<li >
-    <a href="../python列表/">5. 列表</a>
+<li class="active">
+    <a href="./">5. 列表</a>
 </li>
             
 <li >
@@ -192,12 +192,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../python相关介绍/">
+                                <a rel="next" href="../python循环/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../python字符串/">
+                                <a rel="prev" href="../补充知识点/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -209,296 +209,277 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">复合赋值算术运算符</a></li>
-        <li class="main "><a href="#_2">比较运算符</a></li>
-        <li class="main "><a href="#_3">数址对象的构造函数（创建函数）</a></li>
-        <li class="main "><a href="#boolx">bool(x)返回假值的情况</a></li>
-        <li class="main "><a href="#1">练习1</a></li>
-        <li class="main "><a href="#_4">预置的数值型函数</a></li>
-        <li class="main "><a href="#_5">基本输入函数</a></li>
-        <li class="main "><a href="#_6">基本输出函数</a></li>
-        <li class="main "><a href="#statement">语句 statement</a></li>
-        <li class="main "><a href="#_7">显示折行</a></li>
-        <li class="main "><a href="#_8">隐式折行</a></li>
-        <li class="main "><a href="#if">if 语句</a></li>
-            <li><a href="#if_1">if 语句的真值表达式</a></li>
-        <li class="main "><a href="#_9">条件表达式</a></li>
-        <li class="main "><a href="#pass">pass 语句</a></li>
-        <li class="main "><a href="#_10">布尔运算</a></li>
-        <li class="main "><a href="#_11">正负号运算符</a></li>
+        <li class="main active"><a href="#_1">问题</a></li>
+        <li class="main "><a href="#_2">列表的定义</a></li>
+        <li class="main "><a href="#_3">创建空列表的字面值表达式</a></li>
+        <li class="main "><a href="#_4">创建非空的列表的字面值</a></li>
+        <li class="main "><a href="#list">列表的构造函数list</a></li>
+        <li class="main "><a href="#_5">列表的运算</a></li>
+        <li class="main "><a href="#_6">列表的比较运算</a></li>
+        <li class="main "><a href="#_7">列表是可迭代对象</a></li>
+        <li class="main "><a href="#in-not-in">列表的 in / not in 运算符</a></li>
+        <li class="main "><a href="#_8">列表的索引操作</a></li>
+        <li class="main "><a href="#_9">列表的索引赋值</a></li>
+        <li class="main "><a href="#_10">列表的切片</a></li>
+        <li class="main "><a href="#_11">列表的切片赋值</a></li>
+        <li class="main "><a href="#_12">切片的注意事项</a></li>
+        <li class="main "><a href="#_13">列表推导式</a></li>
+        <li class="main "><a href="#_14">列表推导式的嵌套</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">复合赋值算术运算符</h3>
-<pre><code>    运算符         说明
-    y+=x    -&gt;  y=y+x
-    y-=x    -&gt;  y=y-x
-    y*=x    -&gt;  y=y*x
-    y/=x    -&gt;  y=y/x
-    y//=x   -&gt;  y=y//x
-    y%=x    -&gt;  y=y%x
-    y**=x   -&gt;  y=y**x
+<h3 id="_1">问题</h3>
+<p>如何将计算机运算的数据临时保存在一个地方，同时又方便添加，删除，修改等操作</p>
+<h3 id="_2">列表的定义</h3>
+<ul>
+<li>列表是一种容器</li>
+<li>列表是可以改变的序列</li>
+<li>列表是由一系列特定元素组成的，元素与元素之间可能没有任何的关联关系，但他们之间有先后顺序关系</li>
+</ul>
+<h3 id="_3">创建空列表的字面值表达式</h3>
+<ul>
+<li>[]  # 创建一个空列表</li>
+<li>l = []  # 变量l 绑定一个新创建的空列表</li>
+</ul>
+<h3 id="_4">创建非空的列表的字面值</h3>
+<pre><code class="python">    l = [1 ,2 ,3, 4]  # 变量l 绑定一个新创建的且含有四个元素的列表
+    l = ['BeiJing', 'ShangHai', 'ShenZhen']
+    l = [1, 'Two', 3.14, '四']
+    l = [1, 2, [3.1, 3.2, 3.3], 4]
 </code></pre>
 
-<h3 id="_2">比较运算符</h3>
-<pre><code>    &lt;   小于
-    &lt;=  小于等于
-    &gt;=  大于等于
-    ==  等于
-    !=  不等于
+<h3 id="list">列表的构造函数list</h3>
+<ul>
+<li>list() 生成一个空的列表，等同于[]</li>
+<li>list(iterable) 用有、可迭代对象创建一个列表</li>
+</ul>
+<pre><code>    l = list()  # l = []
+    l = list('hello')  # l = ['h', 'e', 'l', 'l', 'o']
+    l = list(range(5))  # l = [0, 1, 2, 3, 4]
+</code></pre>
 
-    语法
-        左表达式 &gt; 右表达式
-    说明
-        比较运算符通常返回布尔类型的值
+<h3 id="_5">列表的运算</h3>
+<pre><code>算术运算：
+    + += * *=（运算规则和字符串的运算规则）
++ 用于拼接列表，生成新的列表
+    x = [1, 2, 3]
+    y = [4, 5, 6]
+    z = x + y
++= 用于原列表与右侧可迭代对象追加来修改原列表
+    语法：
+        列表 += 可迭代对象
     示例
-        100&lt;200   #True
-        100&gt;=200  #False
-        1+5==2+4  #True
+        x = [1, 2, 3]
+        y = [4, 5, 6]
+        x += y  # x = [1, 2, 3, 4, 5, 6]
+        x += 'ABC'  # x = [1, 2, 3, 4, 5, 6, 'A', 'B', 'C']
+
+    += 是改变原来的列表对象，并不会创建新的列表
+        x = [1, 2, 3]
+        print(id(x))
+        x += [4 ,5, 6]
+        print(id(x))
+
+* 生成重复的列表
+    x = [1, 2] * 3  # x = [1, 2, 1, 2, 1 ,2]
+
+*= 生成重复的列表， 并改变对列表的绑定
+    x = [1, 2, 3]
+    x *= 2  # x = [1, 2, 3, 1, 2, 3]
 </code></pre>
 
-<h3 id="_3">数址对象的构造函数（创建函数）</h3>
-<pre><code>    float(obj)
-    用字符串或数字转换为浮点数，如果不给出参数，则返回0.0
-        int(x,base=10)
+<h3 id="_6">列表的比较运算</h3>
+<pre><code>    运算符 &lt; &lt;= &gt; &gt;= != ==
+    比较规则，与字符串的比较规则相同
+
+    示例
+        [1, 2, 3] &lt; [1, 2, 4]  # True
+        [1, 2, 3] &lt; [3, 2, 1]  # True
+</code></pre>
+
+<h3 id="_7">列表是可迭代对象</h3>
+<pre><code class="python">l = [1, 3, 5, 7]
+    for i in l:
+        print(i)
+</code></pre>
+
+<h3 id="in-not-in">列表的 in / not in 运算符</h3>
+<ul>
+<li>判断一个值是否存在于列表中，如果存在返回True,否则返回 False</li>
+<li>同字符串的 in 运算符 用于检查一个值是否存在于列表中，如果存在返回True, 否则返回False</li>
+</ul>
+<pre><code class="python">  x = [1, 'Two', 3, '四']
+  3 in x  # 返回 True
+  '3' in x  # 返回 False
+  10 in x  # False
+  10 not in x  # True
+</code></pre>
+
+<h3 id="_8">列表的索引操作</h3>
+<pre><code class="python">  语法:
+    列表[整数表达式]
+  用法:
+    与字符串索引的用法相同(分为正向索引和反向索引)
+　　示例:
+    x = [1,3,5,7]
+    print(x[1])  # 3　　
+    print(x[-1])  # 7
+</code></pre>
+
+<h3 id="_9">列表的索引赋值</h3>
+<pre><code>  列表是可变的，可以通过索引赋值改变列表中的元素
+  语法:
+    列表[整数表达式] = 表达式
+  作用:
+    改变列表中索引的绑定关系
+  示例:
+    x = [1, 2, 3, 4]
+    x[2] = 3.14  # 改变了第三个元素的值
+</code></pre>
+
+<h3 id="_10">列表的切片</h3>
+<pre><code>  列表[:]
+  列表[::]
+  列表的切片取值返回一个新的列表，规则等同于字符串切片规则
+
+  示例:
+    x = [1, 2, 3, 4, 5, 6, 7, 8]
+    x[::2]  # [1, 3, 5, 7]
+    y = [1::3]  # y = [2, 5, 8]
+</code></pre>
+
+<h3 id="_11">列表的切片赋值</h3>
+<pre><code>  作用:
+    可以改变原列表的数据排列，可以插入和修改数据
+    可以用切片改变列表的对应元素的值
+  语法:
+    列表[切片]　= 可迭代对象
+　　说明:
+    切片赋值的赋值运算符(=) 的右侧必须是一个可迭代对象
+
+  示例:
+    L = [2, 3, 4]
+    L[0:1] = [1.1, 2.2]  # L = [1.1, 2.2, 3, 4]
+    L[2:] = [3.3, 4.4, 5.5]  # L = [1.1, 2.2, 3.3, 4.4, 5.5]
+    L[:] = [3, 4] 　# L = [3, 4]
+    L[0:0] = [1, 2]  # L = [1, 2, 3, 4]
+    L = [3, 4]
+    L[1:1] = [3.14]  # L = [3, 3.14, 4]
+    L = [3, 4]
+    L[-1:-1] = [5, 6] # L = [3, 4, 5, 6]
+    L = [2, 3, 4]
+    L[1:2] = &quot;ABC&quot;  # L = [2, 'A', 'B', 'C', 4]
+    L = [2, -1, 7]
+    L[1:2] = range(3, 7)  # L=[2, 3, 4, 5, 6, 7]
+</code></pre>
+
+<h3 id="_12">切片的注意事项</h3>
+<pre><code>对于步长不等于1的切片赋值,赋值运算符的右侧的可迭代对象提供元素的个数一定要等于切片切出的段数
+  示例:
+    L = [1, 2, 3, 4, 5, 6, 7, 8]
+    L[1::2] = &quot;ABCD&quot;  # 对的
+    L[1::2] = &quot;ABCDEF&quot;  # 错的
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>  已知有列表:
+    L = [3, 5]
+  用索引和切片操作,将原列表改变为:
+    L = [1, 2, 3, 4, 5, 6]
+  将列表反转,删除最后一个元素后打印此列表
+    ....
+    print(L)  # [6, 5, 4, 3, 2]
+
+  写程序,让用户循环输入一些整数,当输入-1时结束输入,将这些整数存于列表L中
+    1) 打印您共输入了多少个有效的数
+    2) 打印您输入的数的最大数是?
+    3) 打印您输入的最小数是多少?
+    4) 打印您输入的这些数的平均值是多少?
+
+  写一个程序，让用户输入很多个正整数，当输入小于零的数时结束输入
+　　1) 打印这些数中最大的一个数
+　　2) 打印这些数中第二大的一个数
+   3) 删除最小的一个数
+   4) 按原来顺序打印出剩余的这些数
+</code></pre>
+
+<h3 id="_13">列表推导式</h3>
+<p>list comprehension:   列表推导式是用可迭代对象创建列表的表达式</p>
+<pre><code>  作用:
+    用简易方法生成列表
+  语法:
+    [表达式 for 变量 in 可迭代对象]
     或
-        int(x=0) 用数字或字符串转换为整数，如果不给出参数则返回0，
-        base为进制转换的底数
-
-    complex(r=0.0,i=0.0) 用数字创建一个复数（实部为r,虚部为i）
-    bool(x)  用x创建一个布尔值（True/False）
+    [表达式 for 变量 in 可迭代对象 if 真值表达式]
+  示例:
+    # 生成一个数值为1~9的平方的列表
+    # [1, 4, 9, 16, .... 81]
+    # 不用推导式:
+    L = []
+    for i in range(1, 10):
+        L.append(i**2)
+    # 推导式实现
+    L = [i ** 2 for i in range(1, 10)]
 </code></pre>
 
-<h3 id="boolx">bool(x)返回假值的情况</h3>
-<pre><code>    bool(x)用于显示获取x的布尔值
+<pre><code>用列表推导式生成 1~100以内奇数的列表, 结果是:[1, 3, 5, 7, ...., 99]
+  答案:
+    [i for i in range(1, 100, 2)]
 
-    假值情况
-        None        空值
-        False       布尔假值
-        0  0.0 0j   所有数字零
-        ----------以下后面会讲--------
-        ''      空字符串
-        []      空列表
-        ()      空元组
-        {}      空字典
-        set()       空集合
-        ....        一切空的容器对象bool(x)取值为假
+    或
+    [i for i in range(1, 100) if i % 2 == 1]
 </code></pre>
 
-<h3 id="1">练习1</h3>
-<pre><code>    1/ 将数字（3.14）用变量pi绑定
-    2/ 将pi变量转化为整数用变量 i 绑定
-    3/ 将pi变量与i变量相减，结果用变量f绑定
-        1. 判断f是否等于0.14？  为什么？
-        2. 删除所有变量（用交互模式来做）
-
-    pi=3.14
-    i=int(pi)
-    f=pi-i
+<p><strong>练习</strong></p>
+<p>输入一个开始的整数用begin绑定<br />
+  输入一个结束的整数用end绑定<br />
+  将从begin开始,到end结束(不包含end)的所有偶数存于列表中<br />
+  并打印此列表<br />
+  (可以使用列表推导式完成,也可以用循环语句来完成  </p>
+<h3 id="_14">列表推导式的嵌套</h3>
+<pre><code>语法:
+    [表达式
+      for 变量1 in 可迭代对象1 if真值表达式1
+        for 变量2 in 可迭代对象2 if 真值表达式2 ...]
 </code></pre>
 
-<h3 id="_4">预置的数值型函数</h3>
-<pre><code>    abs(x)    取x的绝对值
-    round(number[,ndigits])
-    对数值进行近似的四舍五入，ndigits是小数向右取整的位数，负数表示向左取整
-    pow(x,y,z=None) 相当于x**y 或x**y%z
+<pre><code>示例:
+    #将列表[10, 20, 30] 中的元素与列表[1,2,3]元素分别相加,将得到的元素放于一个列表中
 
-    help()查看帮助函数
-        &gt;&gt;&gt;help(函数名)
+    L = [x + y
+          for x in [10, 20, 30]
+            for y in [1,2,3]]
+    print(L)  #[11, 12, 13, 21, 22, 23, 31,32,33]
 </code></pre>
 
-<h3 id="_5">基本输入函数</h3>
-<p>input('提示字符串')      返回用户输入的字符串  </p>
-<pre><code class="python">s=input('请输入一些文字：')
-print('您刚才输入的文字是：',s)
+<p><strong>练习</strong></p>
+<pre><code>  1. 用字符串&quot;ABC&quot;和字符串&quot;123&quot; 生成如下列表
+   ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3', ]
+   答案:
+     [ x + y for x in &quot;ABC&quot; for y in &quot;123&quot;]
 
-s2=input()
-print('您第二次输入的文字是：',s2)
-
-r=int(input('请输入一个整数'))
-print(r,' / 2 = ',r/2)
+  2. 已知有一个字符串:
+    s = '100,200,300,500,800'
+    将其转化为列表,列表的内部是整数
+    L = [100, 200, 300, 500, 800]
+  答案:
+    L = [int(x) for x in s.split(',')]
 </code></pre>
 
-<h3 id="_6">基本输出函数</h3>
-<pre><code>print
-    作用
-        将一系列的值以字符串的形式输出到标准输出设备上，默认为终端
-    格式
-        print(value,...,sep=' ',end='\n')
-        选项的关键字参数为
-            sep  两个值之间的分隔符，默认为一个空格
-            end  输出完毕后在流末自动追加一个字符串，默认为换行符'\n'
-</code></pre>
+<pre><code>  1. 有一些数存在列表中, 如:
+     L = [1, 3, 2, 1, 6, 4, 2, ...., 98, 82]
+    1) 将列表L中出现的数字存于另一个列表L2中
+      要求:
+         重复出现多次的数字只在L2列表中保留一份(去重)
+    2) 将列表中出现两次的数字存于L3列表中(在L3列表中保留一份)
 
-<h3 id="statement">语句 statement</h3>
-<pre><code>语句是由一些表达式组成，通常一条语句可以独立的运行来完成一部分事情并形成结果
-    一条语句建议写在一行内
-    多行语句写在一行内需要用分号隔开
-    示例
-        x = 100
-        y = 200
-        print(x + y)
+  2. 计算出100以内的素数,将这些素数存于列表中,最后打印出列表中的这些素数
 
-    写在一行内
-        x = 100; y = 200; print(x + y)
-</code></pre>
-
-<h3 id="_7">显示折行</h3>
-<pre><code>    折行符 \
-    折行符必须放在一行的末尾，来示意解释执行器的下一行也是本行的语句
-</code></pre>
-
-<h3 id="_8">隐式折行</h3>
-<p>所有括号的内容折行，称为隐式折行   ()  []  {}</p>
-<h3 id="if">if 语句</h3>
-<ul>
-<li>问题：<br />
-        有两条语句，print('是奇数') , print('是偶数')<br />
-            如何只让其中一条语句执行并打印出结果</li>
-<li>作用<br />
-        让程序根据条件选择性的执行某条语句或某些语句  </li>
-</ul>
-<pre><code>    语法
-        if 真值表达式1：
-            语句块1
-        elif 真值表达式2：
-            语句块2
-        elif 真值表达式3：
-            语句块3
-
-        ...
-        else:
-            语句块
-
-    说明
-        elif    语句可以有0个，1个，多个
-        else    子句可以有0个，1个，且只能放在此if语句的最后
-</code></pre>
-
-<p>示例：</p>
-<pre><code class="python"># x = int(input('输入一个整数：'))
-# if x % 2 == 0:
-#     print(x, '是偶数')
-# else:
-#     print(x, '是奇数')
-#
-#
-
-# 任意输入一个数，用程序判断这个数是正数，负数，还是0
-x = int(input('输入一个数：'))
-if x == 0:
-    print(x, '是0')
-elif x &lt; 0:
-    print(x, '是负数')
-else:
-    print(x, '是正数')
-</code></pre>
-
-<h4 id="if_1">if 语句的真值表达式</h4>
-<pre><code>    if 100:
-        print('真值')
-    等同于
-    if bool(100):
-        print('真值')
-</code></pre>
-
-<h3 id="_9">条件表达式</h3>
-<pre><code>    语法
-        表达式1  if  真值表达式2 else 表达式2
-    作用
-        根据真值表达式的取值（True/False）
-        来决定执行表达式1 或者 表达式2 并返回结果
-</code></pre>
-
-<p>示例：</p>
-<pre><code class="python"># 商场促销，满100 减 20
-money = int(input('请输入商品金额：'))
-pay = money - 20 if money &gt;= 100 else money
-print('您需要支付：', pay, '元')
-</code></pre>
-
-<h3 id="pass">pass 语句</h3>
-<pre><code>    作用
-        通常用来填充语法空白
-    语法
-        pass
-</code></pre>
-
-<p>示例：</p>
-<pre><code class="python"># 此示例为pass语句的用法
-# 输入一个学生的成绩，如果成绩不在0-100之间
-# 则提示错误
-
-score = int(input('请输入成绩：'))
-if 0 &lt;= score &lt;= 100:
-    pass
-else:
-    print('成绩不合法！')
-</code></pre>
-
-<h3 id="_10">布尔运算</h3>
-<ul>
-<li>not</li>
-</ul>
-<pre><code>        语法
-            not x
-        作用
-            对 x 进行布尔取非，如bool(x) 为True,则返回False,否则返回True
-        示例
-            not　True        #则返回False
-            not　False       #则返回True
-            not　100 &gt; 200   #则返回True
-</code></pre>
-
-<ul>
-<li>and</li>
-</ul>
-<pre><code>        语法
-            x and y     (x,y代表表达式)
-        作用
-            优先返回【假】值对象
-            当x的布尔值为False时，返回x,否则返回y
-        示例
-            True  and　True      #则返回True
-            True  and  False        #则返回False
-            False  and　True     #则返回False
-            False  and　False    #则返回False
-            1 and 2     #返回2
-            0 and 1         #返回0
-            0.0 and 0       #返回0.0
-</code></pre>
-
-<ul>
-<li>or</li>
-</ul>
-<pre><code>        语法
-            x or y      (x,y代表表达式)
-        作用
-            优先返回【真】值对象
-            当x的布尔值为True时，返回x,否则返回y
-        示例
-            True  or　True       #则返回True
-            True  or  False     #则返回True
-            False  or　True      #则返回True
-            False  or　False     #则返回False
-            1 or 2      #返回1
-            0 or 1         #返回1
-            0.0 or 0       #返回0
-</code></pre>
-
-<h3 id="_11">正负号运算符</h3>
-<pre><code>    + （正号）  -（负号）
-
-    一元运算符
-        语法
-            + 表达式
-            - 表达式
-
-        示例
-            a = 5
-            b = -a
-            c = +a
+  3. 生成前40个斐波那契数(Fibonacci)
+    1 1 2 3 5 8 13 21 ......
+    要求将这数整数存于列表L中,最后打印出这些数
+    (斐波那契的前两个是1, 1, 之后的数是前两个数的和)
 </code></pre></div>
         </div>
 

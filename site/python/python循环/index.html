@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>2. django中的路由 - 杨小哥博客</title>
+        <title>4. 循环 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -93,27 +93,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+    <a href="../python相关介绍/">1. python相关介绍</a>
 </li>
             
 <li >
-    <a href="../../python/python基础语法/">2. python基础语法</a>
+    <a href="../python基础语法/">2. python基础语法</a>
 </li>
             
 <li >
-    <a href="../../python/python字符串/">3. 字符串</a>
+    <a href="../python字符串/">3. 字符串</a>
+</li>
+            
+<li class="active">
+    <a href="./">4. 循环</a>
 </li>
             
 <li >
-    <a href="../../python/python循环/">4. 循环</a>
+    <a href="../python列表/">5. 列表</a>
 </li>
             
 <li >
-    <a href="../../python/python列表/">5. 列表</a>
-</li>
-            
-<li >
-    <a href="../../python/补充知识点/">补充知识点</a>
+    <a href="../补充知识点/">补充知识点</a>
 </li>
     </ul>
   </li>
@@ -123,35 +123,35 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../1_django介绍及安装/">1. django介绍及安装</a>
-</li>
-            
-<li class="active">
-    <a href="./">2. django中的路由</a>
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
 </li>
             
 <li >
-    <a href="../3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
 </li>
             
 <li >
-    <a href="../4_django中的session和cookie/">4. session和cookie</a>
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
 </li>
             
 <li >
-    <a href="../5_django中的模板/">5. django中的模板</a>
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
 </li>
             
 <li >
-    <a href="../6_django中的模型/">6. django中的模型</a>
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
 </li>
             
 <li >
-    <a href="../7_django模型中的关系映射/">7. 模型中的关系映射</a>
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
 </li>
             
 <li >
-    <a href="../8_django自带的后台管理/">8. 自带的后台管理</a>
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
 </li>
             
 <li >
@@ -192,12 +192,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../1_django介绍及安装/">
+                                <a rel="next" href="../python字符串/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../3_django中的HttpRequest对象/">
+                                <a rel="prev" href="../python列表/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -209,228 +209,196 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#django">django框架的使用</a></li>
-            <li><a href="#_1">创建项目</a></li>
-            <li><a href="#url">url的使用</a></li>
-            <li><a href="#django_2">Django中的应用</a></li>
+        <li class="main active"><a href="#while">while 语句</a></li>
+        <li class="main "><a href="#break">break 语句</a></li>
+        <li class="main "><a href="#_1">死循环</a></li>
+        <li class="main "><a href="#for">for 循环</a></li>
+        <li class="main "><a href="#range">range 函数</a></li>
+        <li class="main "><a href="#for_1">for 语句变量可能不被创建的问题</a></li>
+        <li class="main "><a href="#for_2">for 语句注意事项</a></li>
+        <li class="main "><a href="#continue">continue 语句</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<hr />
-<hr />
-<h1 id="django">django框架的使用</h1>
-<h2 id="_1">创建项目</h2>
-<pre><code>使用 django-admin 创建 Django 项目 ，在控制台输入。
-</code></pre>
-<p>​   语法： </p>
-<pre><code class="python">django-admin startproject 项目名称
+<h3 id="while">while 语句</h3>
+<pre><code>        作用：
+            根据一定条件，重复执行一条语句或多条语句
+        语法
+            while 真值表达式：
+                语句块
+            else:
+                语句块2
+        说明
+            1. 先判断真值表达式，为True 或False
+            2. 如果为True,则执行语句块1，再回到第一步
+            3. 如果为False,则执行语句块2，然后结束此while的执行
+            4. else 子句部分可以省略（类似if）
+        注意事项
+            要控制循环真值表达式的值来防止死循环
+            通常用真值表达式内的循环变量来控制循环条件
+            通常在循环语句块内改变循环变量来控制循环次数和变量走向
+        循环嵌套
+            while语句本身是语句，和其他语句一样，可以嵌套在任何符合语句中
+            示例
+                while 真值表达式：
+                    ...
+                    while 真值表达式2:
+                        ...
+                    else:
+                        ...
+                else:
+                    ...
 </code></pre>
 
-<p>​   如:</p>
-<pre><code class="python">django-admin startproject django_test
+<h3 id="break">break 语句</h3>
+<pre><code>    作用
+        用于循环语句中（while， for语句）中，用来终止当前循环语句的执行
+    语法
+        break
+    说明
+        1. 当break 语句执行后，此循环语句break 后的语句将不再执行
+        2. break 语句通常和if 语句组合使用
+        3. break 语句终止循环时else 字句将不再执行
+        4. break 语句只能终止当前循环语句的执行，如果有循环嵌套，不会跳出外层循环
 </code></pre>
 
-<p><img alt="创建项目" src="../images/startproject.png" /></p>
-<h3 id="django_1">Django项目结构</h3>
-<p><img alt="结构树" src="../images/projecttree.png" /></p>
-<ol>
-<li><strong>manage.py</strong> </li>
-</ol>
-<p>功能： 包含执行django中的各项操作的指令 </p>
-<p>如： 启动服务 runserver </p>
-<ol>
-<li>
-<p><strong>主目录 django_test/django_test</strong></p>
-</li>
-<li>
-<p><code>__init__.py</code></p>
-<p>项目的初始化文件，自动运行 </p>
-</li>
-<li>
-<p>urls.py  </p>
-<p>项目的基础路由配置文件</p>
-</li>
-<li>
-<p>wsgi.py </p>
-<p>Web Server Gateway Interface
-  Web 服务网关接口</p>
-</li>
-<li>
-<p>settings.py </p>
-<p>项目的配置文件</p>
-<p><code>python
-   1. BASE_DIR
-     项目根目录
-   2. ALLOWED_HOSTS
-       设置允许访问到本项目的地址列表
-       如果允许在网络中被其他的机器访问到的话
-       推荐写["*"], 表示任何能够表示该机器的地址都能访问到该项目
-       同时在启动服务时还需要指定地址和端口
-       python3 manage.py runserver 0.0.0.0:8000
-   3. INSTALLED_APPS
-    指定已安装的应用，如果由自定义的应用的话需要在此注册
-   4. MIDDLEWARE
-    中间件，如果有自定义的中间件，需要在此注册
-   5. ROOT_URLCONF
-    指定项目的基础路由配置文件
-   6. TEMPLATES
-    配置模板的相应信息
-   7. DATABASES
-    配置数据库的信息
-   8. LANGUAGE_CODE
-    设置语言，主要设置中文的话，允许将值改为'zh-Hans'
-  9. TIME_ZONE
-       指定时区，默认时区，允许将值更改为"Asia/Shanghai"</code></p>
-</li>
-</ol>
-<h2 id="url">url的使用</h2>
-<ol>
-<li>
-<p><code>urls.py</code> </p>
-<p>默认在主目录中，主路由配置文件，会包含最基本的地址映射，每个地址访问都必须要先经过该文件</p>
-<p>作用：通过urls中定义好的地址找到对应的视图处理函数</p>
-<p><code>python
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]</code></p>
-</li>
-<li>
-<p><code>path()</code></p>
-<p>作用：为了匹配用户的访问路径 </p>
-<p>语法: </p>
-</li>
-</ol>
-<p>```
-   from django.urls import path</p>
-<p>path(route, view, kwargs=None, name=None)
-       route: 匹配请求的url
-       view: 地址匹配上之后要执行操作的视图处理函数
-       kwargs: 字典，用来想view传参的，可以省略
-       name: 为url起别名, 在地址反向解析时使用
-   ```</p>
-<ol>
-<li>向url传递参数</li>
-</ol>
-<p>方式一：通过path的参数kwargs的方式传递，不推荐，这里依赖了django框架，不通用。</p>
-<p>方式二：通过http协议进行传参</p>
+<pre><code class="python"># ecoding = utf-8
+i = 1
+while i &lt;= 6:
+    print('循环开始时：', i)
+    if i == 3:
+        break
+    print('循环结束时：', i)
+    i += 1
+print('-------------程序退出---------')
+</code></pre>
+
+<h3 id="_1">死循环</h3>
 <ul>
-<li>
-<p>get请求</p>
-<p>http:// xxxx.com/login?id=1&amp;token=xxx</p>
-</li>
-<li>
-<p>post请求</p>
-<p>http:// xxx.com/login</p>
-<p>数据放在 form-data里，详细一点的话就是放在http请求的请求体里（可以去看看http协议的内容）</p>
-</li>
+<li>死循环是指条件一直成立的循环，</li>
+<li>死循环通常用break语句来终止循环</li>
+<li>死循环的else子句永远不会执行</li>
 </ul>
-<p><strong>数据怎么取？？</strong></p>
-<p>后面的教程会讲到。</p>
-<h2 id="django_2">Django中的应用</h2>
-<ol>
-<li>什么是应用 ？
-       应用就是网站中的一个独立的模块
-       如: 网易网站可分为若干应用组成</li>
-</ol>
-<p>​        新闻应用: 与新闻相关的内容
-   ​        车应用: 与汽车相关的内容</p>
-<p>​        科技应用: 与科技相关的内容</p>
-<p>在django中, 主目录一般不处理具体的请求, 主目录一般处理的是项目的初始化操作
-   处理的是初始化操作, 以及请求的分发(分布式请求处理), 而具体的请求是由各个应用去处理.</p>
-<ol>
-<li>
-<p>创建应用</p>
-</li>
-<li>
-<p>命令</p>
-<p><code>python
-  python manage.py startapp 应用的名称</code></p>
-</li>
-<li>
-<p>需要在settings.py 中进行注册 ， 在INSTALLED_APPS 中追加应用的名称来注册应用 </p>
-<p><code>python
-  INSTALLED_APPS = [
-      'django.contrib.admin',
-      ... ...
-      '自定义的应用名称'
-  ]</code></p>
-</li>
-<li>
-<p>应用的解析组成</p>
-</li>
-<li>migrations 文件夹 : 存放数据库的中间文件</li>
-<li><code>__init__.py</code> :  应用的初始化文件 </li>
-<li><code>admin.py</code> :  应用的后台管理配置文件 </li>
-<li><code>apps.py</code> :  和应用的属性配置文件 </li>
-<li><code>models.py</code> :  Models 与 模型相关的映射文件 </li>
-<li><code>tests.py</code> :  应用的单元测试文件 </li>
-<li>
-<p><code>views.py</code> :  视图处理函数的文件 </p>
-</li>
-<li>
-<p>分部式的路由系统 </p>
-<p>在每个应用中分别创建urls.py, 格式参考主路由文件 </p>
-<p>目的: 为了处理各个应用中的请求路由</p>
-<p>用法: </p>
-<pre><code>(这里直接引用django官方的例子)
+<pre><code class="python"># 循环输入字符串，当输入'quit()' 结束输入
+# 将每次输入的内容打印在屏幕上
+while True:
+    s = input('请输入：&gt;&gt;&gt;')
+    if s == 'quit()':
+        break
+    print(s)
+else:
+    print('else 子句永远不会执行')
+
 </code></pre>
-<ol>
-<li>创建一个polls应用：</li>
-</ol>
-<p><code>python
-  python manage.py startapp polls</code></p>
-<p><img alt="polls应用的目录结构" src="../images/polls.png" /></p>
-</li>
-<li>
-<p><code>django_test/setting.py</code> 声明polls模块</p>
-<p><code>INSTALLED_APPS = [
-      'django.contrib.admin',
-      'django.contrib.auth',
-      'django.contrib.contenttypes',
-      'django.contrib.sessions',
-      'django.contrib.messages',
-      'django.contrib.staticfiles',
-   'polls'   # &lt;- 这里
-  ]</code></p>
-</li>
-<li>
-<p>在polls包下创建<code>urls.py</code> 模块，并定义一个http://127.0.0.1:8000/
-   路由。</p>
-<p>```python
-  from django.urls import path
-  from .views import index_view</p>
-<p>urlpatterns = [
-      path('', index_view, name='index'),
-  ]
-  ```</p>
-</li>
-<li>
-<p>编写试图函数 <code>polls/views.py</code></p>
-<p>```python
-  from django.http import HttpResponse
-  from django.shortcuts import render</p>
-<p># Create your views here.
-  def index_view(request):
-      return HttpResponse('index')
-  ```</p>
-</li>
-<li>
-<p>将polls应用的urls注册到主路由系统中，<code>django_test/urls.py</code></p>
-<p>```python
-  from django.contrib import admin
-  from django.urls import path, include</p>
-<p>urlpatterns = [
-      path('admin/', admin.site.urls),
-      path('', include("polls.urls")),
-  ]
-  ```</p>
-</li>
-<li>
-<p>启动服务，访问主页：http://127.0.0.1:8000/ </p>
-<p><img alt="主页" src="../images/index.png" /></p>
-</li>
-</ol></div>
+
+<h3 id="for">for 循环</h3>
+<pre><code>    作用
+        用来遍历可迭代对象的数据元素
+            可迭代对象是指能依次获取数据元素的对象
+    可迭代对象包括：
+        字符串（str）
+        列表 (list)
+        元组 （tuple）
+    语法：
+        for 变量 in 可迭代对象：
+            语句块1
+        else:
+            语句块2
+</code></pre>
+
+<pre><code class="python">s = 'ABCD'
+for ch in s:
+    print('ch&gt;&gt;&gt;', ch)
+</code></pre>
+
+<p><strong>for 语法说明</strong></p>
+<p>else 子句部分可以省略, 当在循环内部用break 终止循环时，else 子句部分不会执行</p>
+<pre><code class="python"># 输入一段字符串，判断这个字符串内是否有'H'这个字符，并打印结果
+s = input('输入字符串：')
+for ch in s:
+    if ch == 'H':
+        print(s, '有H字符')
+        break
+else:
+    print(s, '没有H字符')
+</code></pre>
+
+<h3 id="range">range 函数</h3>
+<pre><code>    range(stop)   用来生成0 - stop区间内的整数，直到stop为止（不包含stop）
+    range(start, stop[,step])    用来生成start ~ stop区间内的整数，直到stop为止
+                    每次生成整数后移动 step
+    格式详见
+        &gt;&gt;&gt; help(range)
+
+    作用
+        用来创建一个生成一系列整数的可迭代对象（也叫整数序列生成器）
+    说明
+        range返回的对象可以有for 语句来进行依次迭代访问取出其中的整数
+    示例
+        range(4)    #生成0 1 2 3
+        range(3 ,6) #生成 3 4 5
+        range(1, 10, 2) #生成 1 3 5 7 9
+        range(5, 0, -2) #生成 5 3 1
+        range(4, 0) #空
+
+</code></pre>
+
+<h3 id="for_1">for 语句变量可能不被创建的问题</h3>
+<pre><code>    for i in range(4,0):
+        print(i)
+    print('绑定', i)    # 报错
+
+    for i in range(0,4):
+        print(i)
+    print('绑定', i)    # 3
+</code></pre>
+
+<h3 id="for_2">for 语句注意事项</h3>
+<pre><code class="python">i = 6
+for x in range(1, i):  # for x in range(1, 6)
+    print('x =', x, 'i =', i)
+    i -= 1
+
+# 请问打印结果是什么？
+</code></pre>
+
+<h3 id="continue">continue 语句</h3>
+<pre><code>    作用
+        用于循环语句（while for）中，不再执行本次循环continue
+        之后的语句，重新开始一次新的循环
+    语法
+        continue
+    说明
+        1. 在while语句中执行continue，将会直接跳到while语句的真值表达式处
+        重新判断循环条件
+        2. 在for 语句中执行continue 语句，将会从可迭代对象中取下一个元素，
+        绑定变量后再次进行循环
+</code></pre>
+
+<pre><code class="python"># 此示例示意continue 语句的用法
+for x in range(5):
+    if x == 2 or x == 3:
+        continue
+    print(x)
+
+# 打印10以内的奇数
+for n in range(10):
+    if n % 2 == 0:  # 是偶数，跳过输出
+        continue
+    print(n)
+</code></pre>
+
+<pre><code class="python">#此示例示意在while 中使用continue 语句
+
+# 略过2
+x = -1
+while x &lt; 5:
+    x += 1
+    if x == 2:
+        continue
+    print(x)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
