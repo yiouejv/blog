@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>9. 函数 - 杨小哥博客</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">杨小哥博客</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lua/表的构造/">lua 表的构造</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/select函数/">lua select 函数</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/opp/">lua 面向对象</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并发编程和并行编程/">1. 并发编程和并行编程</a>
+</li>
+                                    
+<li >
+    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">2. skynet 基于 Actor 模式的开源框架</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">python 语法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../python相关介绍/">1. python相关介绍</a>
+</li>
+            
+<li >
+    <a href="../python基础语法/">2. python基础语法</a>
+</li>
+            
+<li >
+    <a href="../python字符串/">3. 字符串</a>
+</li>
+            
+<li >
+    <a href="../python循环/">4. 循环</a>
+</li>
+            
+<li >
+    <a href="../python列表/">5. 列表</a>
+</li>
+            
+<li >
+    <a href="../python元组/">6. 元组</a>
+</li>
+            
+<li >
+    <a href="../python字典/">7. 字典</a>
+</li>
+            
+<li >
+    <a href="../python集合/">8. 集合</a>
+</li>
+            
+<li class="active">
+    <a href="./">9. 函数</a>
+</li>
+            
+<li >
+    <a href="../补充知识点/">补充知识点</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">django</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
+</li>
+            
+<li >
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
+</li>
+            
+<li >
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+</li>
+            
+<li >
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
+</li>
+            
+<li >
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
+</li>
+            
+<li >
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
+</li>
+            
+<li >
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
+</li>
+            
+<li >
+    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+</li>
+            
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tools/linux操作系统/">linux操作系统</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">理财 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并.md">基金理财</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../python集合/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../补充知识点/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#function">函数function</a></li>
+        <li class="main "><a href="#def">def 语句</a></li>
+        <li class="main "><a href="#_1">函数调用</a></li>
+        <li class="main "><a href="#return">return 语句</a></li>
+        <li class="main "><a href="#_2">函数的参数传递</a></li>
+            <li><a href="#_3">位置传参</a></li>
+            <li><a href="#_4">序列传参</a></li>
+            <li><a href="#_5">关键字传参</a></li>
+            <li><a href="#_6">字典关键字传参</a></li>
+            <li><a href="#_7">传参的综合传参</a></li>
+        <li class="main "><a href="#_8">函数的缺省参数</a></li>
+        <li class="main "><a href="#_9">函数形参的定义方式</a></li>
+            <li><a href="#_10">位置形参</a></li>
+            <li><a href="#_11">星号元组形参</a></li>
+            <li><a href="#_12">命名关键字形参</a></li>
+            <li><a href="#_13">双星号字典形参</a></li>
+        <li class="main "><a href="#_14">函数的参数说明</a></li>
+        <li class="main "><a href="#_15">思考题</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="function">函数function</h3>
+<pre><code>函数是可以重复执行的语句块，可以重复调用
+    作用
+        用于封装语句块，提高代码的重用性
+        定义用户级别的函数
+</code></pre>
+
+<h3 id="def">def 语句</h3>
+<pre><code>    语法
+        def 函数名(形参列表):
+            语句块
+    作用
+        用语句块创建一个函数，并用函数名变量绑定这个函数
+
+    语法说明
+        1. 函数名是变量，它用于绑定语句块
+        2. 函数有自己的名字空间，在函数外部不可以访问函数内部的变量，
+            在函数内部可以访问函数外部的变量（要让函数处理外部的数据需要用参数给函数传入一些数据）
+        3. 函数不需要传入参数时，形参列表可以为空
+        4. 语句部分不能为空，如果为空需要填充pass语句
+</code></pre>
+
+<pre><code class="python"># 此示例用def 语句来定义一个函数并调用这个函数
+def say_hello():
+    print('hello world!')
+    print('hello Tarena!')
+    print('hello everyone')
+</code></pre>
+
+<pre><code class="python"># 带有参数的函数调用
+def mymax(a, b):
+    if a &gt; b:
+        print('最大值为：', a)
+    else:
+        print('最大值为：', b)
+
+if __name__ == '__main__':
+    mymax(1, 2)     #带传参调用
+</code></pre>
+
+<h3 id="_1">函数调用</h3>
+<pre><code>函数名(实际调用传递参数)
+        注：实际调用传递参数，以后称为实参
+    说明
+        函数调用是一个表达式
+        如果函数内部没有return 语句，则函数执行完毕后返回None对象
+</code></pre>
+
+<pre><code>练习
+    写一个函数，myadd, 此函数中的参数列表里有两个参数x, y
+    此函数的功能是打印x + y的和
+
+    写一个函数print_even， 传入一个参数n代表终止整数，打印2 4 6 8 ... n之间的所有偶数
+</code></pre>
+
+<h3 id="return">return 语句</h3>
+<pre><code>    语法
+        return [表达式]
+        注 []代表可以省略其中的内容
+    作用
+        用于函数中，结束当前函数的执行，返回到调用该函数的地方，同时返回一个对象的引用关系
+    说明
+        1. return 语句后跟表达式可以省略，省略后相当于return None
+        2. 如果函数内内有 retutn 语句，则函数执行完毕后返回None
+</code></pre>
+
+<pre><code>练习
+    写一个函数myadd2,实现返回两个数的和:
+     如：
+        def myadd(a, b):
+            ..
+</code></pre>
+
+<h3 id="_2">函数的参数传递</h3>
+<pre><code>    位置传递
+        序列传参
+    关键字传参
+        字典关键字传参
+</code></pre>
+
+<h5 id="_3">位置传参</h5>
+<p>实际参数的对应关系与形参的对应关系是按位置依次对应的</p>
+<pre><code>示意
+    def mymin(a, b, c):
+        pass
+    mymin(1, 2, 3)  #1,2,3位置是对应关系传递给a, b, c
+
+说明
+    实参和形参通过位置进行传递和匹配
+    实参的个数和形参的个数相同
+</code></pre>
+<pre><code class="python">#   此示例示意位置传参
+def myfun(a, b, c):
+    '''这是一个函数传参的示例'''
+    print('a的值是：', a)
+    print('b的值是：', b)
+    print('c的值是：', c)
+
+myfun(1, 2, 3)
+myfun(4, 5, 6)
+</code></pre>
+
+<h5 id="_4">序列传参</h5>
+<p>序列传参是指函数在调用过程中，用*将序列拆解按位置进行传参的方式</p>
+<pre><code>说明
+    序列传参时，序列拆解的位置将与形参一一对应
+    序列的位置信息也对应相应的参数位置
+</code></pre>
+
+<pre><code class="python"># 此示例示意序列传参
+def myfun(a, b, c):
+    print('a的值是：', a)
+    print('b的值是：', b)
+    print('c的值是：', c)
+
+s1 = [11, 22, 33]
+s2 = [44, 55, 66]
+s3 = 'ABC'
+myfun(*s1)
+myfun(*s3)
+</code></pre>
+
+<h5 id="_5">关键字传参</h5>
+<ul>
+<li>关键字传参是指传参时，按照形参的名称给形参赋值</li>
+<li>实参和形参名称进行匹配</li>
+</ul>
+<pre><code>    示意
+        def myfun(a, b, c)
+            pass
+        myfun(b = 22, c = 33, a = 11)   # 11-&gt;a  22-&gt;b 33-&gt;c
+        myfun(b = 66, c = 55, a = 44)   # 44-&gt;a  66-&gt;b 55-&gt;c
+    说明
+        实参和形参按着形参名进行匹配，可以不按位置进行匹配
+</code></pre>
+
+<pre><code class="python"># 此示例示意关键字传参
+def myfun(a, b, c):
+    print('a的值是：', a)
+    print('b的值是：', b)
+    print('c的值是：', c)
+
+myfun(b = 22, c = 33, a = 11)   # 11-&gt;a  22-&gt;b 33-&gt;c
+myfun(b = 66, c = 55, a = 44)   # 44-&gt;a  66-&gt;b 55-&gt;c
+</code></pre>
+
+<h5 id="_6">字典关键字传参</h5>
+<p>是指实参为字典，将字典用**拆解后进行关键字传参的方式</p>
+<pre><code>    说明
+        字典的键名和形参名一致
+        字典的键名必须为字符串（且为标识符的命名方式）
+        字典的键名要在形参中存在
+</code></pre>
+
+<pre><code class="python"># 此示例示意字典关键字传参
+def myfun(a, b, c):
+    print('a的值是：', a)
+    print('b的值是：', b)
+    print('c的值是：', c)
+
+d1 = {
+    'a' : 100,
+    'b' : 200,
+    'c' : 250
+}
+
+myfun(**d1)   # 11-&gt;a  22-&gt;b 33-&gt;c
+myfun(b = 66, c = 55, a = 44)   # 44-&gt;a  66-&gt;b 55-&gt;c
+</code></pre>
+
+<h5 id="_7">传参的综合传参</h5>
+<ol>
+<li>函数的传参方式，在能确定形参能唯一匹配到相应参数的情况下可以任意组合</li>
+<li>函数的位置传参要先于关键字传参</li>
+</ol>
+<pre><code>    说明
+        位置传参和序列传参可以混合使用且可以顺序颠倒
+            如：
+            myfun(100, *[200, 300])
+            myfun(*[100, 200], 300)
+            myfun(*[100], 200, *[300])
+        函数的关键字传参和字典关键字传参可以混合使用，且可以颠倒顺序
+            如：
+                myfun(c=300, **{'b': 200,'a'：100})
+                myfun(**{'b': 200, 'c': 300}, a=100)
+        位置传参和关键字传参可以混合使用，但位置传参要先于关键字传参：
+            如：
+                myfun(100, c=300, b=200)
+                myfun(10, c=30, **{'b': 20})
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>    写一个函数，getminmax(a, b, c)三个参数，此函数用于返回三个数的最大值，最小值
+        形成元组后返回
+            元组格式：
+                （最小值，最大值）
+    可以尝试上述传参方式
+</code></pre>
+
+<h3 id="_8">函数的缺省参数</h3>
+<pre><code>语法：
+        def 函数名(形参名1=默认实参1, 形参名2=默认实参名2....):
+            语句块
+</code></pre>
+
+<pre><code class="python"># 此示例示意缺省参数
+def info(name, age=1, address='不详'):
+    print('我叫', name, '我今年', age, '岁', '我的住址是：', address)
+
+info('老王', '22')
+</code></pre>
+
+<p>说明</p>
+<ul>
+<li>缺省参数必须自右至左依次存在，如果一个参数有缺省参数，则其右侧的所有参数都必须有缺省参数</li>
+<li>缺省参数可以有0个或多个，甚至全部都有缺省参数</li>
+</ul>
+<pre><code class="python"># 示例
+        def info(a, b=10, c):   # 错的
+            pass
+        def info(a=100, b=200, c=300):  #对的
+            pass
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>1. 写一个函数myadd,此函数可以计算两个，三个，四个实参的和
+    def myadd(...):
+        ...
+    print(myadd(100, 200))  #300
+    print(myadd(100, 200, 300))  #600
+    print(myadd(100, 200, 300, 400))  #1000
+    print(myadd(100, 200, 300, 400, 500))  #报错
+
+2.  写一个myrange()函数：
+    此函数用给定的参数，返回一个存有对应的整数列表
+    如：
+        def myrange():
+            ...
+        l = myrange(5)  #l = [0, 1, 2, 3, 4]
+        l = myrange(5, 10) #l = [5, 6, 7, 8, 9]
+        l = myrange(5, 10, 2)   #l = [5, 7, 9]
+</code></pre>
+
+<h3 id="_9">函数形参的定义方式</h3>
+<ul>
+<li>位置形参</li>
+<li>星号元组形参</li>
+<li>命名关键字形参</li>
+<li>双星号字典形参</li>
+</ul>
+<h5 id="_10">位置形参</h5>
+<pre><code>def 函数名(形参名1, 形参名1, ...)
+        语句块
+</code></pre>
+
+<h5 id="_11">星号元组形参</h5>
+<pre><code>    def 函数名(*元组形参名):
+        语句块
+    作用
+        收集多余位置传参
+    说明
+        元组形参一般命名为'agrs'
+</code></pre>
+
+<pre><code class="python"># 此示例示意星号元组形参
+def star_tuple_args(*args):
+    print(args)
+    print('实参的个数是：', len(args))
+
+star_tuple_args()
+star_tuple_args(1, 2, 3)
+star_tuple_args(1, 2, 3, 4, 5, 6, 7, 8 ,9)
+star_tuple_args('dasda', 1)
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>1.写一个函数，mysum 可以传入任意个实参的数字，返回所有实参的和
+        def mysum(*args):
+            return sum(args)
+        print(mysum(1, 2, 3, 4))    #10
+        print(mysum(1, 2, 3, 4, 5, 6))  #21
+
+2.已知内建函数max帮助文档为help(max)
+        max(iterable, *[, default=obj, key=func]) -&gt; value
+        max(arg1, arg2, *args, *[, key=func]) -&gt; value
+
+      仿造max写一个mymax函数，功能要求与max完全相同（不允许用max）
+      print(mymax([6, 8, 3, 5]))    # 8
+      print(mymax(100, 200))        #200
+      print(mymax(1, 3, 5, 9, 7))   #9  
+</code></pre>
+
+<h5 id="_12">命名关键字形参</h5>
+<pre><code>【【 *是位置形参和关键字行参的分隔符】】
+
+    语法
+        def 函数名(*, 命名关键字形参)：
+            语句块
+        def 函数名(*args, 命名关键字形参):
+            语句块
+    作用
+        强制所有的参数必须用关键字传参或字典关键字传参
+</code></pre>
+
+<pre><code class="python">#   此示例示意命名关键字形参
+
+# def 函数名(*, 命名关键字形参)：
+#             语句块
+def fun(*, c, d):
+    print('c =', c)
+    print('d =', d)
+
+# print(fun(3, 4))    #出错
+print(fun(d=4, c=3))
+
+def fun2(a, b, *, c, d):    # *是位置形参和关键字行参的分隔符
+    print(a, b, c, d)
+
+fun2(1, 2, c=3, d=4)
+
+# def 函数名(*args, 命名关键字形参):
+#     语句块
+def fun3(a, b, *args, c=7, d=8):
+    print(args, a, b, c, d)
+
+fun3(1, 3, 4, 5, 6)
+</code></pre>
+
+<h5 id="_13">双星号字典形参</h5>
+<pre><code>    语法
+        def 函数名(**字典形参名):
+            语句块
+    作用
+        收集多余的关键字形参
+    说明
+        字典形参名一般命名为 kwargs
+</code></pre>
+
+<pre><code class="python">#   此示例示意双星号字典形参
+def fun(**kwargs):
+    print('关键字形参的个数为：', len(kwargs))
+    print('kwargs', kwargs)
+
+fun(name='yangwenjun', age=35, address='温馨家园')
+
+fun(a=1, b=&quot;BBBB&quot;, c=[1,2,3], d=True)
+
+fun()
+</code></pre>
+
+<h3 id="_14">函数的参数说明</h3>
+<p>位置形参，缺省参数，星号元组形参，双星号字典形参，命名关键字形参可以混合使用</p>
+<pre><code>函数参数自左至右的顺序为：
+    1. 位置形参
+    2. 星号元组形参
+    3. 命名关键字形参
+    4. 双星号字典形参
+
+示例
+    def fn(a, b, *args, c, **kwargs):
+        pass
+    fn(100, 200, 300, 400, d='D', e='E', c='C')
+</code></pre>
+<h3 id="_15">思考题</h3>
+<pre><code>查看&gt;&gt;&gt;help(print) 猜想print函数的参数列表是如何定义的
+print(*args, sep=' ',end='\n')
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
