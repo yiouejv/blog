@@ -26,6 +26,8 @@ nav:
       - 8. 集合: python/python集合.md
       - 9. 函数: python/python函数.md
       - 10. 作用域: python/python作用域.md
+      - 11. 高阶函数: python/python高阶函数.md
+      - 12. 递归: python/python递归.md
       - 补充知识点: python/补充知识点.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
