@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>错误处理 pcall & xpcall - 杨小哥博客</title>
+        <title>11. 高阶函数 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -46,28 +46,28 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../表的构造/">lua 表的构造</a>
+    <a href="../../lua/表的构造/">lua 表的构造</a>
 </li>
                                     
 <li >
-    <a href="../select函数/">lua select 函数</a>
+    <a href="../../lua/select函数/">lua select 函数</a>
 </li>
                                     
 <li >
-    <a href="../opp/">lua 面向对象</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">错误处理 pcall & xpcall</a>
+    <a href="../../lua/opp/">lua 面向对象</a>
 </li>
                                     
 <li >
-    <a href="../协程实现生产者消费者/">协程实现生产者消费者</a>
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
 </li>
                                 </ul>
                             </li>
@@ -84,7 +84,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -93,55 +93,55 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+    <a href="../python相关介绍/">1. python相关介绍</a>
 </li>
             
 <li >
-    <a href="../../python/python基础语法/">2. python基础语法</a>
+    <a href="../python基础语法/">2. python基础语法</a>
 </li>
             
 <li >
-    <a href="../../python/python字符串/">3. 字符串</a>
+    <a href="../python字符串/">3. 字符串</a>
 </li>
             
 <li >
-    <a href="../../python/python循环/">4. 循环</a>
+    <a href="../python循环/">4. 循环</a>
 </li>
             
 <li >
-    <a href="../../python/python列表/">5. 列表</a>
+    <a href="../python列表/">5. 列表</a>
 </li>
             
 <li >
-    <a href="../../python/python元组/">6. 元组</a>
+    <a href="../python元组/">6. 元组</a>
 </li>
             
 <li >
-    <a href="../../python/python字典/">7. 字典</a>
+    <a href="../python字典/">7. 字典</a>
 </li>
             
 <li >
-    <a href="../../python/python集合/">8. 集合</a>
+    <a href="../python集合/">8. 集合</a>
 </li>
             
 <li >
-    <a href="../../python/python函数/">9. 函数</a>
+    <a href="../python函数/">9. 函数</a>
 </li>
             
 <li >
-    <a href="../../python/python作用域/">10. 作用域</a>
+    <a href="../python作用域/">10. 作用域</a>
+</li>
+            
+<li class="active">
+    <a href="./">11. 高阶函数</a>
 </li>
             
 <li >
-    <a href="../../python/python高阶函数/">11. 高阶函数</a>
+    <a href="../python递归/">12. 递归</a>
 </li>
             
 <li >
-    <a href="../../python/python递归/">12. 递归</a>
-</li>
-            
-<li >
-    <a href="../../python/补充知识点/">补充知识点</a>
+    <a href="../补充知识点/">补充知识点</a>
 </li>
     </ul>
   </li>
@@ -220,12 +220,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../opp/">
+                                <a rel="next" href="../python作用域/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../协程实现生产者消费者/">
+                                <a rel="prev" href="../python递归/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -237,67 +237,144 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#pcall-xpcall">错误处理 pcall &amp; xpcall</a></li>
-            <li><a href="#pcall">pcall</a></li>
-            <li><a href="#xpcall">xpcall</a></li>
+        <li class="main active"><a href="#_1">函数式编程</a></li>
+        <li class="main "><a href="#_2">函数的可重入性</a></li>
+        <li class="main "><a href="#_3">高阶函数</a></li>
+        <li class="main "><a href="#python">python内置的高阶函数</a></li>
+            <li><a href="#map">map函数</a></li>
+            <li><a href="#filter">filter 函数</a></li>
+            <li><a href="#sorted">sorted 函数</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="pcall-xpcall">错误处理 pcall &amp; xpcall</h1>
-<h2 id="pcall">pcall</h2>
-<p>pcall 指的是 <code>protected call</code> 类似其它语言里的 <code>try-catch</code>, 使用pcall 调用函数，如果函数 f 中发生了错误， 它并不会抛出一个错误，而是返回错误的状态, 为被执行函数提供一个保护模式，保证程序不会意外终止</p>
-<p>语法</p>
-<pre><code>pcall( f , arg1,···)
+<h3 id="_1">函数式编程</h3>
+<p>​    指用一系列函数解决问题</p>
+<pre><code class="python"># 示例
+        求 1 + 2 + 3 + 4 +...+100的和
+        # 方法1
+            s = 0
+            for x in range(1, 101):
+                s += x
+            print(s)
+        # 方法2
+            print(sum(range(1, 101)))
 </code></pre>
 
-<p>返回值</p>
-<ol>
-<li>函数执行状态 (boolean)</li>
-<li>没有错误返回 <code>true</code></li>
-<li>有错误返回 <code>false</code></li>
-<li>发生错误返回错误信息，否则返回函数调用返回值</li>
-</ol>
-<p>pcall 示例</p>
-<p>使用pcall 处理错误</p>
-<pre><code class="lua">function square(a)
-  return a * &quot;a&quot;
-end
+<h3 id="_2">函数的可重入性</h3>
+<p>当一个函数的输入一定，则输出必然一定的函数称为可重入函数</p>
+<p>说明</p>
+<p>​        可重入函数内一定不会访问除局部变量以外的变量</p>
+<pre><code class="python"># 示例
+        # 可重入函数
+        def myadd(x, y):
+            return x + y
+        print(myadd(100, 200))  # 300
 
-local status, retval = pcall(square,10);
-
-print (&quot;Status: &quot;, status)        -- 打印 &quot;false&quot; 
-print (&quot;Return Value: &quot;, retval)  -- 打印 &quot;input:2: attempt to perform arithmetic on a string value&quot;
+        # 不可重入函数
+        y = 200
+        def myadd(x):
+            return x + y
+        print(myadd(y))  # 300
+        y = 300
+        print(myadd(100))  # 400
 </code></pre>
 
-<p>正常没错误</p>
-<pre><code class="lua">function square(a)
-  return a * a
-end
-
-local status, retval = pcall(square,10);
-
-print (&quot;Status: &quot;, status)        -- 打印 &quot;true&quot;
-print (&quot;Return Value: &quot;, retval)  -- 打印 &quot;100&quot;
+<h3 id="_3">高阶函数</h3>
+<p>（可用的函数式编程函数）</p>
+<pre><code>什么是高阶函数？？
+        满足下列条件中的一个的函数即为高阶函数
+        1. 函数接受一个或多个函数作为参数传入
+        2. 函数返回一个函数
 </code></pre>
 
-<h2 id="xpcall">xpcall</h2>
-<pre><code>xpcall (f, msgh [, arg1, ···])
+<h3 id="python">python内置的高阶函数</h3>
+<p>map filter sorted</p>
+<h4 id="map">map函数</h4>
+<p>map(func, *iterable) </p>
+<p>返回一个可迭代对象，此可迭代对象用函数func对可迭代对象iterable中的每一个元素作为参数计算后得新的数据</p>
+<pre><code class="python"># 此示例示意map函数的使用
+def power2(x):
+    return x**2
+
+for x in map(power2, range(1, 10)):
+    print(x)  # 1, 4, 9, 16 ... 81
 </code></pre>
 
-<p><code>xpcall</code> 类似 <code>pcall</code> xpcall接受两个参数：调用函数、错误处理函数</p>
-<p>比如使用 debug.traceback 获取栈信息</p>
-<pre><code class="lua">&gt; status, err, ret = xpcall(square, debug.traceback, 10)
-&gt; status
-false
-&gt; err
-stdin:2: attempt to perform arithmetic on a string value
-stack traceback:
-    stdin:2: in function 'square'
-    [C]: in function 'xpcall'
-    stdin:1: in main chunk
-    [C]: in ?
-&gt;
+<p><strong>练习</strong></p>
+<pre><code>求 1**2 + 2**2 +3**2 +...+ 9**2 的和
+求 1**3 + 2**3 +3**3 +...+ 9**3 的和
+</code></pre>
+
+<p><strong>答案</strong></p>
+<pre><code>s = sum((map(lambda x : x**2, range(1, 10))))
+print(s)
+s = sum((map(lambda x : x**3, range(1, 10))))
+print(s)
+</code></pre>
+
+<h4 id="filter">filter 函数</h4>
+<pre><code>    语法
+        filter(function, iterbale)
+
+    作用
+        1. 筛选可迭代对象iterable 中的数据，返回一个可迭代对象，此可迭代对象只返回iterable中符合条件的数据
+        2. function将对iterbale中提供的每个数据进行求布尔值，如果为True则保留，否则为False 丢弃数据
+</code></pre>
+
+<pre><code>names = ['Tom', 'Jerry', 'Spike', 'Tyke']
+l5 = sorted(names, key=lambda s : s[::-1])
+print(l5)
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>    1. 将1-20的偶数用filter生成可迭代对象后，将可迭代对象生成的数据存于列表中
+            l = list(filter(lambda x : x%2==0, range(1,21)))
+            print(l)
+    2. 用filter 函数将1-100之间的所有素数存在列表中
+            def isprime(n):
+                if n &lt; 2:
+                    return False
+                for i in range(2, n):
+                    if n % i == 0:
+                        return False
+                return True
+            l = list(filter(isprime, range(1,100)))
+            print(l)
+</code></pre>
+
+<h4 id="sorted">sorted 函数</h4>
+<pre><code>    作用
+        将原可迭代对象的数据进行排序，生成排序后的列表
+    函数参数格式
+        sorted(iterable, key=None, reverse=False)
+    说明
+        iterable 可迭代对象
+        【key函数】是用来提供一个值，这个值将作为排序的依据，如果不给出key函数，则用
+        原数据的值进行比较和排序
+        reverse 标志用来设置是否降序排序
+    示例
+        l = [5, -2, -4, 0, 3, 1]
+        l2 = sorted(l)  # [-4, -2, 0, 1, 3, 5]
+        l3 = sorted(l, reverse=True)  # [5, 3, 1, 0, -2, -4]
+        l4 = sorted(l, key=abs)   # [0, 1, -2, 3, -4, 5]
+
+        names = ['Tom', 'Jerry', 'Spike', 'Tyke']
+        l5 = sorted(names)  # ['Jerry', 'Spike', 'Tom', 'Tyke']
+
+        names = ['Tom', 'Jerry', 'Spike', 'Tyke']
+        l5 = sorted(names, key=len)  # ['Tom', 'Tyke', 'Jerry', 'Spike']
+</code></pre>
+
+<p><strong>练习</strong></p>
+<pre><code>    names = ['Tom', 'Jerry', 'Spike', 'Tyke']
+    排序的依据为字符串的反序
+        'moT' 'yrreJ' 'ekipS' 'ekyT'
+    结果为
+        ['Spike', 'Tyke', 'Tom', 'Jerry']
+
+        names = ['Tom', 'Jerry', 'Spike', 'Tyke']
+        l5 = sorted(names, key=lambda s : s[::-1])
 </code></pre></div>
         </div>
 
