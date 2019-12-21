@@ -22,6 +22,7 @@ nav:
       - 4. 循环: python/python循环.md
       - 5. 列表: python/python列表.md
       - 6. 元组: python/python元组.md
+      - 7. 字典: python/python字典.md
       - 补充知识点: python/补充知识点.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
