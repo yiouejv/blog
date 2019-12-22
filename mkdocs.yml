@@ -34,6 +34,8 @@ nav:
       - 16. 异常: python/python异常.md
       - 17. 迭代器和生成器: python/python迭代器和生成器.md
       - 18. 字节串和字节数组: python/字节串和字节数组.md
+      - 19. 文件读写: python/文件读写.md
+      - 20. 字符编码: python/字符编码.md
       - 补充知识点: python/补充知识点.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
