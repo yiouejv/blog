@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>5. 列表 - 杨小哥博客</title>
+        <title>14. 模块 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -108,8 +108,8 @@
     <a href="../python循环/">4. 循环</a>
 </li>
             
-<li class="active">
-    <a href="./">5. 列表</a>
+<li >
+    <a href="../python列表/">5. 列表</a>
 </li>
             
 <li >
@@ -144,8 +144,8 @@
     <a href="../python装饰器/">13. 装饰器</a>
 </li>
             
-<li >
-    <a href="../python模块/">14. 模块</a>
+<li class="active">
+    <a href="./">14. 模块</a>
 </li>
             
 <li >
@@ -232,12 +232,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../python循环/">
+                                <a rel="next" href="../python装饰器/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../python元组/">
+                                <a rel="prev" href="../python包/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -249,278 +249,159 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">问题</a></li>
-        <li class="main "><a href="#_2">列表的定义</a></li>
-        <li class="main "><a href="#_3">创建空列表的字面值表达式</a></li>
-        <li class="main "><a href="#_4">创建非空的列表的字面值</a></li>
-        <li class="main "><a href="#list">列表的构造函数list</a></li>
-        <li class="main "><a href="#_5">列表的运算</a></li>
-        <li class="main "><a href="#_6">列表的比较运算</a></li>
-        <li class="main "><a href="#_7">列表是可迭代对象</a></li>
-        <li class="main "><a href="#in-not-in">列表的 in / not in 运算符</a></li>
-        <li class="main "><a href="#_8">列表的索引操作</a></li>
-        <li class="main "><a href="#_9">列表的索引赋值</a></li>
-        <li class="main "><a href="#_10">列表的切片</a></li>
-        <li class="main "><a href="#_11">列表的切片赋值</a></li>
-        <li class="main "><a href="#_12">切片的注意事项</a></li>
-        <li class="main "><a href="#_13">列表推导式</a></li>
-        <li class="main "><a href="#_14">列表推导式的嵌套</a></li>
+        <li class="main active"><a href="#moudle">模块 Moudle</a></li>
+        <li class="main "><a href="#import">import 语句</a></li>
+        <li class="main "><a href="#from-import">from import 语句</a></li>
+        <li class="main "><a href="#dir">dir 函数</a></li>
+        <li class="main "><a href="#_1">用户自定义模块</a></li>
+        <li class="main "><a href="#import_1">import 语句的搜索路径</a></li>
+        <li class="main "><a href="#_2">模块的加载过程</a></li>
+        <li class="main "><a href="#_3">模块的重新加载</a></li>
+        <li class="main "><a href="#_4">模块被导入和执行的过程</a></li>
+        <li class="main "><a href="#_5">模块的编译</a></li>
+        <li class="main "><a href="#_6">模块的属性</a></li>
+        <li class="main "><a href="#_7">模块的隐藏属性</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">问题</h3>
-<p>如何将计算机运算的数据临时保存在一个地方，同时又方便添加，删除，修改等操作</p>
-<h3 id="_2">列表的定义</h3>
-<ul>
-<li>列表是一种容器</li>
-<li>列表是可以改变的序列</li>
-<li>列表是由一系列特定元素组成的，元素与元素之间可能没有任何的关联关系，但他们之间有先后顺序关系</li>
-</ul>
-<h3 id="_3">创建空列表的字面值表达式</h3>
-<ul>
-<li>[]  # 创建一个空列表</li>
-<li>l = []  # 变量l 绑定一个新创建的空列表</li>
-</ul>
-<h3 id="_4">创建非空的列表的字面值</h3>
-<pre><code class="python">    l = [1 ,2 ,3, 4]  # 变量l 绑定一个新创建的且含有四个元素的列表
-    l = ['BeiJing', 'ShangHai', 'ShenZhen']
-    l = [1, 'Two', 3.14, '四']
-    l = [1, 2, [3.1, 3.2, 3.3], 4]
+<h3 id="moudle">模块 Moudle</h3>
+<pre><code>    什么是模块
+        模块是一个包含一系列数据，函数，类等组成的程序组
+        模块是一个文件，模块文件名通常以.py结尾
+
+    作用
+        让一些相关的数据，函数，类等有逻辑的组织在一起，使逻辑结构更加清晰
+        模块中的数据，函数和类等可以提供给其他模块或程序使用
+
+    模块的分类
+        1. 内置模块，在解释执行器内部定义，可以直接使用
+        2. 标准库模块，安装python时已经安装且可以直接使用
+        3. 第三方模块（通常为开源）， 需要自己安装
+        4. 用户自定义模块（可以作为其他人的第三方模块）
 </code></pre>
 
-<h3 id="list">列表的构造函数list</h3>
-<ul>
-<li>list() 生成一个空的列表，等同于[]</li>
-<li>list(iterable) 用有、可迭代对象创建一个列表</li>
-</ul>
-<pre><code>    l = list()  # l = []
-    l = list('hello')  # l = ['h', 'e', 'l', 'l', 'o']
-    l = list(range(5))  # l = [0, 1, 2, 3, 4]
-</code></pre>
-
-<h3 id="_5">列表的运算</h3>
-<pre><code>算术运算：
-    + += * *=（运算规则和字符串的运算规则）
-+ 用于拼接列表，生成新的列表
-    x = [1, 2, 3]
-    y = [4, 5, 6]
-    z = x + y
-+= 用于原列表与右侧可迭代对象追加来修改原列表
-    语法：
-        列表 += 可迭代对象
+<h3 id="import">import 语句</h3>
+<pre><code>    语法
+        import 模块名1[as 模块新名1], 模块名2[as 模块新名2]...
+    作用
+        将某模块整体导入到当前模块中
     示例
-        x = [1, 2, 3]
-        y = [4, 5, 6]
-        x += y  # x = [1, 2, 3, 4, 5, 6]
-        x += 'ABC'  # x = [1, 2, 3, 4, 5, 6, 'A', 'B', 'C']
-
-    += 是改变原来的列表对象，并不会创建新的列表
-        x = [1, 2, 3]
-        print(id(x))
-        x += [4 ,5, 6]
-        print(id(x))
-
-* 生成重复的列表
-    x = [1, 2] * 3  # x = [1, 2, 1, 2, 1 ,2]
-
-*= 生成重复的列表， 并改变对列表的绑定
-    x = [1, 2, 3]
-    x *= 2  # x = [1, 2, 3, 1, 2, 3]
+        import math  # 导入数据模块
+        import sys, time  # 导入系统模块和时间模块
+    用法
+        模块名.属性名
+        如
+            math.factorial(5)
+            math.cos(0)
 </code></pre>
 
-<h3 id="_6">列表的比较运算</h3>
-<pre><code>    运算符 &lt; &lt;= &gt; &gt;= != ==
-    比较规则，与字符串的比较规则相同
-
+<h3 id="from-import">from import 语句</h3>
+<pre><code>    语法
+        from 模块名 import *
+    作用
+        将某模块的所有属性全部导入到当前模块
     示例
-        [1, 2, 3] &lt; [1, 2, 4]  # True
-        [1, 2, 3] &lt; [3, 2, 1]  # True
+        from math import *
+        print(sin(pi / 2))
+        print(factorial(5))  # 可以直接使用math里的全部属性
 </code></pre>
 
-<h3 id="_7">列表是可迭代对象</h3>
-<pre><code class="python">l = [1, 3, 5, 7]
-    for i in l:
-        print(i)
+<h3 id="dir">dir 函数</h3>
+<pre><code>dir([对象])   返回一个字符串列表
+    作用
+        1. 如果没有参数调用，则返回当前作用域内所有变量的列表
+        2. 如果给定一个对象作为参数，则返回这个对象的所有变量的列表
+            （1）对于一个模块，返回这个模块的全部属性
+            （2）对于一个类对象，返回类对象的所有变量并递归基类对象的所有变量
+            （3）对于其他对象返回所有变量，类变量和基类变量
+
 </code></pre>
 
-<h3 id="in-not-in">列表的 in / not in 运算符</h3>
-<ul>
-<li>判断一个值是否存在于列表中，如果存在返回True,否则返回 False</li>
-<li>同字符串的 in 运算符 用于检查一个值是否存在于列表中，如果存在返回True, 否则返回False</li>
-</ul>
-<pre><code class="python">  x = [1, 'Two', 3, '四']
-  3 in x  # 返回 True
-  '3' in x  # 返回 False
-  10 in x  # False
-  10 not in x  # True
+<h3 id="_1">用户自定义模块</h3>
+<pre><code>    要求：
+        模块名以'.py'结尾
+        模块名必须是标识符的命名规则，避免名称和内建模块冲突
+    导入方式
+        import 语句
+        from import 语句
+        from import * 语句
 </code></pre>
 
-<h3 id="_8">列表的索引操作</h3>
-<pre><code class="python">  语法:
-    列表[整数表达式]
-  用法:
-    与字符串索引的用法相同(分为正向索引和反向索引)
-　　示例:
-    x = [1,3,5,7]
-    print(x[1])  # 3　　
-    print(x[-1])  # 7
+<h3 id="import_1">import 语句的搜索路径</h3>
+<ol>
+<li>索引内建模块 bulitin</li>
+<li>搜索程序的运行时路径（当前路径）</li>
+<li>sys.path提供的路径</li>
+</ol>
+<p><strong>两种方法让用户自定义模块被导入</strong></p>
+<ol>
+<li>将模块复制到sys.path提供的路径</li>
+<li>在运行时，在sys.path里添加自定义的路径</li>
+</ol>
+<h3 id="_2">模块的加载过程</h3>
+<p>​    在模块导入时，模块的所有语句都会执行，如果一个模块已经被导入，则再次导入时不会重新执行模块内的语句</p>
+<h3 id="_3">模块的重新加载</h3>
+<pre><code>    import mymod
+    import imp
+    import reload(mymod)
 </code></pre>
 
-<h3 id="_9">列表的索引赋值</h3>
-<pre><code>  列表是可变的，可以通过索引赋值改变列表中的元素
-  语法:
-    列表[整数表达式] = 表达式
-  作用:
-    改变列表中索引的绑定关系
-  示例:
-    x = [1, 2, 3, 4]
-    x[2] = 3.14  # 改变了第三个元素的值
+<h3 id="_4">模块被导入和执行的过程</h3>
+<pre><code>    1. 先搜索相关路径找模块文件(.py)
+    2. 判断是否有此模块对应的.pyc, 如果有pyc文件存在且比.pyc新则直接加载.pyc文件
+    3. 否则用模块名.py 文件生成.pyc 并加载执行
 </code></pre>
 
-<h3 id="_10">列表的切片</h3>
-<pre><code>  列表[:]
-  列表[::]
-  列表的切片取值返回一个新的列表，规则等同于字符串切片规则
-
-  示例:
-    x = [1, 2, 3, 4, 5, 6, 7, 8]
-    x[::2]  # [1, 3, 5, 7]
-    y = [1::3]  # y = [2, 5, 8]
+<h3 id="_5">模块的编译</h3>
+<pre><code>         编译                                      解释执行
+       mymod.py       ---&gt;mymod.pyc      ------&gt;   python3
 </code></pre>
 
-<h3 id="_11">列表的切片赋值</h3>
-<pre><code>  作用:
-    可以改变原列表的数据排列，可以插入和修改数据
-    可以用切片改变列表的对应元素的值
-  语法:
-    列表[切片]　= 可迭代对象
-　　说明:
-    切片赋值的赋值运算符(=) 的右侧必须是一个可迭代对象
+<h3 id="_6">模块的属性</h3>
+<pre><code>    模块的文档字符串
+        模块内的第一次没有赋值给任何变量的字符串为模块的文档字符串
+        模块内的文档字符串绑定在模块的__doc__属性上
 
-  示例:
-    L = [2, 3, 4]
-    L[0:1] = [1.1, 2.2]  # L = [1.1, 2.2, 3, 4]
-    L[2:] = [3.3, 4.4, 5.5]  # L = [1.1, 2.2, 3.3, 4.4, 5.5]
-    L[:] = [3, 4] 　# L = [3, 4]
-    L[0:0] = [1, 2]  # L = [1, 2, 3, 4]
-    L = [3, 4]
-    L[1:1] = [3.14]  # L = [3, 3.14, 4]
-    L = [3, 4]
-    L[-1:-1] = [5, 6] # L = [3, 4, 5, 6]
-    L = [2, 3, 4]
-    L[1:2] = &quot;ABC&quot;  # L = [2, 'A', 'B', 'C', 4]
-    L = [2, -1, 7]
-    L[1:2] = range(3, 7)  # L=[2, 3, 4, 5, 6, 7]
+    __doc__属性 用来绑定文档字符串
+
+    __file__属性
+        用于绑定此模块对应的文件路径
+
+    __name__属性
+        1. 用来记录模块自身的名字
+        2. 用来判断是否为主模块
+            （注：主模块是指程序最先被python3 执行的模块）
+        说明
+            当此模块为主模块运行时，__name__的值为__main__
+            当此模块不是主模块时，__name__绑定模块的名字
+
+    __all__列表
+        模块中的__all__列表必须是一个字符串列表
+        作用
+            当用from mymod import * 导入时，只导入__all__列表内属性
+
 </code></pre>
 
-<h3 id="_12">切片的注意事项</h3>
-<pre><code>对于步长不等于1的切片赋值,赋值运算符的右侧的可迭代对象提供元素的个数一定要等于切片切出的段数
-  示例:
-    L = [1, 2, 3, 4, 5, 6, 7, 8]
-    L[1::2] = &quot;ABCD&quot;  # 对的
-    L[1::2] = &quot;ABCDEF&quot;  # 错的
+<pre><code class="python"># 此列表限定当用from mymod2 import * 时只导入 f1 和 var1
+__all__ = ['f1', 'var1']
+def f1():
+    pass
+
+
+def f2():
+    pass
+
+
+def f3():
+    pass
+
+var1 = 100
+var2 = 200
 </code></pre>
 
-<p><strong>练习</strong></p>
-<pre><code>  已知有列表:
-    L = [3, 5]
-  用索引和切片操作,将原列表改变为:
-    L = [1, 2, 3, 4, 5, 6]
-  将列表反转,删除最后一个元素后打印此列表
-    ....
-    print(L)  # [6, 5, 4, 3, 2]
-
-  写程序,让用户循环输入一些整数,当输入-1时结束输入,将这些整数存于列表L中
-    1) 打印您共输入了多少个有效的数
-    2) 打印您输入的数的最大数是?
-    3) 打印您输入的最小数是多少?
-    4) 打印您输入的这些数的平均值是多少?
-
-  写一个程序，让用户输入很多个正整数，当输入小于零的数时结束输入
-　　1) 打印这些数中最大的一个数
-　　2) 打印这些数中第二大的一个数
-   3) 删除最小的一个数
-   4) 按原来顺序打印出剩余的这些数
-</code></pre>
-
-<h3 id="_13">列表推导式</h3>
-<p>list comprehension:   列表推导式是用可迭代对象创建列表的表达式</p>
-<pre><code>  作用:
-    用简易方法生成列表
-  语法:
-    [表达式 for 变量 in 可迭代对象]
-    或
-    [表达式 for 变量 in 可迭代对象 if 真值表达式]
-  示例:
-    # 生成一个数值为1~9的平方的列表
-    # [1, 4, 9, 16, .... 81]
-    # 不用推导式:
-    L = []
-    for i in range(1, 10):
-        L.append(i**2)
-    # 推导式实现
-    L = [i ** 2 for i in range(1, 10)]
-</code></pre>
-
-<pre><code>用列表推导式生成 1~100以内奇数的列表, 结果是:[1, 3, 5, 7, ...., 99]
-  答案:
-    [i for i in range(1, 100, 2)]
-
-    或
-    [i for i in range(1, 100) if i % 2 == 1]
-</code></pre>
-
-<p><strong>练习</strong></p>
-<p>输入一个开始的整数用begin绑定<br />
-  输入一个结束的整数用end绑定<br />
-  将从begin开始,到end结束(不包含end)的所有偶数存于列表中<br />
-  并打印此列表<br />
-  (可以使用列表推导式完成,也可以用循环语句来完成  </p>
-<h3 id="_14">列表推导式的嵌套</h3>
-<pre><code>语法:
-    [表达式
-      for 变量1 in 可迭代对象1 if真值表达式1
-        for 变量2 in 可迭代对象2 if 真值表达式2 ...]
-</code></pre>
-
-<pre><code>示例:
-    #将列表[10, 20, 30] 中的元素与列表[1,2,3]元素分别相加,将得到的元素放于一个列表中
-
-    L = [x + y
-          for x in [10, 20, 30]
-            for y in [1,2,3]]
-    print(L)  #[11, 12, 13, 21, 22, 23, 31,32,33]
-</code></pre>
-
-<p><strong>练习</strong></p>
-<pre><code>  1. 用字符串&quot;ABC&quot;和字符串&quot;123&quot; 生成如下列表
-   ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3', ]
-   答案:
-     [ x + y for x in &quot;ABC&quot; for y in &quot;123&quot;]
-
-  2. 已知有一个字符串:
-    s = '100,200,300,500,800'
-    将其转化为列表,列表的内部是整数
-    L = [100, 200, 300, 500, 800]
-  答案:
-    L = [int(x) for x in s.split(',')]
-</code></pre>
-
-<pre><code>  1. 有一些数存在列表中, 如:
-     L = [1, 3, 2, 1, 6, 4, 2, ...., 98, 82]
-    1) 将列表L中出现的数字存于另一个列表L2中
-      要求:
-         重复出现多次的数字只在L2列表中保留一份(去重)
-    2) 将列表中出现两次的数字存于L3列表中(在L3列表中保留一份)
-
-  2. 计算出100以内的素数,将这些素数存于列表中,最后打印出列表中的这些素数
-
-  3. 生成前40个斐波那契数(Fibonacci)
-    1 1 2 3 5 8 13 21 ......
-    要求将这数整数存于列表L中,最后打印出这些数
-    (斐波那契的前两个是1, 1, 之后的数是前两个数的和)
-</code></pre></div>
+<h3 id="_7">模块的隐藏属性</h3>
+<p>模块中以下划线'_' 开头的属性，在from xxx import * 导入时将不被导入， 通常称为这些属性为隐藏属性</p></div>
         </div>
 
         <footer class="col-md-12">

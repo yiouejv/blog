@@ -31,6 +31,9 @@ nav:
       - 13. 装饰器: python/python装饰器.md
       - 14. 模块: python/python模块.md
       - 15. 包: python/python包.md
+      - 16. 异常: python/python异常.md
+      - 17. 迭代器和生成器: python/python迭代器和生成器.md
+      - 18. 字节串和字节数组: python/字节串和字节数组.md
       - 补充知识点: python/补充知识点.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
