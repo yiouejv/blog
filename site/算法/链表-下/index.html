@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>5. 链表-下 - 杨小哥博客</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">杨小哥博客</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">leetcode</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">数组</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../leetcode/数组/6.Z字形变换/">6.Z字形变换</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/11. 盛最多水的容器/">11. 盛最多水的容器</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/26.删除排序数组中的重复项/">26.删除排序数组中的重复项</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/27.移除元素/">27.移除元素</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/35. 搜索插入位置/">35. 搜索插入位置</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">链表</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../leetcode/链表/19. 删除链表的倒数第N个节点/">19. 删除链表的倒数第N个节点</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/21. 合并两个有序链表/">21. 合并两个有序链表</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/23. 合并K个排序链表(可以优化)/">23. 合并K个排序链表(可以优化)</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/24. 两两交换链表中的节点/">24. 两两交换链表中的节点</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/206. 反转链表/">206. 反转链表</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">数据结构和算法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
+</li>
+            
+<li >
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+            
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+            
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+            
+<li class="active">
+    <a href="./">5. 链表-下</a>
+</li>
+            
+<li >
+    <a href="../栈/">6. 栈</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">点开</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../基本排序算法/">基本排序算法</a>
+</li>
+            
+<li >
+    <a href="../分治法和归并排序/">分治法和归并排序</a>
+</li>
+            
+<li >
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lua/表的构造/">lua 表的构造</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/select函数/">lua select 函数</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/opp/">lua 面向对象</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并发编程和并行编程/">1. 并发编程和并行编程</a>
+</li>
+                                    
+<li >
+    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">2. skynet 基于 Actor 模式的开源框架</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">python 语法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+</li>
+            
+<li >
+    <a href="../../python/python基础语法/">2. python基础语法</a>
+</li>
+            
+<li >
+    <a href="../../python/python字符串/">3. 字符串</a>
+</li>
+            
+<li >
+    <a href="../../python/python循环/">4. 循环</a>
+</li>
+            
+<li >
+    <a href="../../python/python列表/">5. 列表</a>
+</li>
+            
+<li >
+    <a href="../../python/python元组/">6. 元组</a>
+</li>
+            
+<li >
+    <a href="../../python/python字典/">7. 字典</a>
+</li>
+            
+<li >
+    <a href="../../python/python集合/">8. 集合</a>
+</li>
+            
+<li >
+    <a href="../../python/python函数/">9. 函数</a>
+</li>
+            
+<li >
+    <a href="../../python/python作用域/">10. 作用域</a>
+</li>
+            
+<li >
+    <a href="../../python/python高阶函数/">11. 高阶函数</a>
+</li>
+            
+<li >
+    <a href="../../python/python递归/">12. 递归</a>
+</li>
+            
+<li >
+    <a href="../../python/python装饰器/">13. 装饰器</a>
+</li>
+            
+<li >
+    <a href="../../python/python模块/">14. 模块</a>
+</li>
+            
+<li >
+    <a href="../../python/python包/">15. 包</a>
+</li>
+            
+<li >
+    <a href="../../python/python异常/">16. 异常</a>
+</li>
+            
+<li >
+    <a href="../../python/python迭代器和生成器/">17. 迭代器和生成器</a>
+</li>
+            
+<li >
+    <a href="../../python/字节串和字节数组/">18. 字节串和字节数组</a>
+</li>
+            
+<li >
+    <a href="../../python/文件读写/">19. 文件读写</a>
+</li>
+            
+<li >
+    <a href="../../python/字符编码/">20. 字符编码</a>
+</li>
+            
+<li >
+    <a href="../../python/补充知识点/">补充知识点</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">django</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
+</li>
+            
+<li >
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
+</li>
+            
+<li >
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+</li>
+            
+<li >
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
+</li>
+            
+<li >
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
+</li>
+            
+<li >
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
+</li>
+            
+<li >
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
+</li>
+            
+<li >
+    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+</li>
+            
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tools/linux操作系统/">linux操作系统</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">理财 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并.md">基金理财</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../链表-上/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../栈/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">链表（下）：如何轻松写出正确的链表代码？</a></li>
+            <li><a href="#_2">重点留意边界条件处理</a></li>
+            <li><a href="#_3">多写多练，没有捷径</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="_1">链表（下）：如何轻松写出正确的链表代码？</h1>
+<h2 id="_2">重点留意边界条件处理</h2>
+<p>我经常用来检查链表代码是否正确的边界条件有这样几个：</p>
+<ul>
+<li>如果链表为空时，代码是否能正常工作？ </li>
+<li>如果链表只包含一个结点时，代码是否能正常工作？</li>
+<li>如果链表只包含两个结点时，代码是否能正常工作？</li>
+<li>代码逻辑在处理头结点和尾结点的时候，是否能正常工作？</li>
+</ul>
+<p>当你写完链表代码之后，除了看下你写的代码在正常的情况下能否工作，还要看下在上面我列举的几个边界条件下，代码仍然能否正确工作。如果这些边界条件下都没有问题，那基本上可以认为没有问题了。</p>
+<h2 id="_3">多写多练，没有捷径</h2>
+<p>5 个常见的链表操作。你只要把这几个操作都能写熟练，不熟就多写几遍，我保证你之后再也不会害怕写链表代码。</p>
+<ul>
+<li>单链表反转 </li>
+<li>链表中环的检测</li>
+<li>两个有序的链表合并</li>
+<li>删除链表倒数第 n 个结点</li>
+<li>求链表的中间结点</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

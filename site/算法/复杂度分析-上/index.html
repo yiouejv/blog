@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>1. 复杂度分析-上 - 杨小哥博客</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">杨小哥博客</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">leetcode</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">数组</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../leetcode/数组/6.Z字形变换/">6.Z字形变换</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/11. 盛最多水的容器/">11. 盛最多水的容器</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/26.删除排序数组中的重复项/">26.删除排序数组中的重复项</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/27.移除元素/">27.移除元素</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/数组/35. 搜索插入位置/">35. 搜索插入位置</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">链表</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../leetcode/链表/19. 删除链表的倒数第N个节点/">19. 删除链表的倒数第N个节点</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/21. 合并两个有序链表/">21. 合并两个有序链表</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/23. 合并K个排序链表(可以优化)/">23. 合并K个排序链表(可以优化)</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/24. 两两交换链表中的节点/">24. 两两交换链表中的节点</a>
+</li>
+            
+<li >
+    <a href="../../leetcode/链表/206. 反转链表/">206. 反转链表</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">数据结构和算法</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">1. 复杂度分析-上</a>
+</li>
+            
+<li >
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+            
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+            
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+            
+<li >
+    <a href="../链表-下/">5. 链表-下</a>
+</li>
+            
+<li >
+    <a href="../栈/">6. 栈</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">点开</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../基本排序算法/">基本排序算法</a>
+</li>
+            
+<li >
+    <a href="../分治法和归并排序/">分治法和归并排序</a>
+</li>
+            
+<li >
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../lua/表的构造/">lua 表的构造</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/select函数/">lua select 函数</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/opp/">lua 面向对象</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">skynet <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并发编程和并行编程/">1. 并发编程和并行编程</a>
+</li>
+                                    
+<li >
+    <a href="../../skynet/skynet 基于 Actor 模式的开源框架/">2. skynet 基于 Actor 模式的开源框架</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">python 语法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../python/python相关介绍/">1. python相关介绍</a>
+</li>
+            
+<li >
+    <a href="../../python/python基础语法/">2. python基础语法</a>
+</li>
+            
+<li >
+    <a href="../../python/python字符串/">3. 字符串</a>
+</li>
+            
+<li >
+    <a href="../../python/python循环/">4. 循环</a>
+</li>
+            
+<li >
+    <a href="../../python/python列表/">5. 列表</a>
+</li>
+            
+<li >
+    <a href="../../python/python元组/">6. 元组</a>
+</li>
+            
+<li >
+    <a href="../../python/python字典/">7. 字典</a>
+</li>
+            
+<li >
+    <a href="../../python/python集合/">8. 集合</a>
+</li>
+            
+<li >
+    <a href="../../python/python函数/">9. 函数</a>
+</li>
+            
+<li >
+    <a href="../../python/python作用域/">10. 作用域</a>
+</li>
+            
+<li >
+    <a href="../../python/python高阶函数/">11. 高阶函数</a>
+</li>
+            
+<li >
+    <a href="../../python/python递归/">12. 递归</a>
+</li>
+            
+<li >
+    <a href="../../python/python装饰器/">13. 装饰器</a>
+</li>
+            
+<li >
+    <a href="../../python/python模块/">14. 模块</a>
+</li>
+            
+<li >
+    <a href="../../python/python包/">15. 包</a>
+</li>
+            
+<li >
+    <a href="../../python/python异常/">16. 异常</a>
+</li>
+            
+<li >
+    <a href="../../python/python迭代器和生成器/">17. 迭代器和生成器</a>
+</li>
+            
+<li >
+    <a href="../../python/字节串和字节数组/">18. 字节串和字节数组</a>
+</li>
+            
+<li >
+    <a href="../../python/文件读写/">19. 文件读写</a>
+</li>
+            
+<li >
+    <a href="../../python/字符编码/">20. 字符编码</a>
+</li>
+            
+<li >
+    <a href="../../python/补充知识点/">补充知识点</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">django</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
+</li>
+            
+<li >
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
+</li>
+            
+<li >
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+</li>
+            
+<li >
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
+</li>
+            
+<li >
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
+</li>
+            
+<li >
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
+</li>
+            
+<li >
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
+</li>
+            
+<li >
+    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+</li>
+            
+<li >
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tools/linux操作系统/">linux操作系统</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">理财 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../skynet/并.md">基金理财</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../leetcode/链表/206. 反转链表/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../复杂度分析-下/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">时间复杂度分析</a></li>
+            <li><a href="#o">大 O 复杂度表示法</a></li>
+            <li><a href="#_2">时间复杂度分析</a></li>
+            <li><a href="#_6">空间复杂度分析</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="_1">时间复杂度分析</h1>
+<p><strong>复杂度分析是整个算法学习的精髓，只要掌握了它，数据结构和算法的内容基本上就掌握了一半</strong></p>
+<h2 id="o">大 O 复杂度表示法</h2>
+<p>算法的执行效率，粗略地讲，就是算法代码执行的时间。</p>
+<p>但是，如何在不运行代码的情况下，用“肉眼”得到一段代码的执行时间呢？这里有段非常简单的代码，求 1,2,3…n </p>
+<p>的累加和。现在，我就带你一块来估算一下这段代码的执行时间。 </p>
+<pre><code class="c"> int cal(int n) {
+   int sum = 0;
+   int i = 1;
+   for (; i &lt;= n; ++i) {
+     sum = sum + i;
+   }
+   return sum;
+ }
+</code></pre>
+
+<p>从 CPU 的角度来看，这段代码的每一行都执行着类似的操作：<strong>读数据-运算-写数据</strong>。尽管每行代码对应的 CPU 执</p>
+<p>行的个数、执行的时间都不一样，但是，我们这里只是粗略估计，所以可以假设每行代码执行的时间都一样，为 </p>
+<p>unit_time。在这个假设的基础之上，这段代码的总执行时间是多少呢？ </p>
+<p>第 2、3 行代码分别需要 1 个 unit_time 的执行时间，第 4、5 行都运行了 n 遍，所以需要 2n unit_time 的执行</p>
+<p>时间，所以这段代码总的执行时间就是 (2n+2)*unit_time。可以看出来，<strong>所有代码的执行时间 T(n) 与每行代码的</strong></p>
+<p><strong>执行次数成正比</strong>。 </p>
+<p>按照这个分析思路，我们再来看这段代码。</p>
+<pre><code class="c">int cal(int n) {
+   int sum = 0;
+   int i = 1;
+   int j = 1;
+   for (; i &lt;= n; ++i) {
+     j = 1;
+     for (; j &lt;= n; ++j) {
+       sum = sum +  i * j;
+     }
+   }
+ }
+</code></pre>
+
+<p>我们依旧假设每个语句的执行时间是 unit_time。那这段代码的总执行时间 T(n) 是多少呢？</p>
+<p>第 2、3、4 行代码，每行都需要 1 个 unit_time 的执行时间，第 5、6 行代码循环执行了 n 遍，需要 2n * </p>
+<p>unit_time 的执行时间，第 7、8 行代码循环执行了 n2遍，所以需要 2n2* unit_time 的执行时间。所以，整段代</p>
+<p>码总的执行时间 T(n) = (2n2+2n+3)*unit_time。</p>
+<p>尽管我们不知道 unit_time 的具体值，但是通过这两段代码执行时间的推导过程，我们可以得到一个非常重要的规</p>
+<p>律，那就是，<strong>所有代码的执行时间 T(n) 与每行代码的执行次数 n 成正比</strong>。</p>
+<p>我们可以把这个规律总结成一个公式。注意，大 O 就要登场了！</p>
+<p><img alt="大O表示法" src="../../images/O.png" /></p>
+<p>我来具体解释一下这个公式。其中，T(n) 我们已经讲过了，它表示代码执行的时间；n 表示数据规模的大小；f(n) </p>
+<p>表示每行代码执行的次数总和。因为这是一个公式，所以用 f(n) 来表示。公式中的 O，表示代码的执行时间 T(n) </p>
+<p>与 f(n) 表达式成正比。</p>
+<p>所以，第一个例子中的 T(n) = O(2n+2)，第二个例子中的 T(n) = O(2n2+2n+3)。这就是<strong>大 O 时间复杂度表示法</strong>。</p>
+<p>大 O 时间复杂度实际上并不具体表示代码真正的执行时间，而是表示<strong>代码执行时间随数据规模增长的变化趋势</strong>，</p>
+<p>所以，也叫作<strong>渐进时间复杂度（asymptotic time complexity）</strong>，简称<strong>时间复杂度</strong>。</p>
+<p>当 n 很大时，你可以把它想象成 10000、100000。而公式中的低阶、常量、系数三部分并不左右增长趋势，所以</p>
+<p>都可以忽略。我们只需要记录一个最大量级就可以了，如果用大 O 表示法表示刚讲的那两段代码的时间复杂度，</p>
+<p>就可以记为：T(n) = O(n)； T(n) = O(n2)。</p>
+<h2 id="_2">时间复杂度分析</h2>
+<p>前面介绍了大 O 时间复杂度的由来和表示方法。现在我们来看下，如何分析一段代码的时间复杂度？我这儿有三</p>
+<p>个比较实用的方法可以分享给你。</p>
+<ol>
+<li>
+<h3 id="_3">只关注循环执行次数最多的一段代码</h3>
+</li>
+</ol>
+<p>我刚才说了，大 O 这种复杂度表示方法只是表示一种变化趋势。我们通常会忽略掉公式中的常量、低阶、系</p>
+<p>数，只需要记录一个最大阶的量级就可以了。所以，我们在分析一个算法、一段代码的时间复杂度的时候，也</p>
+<p>只关注循环执行次数最多的那一段代码就可以了。这段核心代码执行次数的 n 的量级，就是整段要分析代码</p>
+<p>的时间复杂度。</p>
+<p>为了便于你理解，我还拿前面的例子来说明。</p>
+<p><code>c
+   int cal(int n) {
+      int sum = 0;
+      int i = 1;
+      for (; i &lt;= n; ++i) {
+        sum = sum + i;
+      }
+      return sum;
+    }</code></p>
+<p>其中第 2、3 行代码都是常量级的执行时间，与 n 的大小无关，所以对于复杂度并没有影响。循环执行次数最</p>
+<p>多的是第 4、5 行代码，所以这块代码要重点分析。前面我们也讲过，这两行代码被执行了 n 次，所以总的时</p>
+<p>间复杂度就是 O(n)。</p>
+<ol>
+<li>
+<h3 id="_4">加法法则：总复杂度等于量级最大的那段代码的复杂度</h3>
+</li>
+</ol>
+<p>我这里还有一段代码。你可以先试着分析一下，然后再往下看跟我的分析思路是否一样。</p>
+<p>```c
+   int cal(int n) {
+      int sum_1 = 0;
+      int p = 1;
+      for (; p &lt; 100; ++p) {
+        sum_1 = sum_1 + p;
+      }</p>
+<pre><code>  int sum_2 = 0;
+  int q = 1;
+  for (; q &lt; n; ++q) {
+    sum_2 = sum_2 + q;
+  }
+
+  int sum_3 = 0;
+  int i = 1;
+  int j = 1;
+  for (; i &lt;= n; ++i) {
+    j = 1; 
+    for (; j &lt;= n; ++j) {
+      sum_3 = sum_3 +  i * j;
+    }
+  }
+
+  return sum_1 + sum_2 + sum_3;
+}
+</code></pre>
+<p>```</p>
+<p>这个代码分为三部分，分别是求 sum_1、sum_2、sum_3。我们可以分别分析每一部分的时间复杂度，然后</p>
+<p>把它们放到一块儿，再取一个量级最大的作为整段代码的复杂度。</p>
+<p>第一段的时间复杂度是多少呢？这段代码循环执行了 100 次，所以是一个常量的执行时间，跟 n 的规模无</p>
+<p>关。</p>
+<p>这里我要再强调一下，即便这段代码循环 10000 次、100000 次，只要是一个已知的数，跟 n 无关，照样也</p>
+<p>是常量级的执行时间。当 n 无限大的时候，就可以忽略。尽管对代码的执行时间会有很大影响，但是回到时</p>
+<p>间复杂度的概念来说，它表示的是一个算法执行效率与数据规模增长的变化趋势，所以不管常量的执行时间多</p>
+<p>大，我们都可以忽略掉。因为它本身对增长趋势并没有影响。</p>
+<p>那第二段代码和第三段代码的时间复杂度是多少呢？答案是 O(n) 和 O(n2)，你应该能容易就分析出来，我</p>
+<p>就不啰嗦了。</p>
+<p>​    </p>
+<p>综合这三段代码的时间复杂度，我们取其中最大的量级。所以，整段代码的时间复杂度就为 O(n2)。也就是</p>
+<p>说：<strong>总的时间复杂度就等于量级最大的那段代码的时间复杂度</strong>。那我们将这个规律抽象成公式就是：</p>
+<p>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；那么 T(n)=T1(n)+T2(n)=max(O(f(n)), O(g(n))) =O(max(f(n), g(n))).</p>
+<ol>
+<li>
+<h3 id="_5">乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</h3>
+</li>
+</ol>
+<p>我刚讲了一个复杂度分析中的加法法则，这儿还有一个<strong>乘法法则</strong>。类比一下，你应该能“猜到”公式是什么样子</p>
+<p>的吧？</p>
+<p>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；</p>
+<p>那么 T(n)=T1(n)<em>T2(n)=O(f(n))</em>O(g(n))=O(f(n)*g(n)).</p>
+<p>也就是说，假设 T1(n) = O(n)，T2(n) = O(n2)，则 T1(n) * T2(n) = O(n3)。落实到具体的代码上，我们可以把</p>
+<p>乘法法则看成是<strong>嵌套循环</strong>，我举个例子给你解释一下。</p>
+<p>```c
+   int cal(int n) {
+      int ret = 0; 
+      int i = 1;
+      for (; i &lt; n; ++i) {
+        ret = ret + f(i);
+      } 
+    } </p>
+<pre><code>int f(int n) {
+ int sum = 0;
+ int i = 1;
+ for (; i &lt; n; ++i) {
+   sum = sum + i;
+ } 
+ return sum;
+}
+</code></pre>
+<p>```</p>
+<p>我们单独看 cal() 函数。假设 f() 只是一个普通的操作，那第 4～6 行的时间复杂度就是，T1(n) = O(n)。但 f() </p>
+<p>函数本身不是一个简单的操作，它的时间复杂度是 T2(n) = O(n)，所以，整个 cal() 函数的时间复杂度就是，</p>
+<p>T(n) = T1(n) * T2(n) = O(n*n) = O(n2)。</p>
+<p>我刚刚讲了三种复杂度的分析技巧。不过，你并不用刻意去记忆。实际上，复杂度分析这个东西关键在于“熟</p>
+<p>练”。你只要多看案例，多分析，就能做到“无招胜有招”。</p>
+<p>## 几种常见时间复杂度实例分析</p>
+<p><img alt="几种常见时间复杂度实例分析" src="../../images/oo.jpg" /></p>
+<p>### O(1)</p>
+<p>首先你必须明确一个概念，O(1) 只是常量级时间复杂度的一种表示方法，并不是指只执行了一行代码。比如</p>
+<p>这段代码，即便有 3 行，它的时间复杂度也是 O(1），而不是 O(3)。</p>
+<p><code>c
+    int i = 8;
+    int j = 6;
+    int sum = i + j;</code></p>
+<p>我稍微总结一下，只要代码的执行时间不随 n 的增大而增长，这样代码的时间复杂度我们都记作 O(1)。或者</p>
+<p>说，<strong>一般情况下，只要算法中不存在循环语句、递归语句，即使有成千上万行的代码，其时间复杂度也是</strong></p>
+<p><strong>Ο(1)。</strong></p>
+<p>### O(logn)、O(nlogn)</p>
+<p>对数阶时间复杂度非常常见，同时也是最难分析的一种时间复杂度。我通过一个例子来说明一下。</p>
+<p><code>c
+    i=1;
+    while (i &lt;= n)  {
+      i = i * 2;
+    }</code></p>
+<p>根据我们前面讲的复杂度分析方法，第三行代码是循环执行次数最多的。所以，我们只要能计算出这行代码被</p>
+<p>执行了多少次，就能知道整段代码的时间复杂度。</p>
+<p>从代码中可以看出，变量 i 的值从 1 开始取，每循环一次就乘以 2。当大于 n 时，循环结束。还记得我们高中</p>
+<p>学过的等比数列吗？实际上，变量 i 的取值就是一个等比数列。如果我把它一个一个列出来，就应该是这个样</p>
+<p>子的：</p>
+<p><img alt="" src="../../images/222.jpg" /></p>
+<p>所以，我们只要知道 x 值是多少，就知道这行代码执行的次数了。通过 2x=n 求解 x 这个问题我们想高中应该</p>
+<p>就学过了，我就不多说了。x=log2n，所以，这段代码的时间复杂度就是 O(log2n)。</p>
+<p>现在，我把代码稍微改下，你再看看，这段代码的时间复杂度是多少？</p>
+<p><code>c
+    i=1;
+    while (i &lt;= n)  {
+      i = i * 3;
+    }</code></p>
+<p>根据我刚刚讲的思路，很简单就能看出来，这段代码的时间复杂度为 O(log3n)。</p>
+<p>实际上，不管是以 2 为底、以 3 为底，还是以 10 为底，我们可以把所有对数阶的时间复杂度都记为 </p>
+<p>O(logn)。为什么呢？</p>
+<p>我们知道，对数之间是可以互相转换的，log3n 就等于 log32 * log2n，所以 O(log3n) = O(C * log2n)，其中 </p>
+<p>C=log32 是一个常量。基于我们前面的一个理论：<strong>在采用大 O 标记复杂度的时候，可以忽略系数，即O(Cf(n))</strong> <strong>= O(f(n))</strong>。所以，O(log2n) 就等于 O(log3n)。因此，在对数阶时间复杂度的表示方法里，我们忽略</p>
+<p>对数的“底”，统一表示为 O(logn)。</p>
+<p>如果你理解了我前面讲的 O(logn)，那 O(nlogn) 就很容易理解了。还记得我们刚讲的乘法法则吗？如果一段</p>
+<p>代码的时间复杂度是 O(logn)，我们循环执行 n 遍，时间复杂度就是 O(nlogn) 了。而且，O(nlogn) 也是一种</p>
+<p>非常常见的算法时间复杂度。比如，归并排序、快速排序的时间复杂度都是 O(nlogn)。</p>
+<h2 id="_6">空间复杂度分析</h2>
+<p>前面，咱们花了很长时间讲大 O 表示法和时间复杂度分析，理解了前面讲的内容，空间复杂度分析方法学起来就</p>
+<p>非常简单了。</p>
+<p>前面我讲过，时间复杂度的全称是<strong>渐进时间复杂度，表示算法的执行时间与数据规模之间的增长关系</strong>。类比一下，</p>
+<p>空间复杂度全称就是<strong>渐进空间复杂度（asymptotic space complexity）</strong>，<strong>表示算法的存储空间与数据规模之间的增长关系</strong>。</p>
+<p>我还是拿具体的例子来给你说明。（这段代码有点“傻”，一般没人会这么写，我这么写只是为了方便给你解释。）</p>
+<pre><code class="c">void print(int n) {
+  int i = 0;
+  int[] a = new int[n];
+  for (i; i &lt;n; ++i) {
+    a[i] = i * i;
+  }
+
+  for (i = n-1; i &gt;= 0; --i) {
+    print out a[i]
+  }
+}
+</code></pre>
+
+<p>跟时间复杂度分析一样，我们可以看到，第 2 行代码中，我们申请了一个空间存储变量 i，但是它是常量阶的，跟</p>
+<p>数据规模 n 没有关系，所以我们可以忽略。第 3 行申请了一个大小为 n 的 int 类型数组，除此之外，剩下的代码</p>
+<p>都没有占用更多的空间，所以整段代码的空间复杂度就是 O(n)。</p>
+<p>我们常见的空间复杂度就是 O(1)、O(n)、O(n2)，像 O(logn)、O(nlogn) 这样的对数阶复杂度平时都用不到。而</p>
+<p>且，空间复杂度分析比时间复杂度分析要简单很多。所以，对于空间复杂度，掌握刚我说的这些内容已经足够了。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
