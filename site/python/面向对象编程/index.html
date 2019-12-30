@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>7. 字典 - 杨小哥博客</title>
+        <title>基本语法 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -231,8 +231,8 @@
     <a href="../python元组/">6. 元组</a>
 </li>
             
-<li class="active">
-    <a href="./">7. 字典</a>
+<li >
+    <a href="../python字典/">7. 字典</a>
 </li>
             
 <li >
@@ -291,8 +291,8 @@
     <a href="#">21. 面向对象编程</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../面向对象编程/">基本语法</a>
+<li class="active">
+    <a href="./">基本语法</a>
 </li>
             
 <li >
@@ -385,12 +385,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../python元组/">
+                                <a rel="next" href="../字符编码/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../python集合/">
+                                <a rel="prev" href="../继承派生/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -402,227 +402,405 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#dict">字典 dict</a></li>
-        <li class="main "><a href="#_1">字典的字面值表示方法</a></li>
-        <li class="main "><a href="#_2">创建空字典</a></li>
-        <li class="main "><a href="#_3">创建非空字典</a></li>
-        <li class="main "><a href="#dict_1">字典的构造函数 dict</a></li>
-        <li class="main "><a href="#_4">字典的操作</a></li>
-        <li class="main "><a href="#_5">添加/修改字典的元素</a></li>
-        <li class="main "><a href="#del">删除字典元素 del语句</a></li>
-        <li class="main "><a href="#in-not-in">字典的 in / not in 运算符</a></li>
-        <li class="main "><a href="#_6">字典的迭代访问</a></li>
-        <li class="main "><a href="#_7">可以用于字典的函数</a></li>
-        <li class="main "><a href="#_8">字典的方法</a></li>
-        <li class="main "><a href="#_9">字典推导式</a></li>
+        <li class="main active"><a href="#_1">面向对象编程</a></li>
+        <li class="main "><a href="#_2">类的创建语句</a></li>
+        <li class="main "><a href="#_3">构造函数</a></li>
+        <li class="main "><a href="#method">实例方法(method)</a></li>
+        <li class="main "><a href="#attribute">实例属性 attribute</a></li>
+            <li><a href="#_4">练习</a></li>
+        <li class="main "><a href="#_5">删除属性</a></li>
+        <li class="main "><a href="#_6">初始化方法</a></li>
+            <li><a href="#_7">练习</a></li>
+        <li class="main "><a href="#_8">析构方法</a></li>
+        <li class="main "><a href="#_9">预置实例属性</a></li>
+        <li class="main "><a href="#_10">用于对象的函数</a></li>
+        <li class="main "><a href="#_11">面向对象的综合示例</a></li>
+        <li class="main "><a href="#_12">类变量</a></li>
+        <li class="main "><a href="#classmethod">类方法@classmethod</a></li>
+        <li class="main "><a href="#staticmethod">静态方法 @staticmethod</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="dict">字典 dict</h3>
-<pre><code>声明时键为不可变的符号
-       d = {
-            True : '真',
-            False : '假',
-            None : '空',
-            'name' : '姓名',
-            tuple('ABc') : '元组',
-            100 ： '一百'
-       }
-</code></pre>
-
-<p><strong>什么是字典:</strong></p>
+<h3 id="_1">面向对象编程</h3>
+<p>Object Oriented Programming</p>
+<p><strong>什么是对象</strong></p>
+<p>​    对象是指现实生活中的物体或实体</p>
+<p><strong>什么是面向对象</strong></p>
+<p>​    把一切看成对象，用各种对象之间的关系来描述事物</p>
+<p><strong>对象的特征</strong></p>
 <ol>
-<li>字典是一种可变的容器，可以存储任意类型的数据</li>
-<li>字典中的每个数据都是用'键'(key)进行索引的，而不像序列可以用索引下标进行索引</li>
-<li>字典中的数据没有先后顺序关系,字典的存储是无序的</li>
-<li>字典中的数据以键-值对(key-value)对形式进行映射存储</li>
-<li>字典的键不能重复,且只能用不可变类型作为字典的键</li>
+<li>对象有很多属性（名词或形容词）
+        年龄，姓名，性别...</li>
+<li>对象有很多行为（动作，动词）
+    学习，吃饭，睡觉，踢球，工作...</li>
 </ol>
-<h3 id="_1">字典的字面值表示方法</h3>
-<p>以{} 括起来,以冒号(:) 分隔键-值对,各键值对用逗号分隔开</p>
-<h3 id="_2">创建空字典</h3>
-<p>d = {}  # {} 表达式用来创建一个空的字典</p>
-<h3 id="_3">创建非空字典</h3>
-<pre><code>    d = {'name': 'weimingze', 'age': 35}
-    d = {'a': 100}
-    d = {'a': tuple(&quot;ABC&quot;)}
-    d = {'abc': list(&quot;ABC&quot;)}
-    d = {'a': {'b':100, 'c':200}}
-    d = {True:'真值', False: '假值', None:'空', 100:'一百'}
-    d = {(1970, 1, 1): '计算机元年'} 
-</code></pre>
-
-<h3 id="dict_1">字典的构造函数 dict</h3>
-<pre><code>  dict()  创建一个空的字典,等同于{}
-  dict(iterable)  用可迭代对象创建一个新的字典
-  dict(**kwargs)  用关键字传参形式创建一个新的字典  
-</code></pre>
-
-<pre><code class="python"># 示例:
-  d = dict()
-  d = dict([('name', 'tarena'), ('age', 15)])
-  d = dict((['name', 'weimingze'], &quot;AB&quot;))
-  d = dict(name='Tarena', age=15)
-</code></pre>
-
-<h3 id="_4">字典的操作</h3>
-<pre><code>  字典的键索引
-    用[] 运算符可以获取字典内'键'对应的'值'
-  语法:
-    v = 字典[键]
-  示例:
-    d = {'name': 'tarena', 'age': 15}
-    print(d['name'], '今年', d['age'], '岁')
-</code></pre>
-
-<h3 id="_5">添加/修改字典的元素</h3>
-<pre><code>  语法:
-    字典[键] = 表达式
-  示例:
-    d = {}
-    d['name'] = 'tarena'  #创建新的键'name'同时关联值
-    d['age'] = 15  # 创建键并绑定15
-    d['age'] = 16  # 修改原来的键'age',重新绑定为16
-  说明:
-    键不存在,创建键,并绑定值
-    键存在,修改键的绑定关系
-</code></pre>
-
-<h3 id="del">删除字典元素 del语句</h3>
-<pre><code>  del 字典[键]
-  示例:
-    d = {1:'一', 'hello': 'world', False:'假值'}
-    del d['hello']
-
-</code></pre>
-
-<h3 id="in-not-in">字典的 in / not in 运算符</h3>
+<p><strong>什么是类</strong></p>
 <ul>
-<li>in用来判断一个键是否存在于字典中,如果存在返回 True,否则返回False</li>
-<li>not in 的返回结果与in 相反</li>
+<li>拥有相同属性个行为的对象分为一组，即为一个类</li>
+<li>类是用来描述对象的工具，用类可以创建此类的对象（实例）</li>
 </ul>
-<pre><code class="python"># 示例:
-  d = {'name': '小张', 'age': 20}
-  'name' in d  # True
-  'age' not in d  # False
-  '小张' in d   # False  (只判断键,不判断值)
-  20 not in d  # True
+<h3 id="_2">类的创建语句</h3>
+<p>class 语句</p>
+<pre><code>    语法
+        class 类名（继承列表）
+            '''类文档字符串'''
+            实例方法定义
+            类变量定义
+            类方法定义(@classmethod)
+            静态方法定义(@staticmethod)
+
+    作用
+        创建一个类
+        类用于描述对象的行为和属性
+        类用于创建此类的一个或多个对象（实例）
+    说明
+        类名必须为标识符（与变量命名规则相同，建议首字母大写）
+        类名实质上就是变量，它绑定一个类
 </code></pre>
 
-<p><strong>练习</strong></p>
-<pre><code>1.写程序,实现以下要求:
-    1) 将如下数据形成一个字典 seasons
-      键             值
-      1          '春季有1,2,3月'
-      2          '夏季有4,5,6月'
-      3          '秋季有7,8,9月'
-      4          '冬季有10,11,12月'
-    2)  让用户输入一个整数代表这个季度,打印这个季度有信息
-      如果用户输入的信息不在字典中,则打印&quot;信息不存在&quot;
+<pre><code class="python">class Dog():
+    '''创建一个Dog类，此类用于描述一种小动物的行为和属性'''
+    pass
+
+dog1 = Dog()  # 创建Dog类的一个实例
+print(id(dog1))
+
+dog2 = Dog()  # 创建Dog类的一个实例
+print(id(dog2))
 </code></pre>
 
-<h3 id="_6">字典的迭代访问</h3>
-<p>字典是可迭代对象,字典只能对'键'进行访问</p>
-<pre><code class="python"># 示例:
-    d= {'aaa': 111, 'bbb': 222, 'ccc': 333}
-    for k in d:
-        print(k)
+<h3 id="_3">构造函数</h3>
+<pre><code>    构造函数调用表达式
+        类名([创建传参列表])
+
+    作用
+        创建这个类的对象，并返回此实例对象的引用关系
+
+    说明
+        实例有自己的作用域和名字空间，可以为该实例添加实例变量（也叫属性）
+        实例可以调用类方法和实例方法
+        实例可以访问类变量和实例变量
 </code></pre>
 
-<h3 id="_7">可以用于字典的函数</h3>
-<ul>
-<li>len(x)  返回字典的键值对个数</li>
-<li>max(x)  返回字典键的最大值</li>
-<li>min(x)  返回字典键的最小值</li>
-<li>sum(x)  返回字典所有键的和</li>
-<li>any(x)  真值测试,只对键进行测试</li>
-<li>all(x)  真值测试,全部键为真值.结果才为True</li>
-</ul>
-<pre><code class="python"># 示例:
-  d = {0: '零', 5:'伍', 8:'捌', 3:'叁'}
-  len(d)  # 4
-  max(d)  # 8
-  min(d)  # 0
-  sum(d)  # 16
-  any(d)  # True
-  all(d)  # False
+<h3 id="method">实例方法(method)</h3>
+<pre><code>    语法
+        class 类名(继承列表):
+            def 实例方法名(self, 形参名1, 形参名2, ...):
+                '''方法文档字符串'''
+                语句块
+
+    作用
+        用于描述一个对象的行为，让此类型的全部对象都拥有相同的行为
+
+    说明
+        实例方法的实质是函数，是定义在类内的函数
+        实例方法至少有一个形参，第一个形参用来绑定调用这个方法的实例，一般命名为'self'
 </code></pre>
 
-<h3 id="_8">字典的方法</h3>
-<pre><code>  方法名           说明
-  D.clear()     清空字典
-  D.pop(key)    移除键,同时返回此键对应的值
-  D.copy()      返回字典D的副本(浅拷贝)
-  D.update(D2)  将字典D2合并到D中,如果键相同,则此键的值取D2的值为为新值
-  D.get(key, default=None)  返回键key所对应的值,如果没有此键,则返回Default的值
-
-  D.keys()      返回可迭代的dict_keys集合对象
-  D.values()    返回可迭代的dict_value集合对象
-  D.items()     返回可迭代的dict_item对象
-
+<p><strong>实例方法的调用语句</strong></p>
+<pre><code>    实例.实例方法名(调用传参)
+    或
+    类名.实例方法名(实例, 调用传参)
 </code></pre>
 
-<pre><code class="python"># 示例:
-  d = {1: 'One', 2: &quot;Two&quot;}
-  d2 = {2: '二', 3: '三'}
-  d3 = d.copy()  # 复制
-  d3.pop(1)  # d3 = {2: &quot;Two&quot;}
-  d.update(d2)  # d = {1: 'One', 2: '二', 3: '三'}
+<pre><code class="python"># 此示例示意示例方法的定义和调用
+class Dog:
+    def eat(self, food):
+        '''此方法用来描述小狗吃东西的行为'''
+        print('小狗正在吃', food)
+    def sleep(self, hour):
+        print('小狗睡了%d小时' % hour)
+    def play(self, obj):
+        print('小狗正玩', obj)
 
-  d = {1: 'One', 2: '二', 3: '三'}
-  for k in d.keys():
-      print(k)   # 1 2 3
-  for v in d.values():
-      print(v)  # 'One' '二' '三'
-  for t in d.items():
-      print(t)  # (1, 'One') (2, '二') (3, '三')
+dog = Dog()
+dog.eat('骨头')
+dog.sleep(1)
+dog.play('飞盘')
 </code></pre>
 
-<p><strong>练习</strong></p>
-<pre><code>输入任意一段字符串,打印出这个字符串中出现过的字符及出现过的次数:
-    如:
-      输入: ABCDABCABA
-    打印如下:
-      A: 4次
-      B: 3次
-      D: 1次
-      C: 2次
-    注: 不要求打印的顺序
+<h3 id="attribute">实例属性 attribute</h3>
+<pre><code>    每个实例可以有自己的实例变量用来保存对象自己的数据
+
+    语法
+        实例.属性名
+
+    赋值规则同变量的赋值规则
+        首次为属性赋值则创建此属性
+        再次为属性赋值则改变属性的绑定关系
+
+    作用
+        记录每个对象自身的数据
 </code></pre>
 
-<h3 id="_9">字典推导式</h3>
-<pre><code>  是用可迭代对象生成字典的表达式
-  语法:
-    {键表达式 : 值表达式 for 变量 in 可迭代对象[if 真值表达式]}
-    注: []表示其中的内容可省略
-  示例:
-    # 生成一个字典,键为数字 1 ~ 9,值为键的平方
-    d = {x : x ** 2 for x in range(1, 10)}
+<pre><code class="python"># 此示例示意示例的属性attribute 及访问属性的方法
+class Dog:
+    def eat(self, food):
+        self.last_food = food
+        print(self.color, '的', self.kinds, '正在吃', food)
+    def show_last_food(self):
+        print(self.color, '的', self.kinds,'上次吃的', self.last_food)
+
+dog1 = Dog()
+dog1.kinds = '京巴'  # 添加实例属性
+dog1.color = '白色'  # 添加狗毛的颜色
+dog1.color = '黄色'  # 修改实例属性的绑定关系
+
+dog2 = Dog()
+dog2.kinds = '藏獒'  # 另一个对象
+dog2.color = '棕色'
+print(dog1.color, '的', dog1.kinds)
+print(dog2.color, '的', dog2.kinds)
+
+dog1.eat('骨头')
+dog2.eat('狗粮')
+dog1.show_last_food()
+dog2.show_last_food()
 </code></pre>
 
-<p><strong>字典推导式练习</strong></p>
-<pre><code>  1. 已知有如下字符串列表
-    L = ['tarena', 'xiaozhang', 'abc']
-  生成如下字典:
-    d = {'tarena': 6, 'xiaozhang': 9, 'abc': 3}
-    注: 字典的值为键的长度
+<h5 id="_4">练习</h5>
+<pre><code class="python">    定义一个'人'(Human)类，
+        calss Human:
+            def set_info(self, name, age, address='不详')
+                '''此方法用来给人对象添加姓名, 年龄, 家庭住址等属性'''
 
-  2. 已知有如下两个列表:
-    nos = [1001, 1002, 1005, 1008]
-    names = ['Tom', 'Jerry', 'Spike', 'Tyke']
-    用上述两个列表生成如下字典:
-    {1001: 'Tom', 1002: 'Jerry', 1005: 'Spike', 1008: 'Tyke'}
+            def show_info(self):
+                '''此处显示此人信息'''
+    调用如下：
+        h1 = Human()
+        h1.set_info('小张', 20, '北京市东城区')
+        h2 = Human()
+        h2.set_info('小李', 18)
+        h1.show_info()
+        h2.show_info()
 </code></pre>
 
-<p><strong>字典 VS 列表</strong></p>
+<h3 id="_5">删除属性</h3>
+<pre><code>    del 语句
+        可以删除实例（instance）的属性
+    语句
+        del 实例.实例变量名
+    示例
+        class Dog:
+            pass
+        dog1 = Dog()
+        dog1.color = '白色'
+        del dog1.color  # 删除属性
+        print(dog1.color)  # AttributeError 属性错误
+</code></pre>
+
+<p><strong>del语句小结</strong></p>
 <ol>
-<li>都是可变对象</li>
-<li>索引方式,列表用整数索引,字典用键索引</li>
-<li>字典的插入,删除,修改的速度可能会快过
-    列表(重要)</li>
-<li>列表的存储是有序的,字典的存储是无序的</li>
-</ol></div>
+<li>删除变量  del name</li>
+<li>删除列表中的元素  del l[0]</li>
+<li>删除字典的键  del d['name']</li>
+<li>删除实例的属性  del 实例.实例变量名</li>
+</ol>
+<h3 id="_6">初始化方法</h3>
+<pre><code>    作用
+        对新创建的对象添加属性
+    语法格式
+        class 类名(继承列表):
+            del __init__(self, [形参列表]):
+                语句块
+
+        注: []代表其中的内容可以省略
+
+    说明
+        1. 初始化方法名必须为 '__init__' 不可以改变
+        2. 初始化方法会在构造函数创建实例后自动调用，且将实例自身通过第一个参数self 传入__init__方法
+        3. 构造函数的实参将通过__init__方法的参数列表传入到__init__方法中
+        4. 初始化方法内如果需要return语句返回，则只能返回None
+</code></pre>
+
+<pre><code class="python"># 此示例示意初始化方法的定义，及初始化方法对新对象添加属性
+class Car:
+    def __init__(self, c, b, m):
+        self.color = c  # 颜色
+        self.brand = b  # 品牌
+        self.model = m  # 型号
+    def run(self, speed):
+        print(self.color, '的', self.brand, self.model, '正在以', speed, '公里/小时的速度行驶')
+
+a4 = Car('红色','奥迪','A4')
+a4.run(199)
+
+t1 = Car('蓝色', 'TESLA', 'Model S')
+t1.run(230)
+</code></pre>
+
+<h5 id="_7">练习</h5>
+<pre><code>写一个Student类， 此类创建的对象有三个属性，姓名，年龄， 成绩
+    1. 用初始化方法为该类添加上述三个属性
+    2. 添加set_score() 方法能为对象修改学生成绩
+    3. 添加show_info() 方法打印学生信息
+</code></pre>
+
+<h3 id="_8">析构方法</h3>
+<pre><code>class 类名(继承列表):
+    def __del__(self):
+        语句块
+析构方法在对象被销毁时自动调用
+python语言建议不要在对象销毁时做任何事，因为销毁时间难以确定
+</code></pre>
+<pre><code class="python"># 此示例示意析构方法的使用
+import time
+class Car:
+    def __init__(self, info):
+        self.info = info
+        print('汽车对象', info, '被创建')
+    def __del__(self):
+        print('汽车对象', self.info, '被销毁')
+
+car = Car('BYD E6')
+# car = None  # 改变对象的绑定关系可以释放 BYD E6对象
+del car  # 删除变量释放对象
+l = []
+l.append(Car('汽车1'))
+l.append(Car('汽车2'))
+l.append(Car('汽车3'))
+# del l  # 释放列表
+
+input('请输入回车键继续执行程序')
+print('程序退出')
+</code></pre>
+
+<h3 id="_9">预置实例属性</h3>
+<pre><code>__dict__属性
+        __dict__属性 绑定一个存储此实例自身变量字典
+
+    示例
+        class Dog:
+            pass
+        dog1 = Dog()
+        print(dog1.__dict__)  # {}
+        dog1.color = '白色'
+        print(dog1.__dict__)  # {'color': '白色'}
+        dog1.kinds = '京巴'
+        print(dog1.__dict__)  # {'color': '白色', 'kinds':'京巴'}
+
+__class__属性
+        __class__ 属性绑定创建此实例的类
+        作用
+            可以借助此属性来访问创建此实例的类
+        示例
+            class Dog:
+                pass
+            dog1 = Dog()
+            print(dog1.__class__)
+            dog2 = dog1.__class__()
+            print(dog2.__class__)
+
+</code></pre>
+
+<h3 id="_10">用于对象的函数</h3>
+<pre><code>isinstance(obj, class_or_tuple)
+    返回这个对象obj是否是某个类的对象或者某些类中的一个类的对象，如果是返回True, 否则返回False
+
+    type(obj)  返回对象的类型
+</code></pre>
+
+<h3 id="_11">面向对象的综合示例</h3>
+<pre><code>有两个人：
+        属性：
+            1. 姓名：张三    年龄：35 岁
+            2. 姓名：李四    年龄：8  岁
+        行为：
+            1. 教别人学东西 teach
+            2. 工作赚钱 work
+            2. 工作赚钱 work
+            3. 借钱 borrow
+    事情：
+        张三 教 李四 学 python
+        李四 教 张三 学 王者荣耀
+        张三 上班赚了 1000元钱
+        李四 向 张三 借了 200元钱
+        35 岁的 张三 有钱 800元， 它学会的技能：王者荣耀
+        8  岁的 李四 有钱 200元， 它学会的技能：python
+</code></pre>
+
+<h3 id="_12">类变量</h3>
+<pre><code>类变量是类的属性，此属性属于类，不属于此类的实例
+
+    作用
+        通常用来存储该类创建对象的共有属性
+
+    说明
+        类变量可以通过该类直接访问
+        类变量，可以通过类的实例直接访问
+        类变量可以通过此类的对象__class__属性间接访问
+</code></pre>
+
+<p><strong>类的文档字符串</strong></p>
+<pre><code>类内第一个没有赋值给任何变量的字符串为类的文档字符串
+    类的文档字符串可以通过help()函
+
+    数查看
+    类的文档字符串绑定在类的__doc__属性上
+</code></pre>
+
+<pre><code>类的__slots__列表
+    作用
+        限定一个类创建的实例只能有固定的属性（实例变量）
+        不允许对象添加列表以外的实例属性（实例变量）
+        防止用户因填错属性名而发生的程序错误
+    说明
+        __slots__属性绑定一个字符串列表
+        含有__slots__属性的类所创建的实例对象没有__dict__属性，即此实例不用字典来存储对象的实例属性
+</code></pre>
+
+<pre><code class="python"># 此示例示意类内__slots__列表的用法和作用
+class Human:
+    # __slots__ = ['name', 'age']  # 保存类只能有列表里的属性
+    def __init__(self, n, a):
+        self.name = n
+        self.age = a
+    def info(self):
+        print(self.name, '今年', self.age, '岁')
+
+h1 = Human('小张', 8)
+h1.info()  # 小张 今年 8 岁
+h1.Age = 9
+h1.info()  # 小张 今年 8 岁
+</code></pre>
+
+<h3 id="classmethod">类方法@classmethod</h3>
+<pre><code>类方法是用于描述类的行为的方法，类方法属于类，不属于类的实例对象
+
+    说明
+        类方法需要用@calssmethod装饰器定义
+        类方法至少有一个形参，第一个形参绑定类，约定为'cls'
+        类和该类的实例都可以调用类的方法
+        类方法不能访问此类创建的对象的实例属性
+
+    示例见
+        class A:
+            v = 0  # 类变量
+
+            @classmethod
+            def get_v(cls):
+                return cls.v  # 用cls访问变量v
+
+            @classmethod
+            def set_v(cls, v):
+                cls.v = v
+
+        A.set_v(100)
+        print('A.v =', A.get_v())  # 调用类方法得到类变量的值
+
+        a = A()  # a绑定大A类型的一个实例对象
+      【 print(a.get_v())  # 此类的实例也能调用该类的方法， 实际上传递的是a.__class__，装饰器的功能 】
+</code></pre>
+
+<h3 id="staticmethod">静态方法 @staticmethod</h3>
+<pre><code>静态方法是定义在类的内部的函数，此函数的作用域是类的内部
+    说明
+        静态方法是需要使用@staticmethod装饰器定义
+        静态方法与普通函数定义相同，不需要传入self实际参数和cls类参数
+        静态方法只能凭借该类或类创建的实例调用
+        静态方法不能访问类变量和实例变量
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
