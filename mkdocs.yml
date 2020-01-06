@@ -38,6 +38,7 @@ nav:
     - pairs和ipairs: lua/pairs和ipairs.md
     - 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
     - 协程实现生产者消费者: lua/协程实现生产者消费者.md
+    - lua 单链表: lua/lua 实现单链表.md
   - skynet:
     - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
     - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
