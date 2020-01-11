@@ -305,14 +305,20 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">位运算</a></li>
-        <li class="main "><a href="#1">题1: 找出唯一成对的数</a></li>
+        <li class="main "><a href="#1">题1：找出唯一成对的数</a></li>
+        <li class="main "><a href="#21">题2：二进制中1的个数</a></li>
+            <li><a href="#_2">解法一</a></li>
+            <li><a href="#_3">解法二</a></li>
+        <li class="main "><a href="#32">题3：是否为2的整数次方</a></li>
+        <li class="main "><a href="#4">题4：将二进制整数的奇偶位互换</a></li>
+        <li class="main "><a href="#_4">总结</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h3 id="_1">位运算</h3>
 <p><img alt="" src="../../images/位运算.png" /></p>
-<h3 id="1">题1: 找出唯一成对的数</h3>
+<h3 id="1">题1：找出唯一成对的数</h3>
 <p><img alt="" src="../../images/wys1.png" /></p>
 <p>解题思路：</p>
 <p>n^1^1 = n, 一个数两次^同一个数，得到数本身。</p>
@@ -327,7 +333,79 @@
 
 
 print(find_repeat([1, 2, 3, 3, 4, 5, 6]))
-</code></pre></div>
+</code></pre>
+
+<h3 id="21">题2：二进制中1的个数</h3>
+<p><img alt="" src="../../images/wys2.png" /></p>
+<p>解题思路：</p>
+<p><img alt="" src="../../images/wys2_1.png" /></p>
+<h4 id="_2">解法一</h4>
+<p>将9的二进制数的每一位与1做与运算，如果结果为1移到该位的值，则该位数字为1，否则为0。</p>
+<p>需循环32次，将1依次移到指定位数与9的二进制数做与运算，如果结果为1移到该位的值则计数。</p>
+<p>注：32次，整数为四字节表示，一字节八位。</p>
+<pre><code class="python">def count_bin_1(n):
+    count = 0
+    for i in range(32):
+        if (1 &lt;&lt; i) &amp; n == 1 &lt;&lt; i: count += 1
+    return count
+
+
+print(count_bin_1(9))
+</code></pre>
+
+<h4 id="_3">解法二</h4>
+<p><img alt="" src="../../images/wys2_2.png" /></p>
+<p>查看上图总结规律，(n-1)&amp;n实际上就是消除1001中“1”的过程，统计执行了多少次(n-1)&amp;n，即可知道1001中包含几个“1”</p>
+<pre><code class="python">def count_bin_1(n):
+    count = 0
+    while n != 0:
+        n = (n - 1) &amp; n
+        count += 1
+    return count
+
+
+print(count_bin_1(15))
+</code></pre>
+
+<h3 id="32">题3：是否为2的整数次方</h3>
+<p><img alt="" src="../../images/wys3.png" /></p>
+<p>解题思路:</p>
+<p>2的整数次方，2^0, 2^1, 2^2, 也就是说，将该数转化为2进制表示，只有一个1出现。</p>
+<pre><code class="python">def is2(n):
+    return not (n-1)&amp;n
+
+
+print(is2(8))
+</code></pre>
+
+<h3 id="4">题4：将二进制整数的奇偶位互换</h3>
+<p>解题过程</p>
+<p><img alt="" src="../../images/wys4_1.png" /></p>
+<pre><code class="python">def exchange(n):
+    ji = n &amp; 0xaaaaaaaa  # 10101010 10101010 10101010 10101010
+    ou = n &amp; 0x55555555  # 01010101 01010101 01010101 01010101
+    return (ji &gt;&gt; 1) ^ (ou &lt;&lt; 1)
+
+
+print(exchange(9))
+</code></pre>
+
+<h3 id="_4">总结</h3>
+<ol>
+<li>
+<p>异或运算相当于不进位的加法运算，1+1为0，0+0为0，1+0为1，所以异或相同为0，不同为1</p>
+</li>
+<li>
+<p>n^0 = n;  n^x^x = n; x^x = 0</p>
+</li>
+<li>
+<p>(n-1) &amp; n 从低位依次往高位消除n(二进制表示)中的1。</p>
+</li>
+<li>
+<p>n&amp;0xaaaaaaaa 只保留2进制偶数位；0xaaaaaaaa == 0b10101010 10101010 10101010 10101010</p>
+</li>
+</ol>
+<p>n&amp;0x55555555 只保留2进制奇数位;  0x55555555 == 0b01010101 01010101 01010101 01010101</p></div>
         </div>
 
         <footer class="col-md-12">
