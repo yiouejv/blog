@@ -311,6 +311,9 @@
             <li><a href="#_3">解法二</a></li>
         <li class="main "><a href="#32">题3：是否为2的整数次方</a></li>
         <li class="main "><a href="#4">题4：将二进制整数的奇偶位互换</a></li>
+        <li class="main "><a href="#501">题5：0~1间浮点数的二进制表示</a></li>
+        <li class="main "><a href="#6k1">题6：出现k次与出现1次</a></li>
+            <li><a href="#leetcode137">leetcode137 题</a></li>
         <li class="main "><a href="#_4">总结</a></li>
     </ul>
 </div></div>
@@ -390,6 +393,92 @@ print(is2(8))
 print(exchange(9))
 </code></pre>
 
+<h3 id="501">题5：0~1间浮点数的二进制表示</h3>
+<p><img alt="" src="../../images/wys5.png" /></p>
+<p>解题思路：</p>
+<p>浮点数的二进制表示为乘2挪整，如下图</p>
+<p><img alt="" src="../../images/wys5_1.png" /></p>
+<pre><code class="python">def float_bin(f):
+    res = ['0.']
+    while f != 0:
+        f = f * 2
+        res.append(str(int(f)))
+        f -= int(f)
+    return ''.join(res)
+
+
+print(float_bin(0.625))
+</code></pre>
+
+<h3 id="6k1">题6：出现k次与出现1次</h3>
+<p><img alt="" src="../../images/wys6.png" /></p>
+<p>解题思路：</p>
+<p>2个相同的2进制整数不进位加法，结果位0</p>
+<p>10个相同的10进制整数不进位加法，结果位0</p>
+<p>k个相同的k进制整数不进位加法，结果为0</p>
+<h4 id="leetcode137">leetcode137 题</h4>
+<p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
+<p>说明：</p>
+<pre><code>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+</code></pre>
+
+<p>示例 1:</p>
+<pre><code>输入: [2,2,3,2]
+输出: 3
+</code></pre>
+
+<p>示例 2:</p>
+<pre><code>输入: [0,1,0,1,0,1,99]
+输出: 99
+</code></pre>
+
+<p>该题可以用三进制数来实现，3个三进制做不进位加法，为0，落单的即为答案</p>
+<pre><code class="python">class Solution:
+    def singleNumber(self, nums: List[int]) -&gt; int:
+        # 返回不进位加法之后的三进制
+        three = 0
+        for i in range(len(nums)):
+            three = self.ncarry(three, nums[i], base=3)
+        return three
+
+    def ncarry(self, m, n, base=2):
+        '''将两个十进制数以k进制数做返回不进位加法返回
+                    m: 十进制数
+                    n: 十进制数
+            return: 十进制数
+        '''
+        m = self.toradix(m, base)
+        n = self.toradix(n, base)
+        res = []
+        for i in range(32):
+            res.append((m[i]+n[i])%base)
+
+        return self.todeci(res, base=3)
+
+    def todeci(self, nums, base=2):
+        '''传入数值列表，将列表转为十进制数，base代表传入的进制'''
+        res = 0
+        for i in range(32):
+            res += (base ** i) * nums[31-i]
+        return res
+
+    def toradix(self, n, base=2):
+        '''将十进制数转成指定进制
+            m: 需要转的数
+            base: 要转换的进制
+            return: 对应位数组成32位的列表  # [0, 0, 0, 0...1, 1, 1] 
+        '''
+        res = [0]*32
+        i = 31  # 下标
+        while n // base != 0:
+            res[i] = n % base
+            n //= base
+            i -= 1
+        res[i] = n % base
+        return res
+</code></pre>
+
+<p><strong>注意：只适用于列表数字全为正数的情况。</strong></p>
 <h3 id="_4">总结</h3>
 <ol>
 <li>
@@ -397,6 +486,9 @@ print(exchange(9))
 </li>
 <li>
 <p>n^0 = n;  n^x^x = n; x^x = 0</p>
+</li>
+<li>
+<p>判断二进制数某位是否为1：1&lt;&lt;某位 &amp; n = 1&lt;&lt;某位，可查阅题2解法一</p>
 </li>
 <li>
 <p>(n-1) &amp; n 从低位依次往高位消除n(二进制表示)中的1。</p>
