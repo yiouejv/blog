@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>1. 位运算 - 杨小哥博客</title>
+        <title>排序算法时间复杂度 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -51,15 +51,61 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../排序算法/">排序算法</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">1. 位运算</a>
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
 </li>
                                     
 <li >
-    <a href="../递归/">2. 递归</a>
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">排序算法</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">排序算法时间复杂度</a>
+</li>
+            
+<li >
+    <a href="../排序算法/">基本排序算法</a>
+</li>
+            
+<li >
+    <a href="../分治法和归并排序/">分治法和归并排序</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../位运算/">位运算</a>
+</li>
+                                    
+<li >
+    <a href="../递归/">递归</a>
+</li>
+                                    
+<li >
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
+</li>
+                                    
+<li >
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+                                    
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+                                    
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+                                    
+<li >
+    <a href="../链表-下/">5. 链表-下</a>
+</li>
+                                    
+<li >
+    <a href="../栈/">6. 栈</a>
 </li>
                                 </ul>
                             </li>
@@ -282,7 +328,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../skynet/并.md">基金理财</a>
+    <a href="../../理财/理财/">基金理财</a>
 </li>
                                 </ul>
                             </li>
@@ -295,12 +341,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../排序算法/">
+                                <a rel="next" href="../滑动窗口原理/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../递归/">
+                                <a rel="prev" href="../排序算法/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -312,200 +358,113 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">位运算</a></li>
-        <li class="main "><a href="#1">题1：找出唯一成对的数</a></li>
-        <li class="main "><a href="#21">题2：二进制中1的个数</a></li>
-            <li><a href="#_2">解法一</a></li>
-            <li><a href="#_3">解法二</a></li>
-        <li class="main "><a href="#32">题3：是否为2的整数次方</a></li>
-        <li class="main "><a href="#4">题4：将二进制整数的奇偶位互换</a></li>
-        <li class="main "><a href="#501">题5：0~1间浮点数的二进制表示</a></li>
-        <li class="main "><a href="#6k1">题6：出现k次与出现1次</a></li>
-            <li><a href="#leetcode137">leetcode137 题</a></li>
-        <li class="main "><a href="#_4">总结</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">位运算</h3>
-<p><img alt="" src="../../images/位运算.png" /></p>
-<h3 id="1">题1：找出唯一成对的数</h3>
-<p><img alt="" src="../../images/wys1.png" /></p>
-<p>解题思路：</p>
-<p>n^1^1 = n, 一个数两次^同一个数，得到数本身。</p>
-<p>n^0 = n, 任何数异或0都是他自己。</p>
-<p>将res^数组下标^数组的value，最终得出的结果就为重复值。</p>
-<pre><code class="python">def find_repeat(nums):
-    res = 0
-    for i in range(len(nums)):
-        res ^= i
-        res ^= nums[i]
-    return res
-
-
-print(find_repeat([1, 2, 3, 3, 4, 5, 6]))
-</code></pre>
-
-<h3 id="21">题2：二进制中1的个数</h3>
-<p><img alt="" src="../../images/wys2.png" /></p>
-<p>解题思路：</p>
-<p><img alt="" src="../../images/wys2_1.png" /></p>
-<h4 id="_2">解法一</h4>
-<p>将9的二进制数的每一位与1做与运算，如果结果为1移到该位的值，则该位数字为1，否则为0。</p>
-<p>需循环32次，将1依次移到指定位数与9的二进制数做与运算，如果结果为1移到该位的值则计数。</p>
-<p>注：32次，整数为四字节表示，一字节八位。</p>
-<pre><code class="python">def count_bin_1(n):
-    count = 0
-    for i in range(32):
-        if (1 &lt;&lt; i) &amp; n == 1 &lt;&lt; i: count += 1
-    return count
-
-
-print(count_bin_1(9))
-</code></pre>
-
-<h4 id="_3">解法二</h4>
-<p><img alt="" src="../../images/wys2_2.png" /></p>
-<p>查看上图总结规律，(n-1)&amp;n实际上就是消除1001中“1”的过程，统计执行了多少次(n-1)&amp;n，即可知道1001中包含几个“1”</p>
-<pre><code class="python">def count_bin_1(n):
-    count = 0
-    while n != 0:
-        n = (n - 1) &amp; n
-        count += 1
-    return count
-
-
-print(count_bin_1(15))
-</code></pre>
-
-<h3 id="32">题3：是否为2的整数次方</h3>
-<p><img alt="" src="../../images/wys3.png" /></p>
-<p>解题思路:</p>
-<p>2的整数次方，2^0, 2^1, 2^2, 也就是说，将该数转化为2进制表示，只有一个1出现。</p>
-<pre><code class="python">def is2(n):
-    return not (n-1)&amp;n
-
-
-print(is2(8))
-</code></pre>
-
-<h3 id="4">题4：将二进制整数的奇偶位互换</h3>
-<p>解题过程</p>
-<p><img alt="" src="../../images/wys4_1.png" /></p>
-<pre><code class="python">def exchange(n):
-    ji = n &amp; 0xaaaaaaaa  # 10101010 10101010 10101010 10101010
-    ou = n &amp; 0x55555555  # 01010101 01010101 01010101 01010101
-    return (ji &gt;&gt; 1) ^ (ou &lt;&lt; 1)
-
-
-print(exchange(9))
-</code></pre>
-
-<h3 id="501">题5：0~1间浮点数的二进制表示</h3>
-<p><img alt="" src="../../images/wys5.png" /></p>
-<p>解题思路：</p>
-<p>浮点数的二进制表示为乘2挪整，如下图</p>
-<p><img alt="" src="../../images/wys5_1.png" /></p>
-<pre><code class="python">def float_bin(f):
-    res = ['0.']
-    while f != 0:
-        f = f * 2
-        res.append(str(int(f)))
-        f -= int(f)
-    return ''.join(res)
-
-
-print(float_bin(0.625))
-</code></pre>
-
-<h3 id="6k1">题6：出现k次与出现1次</h3>
-<p><img alt="" src="../../images/wys6.png" /></p>
-<p>解题思路：</p>
-<p>2个相同的2进制整数不进位加法，结果位0</p>
-<p>10个相同的10进制整数不进位加法，结果位0</p>
-<p>k个相同的k进制整数不进位加法，结果为0</p>
-<h4 id="leetcode137">leetcode137 题</h4>
-<p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
-<p>说明：</p>
-<pre><code>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
-</code></pre>
-
-<p>示例 1:</p>
-<pre><code>输入: [2,2,3,2]
-输出: 3
-</code></pre>
-
-<p>示例 2:</p>
-<pre><code>输入: [0,1,0,1,0,1,99]
-输出: 99
-</code></pre>
-
-<p>该题可以用三进制数来实现，3个三进制做不进位加法，为0，落单的即为答案</p>
-<pre><code class="python">class Solution:
-    def singleNumber(self, nums: List[int]) -&gt; int:
-        # 返回不进位加法之后的三进制
-        three = 0
-        for i in range(len(nums)):
-            three = self.ncarry(three, nums[i], base=3)
-        return three
-
-    def ncarry(self, m, n, base=2):
-        '''将两个十进制数以k进制数做返回不进位加法返回
-                    m: 十进制数
-                    n: 十进制数
-            return: 十进制数
-        '''
-        m = self.toradix(m, base)
-        n = self.toradix(n, base)
-        res = []
-        for i in range(32):
-            res.append((m[i]+n[i])%base)
-
-        return self.todeci(res, base=3)
-
-    def todeci(self, nums, base=2):
-        '''传入数值列表，将列表转为十进制数，base代表传入的进制'''
-        res = 0
-        for i in range(32):
-            res += (base ** i) * nums[31-i]
-        return res
-
-    def toradix(self, n, base=2):
-        '''将十进制数转成指定进制
-            m: 需要转的数
-            base: 要转换的进制
-            return: 对应位数组成32位的列表  # [0, 0, 0, 0...1, 1, 1] 
-        '''
-        res = [0]*32
-        i = 31  # 下标
-        while n // base != 0:
-            res[i] = n % base
-            n //= base
-            i -= 1
-        res[i] = n % base
-        return res
-</code></pre>
-
-<p><strong>注意：只适用于列表数字全为正数的情况。</strong></p>
-<h3 id="_4">总结</h3>
-<ol>
-<li>
-<p>异或运算相当于不进位的加法运算，1+1为0，0+0为0，1+0为1，所以异或相同为0，不同为1</p>
-</li>
-<li>
-<p>n^0 = n;  n^x^x = n; x^x = 0</p>
-</li>
-<li>
-<p>判断二进制数某位是否为1：1&lt;&lt;某位 &amp; n = 1&lt;&lt;某位，可查阅题2解法一</p>
-</li>
-<li>
-<p>(n-1) &amp; n 从低位依次往高位消除n(二进制表示)中的1。</p>
-</li>
-<li>
-<p>n&amp;0xaaaaaaaa 只保留2进制偶数位；0xaaaaaaaa == 0b10101010 10101010 10101010 10101010</p>
-</li>
-</ol>
-<p>n&amp;0x55555555 只保留2进制奇数位;  0x55555555 == 0b01010101 01010101 01010101 01010101</p></div>
+<table>
+<thead>
+<tr>
+<th align="center">排序方法</th>
+<th>时间复杂度（平均）</th>
+<th>时间复杂度（最坏）</th>
+<th>时间复杂度（最好）</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">冒泡排序</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td align="center">选择排序</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td align="center">插入排序</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td align="center">希尔排序</td>
+<td>O(n^1.3)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td>O(nlgn)</td>
+<td>O(nlgn)</td>
+<td>O(nlgn)</td>
+<td>O(n)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td>O(nlgn)</td>
+<td>O(n^2)</td>
+<td>O(nlgn)</td>
+<td>O(nlgn)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td>O(nlgn)</td>
+<td>O(nlgn)</td>
+<td>O(nlgn)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">计数排序</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td align="center">桶排序</td>
+<td>O(n+k)</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+<td>O(n+k)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td align="center">基数排序</td>
+<td>O(n*k)</td>
+<td>O(n*k)</td>
+<td>O(n*k)</td>
+<td>O(n+k)</td>
+<td>稳定</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../../images/sorttime.png" /></p></div>
         </div>
 
         <footer class="col-md-12">

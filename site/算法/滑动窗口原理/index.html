@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>滑动窗口介绍 - 杨小哥博客</title>
+        <title>滑动窗口原理 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -46,20 +46,66 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../蓝桥学院/排序算法/">排序算法</a>
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">滑动窗口原理</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">排序算法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../排序算法时间复杂度/">排序算法时间复杂度</a>
+</li>
+            
+<li >
+    <a href="../排序算法/">基本排序算法</a>
+</li>
+            
+<li >
+    <a href="../分治法和归并排序/">分治法和归并排序</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../位运算/">位运算</a>
 </li>
                                     
 <li >
-    <a href="../../蓝桥学院/位运算/">1. 位运算</a>
+    <a href="../递归/">递归</a>
 </li>
                                     
 <li >
-    <a href="../../蓝桥学院/递归/">2. 递归</a>
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
+</li>
+                                    
+<li >
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+                                    
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+                                    
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+                                    
+<li >
+    <a href="../链表-下/">5. 链表-下</a>
+</li>
+                                    
+<li >
+    <a href="../栈/">6. 栈</a>
 </li>
                                 </ul>
                             </li>
@@ -282,7 +328,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../skynet/并.md">基金理财</a>
+    <a href="../../理财/理财/">基金理财</a>
 </li>
                                 </ul>
                             </li>
@@ -294,6 +340,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../排序算法时间复杂度/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -332,16 +388,16 @@
 </ul>
 <h1 id="-">思路讲解-滑动窗口</h1>
 <p>假设原始字符串S如下</p>
-<p><img alt="Demo" src="images/1.png" />
-从左侧开始遍历S，以i标记窗口左侧，j标记窗口右侧，初始时，i=0，j=0，即开头a所在的位置，此时，窗口大小为1</p>
+<p><img alt="Demo" src="../../images/1.png" /></p>
+<p>从左侧开始遍历S，以i标记窗口左侧，j标记窗口右侧，初始时，i=0，j=0，即开头a所在的位置，此时，窗口大小为1</p>
 <p>然后，将j右移，逐步扩大窗口，依次经过b、c、d，此时，窗口内均无重复字符，继续右移j</p>
-<p><img alt="Demo" src="../images/2.png" /></p>
+<p><img alt="Demo" src="../../images/2.png" /></p>
 <p>当j移动到d后面的a所在位置时，对应字符a在窗口中已存在，此时，窗口大小为5，去除当前重复的一位，窗口大小为4。此时窗口内的字符串abcd为</p>
-<p><img alt="Demo" src="../images/3.png" /></p>
+<p><img alt="Demo" src="../../images/3.png" /></p>
 <p>找到窗口中已存在的该字符所在位置，并将i移动到该位置下一位</p>
-<p><img alt="Demo" src="images/4.png" /></p>
+<p><img alt="Demo" src="../../images/4.png" /></p>
 <p>此时为第二个窗口</p>
-<p><img alt="Demo" src="images/5.png" /></p>
+<p><img alt="Demo" src="../../images/5.png" /></p>
 <p>继续重复之前的操作，直到j移动到字符串最后一位停止。</p>
 <h1 id="_2">算法应用</h1>
 <p>leetcode:

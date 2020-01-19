@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>排序算法 - 杨小哥博客</title>
+        <title>递归 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -50,16 +50,62 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+<li >
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
+</li>
+                                    
+<li >
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">排序算法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../排序算法时间复杂度/">排序算法时间复杂度</a>
+</li>
+            
+<li >
+    <a href="../排序算法/">基本排序算法</a>
+</li>
+            
+<li >
+    <a href="../分治法和归并排序/">分治法和归并排序</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../位运算/">位运算</a>
+</li>
+                                    
 <li class="active">
-    <a href="./">排序算法</a>
+    <a href="./">递归</a>
 </li>
                                     
 <li >
-    <a href="../位运算/">1. 位运算</a>
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
 </li>
                                     
 <li >
-    <a href="../递归/">2. 递归</a>
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+                                    
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+                                    
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+                                    
+<li >
+    <a href="../链表-下/">5. 链表-下</a>
+</li>
+                                    
+<li >
+    <a href="../栈/">6. 栈</a>
 </li>
                                 </ul>
                             </li>
@@ -282,7 +328,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../skynet/并.md">基金理财</a>
+    <a href="../../理财/理财/">基金理财</a>
 </li>
                                 </ul>
                             </li>
@@ -294,13 +340,13 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
+                            <li >
+                                <a rel="next" href="../位运算/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../位运算/">
+                                <a rel="prev" href="../复杂度分析-上/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -312,124 +358,134 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">基本排序算法</a></li>
-            <li><a href="#n2">冒泡排序(n**2)</a></li>
-            <li><a href="#n2_1">选择排序(n**2)</a></li>
-            <li><a href="#n2_2">插入排序(n**2)</a></li>
-            <li><a href="#_2">希尔排序</a></li>
+        <li class="main active"><a href="#_1">递归说明</a></li>
+        <li class="main "><a href="#_2">递归的优缺点</a></li>
+        <li class="main "><a href="#_3">递归调用分为两个阶段</a></li>
+        <li class="main "><a href="#1">题1: 求阶乘</a></li>
+        <li class="main "><a href="#2-i-j">题2: 打印i-j</a></li>
+        <li class="main "><a href="#3">题3: 数组求和</a></li>
+        <li class="main "><a href="#4">题4: 字符串翻转</a></li>
+        <li class="main "><a href="#5">题5: 斐波那契数列</a></li>
+        <li class="main "><a href="#_4">汉诺塔</a></li>
+        <li class="main "><a href="#_5">二分查找</a></li>
+        <li class="main "><a href="#_6">小白上楼梯</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">基本排序算法</h1>
-<h3 id="n2">冒泡排序(n**2)</h3>
-<p>进行n-1轮迭代，每次比较相邻的两个元素，如果前者大于后者，则交换顺序。因为直接在元素上进行操作，所以不会返回新的数组。其实就是每一轮冒泡，一个最大的元素就会通过比较相邻的元素，移到最右边。</p>
-<p>你可以想象一个，10个小朋友站一排，身高并一，现在老师喊，从第一个小朋友开始，两两比较，</p>
-<p>个子高的往右移（老师想让他们从低到高排序），第一轮就有一个小朋友最高的小朋友站到最右边，</p>
-<p>第二轮次高的小朋友站倒数第二个位置，一直到最后一轮，一个小朋友不用比较，所以是n-1轮（9轮）</p>
-<p><img alt="bubble" src="../../images/bubble.gif" /></p>
-<pre><code class="python">def bubble_sort(seq):
-    '''冒泡排序'''
-    n = len(seq)
-
-    for i in range(n-1):
-        for j in range(n-1-i):
-            if seq[j] &gt; seq[j+1]:
-                seq[j], seq[j+1] = seq[j+1], seq[j]
-
-
-def test_bubble_sort():
-    import random
-    seq = list(range(10))
-    random.shuffle(seq)
-
-    seq_sort = sorted(seq)
-    bubble_sort(seq)
-    assert seq_sort == seq
+<p>函数直接或间接调用自身</p>
+<h5 id="_1">递归说明</h5>
+<ul>
+<li>递归一定要控制递归的层数，当符合某一条件时要终止递归调用</li>
+<li>几乎所有的递归都能用while循环来代替</li>
+</ul>
+<h5 id="_2">递归的优缺点</h5>
+<ul>
+<li>优点: 可以把问题简单化，让思路理会为清晰，代码更简洁</li>
+<li>缺点: 递归因系统环境影响大，当递归深度太大时，可能会得到不可预知的结果</li>
+</ul>
+<h5 id="_3">递归调用分为两个阶段</h5>
+<ul>
+<li>递推阶段: 从原问题出发，按递归公式递推，从未知到已知，最终达到递归终止条件</li>
+<li>回归阶段: 按递归终止条件求出结果，逆向逐步代入递归公式，回归到原问题求解</li>
+</ul>
+<h3 id="1">题1: 求阶乘</h3>
+<pre><code class="python">def factor(n):
+    '''求n的阶乘'''
+    if n == 1: return 1
+    return n * factor(n-1)
 </code></pre>
 
-<h3 id="n2_1">选择排序(n**2)</h3>
-<p>冒泡排序的思路是两两比较，较大的指移到了最后边，选择排序则是两两比较，选择一个最小的放在第一个位置，</p>
-<p>再从剩下的元素中选择一个最小的放在第二个位置，一直到剩下的元素只有一个元素，也是n-1轮。</p>
-<p>同样的，10个小朋友站成一排，第一轮从10个小朋友中选择一个最矮的放在第一个位置，第二轮从剩下的9个小朋友中，再选择一个最矮的放在第二个位置，一直到只剩下最后一个小朋友，直接站在最后一个位置，也是n-1轮。</p>
-<p>和冒泡排序一样，也是两两交换。</p>
-<p><img alt="select" src="../../images/select.gif" /></p>
-<pre><code class="python">def select_sort(seq):
-    '''选择排序'''
-    n = len(seq)
-
-    for i in range(n-1):
-        for j in range(i+1, n):
-            if seq[j] &lt; seq[i]:
-                seq[i], seq[j] = seq[j], seq[i]
-
-
-def test_select_sort():
-    import random
-    seq = list(range(10))
-
-    random.shuffle(seq)
-    seq_sort = sorted(seq)
-    select_sort(seq)
-    assert seq_sort == seq
+<h3 id="2-i-j">题2: 打印i-j</h3>
+<pre><code class="python">def print_i2j(i, j):
+    if i &gt;= j: return
+    print(i)
+    print_i2j(i+1, j)
 </code></pre>
 
-<h3 id="n2_2">插入排序(n**2)</h3>
-<p>如果有一个有序的序列，要求在这个已经排好序的序列中插入一个数，要求插入后仍然有序。因为是在有序的基础上再排序，利用了之前的有序条件，所以是稳定排序。</p>
-<p>扑克牌摸牌，第一张摸到手里后，因为手里只有一张牌，认为是有序的，摸第二张的时候，这张牌和第一张比较，</p>
-<p>没他大就交换位置，摸第三张牌的时候，和第二张牌比较，没他大就交换位置，否则一直找到比他小的，交换位</p>
-<p>置。到最后一张牌也找到合适的位置后排好序了。</p>
-<p><img alt="insert" src="../../images/insert.gif" /></p>
-<pre><code class="python">def insert_sort(seq):
-    n = len(seq)
-
-    for i in range(1, n):
-        target = seq[i]
-        pos = i - 1
-        while 0 &lt;= pos and target &lt; seq[pos]:
-            seq[pos+1] = seq[pos]
-            pos -= 1
-        seq[pos+1] = target
+<h3 id="3">题3: 数组求和</h3>
+<pre><code class="python">def sum(nums, begin):
+    if begin == len(nums) - 1: return nums[begin]
+    return nums[begin] + sum(nums, begin+1)
 
 
-def test_insert_sort():
-    import random
-    seq = list(range(10))
-    random.shuffle(seq)
-
-    seq_sort = sorted(seq)
-    insert_sort(seq)
-    assert seq_sort == seq
+print(sum([1, 2, 3, 4, 5], 0))
 </code></pre>
 
-<h3 id="_2">希尔排序</h3>
-<p><img alt="" src="../../images/shellsort.gif" /></p>
-<p>1959年Shell发明，第一个突破O(n2)的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
-<p>希尔排序属于插入类排序,是将整个有序序列分割成若干小的子序列分别进行插入排序。</p>
-<pre><code class="python">def shell_sort(seq):
-    n = len(seq)
-
-    interval = n // 2  # 不断缩小增量，每次是原来的一半
-    while 0 &lt; interval &lt; n:
-        # 里面是一个插入排序
-        for i in range(1, n):
-            target = seq[i]
-            pos = i - interval
-            while 0 &lt;= pos and target &lt; seq[pos]:
-                seq[pos+interval] = seq[pos]
-                pos -= interval
-            seq[pos+interval] = target
-        interval //= 2
+<h3 id="4">题4: 字符串翻转</h3>
+<pre><code class="python">def reverse(string):
+    if len(string) == 1: return string
+    return string[-1] + reverse(string[:-1])
 
 
-def test_insert_sort():
-    import random
-    seq = list(range(10))
-    random.shuffle(seq)
+print(reverse('abcdefgh'))
+</code></pre>
 
-    seq_sort = sorted(seq)
-    shell_sort(seq)
-    assert seq_sort == seq
+<h3 id="5">题5: 斐波那契数列</h3>
+<pre><code class="python">def febo(n):
+    if n &lt; 3: return 1
+    return febo(n-1) + febo(n - 2)
+
+
+print(febo(7))
+</code></pre>
+
+<h3 id="_4">汉诺塔</h3>
+<p>1~N从A到B，C作为辅助</p>
+<pre><code>等价于
+    1. 1~N-1 从A移动到C，B作为辅助
+    2. 把N从A移动到B
+    3. 1~N-1 从C移动到B，A作为辅助
+</code></pre>
+
+<h3 id="_5">二分查找</h3>
+<pre><code>等价于三个子问题：
+    左边找（递归）
+    中间比较
+    右边找（递归）
+注意：左查找和右查找只选其一
+</code></pre>
+
+<pre><code class="python">def bin_search(nums, n, lower=0, upper=None):
+    upper = len(nums) if upper is None else upper
+    if upper &lt;= lower: return -1
+
+    mid = (lower + upper) // 2
+    if nums[mid] &gt; n:
+        return bin_search(nums, n, lower, mid)
+    elif nums[mid] &lt; n:
+        return bin_search(nums, n, mid+1, upper)
+    else:
+        return mid
+
+
+print(bin_search([0, 1, 2, 3, 4, 5, 6, 7], 8))
+</code></pre>
+
+<h3 id="_6">小白上楼梯</h3>
+<p><img alt="" src="../../images/recursion.png" /></p>
+<p>解题思路：</p>
+<p>逆推，在第n阶台阶时，有3中方案可以达到第n个台阶</p>
+<ul>
+<li>
+<p>在第n-1个台阶上一个台阶</p>
+</li>
+<li>
+<p>在第n-2个台阶上两次一个台阶或一次上两个台阶</p>
+</li>
+<li>
+<p>在第n-3个台阶上三次一个台阶或一次上三个台阶</p>
+</li>
+</ul>
+<p>上一个台阶再上两个台阶或上两个台阶再上一个台阶</p>
+<pre><code class="python">def stairs(n):
+    if n == 0: return 1
+    if n == 1: return 1
+    if n == 2: return 2
+    return stairs(n-1) + stairs(n-2) + stairs(n-3)
+
+
+print(stairs(3))
 </code></pre></div>
         </div>
 

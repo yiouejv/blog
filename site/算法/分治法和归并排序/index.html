@@ -46,20 +46,66 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../蓝桥学院/排序算法/">排序算法</a>
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
 </li>
                                     
 <li >
-    <a href="../../蓝桥学院/位运算/">1. 位运算</a>
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">排序算法</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../排序算法时间复杂度/">排序算法时间复杂度</a>
+</li>
+            
+<li >
+    <a href="../排序算法/">基本排序算法</a>
+</li>
+            
+<li class="active">
+    <a href="./">分治法和归并排序</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../位运算/">位运算</a>
 </li>
                                     
 <li >
-    <a href="../../蓝桥学院/递归/">2. 递归</a>
+    <a href="../递归/">递归</a>
+</li>
+                                    
+<li >
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
+</li>
+                                    
+<li >
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
+</li>
+                                    
+<li >
+    <a href="../数组/">3. 数组</a>
+</li>
+                                    
+<li >
+    <a href="../链表-上/">4. 链表-上</a>
+</li>
+                                    
+<li >
+    <a href="../链表-下/">5. 链表-下</a>
+</li>
+                                    
+<li >
+    <a href="../栈/">6. 栈</a>
 </li>
                                 </ul>
                             </li>
@@ -282,7 +328,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../skynet/并.md">基金理财</a>
+    <a href="../../理财/理财/">基金理财</a>
 </li>
                                 </ul>
                             </li>
@@ -294,6 +340,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../排序算法/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../位运算/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -308,8 +364,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<hr />
-<hr />
 <h1 id="divide-and-conquer">分治法 (Divide and Conquer)</h1>
 <p>很多有用的算法结构上是递归的，为了解决一个特定问题，算法一次或者多次递归调用其自身以解决若干子问题。 这些算法典型地遵循分治法的思想：将原问题分解为几个规模较小但是类似于原问题的子问题，递归求解这些子问题， 然后再合并这些问题的解来建立原问题的解。</p>
 <p>分治法在每层递归时有三个步骤：</p>
