@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>lua 面向对象 - 杨小哥博客</title>
+        <title>4. 快速排序 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -46,16 +46,16 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">算法 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../算法/数据结构和算法思维导图.md">数据结构和算法思维导图</a>
+    <a href="../数据结构和算法思维导图.md">数据结构和算法思维导图</a>
 </li>
                                     
 <li >
-    <a href="../../算法/滑动窗口原理/">滑动窗口原理</a>
+    <a href="../滑动窗口原理/">滑动窗口原理</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -63,86 +63,86 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../算法/排序算法时间复杂度/">1. 排序算法时间复杂度</a>
+    <a href="../排序算法时间复杂度/">1. 排序算法时间复杂度</a>
 </li>
             
 <li >
-    <a href="../../算法/排序算法/">2. 基本排序算法</a>
+    <a href="../排序算法/">2. 基本排序算法</a>
 </li>
             
 <li >
-    <a href="../../算法/分治法和归并排序/">3. 分治法和归并排序</a>
+    <a href="../分治法和归并排序/">3. 分治法和归并排序</a>
 </li>
             
-<li >
-    <a href="../../算法/快速排序/">4. 快速排序</a>
+<li class="active">
+    <a href="./">4. 快速排序</a>
 </li>
     </ul>
   </li>
                                     
 <li >
-    <a href="../../算法/位运算/">位运算</a>
+    <a href="../位运算/">位运算</a>
 </li>
                                     
 <li >
-    <a href="../../算法/递归/">递归</a>
+    <a href="../递归/">递归</a>
 </li>
                                     
 <li >
-    <a href="../../算法/复杂度分析-上/">1. 复杂度分析-上</a>
+    <a href="../复杂度分析-上/">1. 复杂度分析-上</a>
 </li>
                                     
 <li >
-    <a href="../../算法/复杂度分析-下/">2. 复杂度分析-下</a>
+    <a href="../复杂度分析-下/">2. 复杂度分析-下</a>
 </li>
                                     
 <li >
-    <a href="../../算法/数组/">3. 数组</a>
+    <a href="../数组/">3. 数组</a>
 </li>
                                     
 <li >
-    <a href="../../算法/链表-上/">4. 链表-上</a>
+    <a href="../链表-上/">4. 链表-上</a>
 </li>
                                     
 <li >
-    <a href="../../算法/链表-下/">5. 链表-下</a>
+    <a href="../链表-下/">5. 链表-下</a>
 </li>
                                     
 <li >
-    <a href="../../算法/栈/">6. 栈</a>
+    <a href="../栈/">6. 栈</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">lua <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../表的构造/">lua 表的构造</a>
+    <a href="../../lua/表的构造/">lua 表的构造</a>
 </li>
                                     
 <li >
-    <a href="../select函数/">lua select 函数</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">lua 面向对象</a>
+    <a href="../../lua/select函数/">lua select 函数</a>
 </li>
                                     
 <li >
-    <a href="../pairs和ipairs/">pairs和ipairs</a>
+    <a href="../../lua/opp/">lua 面向对象</a>
 </li>
                                     
 <li >
-    <a href="../错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
+    <a href="../../lua/pairs和ipairs/">pairs和ipairs</a>
 </li>
                                     
 <li >
-    <a href="../协程实现生产者消费者/">协程实现生产者消费者</a>
+    <a href="../../lua/错误处理 pcall & xpcall/">错误处理 pcall & xpcall</a>
 </li>
                                     
 <li >
-    <a href="../lua 实现单链表/">lua 单链表</a>
+    <a href="../../lua/协程实现生产者消费者/">协程实现生产者消费者</a>
+</li>
+                                    
+<li >
+    <a href="../../lua/lua 实现单链表/">lua 单链表</a>
 </li>
                                 </ul>
                             </li>
@@ -345,12 +345,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../select函数/">
+                                <a rel="next" href="../分治法和归并排序/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../pairs和ipairs/">
+                                <a rel="prev" href="../位运算/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -362,75 +362,127 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#lua">lua 面向对象</a></li>
+        <li class="main active"><a href="#_1">快速排序</a></li>
+            <li><a href="#_2">实现方案</a></li>
+        <li class="main "><a href="#_3">时间复杂度</a></li>
+            <li><a href="#_4">三点中值法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="lua">lua 面向对象</h1>
-<pre><code class="lua">--    写一个农民类Peasant有方法：
---        def farm(self, plant):
---            ...
---    写一个工人类Worker
---        方法如下：
---            def work(self, that):
---                ...
---    创建一个农民工为MigrantWorker, 让此类的对象拥有上面两个类的全部方法
---    person = MigrantWorker()
---    person.farm('水稻')  # 正在种植 水稻
---    person.work('汽车')  # 正在制造 汽车
-
--- Peasant 类
-local Peasant = {}
-
-function Peasant:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
-
-function Peasant:farm(plant)
-    print('正在种植'..plant)
-end
-
--- Worker 类
-Worker = {}
-
-function Worker:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
-
-function Worker:work(that)
-    print('正在制造'..that)
-end
+<h3 id="_1">快速排序</h3>
+<p>快速排序是基于分治法进行排序，选取一个主元pivot, 遍历序列，将小于pivot的数字放在主元左边，大于pivot的数放在主元右边；再将左右两边的数递归下去，就排好序了。</p>
+<h4 id="_2">实现方案</h4>
+<p>主元(pivot)选择为序列的第一个元素，左右指针(left, right)从两端遍历序列，左指针一直找到比主元大的元素，右指针一直找到比主元小的元素，交换left, right指向的值，重复操作，直到left &lt; right。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>left &lt; right 时才交换left, right 指向的值</li>
+<li>按照上述，r指向的元素一定是最后一个小于主元的数，把主元和right所指的值进行交换</li>
+</ul>
+<p><img alt="" src="../../images/partition.png" /></p>
+<pre><code class="python">def quick_sort(nums, beg=0, end=None):
+    end = len(nums) if end is None else end
+    if beg &lt; end:
+        pivot = partition(nums, beg, end)
+        quick_sort(nums, beg, pivot)
+        quick_sort(nums, pivot+1, end)
 
 
--- MigrantWorker 类
-MigrantWorker = {}
+def partition(nums, beg, end):
+    pivot_index = beg
+    left = pivot_index + 1
+    right = end - 1
 
-function MigrantWorker:new()
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    self.farm = Peasant:new().farm
-    self.work = Worker:new().work
-    return o
-end
+    while True:
+        while left &lt;= right and nums[left] &lt; nums[pivot_index]: left += 1
+        while left &lt;= right and nums[right] &gt;= nums[pivot_index]: right -= 1
+        if left &gt; right: break
+        swap(nums, left, right)  # 交换
 
--- 创建对象
-local peasant = Peasant:new()
-print(peasant:farm('水稻'))
+    # 把主元和right的位置互换
+    swap(nums, pivot_index, right)
+    return right
 
-local work = Worker:new()
-print(work:work('汽车'))
 
-local migrant_worker = MigrantWorker:new()
-print(migrant_worker:farm('小麦'))
-print(migrant_worker:work('汽车'))
+def swap(nums, left, right):
+    temp = nums[left]
+    nums[left] = nums[right]
+    nums[right] = temp
+
+
+def test_partition():
+    l = [4, 1, 2, 8]
+    assert(partition(l, 0, len(l))==2)
+    l = [1, 2, 3, 4]
+    assert (partition(l, 0, len(l)) == 0)
+    l = [4, 3, 2, 1]
+    assert partition(l, 0, len(l))
+
+
+nums = [2, 3, 5, 1, 3, 5, 5, 6, 8, 9, 0]
+quick_sort(nums)
+print(nums)
+</code></pre>
+
+<h3 id="_3">时间复杂度</h3>
+<p>在比较理想的情况下，比如数组每次都被 pivot 均分，我们可以得到递归式：</p>
+<p>T(n) = 2T(n/2) + n</p>
+<p>通过递归树得到它的时间复杂度是 O(nlog(n))。即便是很坏的情况，比如 pivot 每次都把数组按照 1:9 划分，依然是 O(nlog(n))，感兴趣请阅读算法导论相关章节。</p>
+<p><img alt="" src="../../images/quicksort_worst.png" /></p>
+<p><strong>如上所述</strong>：快速排序的时间复杂度在每次递归时，在主元两侧分布的数越均匀，时间复杂度越靠近nlgn,</p>
+<p>所以快速排序的优化点在于如果选取主元，一般情况下，我们会简单的选取第一个元素作为主元。其实，主元越接</p>
+<p>近数列的中位数效率越高。</p>
+<h4 id="_4">三点中值法</h4>
+<p>取序列首位，中部的三个数之间的第二大的数为主元。</p>
+<pre><code class="python">def quick_sort(nums, beg=0, end=None):
+    end = len(nums) if end is None else end
+    if beg &lt; end:
+        pivot = partition(nums, beg, end)
+        quick_sort(nums, beg, pivot)
+        quick_sort(nums, pivot+1, end)
+
+
+def partition(nums, beg, end):
+    # 三点中值法
+    mid = (end + beg) &gt;&gt; 1
+    if nums[beg] &gt; nums[mid] &gt; nums[end - 1] or nums[end - 1] &gt; nums[mid] &gt; nums[beg]:
+        swap(nums, beg, mid)
+    if nums[beg] &gt; nums[end - 1] &gt; nums[mid] or nums[mid] &gt; nums[end - 1] &gt; nums[beg]:
+        swap(nums, beg, end - 1)
+
+    pivot_index = beg
+    left = pivot_index + 1
+    right = end - 1
+
+    while True:
+        while left &lt;= right and nums[left] &lt; nums[pivot_index]: left += 1
+        while left &lt;= right and nums[right] &gt;= nums[pivot_index]: right -= 1
+        if left &gt; right: break
+        swap(nums, left, right)  # 交换
+
+    # 把主元和right的位置互换
+    swap(nums, pivot_index, right)
+    return right
+
+
+def swap(nums, left, right):
+    temp = nums[left]
+    nums[left] = nums[right]
+    nums[right] = temp
+
+
+def test_partition():
+    l = [4, 1, 2, 8]
+    assert(partition(l, 0, len(l))==2)
+    l = [1, 2, 3, 4]
+    assert (partition(l, 0, len(l)) == 0)
+    l = [4, 3, 2, 1]
+    assert partition(l, 0, len(l))
+
+
+nums = [2, 3, 5, 1, 3, 5, 5, 6, 8, 9, 0]
+quick_sort(nums)
+print(nums)
 </code></pre></div>
         </div>
 
