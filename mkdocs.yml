@@ -84,6 +84,7 @@ nav:
       - 8. 自带的后台管理: django/8_django自带的后台管理.md
       - 9. django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
       - 10. CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
+      - 几个django 2.2和mysql使用的坑: drf/几个django 2.2和mysql使用的坑.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
   - 理财:
