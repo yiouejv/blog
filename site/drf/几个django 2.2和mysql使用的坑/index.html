@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>1. django介绍及安装 - 杨小哥博客</title>
+        <title>几个django 2.2和mysql使用的坑 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -275,48 +275,48 @@
     <a href="#">django</a>
     <ul class="dropdown-menu">
             
+<li >
+    <a href="../../django/1_django介绍及安装/">1. django介绍及安装</a>
+</li>
+            
+<li >
+    <a href="../../django/2_django中的路由/">2. django中的路由</a>
+</li>
+            
+<li >
+    <a href="../../django/3_django中的HttpRequest对象/">3. HttpRequest对象</a>
+</li>
+            
+<li >
+    <a href="../../django/4_django中的session和cookie/">4. session和cookie</a>
+</li>
+            
+<li >
+    <a href="../../django/5_django中的模板/">5. django中的模板</a>
+</li>
+            
+<li >
+    <a href="../../django/6_django中的模型/">6. django中的模型</a>
+</li>
+            
+<li >
+    <a href="../../django/7_django模型中的关系映射/">7. 模型中的关系映射</a>
+</li>
+            
+<li >
+    <a href="../../django/8_django自带的后台管理/">8. 自带的后台管理</a>
+</li>
+            
+<li >
+    <a href="../1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+</li>
+            
+<li >
+    <a href="../2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+</li>
+            
 <li class="active">
-    <a href="./">1. django介绍及安装</a>
-</li>
-            
-<li >
-    <a href="../2_django中的路由/">2. django中的路由</a>
-</li>
-            
-<li >
-    <a href="../3_django中的HttpRequest对象/">3. HttpRequest对象</a>
-</li>
-            
-<li >
-    <a href="../4_django中的session和cookie/">4. session和cookie</a>
-</li>
-            
-<li >
-    <a href="../5_django中的模板/">5. django中的模板</a>
-</li>
-            
-<li >
-    <a href="../6_django中的模型/">6. django中的模型</a>
-</li>
-            
-<li >
-    <a href="../7_django模型中的关系映射/">7. 模型中的关系映射</a>
-</li>
-            
-<li >
-    <a href="../8_django自带的后台管理/">8. 自带的后台管理</a>
-</li>
-            
-<li >
-    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
-</li>
-            
-<li >
-    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
-</li>
-            
-<li >
-    <a href="../../drf/几个django 2.2和mysql使用的坑/">几个django 2.2和mysql使用的坑</a>
+    <a href="./">几个django 2.2和mysql使用的坑</a>
 </li>
     </ul>
   </li>
@@ -353,12 +353,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../python/补充知识点/">
+                                <a rel="next" href="../2.CBV中解决csrf认证的问题/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../2_django中的路由/">
+                                <a rel="prev" href="../../tools/linux操作系统/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -370,91 +370,62 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#django">django介绍及安装</a></li>
-            <li><a href="#_1">版本介绍</a></li>
-            <li><a href="#_3">框架模式</a></li>
-            <li><a href="#django_1">Django框架的安装</a></li>
+        <li class="main active"><a href="#django-22mysql">几个django 2.2和mysql使用的坑</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="django">django介绍及安装</h1>
-<table>
-<thead>
-<tr>
-<th>框架介绍</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td align="left">Django是一个开源框架，2005年开发，采用python语言编写的。</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">早期是主要做新闻和内容管理的网站</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">Django本身提供了非常强大的后台管理系统</td>
-</tr>
-<tr>
-<td>官网</td>
-<td align="left">http://www.djangoproject.com</td>
-</tr>
-<tr>
-<td>中文文档</td>
-<td align="left">http://djangobook.py3k.cn/2.0/</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_1">版本介绍</h2>
-<h3 id="_2">版本路线图</h3>
-<p><img alt="版本路线图" src="../images/version.png" /></p>
-<p>横轴代表发行年份。</p>
-<p><strong><em>LTS</em></strong>是长期支持(Long Term Support)的缩写 ，选用django开发时，一般选用长期支持版。</p>
-<p>django1.8  2019年就不再支持维护了。</p>
-<p>django1.11 2021年 不再支持维护。</p>
-<p>笔者学习的时候使用的是django1.11版，现在推荐使用的是django2.2 以后版本。</p>
-<h2 id="_3">框架模式</h2>
-<table>
-<thead>
-<tr>
-<th>MTV</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>M</td>
-<td>Models - 模型（数据库）</td>
-</tr>
-<tr>
-<td>T</td>
-<td>Templates - 模板（网页）</td>
-</tr>
-<tr>
-<td>V</td>
-<td>Views - 视图（逻辑）</td>
-</tr>
-</tbody>
-</table>
-<h2 id="django_1">Django框架的安装</h2>
-<ol>
-<li>安装最新版本的django</li>
-</ol>
-<p><code>python
-        pip install django</code></p>
-<ol>
-<li>安装指定版本的django</li>
-</ol>
-<p><code>python
-   pip install django==2.2.6</code></p>
-<ol>
-<li>离线安装</li>
-</ol>
-<p>django官网下载tar.gz文件，根据官网文档安装</p></div>
+<h3 id="django-22mysql">几个django 2.2和mysql使用的坑</h3>
+<p>可能是由于Django使用的MySQLdb库对Python3不支持，我们用采用了PyMySQL库来代替，导致出现各种坑，特别是执行以下2条命令的是时候：</p>
+<pre><code>python manage.py makemigrations
+or
+python manage.py inspectdb
+</code></pre>
+
+<p>第一个坑（提示你的mysqlclient版本过低）
+无聊你是否执行pip install mysqlclient安装的最新版的，都抛出：</p>
+<pre><code>django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.3 or newer is required; you have 0.7.11.None
+</code></pre>
+
+<p>MD，LZ看到这错误太想骂人了，没办法采取网上的方法，注释大法！</p>
+<p>找到Python安装路劲下的Python36-32\Lib\site-packages\django\db\backends\mysql\base.py文件</p>
+<p>将文件中的如下代码注释（可能需先关闭pycharm IDE）</p>
+<pre><code>if version &lt; (1, 3, 3):
+    raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)
+</code></pre>
+
+<p>第二个坑（str类型没有decode方法）
+对对对，py3默认str是unicode编码，通过encode方法编码成bytes类型，后者才有decode解码方法。
+提示错误来源：Python36\lib\site-packages\django\db\backends\mysql\operations.py", line 149, in last_executed_query</p>
+<p>这里网上一搜一堆的把encode改成decode方法，我靠，这谁的脑洞无敌了
+源方法内容（pip安装的django 2.2.1原封不动的内容）：</p>
+<pre><code>def last_executed_query(self, cursor, sql, params):
+    # With MySQLdb, cursor objects have an (undocumented) "_executed"
+    # attribute where the exact query sent to the database is saved.
+    # See MySQLdb/cursors.py in the source distribution.
+    query = getattr(cursor, '_executed', None)
+    if query is not None:
+        query = query.decode(errors='replace')
+    return query
+</code></pre>
+<p>通过print大法输出query结果，内容为</p>
+<p>SELECT @@SQL_AUTO_IS_NULL</p>
+<p>数据类型为str
+这里网上还有注释大法，LZ不知道注释了if的后遗症是啥有没有影响，于是也没采纳。
+于是我去django的github去翻这个文件这个方法的最新/历史版本，结果最新master分支内容如下：</p>
+<pre><code>def last_executed_query(self, cursor, sql, params):
+    # With MySQLdb, cursor objects have an (undocumented) "_executed"
+    # attribute where the exact query sent to the database is saved.
+    # See MySQLdb/cursors.py in the source distribution.
+    # MySQLdb returns string, PyMySQL bytes.
+    return force_str(getattr(cursor, '_executed', None), errors='replace')
+</code></pre>
+<p>看函数名，应该是强制去把SQL转换成str了
+我靠！！！这尼玛官网2.2.1/2.2.2(当前最新版)的包不是害人么，记得该文件上面引入下这个方法</p>
+<pre><code>from django.utils.encoding import force_str
+</code></pre>
+
+<p>然后再执行managa.py命令，可以了</p></div>
         </div>
 
         <footer class="col-md-12">
