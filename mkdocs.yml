@@ -87,6 +87,8 @@ nav:
       - 几个django 2.2和mysql使用的坑: drf/几个django 2.2和mysql使用的坑.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
+    - git:
+      - unpack-objects failed: tools/git/unpack-objects.md
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md
