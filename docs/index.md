@@ -25,7 +25,3 @@ mkdocs gh-deploy    # 部署到自己的 github pages, 如果是 readthedocs 会
 ### 访问
 
 [https://yiouejv.github.io/blog](https://yiouejv.github.io/blog)
-
-### 电子书分享
-
-[https://github.com/yiouejv/book_share](https://github.com/yiouejv/book_share)

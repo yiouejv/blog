@@ -88,6 +88,7 @@ nav:
       - Django2 DEBUG=False后静态文件无法加载: django/Django2 DEBUG=False后静态文件无法加载.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
+    - suml使用备注: tools/suml使用备注.md
     - git:
       - unpack-objects failed: tools/git/unpack-objects.md
   - 理财:
