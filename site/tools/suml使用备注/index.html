@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>几个django 2.2和mysql使用的坑 - 杨小哥博客</title>
+        <title>suml使用备注 - 杨小哥博客</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -159,7 +159,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">python <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -308,15 +308,15 @@
 </li>
             
 <li >
-    <a href="../1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
+    <a href="../../drf/1.django视图之CBV的基本使用/">9. django视图之CBV的基本使用</a>
 </li>
             
 <li >
-    <a href="../2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
+    <a href="../../drf/2.CBV中解决csrf认证的问题/">10. CBV中解决csrf认证的问题</a>
 </li>
             
-<li class="active">
-    <a href="./">几个django 2.2和mysql使用的坑</a>
+<li >
+    <a href="../../drf/几个django 2.2和mysql使用的坑/">几个django 2.2和mysql使用的坑</a>
 </li>
             
 <li >
@@ -326,16 +326,16 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../tools/linux操作系统/">linux操作系统</a>
+    <a href="../linux操作系统/">linux操作系统</a>
 </li>
                                     
-<li >
-    <a href="../../tools/suml使用备注/">suml使用备注</a>
+<li class="active">
+    <a href="./">suml使用备注</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -343,7 +343,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../tools/git/unpack-objects/">unpack-objects failed</a>
+    <a href="../git/unpack-objects/">unpack-objects failed</a>
 </li>
     </ul>
   </li>
@@ -371,12 +371,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../2.CBV中解决csrf认证的问题/">
+                                <a rel="next" href="../linux操作系统/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../django/Django2 DEBUG=False后静态文件无法加载/">
+                                <a rel="prev" href="../git/unpack-objects/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -388,62 +388,42 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#django-22mysql">几个django 2.2和mysql使用的坑</a></li>
+        <li class="main active"><a href="#_1">快捷键</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="django-22mysql">几个django 2.2和mysql使用的坑</h3>
-<p>可能是由于Django使用的MySQLdb库对Python3不支持，我们用采用了PyMySQL库来代替，导致出现各种坑，特别是执行以下2条命令的是时候：</p>
-<pre><code>python manage.py makemigrations
-or
-python manage.py inspectdb
-</code></pre>
-
-<p>第一个坑（提示你的mysqlclient版本过低）
-无聊你是否执行pip install mysqlclient安装的最新版的，都抛出：</p>
-<pre><code>django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.3 or newer is required; you have 0.7.11.None
-</code></pre>
-
-<p>MD，LZ看到这错误太想骂人了，没办法采取网上的方法，注释大法！</p>
-<p>找到Python安装路劲下的Python36-32\Lib\site-packages\django\db\backends\mysql\base.py文件</p>
-<p>将文件中的如下代码注释（可能需先关闭pycharm IDE）</p>
-<pre><code>if version &lt; (1, 3, 3):
-    raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)
-</code></pre>
-
-<p>第二个坑（str类型没有decode方法）
-对对对，py3默认str是unicode编码，通过encode方法编码成bytes类型，后者才有decode解码方法。
-提示错误来源：Python36\lib\site-packages\django\db\backends\mysql\operations.py", line 149, in last_executed_query</p>
-<p>这里网上一搜一堆的把encode改成decode方法，我靠，这谁的脑洞无敌了
-源方法内容（pip安装的django 2.2.1原封不动的内容）：</p>
-<pre><code>def last_executed_query(self, cursor, sql, params):
-    # With MySQLdb, cursor objects have an (undocumented) "_executed"
-    # attribute where the exact query sent to the database is saved.
-    # See MySQLdb/cursors.py in the source distribution.
-    query = getattr(cursor, '_executed', None)
-    if query is not None:
-        query = query.decode(errors='replace')
-    return query
-</code></pre>
-<p>通过print大法输出query结果，内容为</p>
-<p>SELECT @@SQL_AUTO_IS_NULL</p>
-<p>数据类型为str
-这里网上还有注释大法，LZ不知道注释了if的后遗症是啥有没有影响，于是也没采纳。
-于是我去django的github去翻这个文件这个方法的最新/历史版本，结果最新master分支内容如下：</p>
-<pre><code>def last_executed_query(self, cursor, sql, params):
-    # With MySQLdb, cursor objects have an (undocumented) "_executed"
-    # attribute where the exact query sent to the database is saved.
-    # See MySQLdb/cursors.py in the source distribution.
-    # MySQLdb returns string, PyMySQL bytes.
-    return force_str(getattr(cursor, '_executed', None), errors='replace')
-</code></pre>
-<p>看函数名，应该是强制去把SQL转换成str了
-我靠！！！这尼玛官网2.2.1/2.2.2(当前最新版)的包不是害人么，记得该文件上面引入下这个方法</p>
-<pre><code>from django.utils.encoding import force_str
-</code></pre>
-
-<p>然后再执行managa.py命令，可以了</p></div>
+<h3 id="_1">快捷键</h3>
+<ul>
+<li>Shift + Del            删除整行</li>
+<li>Ctrl + Shift + d       复制光标所在整行，插入在该行之前  </li>
+<li>Ctrl + d               选词 （按住-继续选择下个相同的字符串，再按，可跳到相应的方法定义处</li>
+<li>Ctrl + Shift + m       选择括号内的内容（按住-继续选择父括号）</li>
+<li>Ctrl + /               注释整行（如已选择内容，同“Ctrl+Shift+/”效果）</li>
+<li>Ctrl + Shift + UP      与上行互换  ctrl + shift + up: 列模式编辑</li>
+<li>Ctrl + k + 数组        代码按层次折叠</li>
+<li>Ctrl + k + j           代码全部展开</li>
+<li>Ctrl + k + b           打开侧边栏</li>
+<li>Ctrl + 回车    　      光标后插入行，　Ctrl+Shift+Enter 光标前插入行</li>
+<li>Ctrl + m               匹配括号</li>
+<li>Ctrl +z, y             撤销，恢复撤销</li>
+<li>Ctrl + F2              设置书签</li>
+<li>F2                     下一个书签</li>
+<li>Shift + F2             上一个书签</li>
+<li>Ctrl + 单击            多行随意位置添加光标</li>
+<li>
+<p>alt + F3( mac: ctrl + command + g): 选择页面中所有相同的词</p>
+</li>
+<li>
+<p>Ctrl + p               即时的文件切换</p>
+</li>
+<li>Ctrl + R               在当前文件内搜索的函数名</li>
+<li>Ctrl + Shift + R       在整个项目内的搜索函数名</li>
+<li>Ctrl + Shift + F       在整个项目内搜索关键词</li>
+<li>Ctrl + G               跳转到指定行</li>
+<li>Alt + -                后退</li>
+<li>Alt + Shift + -        前进</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
