@@ -39,11 +39,12 @@ nav:
     - lua 表的构造: lua/表的构造.md
     - lua select 函数: lua/select函数.md
     - lua 面向对象: lua/opp.md
-    - pairs和ipairs: lua/pairs和ipairs.md
-    - 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
-    - 协程实现生产者消费者: lua/协程实现生产者消费者.md
+    - lua pairs和ipairs: lua/pairs和ipairs.md
+    - lua 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
+    - lua 协程实现生产者消费者: lua/协程实现生产者消费者.md
     - lua 单链表: lua/lua 实现单链表.md
     - lua 打印表: lua/lua 打印表.md
+    - lua 工作中要注意的点: lua/工作中要注意的点.md
   - skynet:
     - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
     - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
@@ -95,4 +96,5 @@ nav:
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md
+    - 白手起家的百万富翁的秘密: 理财/白手起家的百万富翁的秘密.md
   
