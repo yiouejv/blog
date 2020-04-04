@@ -1,4 +1,7 @@
 
+## 在线练习
+<https://learngitbranching.js.org/?locale=zh_CN>
+
 ## 阅读git官网的Book, 顺手记录一下，方便查阅   
 <https://git-scm.com/book/en/v2>  
 
@@ -37,7 +40,7 @@
 - 当你执行 git clone 命令的时候，默认配置下远程 Git 仓库中的每一个文件的每一个版本都将被拉取下来。 事实上，如果你的服务器的磁盘坏掉了，你通常可以使用任何一个克隆下来的用户端来重建服务器上的仓库 （虽然可能会丢失某些服务器端的钩子（hook）设置，但是所有版本的数据仍在.  
 - 克隆仓库的命令是  <span style="color: red;">git clone < url ></span>
 - 克隆远程仓库的时候，自定义本地仓库的名字 <span style="color: red;">git clone < url > newname</span>
-	
+    
 ### git status  
 1. 可以用 git status 命令查看哪些文件处于什么状态。
 2. git status --short 得到一种格式更为紧凑的输出
@@ -72,6 +75,7 @@
 1. git commit -m "message": 提交代码
 2. 请记住，提交时记录的是放在暂存区域的快照。 任何还未暂存文件的仍然保持已修改状态，可以在下次提交时纳入版本管理。 每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。  
 3. git commit -m -a "message": 尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。 Git 提供了一个跳过使用暂存区域的方式， 只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交。  
+4. git commit -amend: 修改提交
 
 ### git rm
 1. git rm file: 从已跟踪文件清单中移除（确切地说，是从暂存区域移除）, 并连带从工作目录中删除指定的文件
@@ -113,36 +117,36 @@ git add README
 3. git remote add < shortname > < url >, 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写
 4. git remote show < remote >, 查看某一个远程仓库的更多信息
 5. git remote rename, 修改一个远程仓库的简写名  
-	- git remote rename pb paul，将 pb 重命名为 paul
+    - git remote rename pb paul，将 pb 重命名为 paul
 6. git remote remove, 移除一个远程仓库
-	- 你已经从服务器上搬走了或不再想使用某一个特定的镜像了
-	- 又或者某一个贡献者不再贡献了——可以使用 git remote remove 或 git remote rm
+    - 你已经从服务器上搬走了或不再想使用某一个特定的镜像了
+    - 又或者某一个贡献者不再贡献了——可以使用 git remote remove 或 git remote rm
 
 ### git fetch
 1. git fetch < remote >, 这个命令会访问远程仓库，从中拉取所有你还没有的数据, 执行完成后，你将会拥有那个远程仓库中所有分支的引用，可以随时合并或查看。   
-	- 如果你使用 clone 命令克隆了一个仓库，命令会自动将其添加为远程仓库并默认以 “origin” 为简写。 所以，git fetch origin 会抓取克隆（或上一次抓取）后新推送的所有工作。   
-	- 必须注意 git fetch 命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。 当准备好时你必须手动将其合并入你的工作。
+    - 如果你使用 clone 命令克隆了一个仓库，命令会自动将其添加为远程仓库并默认以 “origin” 为简写。 所以，git fetch origin 会抓取克隆（或上一次抓取）后新推送的所有工作。   
+    - 必须注意 git fetch 命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。 当准备好时你必须手动将其合并入你的工作。
 
 ### git push
 1. git push origin master, 只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时间克隆，他们先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。 你必须先抓取他们的工作并将其合并进你的工作后才能推送。
 
 ### git tag
 1. git tag --lits, 列出已有的标签  
-	- git tag -l "v1.8.5*", 你也可以按照特定的模式查找标签。 例如，Git 自身的源代码仓库包含标签的数量超过 500 个。 如果只对 1.8.5 系列感兴趣，可以运行 git tag -l "v1.8.5*"   
+    - git tag -l "v1.8.5*", 你也可以按照特定的模式查找标签。 例如，Git 自身的源代码仓库包含标签的数量超过 500 个。 如果只对 1.8.5 系列感兴趣，可以运行 git tag -l "v1.8.5*"   
 - git tag -a v1.4 -m "my version 1.4", 创建附注标签(annotated)  
-	- git show v1.4, 标签信息和与之对应的提交信息  
+    - git show v1.4, 标签信息和与之对应的提交信息  
 - git tag v1.4-lw, 创建轻量标签(lightweight)  
-	- 轻量标签本质上是将提交校验和存储到一个文件中——没有保存任何其他信息   
-	- 创建轻量标签，不需要使用 -a、-s 或 -m 选项，只需要提供标签名字  
+    - 轻量标签本质上是将提交校验和存储到一个文件中——没有保存任何其他信息   
+    - 创建轻量标签，不需要使用 -a、-s 或 -m 选项，只需要提供标签名字  
 - 后期打标签  
-	- git tag -a v1.2 9fceb02, 要在那个提交上打标签，你需要在命令的末尾指定提交的校验和（或部分校验和）
+    - git tag -a v1.2 9fceb02, 要在那个提交上打标签，你需要在命令的末尾指定提交的校验和（或部分校验和）
 - 共享标签
-	- git push origin < tagname >, 默认情况下，git push 命令并不会传送标签到远程仓库服务器上。 在创建完标签后你必须显式地推送标签到共享服务器上  
-	- git push origin --tags, 如果想要一次性推送很多标签，也可以使用带有 --tags 选项的 git push 命令。 这将会把所有不在远程仓库服务器上的标签全部传送到那里  
-	- <span style="color: red;">使用 git push < remote > --tags 推送标签并不会区分轻量标签和附注标签， 没有简单的选项能够让你只选择推送一种标签。</span>
+    - git push origin < tagname >, 默认情况下，git push 命令并不会传送标签到远程仓库服务器上。 在创建完标签后你必须显式地推送标签到共享服务器上  
+    - git push origin --tags, 如果想要一次性推送很多标签，也可以使用带有 --tags 选项的 git push 命令。 这将会把所有不在远程仓库服务器上的标签全部传送到那里  
+    - <span style="color: red;">使用 git push < remote > --tags 推送标签并不会区分轻量标签和附注标签， 没有简单的选项能够让你只选择推送一种标签。</span>
 - git tag -d < tagname >, 删除掉你本地仓库上的标签  
-	- 注意上述命令并不会从任何远程仓库中移除这个标签，你必须用 git push < remote > :refs/tags/< tagname > 来更新你的远程仓库, 上面这种操作的含义是，将冒号前面的空值推送到远程标签名，从而高效地删除它。  
-	- 第二种更直观的删除远程标签的方式是： git push origin --delete < tagname >
+    - 注意上述命令并不会从任何远程仓库中移除这个标签，你必须用 git push < remote > :refs/tags/< tagname > 来更新你的远程仓库, 上面这种操作的含义是，将冒号前面的空值推送到远程标签名，从而高效地删除它。  
+    - 第二种更直观的删除远程标签的方式是： git push origin --delete < tagname >
 
 
 ## git 分支  
@@ -150,26 +154,26 @@ git 分支工作原理： <https://git-scm.com/book/zh/v2/Git-分支-分支简�
 
 ### git branch
 1. git branch, 得到当前所有分支
-	- git branch -v, 查看每一个分支的最后一次提交   
-	- git branch --merged, 查看哪些分支已经合并到当前分支  
-	- git branch --no-merged, 查看哪些分支尚未合并到当前分支  
-	- git branch --no-merged master，查看哪些分支尚未合并到master分支  
+    - git branch -v, 查看每一个分支的最后一次提交   
+    - git branch --merged, 查看哪些分支已经合并到当前分支  
+    - git branch --no-merged, 查看哪些分支尚未合并到当前分支  
+    - git branch --no-merged master，查看哪些分支尚未合并到master分支  
 - git branch < name >, 创建分支，为你创建了一个可以移动的新的指针  
 - git branch -d < branchname >, 删除分支  
 - git branch -u origin/serverfix, 设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支， 你可以在任意时间使用 -u 或 --set-upstream-to 选项运行 git branch 来显式地设置
 - git branch -vv, 如果想要查看设置的所有跟踪分支, 这会将所有的本地分支列出来并且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有。
-	- 需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据。 这个命令并没有连接服务器，它只会告诉你关于本地缓存的服务器数据。 如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库。 可以像这样做：git fetch --all; git branch -vv
-
+    - 需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据。 这个命令并没有连接服务器，它只会告诉你关于本地缓存的服务器数据。 如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库。 可以像这样做：git fetch --all; git branch -vv  
+- git branch -f master HEAD~3  
 ### git checkout
 1. git checkout master, 这条命令做了两件事。  
-	- 一是使 HEAD 指回 master 分支  
-	- 二是将工作目录恢复成 master 分支所指向的快照内容   
+    - 一是使 HEAD 指回 master 分支  
+    - 二是将工作目录恢复成 master 分支所指向的快照内容   
 2. git checkout -b < newbranchname >, 创建一个新分支后立即切换过去  
 3. git checkout -b < branch > < remote >/< branch >, 创建一个新分支后立即切换过去, 并且跟踪远程仓库的分支
 
 ### git merge
 1. git merge < branchname >, 在当前分支合并另一个分支的修改  
-	- 当你试图合并两个分支时， 如果顺着一个分支走下去能够到达另一个分支，那么 Git 在合并两者的时候， 只会简单的将指针向前推进（指针右移），因为这种情况下的合并操作没有需要解决的分歧——这就叫做 “快进（fast-forward）”
+    - 当你试图合并两个分支时， 如果顺着一个分支走下去能够到达另一个分支，那么 Git 在合并两者的时候， 只会简单的将指针向前推进（指针右移），因为这种情况下的合并操作没有需要解决的分歧——这就叫做 “快进（fast-forward）”
 
 ### git add 
 1. 合并时把有冲突的文件标记为已解决状态
