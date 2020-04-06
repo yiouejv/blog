@@ -6,6 +6,10 @@ site_name: 杨小哥博客
 
 nav:
   - 算法:
+    - 数据结构(C语言版)].严蔚敏_吴伟民:
+      - 1. linux 编程环境搭建: 算法/c_data_struct/linux_编程环境搭建.md
+      - 2. 绪论: 算法/c_data_struct/绪论.md
+
     - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
     # - leetcode:
     #   - 数组:

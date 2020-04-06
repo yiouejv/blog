@@ -70,6 +70,7 @@
 1. 不加参数直接输入 git diff : 尚未暂存的文件更新了哪些部分   
 2. git diff --staged : 已暂存文件与最后一次提交的文件差异  
 3. git diff --cached : --staged 和 --cached 是同义词
+4. git diff --check ： 它将会找到可能的空白错误并将它们为你列出来
 
 ### git commit
 1. git commit -m "message": 提交代码

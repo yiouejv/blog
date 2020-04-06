@@ -404,7 +404,8 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gitbook">阅读git官网的Book, 顺手记录一下，方便查阅</a></li>
+        <li class="main active"><a href="#_1">在线练习</a></li>
+        <li class="main "><a href="#gitbook">阅读git官网的Book, 顺手记录一下，方便查阅</a></li>
         <li class="main "><a href="#git">git 基础命令</a></li>
             <li><a href="#git-config">git config</a></li>
             <li><a href="#git-help">git help</a></li>
@@ -431,11 +432,13 @@
             <li><a href="#git-add_1">git add</a></li>
             <li><a href="#git-push_1">git push</a></li>
             <li><a href="#git-rebase">git rebase 变基</a></li>
-            <li><a href="#_1">如何避免每次输入密码</a></li>
+            <li><a href="#_2">如何避免每次输入密码</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h2 id="_1">在线练习</h2>
+<p><a href="https://learngitbranching.js.org/?locale=zh_CN">https://learngitbranching.js.org/?locale=zh_CN</a></p>
 <h2 id="gitbook">阅读git官网的Book, 顺手记录一下，方便查阅</h2>
 <p><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>  </p>
 <h2 id="git">git 基础命令</h2>
@@ -524,6 +527,7 @@
 <li>git commit -m "message": 提交代码</li>
 <li>请记住，提交时记录的是放在暂存区域的快照。 任何还未暂存文件的仍然保持已修改状态，可以在下次提交时纳入版本管理。 每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。  </li>
 <li>git commit -m -a "message": 尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。 Git 提供了一个跳过使用暂存区域的方式， 只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交。  </li>
+<li>git commit -amend: 修改提交</li>
 </ol>
 <h3 id="git-rm">git rm</h3>
 <ol>
@@ -636,9 +640,10 @@ git add README
 <li>git branch -d &lt; branchname &gt;, 删除分支  </li>
 <li>git branch -u origin/serverfix, 设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支， 你可以在任意时间使用 -u 或 --set-upstream-to 选项运行 git branch 来显式地设置</li>
 <li>git branch -vv, 如果想要查看设置的所有跟踪分支, 这会将所有的本地分支列出来并且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有。<ul>
-<li>需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据。 这个命令并没有连接服务器，它只会告诉你关于本地缓存的服务器数据。 如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库。 可以像这样做：git fetch --all; git branch -vv</li>
+<li>需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据。 这个命令并没有连接服务器，它只会告诉你关于本地缓存的服务器数据。 如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库。 可以像这样做：git fetch --all; git branch -vv  </li>
 </ul>
 </li>
+<li>git branch -f master HEAD~3  </li>
 </ol>
 <h3 id="git-checkout_1">git checkout</h3>
 <ol>
@@ -667,7 +672,7 @@ git add README
 </ol>
 <h3 id="git-rebase">git rebase 变基</h3>
 <p>详情： <a href="https://git-scm.com/book/zh/v2/Git-分支-变基">https://git-scm.com/book/zh/v2/Git-分支-变基</a></p>
-<h3 id="_1">如何避免每次输入密码</h3>
+<h3 id="_2">如何避免每次输入密码</h3>
 <ol>
 <li>git config --global credential.helper cache, 如果你正在使用 HTTPS URL 来推送，Git 服务器会询问用户名与密码。 默认情况下它会在终端中提示服务器是否允许你进行推送。
 如果不想在每一次推送时都输入用户名与密码，你可以设置一个 “credential cache”。 最简单的方式就是将其保存在内存中几分钟，可以简单地运行 git config --global credential.helper cache 来设置它。</li>
