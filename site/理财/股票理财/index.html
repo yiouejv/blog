@@ -1,0 +1,2471 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="杨小哥博客,yiouejv,python,python学习,mysql,数据库,游戏开发,skynet,数据结构,数据结构与算法,算法,lua,linux">
+      
+      
+      
+        <meta name="author" content="杨小哥">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.1">
+    
+    
+      
+        <title>股票理财 - 杨小哥博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="../.." title="杨小哥博客" class="md-header-nav__button md-logo" aria-label="杨小哥博客">
+      
+  <img src="../../logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            杨小哥博客
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              股票理财
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/yiouejv/blog/" title="前往 Github 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github.com/yiouejv/blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="杨小哥博客" class="md-nav__button md-logo" aria-label="杨小哥博客">
+      
+  <img src="../../logo.jpg" alt="logo">
+
+    </a>
+    杨小哥博客
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yiouejv/blog/" title="前往 Github 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github.com/yiouejv/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-1" type="checkbox" id="nav-1-1">
+    
+    <label class="md-nav__link" for="nav-1-1">
+      数据结构(C语言版)].严蔚敏_吴伟民
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="数据结构(C语言版)].严蔚敏_吴伟民" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        数据结构(C语言版)].严蔚敏_吴伟民
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/c_data_struct/linux_%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="1. linux 编程环境搭建" class="md-nav__link">
+      1. linux 编程环境搭建
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/c_data_struct/%E7%BB%AA%E8%AE%BA/" title="2. 绪论" class="md-nav__link">
+      2. 绪论
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/数据结构和算法思维导图.md" title="数据结构和算法思维导图" class="md-nav__link">
+      数据结构和算法思维导图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%8E%9F%E7%90%86/" title="滑动窗口原理" class="md-nav__link">
+      滑动窗口原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      排序算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="排序算法" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        排序算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="1. 排序算法时间复杂度" class="md-nav__link">
+      1. 排序算法时间复杂度
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="2. 基本排序算法" class="md-nav__link">
+      2. 基本排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95%E5%92%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="3. 分治法和归并排序" class="md-nav__link">
+      3. 分治法和归并排序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="4. 快速排序" class="md-nav__link">
+      4. 快速排序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/" title="位运算" class="md-nav__link">
+      位运算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/" title="递归" class="md-nav__link">
+      递归
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90-%E4%B8%8A/" title="1. 复杂度分析-上" class="md-nav__link">
+      1. 复杂度分析-上
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90-%E4%B8%8B/" title="2. 复杂度分析-下" class="md-nav__link">
+      2. 复杂度分析-下
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/" title="3. 数组" class="md-nav__link">
+      3. 数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8-%E4%B8%8A/" title="4. 链表-上" class="md-nav__link">
+      4. 链表-上
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8-%E4%B8%8B/" title="5. 链表-下" class="md-nav__link">
+      5. 链表-下
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%A0%88/" title="6. 栈" class="md-nav__link">
+      6. 栈
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      lua
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="lua" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        lua
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E8%A1%A8%E7%9A%84%E6%9E%84%E9%80%A0/" title="lua 表的构造" class="md-nav__link">
+      lua 表的构造
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/select%E5%87%BD%E6%95%B0/" title="lua select 函数" class="md-nav__link">
+      lua select 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/opp/" title="lua 面向对象" class="md-nav__link">
+      lua 面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/pairs%E5%92%8Cipairs/" title="lua pairs和ipairs" class="md-nav__link">
+      lua pairs和ipairs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20pcall%20%26%20xpcall/" title="lua 错误处理 pcall & xpcall" class="md-nav__link">
+      lua 错误处理 pcall & xpcall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85/" title="lua 协程实现生产者消费者" class="md-nav__link">
+      lua 协程实现生产者消费者
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/lua%20%E5%AE%9E%E7%8E%B0%E5%8D%95%E9%93%BE%E8%A1%A8/" title="lua 单链表" class="md-nav__link">
+      lua 单链表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/lua%20%E6%89%93%E5%8D%B0%E8%A1%A8/" title="lua 打印表" class="md-nav__link">
+      lua 打印表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/" title="lua 工作中要注意的点" class="md-nav__link">
+      lua 工作中要注意的点
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      skynet
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="skynet" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        skynet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../skynet/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/" title="1. 并发编程和并行编程" class="md-nav__link">
+      1. 并发编程和并行编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../skynet/skynet%20%E5%9F%BA%E4%BA%8E%20Actor%20%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/" title="2. skynet 基于 Actor 模式的开源框架" class="md-nav__link">
+      2. skynet 基于 Actor 模式的开源框架
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      python
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="python" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      python 语法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="python 语法" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        python 语法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D/" title="1. python相关介绍" class="md-nav__link">
+      1. python相关介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="2. python基础语法" class="md-nav__link">
+      2. python基础语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="3. 字符串" class="md-nav__link">
+      3. 字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%BE%AA%E7%8E%AF/" title="4. 循环" class="md-nav__link">
+      4. 循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%88%97%E8%A1%A8/" title="5. 列表" class="md-nav__link">
+      5. 列表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%85%83%E7%BB%84/" title="6. 元组" class="md-nav__link">
+      6. 元组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%AD%97%E5%85%B8/" title="7. 字典" class="md-nav__link">
+      7. 字典
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E9%9B%86%E5%90%88/" title="8. 集合" class="md-nav__link">
+      8. 集合
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%87%BD%E6%95%B0/" title="9. 函数" class="md-nav__link">
+      9. 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="10. 作用域" class="md-nav__link">
+      10. 作用域
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" title="11. 高阶函数" class="md-nav__link">
+      11. 高阶函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E9%80%92%E5%BD%92/" title="12. 递归" class="md-nav__link">
+      12. 递归
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E8%A3%85%E9%A5%B0%E5%99%A8/" title="13. 装饰器" class="md-nav__link">
+      13. 装饰器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E6%A8%A1%E5%9D%97/" title="14. 模块" class="md-nav__link">
+      14. 模块
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%8C%85/" title="15. 包" class="md-nav__link">
+      15. 包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E5%BC%82%E5%B8%B8/" title="16. 异常" class="md-nav__link">
+      16. 异常
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8/" title="17. 迭代器和生成器" class="md-nav__link">
+      17. 迭代器和生成器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/" title="18. 字节串和字节数组" class="md-nav__link">
+      18. 字节串和字节数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" title="19. 文件读写" class="md-nav__link">
+      19. 文件读写
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" title="20. 字符编码" class="md-nav__link">
+      20. 字符编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-21" type="checkbox" id="nav-4-1-21">
+    
+    <label class="md-nav__link" for="nav-4-1-21">
+      21. 面向对象编程
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="21. 面向对象编程" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-1-21">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        21. 面向对象编程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="基本语法" class="md-nav__link">
+      基本语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E7%BB%A7%E6%89%BF%E6%B4%BE%E7%94%9F/" title="继承派生" class="md-nav__link">
+      继承派生
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" title="运算符重载" class="md-nav__link">
+      运算符重载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/" title="22. 迭代器（高级）" class="md-nav__link">
+      22. 迭代器（高级）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9/" title="补充知识点" class="md-nav__link">
+      补充知识点
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      django
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="django" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        django
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/1_django%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" title="1. django介绍及安装" class="md-nav__link">
+      1. django介绍及安装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/2_django%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%94%B1/" title="2. django中的路由" class="md-nav__link">
+      2. django中的路由
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/3_django%E4%B8%AD%E7%9A%84HttpRequest%E5%AF%B9%E8%B1%A1/" title="3. HttpRequest对象" class="md-nav__link">
+      3. HttpRequest对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/4_django%E4%B8%AD%E7%9A%84session%E5%92%8Ccookie/" title="4. session和cookie" class="md-nav__link">
+      4. session和cookie
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/5_django%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF/" title="5. django中的模板" class="md-nav__link">
+      5. django中的模板
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/6_django%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B/" title="6. django中的模型" class="md-nav__link">
+      6. django中的模型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/7_django%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84/" title="7. 模型中的关系映射" class="md-nav__link">
+      7. 模型中的关系映射
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/8_django%E8%87%AA%E5%B8%A6%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" title="8. 自带的后台管理" class="md-nav__link">
+      8. 自带的后台管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/1.django%E8%A7%86%E5%9B%BE%E4%B9%8BCBV%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="9. django视图之CBV的基本使用" class="md-nav__link">
+      9. django视图之CBV的基本使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/2.CBV%E4%B8%AD%E8%A7%A3%E5%86%B3csrf%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/" title="10. CBV中解决csrf认证的问题" class="md-nav__link">
+      10. CBV中解决csrf认证的问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/%E5%87%A0%E4%B8%AAdjango%202.2%E5%92%8Cmysql%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/" title="几个django 2.2和mysql使用的坑" class="md-nav__link">
+      几个django 2.2和mysql使用的坑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/Django2%20DEBUG%3DFalse%E5%90%8E%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD/" title="Django2 DEBUG=False后静态文件无法加载" class="md-nav__link">
+      Django2 DEBUG=False后静态文件无法加载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      工具
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="工具" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="linux操作系统" class="md-nav__link">
+      linux操作系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/subl%E4%BD%BF%E7%94%A8%E5%A4%87%E6%B3%A8/" title="subl使用备注" class="md-nav__link">
+      subl使用备注
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="git" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git/use_git/" title="使用git" class="md-nav__link">
+      使用git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git/unpack-objects/" title="unpack-objects failed" class="md-nav__link">
+      unpack-objects failed
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      理财
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="理财" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        理财
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%9F%BA%E9%87%91%E7%90%86%E8%B4%A2/" title="基金理财" class="md-nav__link">
+      基金理财
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        股票理财
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="股票理财" class="md-nav__link md-nav__link--active">
+      股票理财
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    股票投资和炒股
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    股票市场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    股票的特点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    股票指数
+  </a>
+  
+    <nav class="md-nav" aria-label="股票指数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    上证指数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    深圳指数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    深圳成指
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#300" class="md-nav__link">
+    沪深300指数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    股票的分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预测股市的两个水晶球
+  </a>
+  
+    <nav class="md-nav" aria-label="预测股市的两个水晶球">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    基本面分析理论, 价值投资流派
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    技术分析理论，趋势投资流派
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    股票分析
+  </a>
+  
+    <nav class="md-nav" aria-label="股票分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    基本面
+  </a>
+  
+    <nav class="md-nav" aria-label="基本面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    财报3+1选股法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    神奇公式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    技术面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    消息面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    心理面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    行业选股
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    成长股投资
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    力哥原创指数选股法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%99%BD%E6%89%8B%E8%B5%B7%E5%AE%B6%E7%9A%84%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E7%9A%84%E7%A7%98%E5%AF%86/" title="白手起家的百万富翁的秘密" class="md-nav__link">
+      白手起家的百万富翁的秘密
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      待学
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="待学" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        待学
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wait/" title="待学记录" class="md-nav__link">
+      待学记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    股票投资和炒股
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    股票市场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    股票的特点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    股票指数
+  </a>
+  
+    <nav class="md-nav" aria-label="股票指数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    上证指数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    深圳指数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    深圳成指
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#300" class="md-nav__link">
+    沪深300指数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    股票的分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    预测股市的两个水晶球
+  </a>
+  
+    <nav class="md-nav" aria-label="预测股市的两个水晶球">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    基本面分析理论, 价值投资流派
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    技术分析理论，趋势投资流派
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    股票分析
+  </a>
+  
+    <nav class="md-nav" aria-label="股票分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    基本面
+  </a>
+  
+    <nav class="md-nav" aria-label="基本面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    财报3+1选股法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    神奇公式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    技术面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    消息面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    心理面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    行业选股
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    成长股投资
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    力哥原创指数选股法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yiouejv/blog/edit/master/docs/理财/股票理财.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>股票理财</h1>
+                
+                <h3 id="_1">股票投资和炒股<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>股票投资：长期行为，众人一起把蛋糕做大的，分得更多的收益</li>
+<li>炒股：短期的投机行为，固定大小的蛋糕，获得的回报是别人的资金， 7亏2平1赚</li>
+</ul>
+<h3 id="_2">股票市场<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>一级市场: 直接对投资者发行股票筹集资金的市场</li>
+<li>二级市场；相互转让股票的市场</li>
+<li>上市公司：能在股票交易所挂牌交易的公司</li>
+</ul>
+<h3 id="_3">股票的特点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>股票投资不同偿还</li>
+<li>股票具有高流动性</li>
+<li>股票具有高收益性</li>
+<li>股票具有高风险性</li>
+<li>股票具有强参与性</li>
+<li>股票权利永久有效</li>
+</ul>
+<h3 id="_4">股票指数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>股票价格指数</p>
+<p>运用简单的统计方法编制而成用来反映市场总体价格或某类股票价格变动走势。</p>
+<h4 id="_5">上证指数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>包含上交所的全部股票，反映上交所上市股票价格的整体变动情况</p>
+<p>1990年12月19日，上证指数100点</p>
+<h4 id="_6">深圳指数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>深圳综指，由深圳证券交易所编制其样本为所有在深圳证券交易所挂牌上市的股票</p>
+<h4 id="_7">深圳成指<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>深圳成分股指数，深成指，只选取了深交所部分股票，代表比较好一点的股票</p>
+<h4 id="300">沪深300指数<a class="headerlink" href="#300" title="Permanent link">&para;</a></h4>
+<p>2005年4月8日沪深交易所联合发布的第一只横跨两市的股票指数。</p>
+<h3 id="_8">股票的分类<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>按照利润分配的先后顺序分类</p>
+<ul>
+<li>普通股：根据公司经营效率均等分配股东权益，目前在沪市和深市上市的股票都是普通股</li>
+<li>优先股：优先股的股东对公司资产利润分配享有优先权</li>
+</ul>
+</li>
+<li>
+<p>按照股票的发行方式分类</p>
+<ul>
+<li>A股：人民币普通股票，境内上市公司发行以人民币为货币进行交易的股票</li>
+<li>B股：人民币特种股票，境内上市公司发行以人民币表明面值但用外币交易的股票，沪市用美元，深市用港币</li>
+<li>H股：在中国大陆境内注册，而在香港上市交易的股票</li>
+</ul>
+</li>
+<li>
+<p>按照上市公司所属的行业来划分</p>
+<ul>
+<li>金融板块，工业板块。。。</li>
+</ul>
+</li>
+<li>
+<p>按照上市公司的经营业绩来划分</p>
+<ul>
+<li>蓝筹股：经营业绩较好，稳定性较高现金股利较丰厚的公司股票</li>
+<li>绩差股：指业绩较差的股票，这类股票价格往往表现不佳</li>
+<li>ST股：Special Treatment，ST代表连续两年亏损</li>
+<li>*ST股：连续三年亏损</li>
+</ul>
+</li>
+</ul>
+<p>。。。</p>
+<h3 id="_9">预测股市的两个水晶球<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="_10">基本面分析理论, 价值投资流派<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>底层认知框架：坚实基础理论</p>
+<p>坚实基础理论认为，每一个投资工具，无论是股票、债券还是房产，都有一个内在价值的坚实基础，我们通过仔细分析这个资产的现状和前景，就可以确定其内在价值，当市场价值低于做为坚实基础的内在价值时，买入机会就出现了，反之，卖出机会就出现了</p>
+<p><img alt="" src="../../images/nzjz.png" /></p>
+<h4 id="_11">技术分析理论，趋势投资流派<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>底层认知框架：空中楼阁理论</p>
+<p>空中楼阁理论认为，专业投资者不愿将精力用于估计企业的内在价值，第一是因为未来充满了不确定性，哪怕专业人士付出了巨大的劳动，企业的真是内在价值，也很难准确评估；第二，就算评估准确，现在股价被低估了，也不确定何时会回归价值。漫长的等待本身就充满了不确定性和风险，而聪明的投资者不会花更大的精力去研究企业的内在价值，而会花时间去研究其他投资者未来的投资行为，去分析他们在乐观时如何将自己的希望建成空中楼阁，聪明的投资者会估计出什么样的投资最容易被大众情绪堆积起一座空中楼阁，然后在大众开始行动之前，我现行买入，占据市场先机，坐等大家把股价推上去，最终建成空中楼阁</p>
+<h2 id="_12">股票分析<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">基本面<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>对应坚实基础理论</p>
+<ul>
+<li>
+<p>宏观：</p>
+<ul>
+<li>股市的走势和变化由国家经济发展水平和经济的景气状态决定</li>
+<li>股价常被看作宏观经济的晴雨表</li>
+<li>
+<p>利率：影响着公司融资的难度，国家上调利率，存款利率上升，人们愿意把钱存银行，就不太愿意去做风险更高的股票投资，这样一来就会有一部分资金，从股市里抽走，导致市场资金紧缺，就会对股价造成一定的负面影响，同时，由于利润上升，企业借钱的成本也提高了，意味着上市公司的经营成本上升了，利润相对就会减少，也是会导致股票价格有所下跌。
+<img alt="" src="../../images/moneyrare.png" />
+<img alt="" src="../../images/moneyrare2.png" /></p>
+</li>
+<li>
+<p>通货膨胀：通货膨胀也会导致股市上涨，但是这是由于增发的货比导致的上涨，单纯撒钱，股市上涨是纯粹的泡沫，一旦发钱速度变慢了，不但股市要崩盘，实体经济也会产生连锁危机。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>微观：</p>
+<ul>
+<li>公司的财务状况，市场竞争格局，经营管理体制等各方面情况影响着公司的股价。</li>
+<li>价值投资：股票长期投资价值的唯一决定因素，就是企业的基本面，基本面是企业增长的根本性的内生动力，每个价值投资者在选择股票做价值投资时，都需要去彻底的分析企业的基本面，企业存在的目的就是为了盈利，投资者最大的关注点也应该是在企业的盈利状况上，投资股票最大的目标就是应该去寻找那些最能够赚钱的企业，关键是将来也能继续赚大钱，而且赚的钱会越来越多，然后投资者以合理的或者低估的价格买入</li>
+<li>
+<p>判断企业的赚钱能力：</p>
+<ol>
+<li>
+<p>ROE（净资产收益率）</p>
+<ul>
+<li>公司税后利润除以净资产得到的百分比，指标值越高，说明投资收益越高，ROE越高，说明企业的赚钱能力越强，经营业绩越好。</li>
+<li>根据投资界供认的标准，一家公司如果常年的ROE保持在15%以上，就可以算是一个好学生了，如果ROE达到了20%以上，那基本上就是学霸级别了</li>
+<li>ROE = 净利润 / 净资产</li>
+<li>净资产 = 总资产 - 总负债</li>
+</ul>
+<p><img alt="" src="../../images/zqnl.png" /></p>
+</li>
+<li>
+<p>PE（市盈率）</p>
+<ul>
+<li>代表单位盈利投资者付出的代价有多高，市盈率就是需要多少年才能收回我们的投资</li>
+<li>用来衡量股价是被高估还是低估 </li>
+<li>PE = 每股市价 / 每股净收益 </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>财务状况：公司的总资产 = 所有者权益（股东投入的钱）+ 负债（公司向银行借的钱）</p>
+</li>
+<li>
+<p>负债经营：</p>
+<ul>
+<li>好处：放大经营杠杆，有减税作用</li>
+<li>坏处：降低企业的稳定性</li>
+<li>一般企业的资产负债率在40%-60%之间，是比较合理的</li>
+</ul>
+</li>
+<li>
+<p>企业活动；</p>
+<p><img alt="" src="../../images/companyactive.png" /></p>
+<p>净现金流：一段时间内，企业经营，投资和融资活动的现金流入和流出的差额</p>
+<p>选择企业时，我们不光要求企业的现金流为正，更重要的是一定要求企业的经营现金流为正，如果一家企业的经营现金流为负数，代表一家企业自身的经营存在问题。**企业可以没有利润，但万万不能没有现金流 **</p>
+</li>
+</ul>
+</li>
+<li>
+<p>中观分析</p>
+<p>对企业所处的行业进行分析</p>
+<ul>
+<li>
+<p>行业分析要素：</p>
+<ul>
+<li>行业是否具有周期性<ol>
+<li>强周期性行业：如钢铁、煤炭原材料行业，船舶机械、金融证券</li>
+<li>弱周期性行业：食品、家电、娱乐、医药行业</li>
+</ol>
+</li>
+<li>
+<p>行业是否具有成长性：行业是否饱和</p>
+</li>
+<li>
+<p>生存环境是否激烈</p>
+</li>
+<li>尽量选择产品和模式简单一眼就能看懂的公司</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>竞争分析</p>
+<ul>
+<li>核心竞争力</li>
+<li>企业优秀管理层<ul>
+<li>诚信，敬业，社会责任</li>
+</ul>
+</li>
+<li>
+<p>财务报告：</p>
+<p>管理者定期向股东提交成绩单，报告公司的财务状况和经营成果，是了解企业的信息窗口</p>
+<p><img alt="" src="../../images/caibao.png" /></p>
+<ol>
+<li>
+<p>资产负债表：</p>
+<p>目前企业的可用资源</p>
+<ul>
+<li>资产：企业能有控制的预期会给企业带来收益的东西</li>
+<li>流动性资产：现金或者变现能力较强的资产</li>
+<li>非流动性资产：短期内不打算变现或者变现能力较差的资产</li>
+<li>应收账款：应收账款越多，企业话语权越低，有竞争力的企业通常表现为应收账款很少，甚至没有，而预收账款较多</li>
+<li>所有者权益<ul>
+<li>实收资本：一般是指公司注册时的资本</li>
+<li>资本公积：企业在经营过程中由于接受捐赠、股本溢价以及法定财产重估增值等原因所形成的公积金</li>
+<li>本年利润：公司当年赚得的利润</li>
+<li>未分配利润：公司以前赚的利润还未来得及分红</li>
+</ul>
+</li>
+<li>负债<ul>
+<li>流动性负债：短期内需要还的负债</li>
+<li>非流动性负债</li>
+<li><strong>流动比率 = 流动资产 / 流动负债</strong>（最好大于200%）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>利润表</p>
+<p>一段时间内企业利用资源带来回报的能力和效率</p>
+<ul>
+<li>
+<p>经营利润：主业收入</p>
+<ul>
+<li>扣非净利润：扣除彩票中奖和炒股非日常收入和支出后的利润</li>
+<li>
+<p>毛利率：</p>
+<ul>
+<li>毛利润占营业收入的百分比，其中毛利润为营业收入减去营业成本</li>
+<li>毛利率的比较主要是基于行业内和自身历史水平</li>
+<li>通常毛利率不能小于30%</li>
+</ul>
+</li>
+<li>
+<p>净利润：</p>
+<ul>
+<li>净利润 = 毛利润 - 三费 - 税费</li>
+<li>三费 = 销售费 + 管理费 + 财务费</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>非经营利润：副业收入</p>
+</li>
+</ul>
+</li>
+<li>
+<p>现金流量表</p>
+<ul>
+<li>
+<p>流动现金负债保障比率 = 流动现金 / 流动负债</p>
+<p>表明的是企业能否用一年内流动的现金来偿还一年内流动的债务，比率越高，说明有更多的流动资金来偿还流动债务</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="31">财报3+1选股法<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>财报下载：</p>
+<ul>
+<li>巨潮资讯网: <a href="http://www.cninfo.com.cn/">http://www.cninfo.com.cn/</a></li>
+<li>上交所官网：<a href="http://www.sse.com.cn/">http://www.sse.com.cn/</a></li>
+<li>深交所官网：<a href="http://www.szse.cn/">http://www.szse.cn/</a></li>
+</ul>
+</li>
+<li>
+<p>杜邦分析法：</p>
+<ul>
+<li>ROE = 净利率 * 总资产周转率 * 权益乘数</li>
+<li>
+<p>总资产周转率：销售收入 / 总资产</p>
+<ul>
+<li>衡量资源的利用效率</li>
+<li>总资产周转率越高，公司运营能力越强，公司盈利能力越高</li>
+</ul>
+</li>
+<li>
+<p>权益乘数：资产 / 所有者权益</p>
+<ul>
+<li>权益乘数越高，所有者权益占比越低，资产负债率越高</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>3+1选股法：</p>
+<ul>
+<li>3代指杜邦分析法中ROE的三个指标</li>
+<li>1代指经营性现金流和净利润之比</li>
+<li>五个步骤：<ol>
+<li>净资产收益率：最近三年ROE在15%以上</li>
+<li>净利率 / 毛利率：越高，公司盈利能力越强</li>
+<li>总资产周转率：越高，公司能力越强</li>
+<li>权益乘数：越低，负债率越低，公司越稳定</li>
+<li>盈利质量：有很高的利润却没有相应的现金流，说明利润中水分较多</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="_14">神奇公式<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>《股市稳赚》作者：乔尔·格林布拉特</p>
+<ul>
+<li>资产回报率 （相当于 ROE）</li>
+<li>股票收益率 （相当于 1/PE）</li>
+<li>原理：<ol>
+<li>按照ROE从高到底排序</li>
+<li>按照PE从低到高排序</li>
+<li>两者综合找出最佳组合（排名 = ROE的排名 + PE排名）</li>
+</ol>
+</li>
+<li>神奇公式的三个前提条件<ol>
+<li>深信并坚持长期投资</li>
+<li>神奇公式不一定能保证每时每刻都有效，需要有耐心</li>
+<li>调整自己的心里预期</li>
+</ol>
+</li>
+<li>实操：<ol>
+<li>打开东方财富网的PC端，点击左侧的**沪深**，将加权净资产收益率和市盈率添加进菜单栏</li>
+<li>在股票部分点击右键，将数据导出致excel表格</li>
+<li>导出属性包含，公司名称，股价，加权净资产收益率，市盈率</li>
+<li>剔除名称以*ST、ST、PT、S开头的股票（亏损或即将退市）</li>
+<li>剔除掉股价为横杠的股票</li>
+<li>剔除加权净资产收益率和市盈率为负数的股票</li>
+<li>按照ROE从高到低排序</li>
+<li>按照PE从低到高排序</li>
+<li>将两个排名相加找出前30只股票</li>
+</ol>
+</li>
+</ul>
+<h3 id="_15">技术面<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>对应空中楼阁理</p>
+<ul>
+<li>量：成交量，成交量越多，市场越活跃</li>
+<li>价：成交价</li>
+<li>时：股票价格变化的时间周期</li>
+<li>空：股票价格波动的空间范围</li>
+</ul>
+<p>技术分析是基于三个理论假设成立的</p>
+<ul>
+<li>假设一：股价变化涵盖一切市场信息</li>
+<li>假设二：价格沿趋势移动</li>
+<li>假设三：历史会重演</li>
+</ul>
+<p>技术分析通过技术指标研究股票价格过去的运行轨迹，寻找股价未来变化方向的线索。</p>
+<p>技术分析的工具</p>
+<ul>
+<li>
+<p>K线：</p>
+<p><img alt="" src="../../images/kline.png" /></p>
+<p>k线的几种形态：</p>
+<ol>
+<li>
+<p>光头光脚阳线</p>
+<p><img alt="" src="../../images/kline1.png" /></p>
+</li>
+<li>
+<p>光脚阳线</p>
+<p>如果出现在高价区表示后市看跌</p>
+<p><img alt="" src="../../images/kline2.png" /></p>
+</li>
+<li>
+<p>光头阳线</p>
+<p><img alt="" src="../../images/kline3.png" /></p>
+</li>
+<li>
+<p>大阳线</p>
+<p><img alt="" src="../../images/kline4.png" /></p>
+</li>
+<li>
+<p>小阳线</p>
+<p><img alt="" src="../../images/kline5.png" /></p>
+</li>
+<li>
+<p>一字线</p>
+<p><img alt="" src="../../images/kline6.png" /></p>
+</li>
+<li>
+<p>十字星线</p>
+<p><img alt="" src="../../images/kline7.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>两类投资者</p>
+<ul>
+<li>多头：看涨的人</li>
+<li>空头：看跌的人</li>
+</ul>
+</li>
+<li>
+<p>趋势分析法</p>
+<p>股市按照一定规律运行，涨势或者跌势会延续，直到遇到阻力或者支撑改变其走势</p>
+<ul>
+<li>
+<p>支撑线</p>
+<ul>
+<li>支撑位：在这个价位时，多方力量足够强大，价格开始反弹</li>
+</ul>
+</li>
+<li>
+<p>阻力线</p>
+<ul>
+<li>阻力位：在这个价位时，空房力量足够强大，价格开始下跌</li>
+</ul>
+</li>
+<li>
+<p>趋势线</p>
+</li>
+</ul>
+<p><img alt="" src="../../images/qushifenxi.png" /></p>
+<p><strong>问：如何利用支撑位和阻力位？</strong></p>
+<p>答：在支撑位买入，在阻力位卖出；在支撑位下设置一个止损价，如果股价反弹，保持不动，如果股价没有反弹，这时候就要清仓退场；当股价涨到阻力位时，卖出的同时，在阻力位上设置一个买单，如果股价跌了，保持不动，涨了买单启动自动购入一些。</p>
+</li>
+<li>
+<p>移动平均线</p>
+<p>均线，英文MA，反应数据在时间窗口上的平均价格</p>
+</li>
+<li>
+<p>技术分析的天敌</p>
+<ul>
+<li>存在交易费用</li>
+<li>交易者的心魔</li>
+</ul>
+</li>
+<li>
+<p>**为什么要了解技术分析？？ **</p>
+<ul>
+<li>技术分析能量化市场情绪，正确率比猜测要高一些。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_16">消息面<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>对应空中楼阁理论</p>
+<ul>
+<li>
+<p>第一步：分辨消息</p>
+<ul>
+<li>第一种消息：庄家故意放假消息</li>
+<li>第二种消息：上市公司真有重大事件</li>
+</ul>
+</li>
+<li>
+<p>第二步：判断消息的可信度</p>
+</li>
+</ul>
+<p><img alt="" src="../../images/gupiaotouzikeng.png" /></p>
+<h3 id="_17">心理面<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>对应空中楼阁理论</p>
+<ul>
+<li>偏见：在投资心理中，我们把一切让决策背离理性的因素都称之为偏见</li>
+<li>认知偏见：信息获取或处理能力有限</li>
+<li>情绪偏见：因执着或者自我保护产生偏见</li>
+</ul>
+<h2 id="_18">行业选股<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>比较适合普通投资者选股</p>
+<ul>
+<li>
+<p>选股第一看行业</p>
+<ol>
+<li>
+<p>周期性</p>
+<ul>
+<li>
+<p>周期性行业（取决于经济大环境）</p>
+<ul>
+<li>行业的景气度与外部宏观经济环境高度正相关，并呈现周期性循环的行业</li>
+<li>钢铁，造船，汽车，房地产，有色金属，银行。。。</li>
+<li>汽车，钢铁，机械，航空，建筑，军工</li>
+</ul>
+</li>
+<li>
+<p>非周期性行业（比较容易出牛股）</p>
+<ul>
+<li>医疗，消费品，环保，交通运输 </li>
+<li>医药，医疗器械，计算机软件，消费，休闲娱乐</li>
+</ul>
+</li>
+<li>
+<p>防御性行业</p>
+<ul>
+<li>粮油食品，公用事业</li>
+</ul>
+</li>
+</ul>
+<p><strong>周期性行业适合波段操作，非周期性行业适合长期持有，防御性行业很难有超额收益</strong></p>
+</li>
+<li>
+<p>生命周期</p>
+<p><img alt="" src="../../images/hangyezhouqi.png" /> </p>
+<ul>
+<li>
+<p>初创期：</p>
+<p>行业前景广阔，市场需求不高，产品销量较低，企业引力较少</p>
+</li>
+<li>
+<p>成长期：</p>
+<p>产品更新迭代快，资本涌入多，增长具有确定性</p>
+</li>
+<li>
+<p>成熟期：</p>
+<p>市场份额占比稳定，产品价格较为稳定，增值服务增多，企业利润较为丰厚，风险相对更低</p>
+</li>
+<li>
+<p>衰退期：</p>
+<p>市场需求减少，产品销量下滑，企业利润降低</p>
+</li>
+</ul>
+</li>
+<li>
+<p>实操</p>
+<ul>
+<li>规避初创期衰退期企业</li>
+<li>成长性企业是最佳选择</li>
+<li>成熟期企业适合稳健性投资者</li>
+<li>选择自己更熟悉的行业</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>选股第二看公司</p>
+</li>
+</ul>
+<h2 id="_19">成长股投资<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>成长股企业特点：</p>
+<ul>
+<li>处于朝阳行业</li>
+<li>起步市值小</li>
+<li>竞争优势强 </li>
+</ul>
+<h2 id="_20">力哥原创指数选股法<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<ul>
+<li>第一步：挑选看好的行业</li>
+<li>第二步：挑选行业指数中出现次数最多的成分股</li>
+<li>第三步：选出来的个股进行交叉验证</li>
+<li>第四步：通过财务分析筛选</li>
+<li>第五步：判断估值的高低</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../%E5%9F%BA%E9%87%91%E7%90%86%E8%B4%A2/" title="基金理财" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                基金理财
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E7%99%BD%E6%89%8B%E8%B5%B7%E5%AE%B6%E7%9A%84%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E7%9A%84%E7%A7%98%E5%AF%86/" title="白手起家的百万富翁的秘密" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                白手起家的百万富翁的秘密
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

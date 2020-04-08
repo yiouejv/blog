@@ -1,0 +1,1929 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="杨小哥博客,yiouejv,python,python学习,mysql,数据库,游戏开发,skynet,数据结构,数据结构与算法,算法,lua,linux">
+      
+      
+      
+        <meta name="author" content="杨小哥">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.1">
+    
+    
+      
+        <title>9. 函数 - 杨小哥博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#function" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="../.." title="杨小哥博客" class="md-header-nav__button md-logo" aria-label="杨小哥博客">
+      
+  <img src="../../logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            杨小哥博客
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              9. 函数
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/yiouejv/blog/" title="前往 Github 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github.com/yiouejv/blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="杨小哥博客" class="md-nav__button md-logo" aria-label="杨小哥博客">
+      
+  <img src="../../logo.jpg" alt="logo">
+
+    </a>
+    杨小哥博客
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yiouejv/blog/" title="前往 Github 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github.com/yiouejv/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="算法" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-1" type="checkbox" id="nav-1-1">
+    
+    <label class="md-nav__link" for="nav-1-1">
+      数据结构(C语言版)].严蔚敏_吴伟民
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="数据结构(C语言版)].严蔚敏_吴伟民" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        数据结构(C语言版)].严蔚敏_吴伟民
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/c_data_struct/linux_%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="1. linux 编程环境搭建" class="md-nav__link">
+      1. linux 编程环境搭建
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/c_data_struct/%E7%BB%AA%E8%AE%BA/" title="2. 绪论" class="md-nav__link">
+      2. 绪论
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../算法/数据结构和算法思维导图.md" title="数据结构和算法思维导图" class="md-nav__link">
+      数据结构和算法思维导图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%8E%9F%E7%90%86/" title="滑动窗口原理" class="md-nav__link">
+      滑动窗口原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      排序算法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="排序算法" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        排序算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" title="1. 排序算法时间复杂度" class="md-nav__link">
+      1. 排序算法时间复杂度
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="2. 基本排序算法" class="md-nav__link">
+      2. 基本排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%88%86%E6%B2%BB%E6%B3%95%E5%92%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="3. 分治法和归并排序" class="md-nav__link">
+      3. 分治法和归并排序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="4. 快速排序" class="md-nav__link">
+      4. 快速排序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E4%BD%8D%E8%BF%90%E7%AE%97/" title="位运算" class="md-nav__link">
+      位运算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/" title="递归" class="md-nav__link">
+      递归
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90-%E4%B8%8A/" title="1. 复杂度分析-上" class="md-nav__link">
+      1. 复杂度分析-上
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90-%E4%B8%8B/" title="2. 复杂度分析-下" class="md-nav__link">
+      2. 复杂度分析-下
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/" title="3. 数组" class="md-nav__link">
+      3. 数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8-%E4%B8%8A/" title="4. 链表-上" class="md-nav__link">
+      4. 链表-上
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8-%E4%B8%8B/" title="5. 链表-下" class="md-nav__link">
+      5. 链表-下
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%AE%97%E6%B3%95/%E6%A0%88/" title="6. 栈" class="md-nav__link">
+      6. 栈
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      lua
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="lua" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        lua
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E8%A1%A8%E7%9A%84%E6%9E%84%E9%80%A0/" title="lua 表的构造" class="md-nav__link">
+      lua 表的构造
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/select%E5%87%BD%E6%95%B0/" title="lua select 函数" class="md-nav__link">
+      lua select 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/opp/" title="lua 面向对象" class="md-nav__link">
+      lua 面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/pairs%E5%92%8Cipairs/" title="lua pairs和ipairs" class="md-nav__link">
+      lua pairs和ipairs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%20pcall%20%26%20xpcall/" title="lua 错误处理 pcall & xpcall" class="md-nav__link">
+      lua 错误处理 pcall & xpcall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85/" title="lua 协程实现生产者消费者" class="md-nav__link">
+      lua 协程实现生产者消费者
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/lua%20%E5%AE%9E%E7%8E%B0%E5%8D%95%E9%93%BE%E8%A1%A8/" title="lua 单链表" class="md-nav__link">
+      lua 单链表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/lua%20%E6%89%93%E5%8D%B0%E8%A1%A8/" title="lua 打印表" class="md-nav__link">
+      lua 打印表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lua/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9/" title="lua 工作中要注意的点" class="md-nav__link">
+      lua 工作中要注意的点
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      skynet
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="skynet" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        skynet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../skynet/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%92%8C%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/" title="1. 并发编程和并行编程" class="md-nav__link">
+      1. 并发编程和并行编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../skynet/skynet%20%E5%9F%BA%E4%BA%8E%20Actor%20%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/" title="2. skynet 基于 Actor 模式的开源框架" class="md-nav__link">
+      2. skynet 基于 Actor 模式的开源框架
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      python
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="python" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-1">
+      python 语法
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="python 语法" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        python 语法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D/" title="1. python相关介绍" class="md-nav__link">
+      1. python相关介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="2. python基础语法" class="md-nav__link">
+      2. python基础语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="3. 字符串" class="md-nav__link">
+      3. 字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%BE%AA%E7%8E%AF/" title="4. 循环" class="md-nav__link">
+      4. 循环
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%88%97%E8%A1%A8/" title="5. 列表" class="md-nav__link">
+      5. 列表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%85%83%E7%BB%84/" title="6. 元组" class="md-nav__link">
+      6. 元组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%AD%97%E5%85%B8/" title="7. 字典" class="md-nav__link">
+      7. 字典
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E9%9B%86%E5%90%88/" title="8. 集合" class="md-nav__link">
+      8. 集合
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="9. 函数" class="md-nav__link md-nav__link--active">
+      9. 函数
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="10. 作用域" class="md-nav__link">
+      10. 作用域
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" title="11. 高阶函数" class="md-nav__link">
+      11. 高阶函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E9%80%92%E5%BD%92/" title="12. 递归" class="md-nav__link">
+      12. 递归
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E8%A3%85%E9%A5%B0%E5%99%A8/" title="13. 装饰器" class="md-nav__link">
+      13. 装饰器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E6%A8%A1%E5%9D%97/" title="14. 模块" class="md-nav__link">
+      14. 模块
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%8C%85/" title="15. 包" class="md-nav__link">
+      15. 包
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E5%BC%82%E5%B8%B8/" title="16. 异常" class="md-nav__link">
+      16. 异常
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8/" title="17. 迭代器和生成器" class="md-nav__link">
+      17. 迭代器和生成器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84/" title="18. 字节串和字节数组" class="md-nav__link">
+      18. 字节串和字节数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/" title="19. 文件读写" class="md-nav__link">
+      19. 文件读写
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" title="20. 字符编码" class="md-nav__link">
+      20. 字符编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-21" type="checkbox" id="nav-4-1-21">
+    
+    <label class="md-nav__link" for="nav-4-1-21">
+      21. 面向对象编程
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="21. 面向对象编程" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-1-21">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        21. 面向对象编程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="基本语法" class="md-nav__link">
+      基本语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%BB%A7%E6%89%BF%E6%B4%BE%E7%94%9F/" title="继承派生" class="md-nav__link">
+      继承派生
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/" title="运算符重载" class="md-nav__link">
+      运算符重载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88%E9%AB%98%E7%BA%A7%EF%BC%89/" title="22. 迭代器（高级）" class="md-nav__link">
+      22. 迭代器（高级）
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9/" title="补充知识点" class="md-nav__link">
+      补充知识点
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      django
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="django" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        django
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/1_django%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%89%E8%A3%85/" title="1. django介绍及安装" class="md-nav__link">
+      1. django介绍及安装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/2_django%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%94%B1/" title="2. django中的路由" class="md-nav__link">
+      2. django中的路由
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/3_django%E4%B8%AD%E7%9A%84HttpRequest%E5%AF%B9%E8%B1%A1/" title="3. HttpRequest对象" class="md-nav__link">
+      3. HttpRequest对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/4_django%E4%B8%AD%E7%9A%84session%E5%92%8Ccookie/" title="4. session和cookie" class="md-nav__link">
+      4. session和cookie
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/5_django%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF/" title="5. django中的模板" class="md-nav__link">
+      5. django中的模板
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/6_django%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9E%8B/" title="6. django中的模型" class="md-nav__link">
+      6. django中的模型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/7_django%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84/" title="7. 模型中的关系映射" class="md-nav__link">
+      7. 模型中的关系映射
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/8_django%E8%87%AA%E5%B8%A6%E7%9A%84%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" title="8. 自带的后台管理" class="md-nav__link">
+      8. 自带的后台管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/1.django%E8%A7%86%E5%9B%BE%E4%B9%8BCBV%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="9. django视图之CBV的基本使用" class="md-nav__link">
+      9. django视图之CBV的基本使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/2.CBV%E4%B8%AD%E8%A7%A3%E5%86%B3csrf%E8%AE%A4%E8%AF%81%E7%9A%84%E9%97%AE%E9%A2%98/" title="10. CBV中解决csrf认证的问题" class="md-nav__link">
+      10. CBV中解决csrf认证的问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../drf/%E5%87%A0%E4%B8%AAdjango%202.2%E5%92%8Cmysql%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/" title="几个django 2.2和mysql使用的坑" class="md-nav__link">
+      几个django 2.2和mysql使用的坑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../django/Django2%20DEBUG%3DFalse%E5%90%8E%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD/" title="Django2 DEBUG=False后静态文件无法加载" class="md-nav__link">
+      Django2 DEBUG=False后静态文件无法加载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      工具
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="工具" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="linux操作系统" class="md-nav__link">
+      linux操作系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/subl%E4%BD%BF%E7%94%A8%E5%A4%87%E6%B3%A8/" title="subl使用备注" class="md-nav__link">
+      subl使用备注
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="git" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git/use_git/" title="使用git" class="md-nav__link">
+      使用git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git/unpack-objects/" title="unpack-objects failed" class="md-nav__link">
+      unpack-objects failed
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      理财
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="理财" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        理财
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%90%86%E8%B4%A2/%E5%9F%BA%E9%87%91%E7%90%86%E8%B4%A2/" title="基金理财" class="md-nav__link">
+      基金理财
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%90%86%E8%B4%A2/%E8%82%A1%E7%A5%A8%E7%90%86%E8%B4%A2/" title="股票理财" class="md-nav__link">
+      股票理财
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E7%90%86%E8%B4%A2/%E7%99%BD%E6%89%8B%E8%B5%B7%E5%AE%B6%E7%9A%84%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E7%9A%84%E7%A7%98%E5%AF%86/" title="白手起家的百万富翁的秘密" class="md-nav__link">
+      白手起家的百万富翁的秘密
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      待学
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="待学" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        待学
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wait/" title="待学记录" class="md-nav__link">
+      待学记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yiouejv/blog/edit/master/docs/python/python函数.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h3 id="function">函数function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>函数是可以重复执行的语句块，可以重复调用
+    作用
+        用于封装语句块，提高代码的重用性
+        定义用户级别的函数
+</code></pre></div>
+
+<h3 id="def">def 语句<a class="headerlink" href="#def" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    语法
+        def 函数名(形参列表):
+            语句块
+    作用
+        用语句块创建一个函数，并用函数名变量绑定这个函数
+
+    语法说明
+        1. 函数名是变量，它用于绑定语句块
+        2. 函数有自己的名字空间，在函数外部不可以访问函数内部的变量，
+            在函数内部可以访问函数外部的变量（要让函数处理外部的数据需要用参数给函数传入一些数据）
+        3. 函数不需要传入参数时，形参列表可以为空
+        4. 语句部分不能为空，如果为空需要填充pass语句
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例用def 语句来定义一个函数并调用这个函数</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello Tarena!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello everyone&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 带有参数的函数调用</span>
+<span class="k">def</span> <span class="nf">mymax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;最大值为：&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;最大值为：&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">mymax</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1">#带传参调用</span>
+</code></pre></div>
+
+<h3 id="_1">函数调用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>函数名(实际调用传递参数)
+        注：实际调用传递参数，以后称为实参
+    说明
+        函数调用是一个表达式
+        如果函数内部没有return 语句，则函数执行完毕后返回None对象
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>练习
+    写一个函数，myadd, 此函数中的参数列表里有两个参数x, y
+    此函数的功能是打印x + y的和
+
+    写一个函数print_even， 传入一个参数n代表终止整数，打印2 4 6 8 ... n之间的所有偶数
+</code></pre></div>
+
+<h3 id="return">return 语句<a class="headerlink" href="#return" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    语法
+        return [表达式]
+        注 []代表可以省略其中的内容
+    作用
+        用于函数中，结束当前函数的执行，返回到调用该函数的地方，同时返回一个对象的引用关系
+    说明
+        1. return 语句后跟表达式可以省略，省略后相当于return None
+        2. 如果函数内内有 retutn 语句，则函数执行完毕后返回None
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>练习
+    写一个函数myadd2,实现返回两个数的和:
+     如：
+        def myadd(a, b):
+            ..
+</code></pre></div>
+
+<h3 id="_2">函数的参数传递<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    位置传递
+        序列传参
+    关键字传参
+        字典关键字传参
+</code></pre></div>
+
+<h5 id="_3">位置传参<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>实际参数的对应关系与形参的对应关系是按位置依次对应的</p>
+<div class="codehilite"><pre><span></span><code>示意
+    def mymin(a, b, c):
+        pass
+    mymin(1, 2, 3)  #1,2,3位置是对应关系传递给a, b, c
+
+说明
+    实参和形参通过位置进行传递和匹配
+    实参的个数和形参的个数相同
+</code></pre></div>
+
+
+<p>```python</p>
+<h1 id="_4">此示例示意位置传参<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>def myfun(a, b, c):
+    '''这是一个函数传参的示例'''
+    print('a的值是：', a)
+    print('b的值是：', b)
+    print('c的值是：', c)
+
+myfun(1, 2, 3)
+myfun(4, 5, 6)
+```</p>
+<h5 id="_5">序列传参<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>序列传参是指函数在调用过程中，用*将序列拆解按位置进行传参的方式</p>
+<div class="highlight"><pre><span></span><code>说明
+    序列传参时，序列拆解的位置将与形参一一对应
+    序列的位置信息也对应相应的参数位置
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例示意序列传参</span>
+<span class="k">def</span> <span class="nf">myfun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a的值是：&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b的值是：&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c的值是：&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s1">&#39;ABC&#39;</span>
+<span class="n">myfun</span><span class="p">(</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">myfun</span><span class="p">(</span><span class="o">*</span><span class="n">s3</span><span class="p">)</span>
+</code></pre></div>
+
+<h5 id="_6">关键字传参<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<ul>
+<li>关键字传参是指传参时，按照形参的名称给形参赋值</li>
+<li>实参和形参名称进行匹配</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    示意
+        def myfun(a, b, c)
+            pass
+        myfun(b = 22, c = 33, a = 11)   # 11-&gt;a  22-&gt;b 33-&gt;c
+        myfun(b = 66, c = 55, a = 44)   # 44-&gt;a  66-&gt;b 55-&gt;c
+    说明
+        实参和形参按着形参名进行匹配，可以不按位置进行匹配
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例示意关键字传参</span>
+<span class="k">def</span> <span class="nf">myfun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a的值是：&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b的值是：&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c的值是：&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">myfun</span><span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">33</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">11</span><span class="p">)</span>   <span class="c1"># 11-&gt;a  22-&gt;b 33-&gt;c</span>
+<span class="n">myfun</span><span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">66</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">55</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">44</span><span class="p">)</span>   <span class="c1"># 44-&gt;a  66-&gt;b 55-&gt;c</span>
+</code></pre></div>
+
+<h5 id="_7">字典关键字传参<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>是指实参为字典，将字典用**拆解后进行关键字传参的方式</p>
+<div class="highlight"><pre><span></span><code>    说明
+        字典的键名和形参名一致
+        字典的键名必须为字符串（且为标识符的命名方式）
+        字典的键名要在形参中存在
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例示意字典关键字传参</span>
+<span class="k">def</span> <span class="nf">myfun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a的值是：&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b的值是：&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c的值是：&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">250</span>
+<span class="p">}</span>
+
+<span class="n">myfun</span><span class="p">(</span><span class="o">**</span><span class="n">d1</span><span class="p">)</span>   <span class="c1"># 11-&gt;a  22-&gt;b 33-&gt;c</span>
+<span class="n">myfun</span><span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">66</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">55</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">44</span><span class="p">)</span>   <span class="c1"># 44-&gt;a  66-&gt;b 55-&gt;c</span>
+</code></pre></div>
+
+<h5 id="_8">传参的综合传参<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<ol>
+<li>函数的传参方式，在能确定形参能唯一匹配到相应参数的情况下可以任意组合</li>
+<li>函数的位置传参要先于关键字传参</li>
+</ol>
+<div class="highlight"><pre><span></span><code>    说明
+        位置传参和序列传参可以混合使用且可以顺序颠倒
+            如：
+            myfun(100, *[200, 300])
+            myfun(*[100, 200], 300)
+            myfun(*[100], 200, *[300])
+        函数的关键字传参和字典关键字传参可以混合使用，且可以颠倒顺序
+            如：
+                myfun(c=300, **{&#39;b&#39;: 200,&#39;a&#39;：100})
+                myfun(**{&#39;b&#39;: 200, &#39;c&#39;: 300}, a=100)
+        位置传参和关键字传参可以混合使用，但位置传参要先于关键字传参：
+            如：
+                myfun(100, c=300, b=200)
+                myfun(10, c=30, **{&#39;b&#39;: 20})
+</code></pre></div>
+
+<p><strong>练习</strong></p>
+<div class="highlight"><pre><span></span><code>    写一个函数，getminmax(a, b, c)三个参数，此函数用于返回三个数的最大值，最小值
+        形成元组后返回
+            元组格式：
+                （最小值，最大值）
+    可以尝试上述传参方式
+</code></pre></div>
+
+<h3 id="_9">函数的缺省参数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>语法：
+        def 函数名(形参名1=默认实参1, 形参名2=默认实参名2....):
+            语句块
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例示意缺省参数</span>
+<span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s1">&#39;不详&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我叫&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;我今年&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s1">&#39;岁&#39;</span><span class="p">,</span> <span class="s1">&#39;我的住址是：&#39;</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
+
+<span class="n">info</span><span class="p">(</span><span class="s1">&#39;老王&#39;</span><span class="p">,</span> <span class="s1">&#39;22&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>说明</p>
+<ul>
+<li>缺省参数必须自右至左依次存在，如果一个参数有缺省参数，则其右侧的所有参数都必须有缺省参数</li>
+<li>缺省参数可以有0个或多个，甚至全部都有缺省参数</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 示例</span>
+        <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>   <span class="c1"># 错的</span>
+            <span class="k">pass</span>
+        <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>  <span class="c1">#对的</span>
+            <span class="k">pass</span>
+</code></pre></div>
+
+<p><strong>练习</strong></p>
+<div class="highlight"><pre><span></span><code>1. 写一个函数myadd,此函数可以计算两个，三个，四个实参的和
+    def myadd(...):
+        ...
+    print(myadd(100, 200))  #300
+    print(myadd(100, 200, 300))  #600
+    print(myadd(100, 200, 300, 400))  #1000
+    print(myadd(100, 200, 300, 400, 500))  #报错
+
+2.  写一个myrange()函数：
+    此函数用给定的参数，返回一个存有对应的整数列表
+    如：
+        def myrange():
+            ...
+        l = myrange(5)  #l = [0, 1, 2, 3, 4]
+        l = myrange(5, 10) #l = [5, 6, 7, 8, 9]
+        l = myrange(5, 10, 2)   #l = [5, 7, 9]
+</code></pre></div>
+
+<h3 id="_10">函数形参的定义方式<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>位置形参</li>
+<li>星号元组形参</li>
+<li>命名关键字形参</li>
+<li>双星号字典形参</li>
+</ul>
+<h5 id="_11">位置形参<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>def 函数名(形参名1, 形参名1, ...)
+        语句块
+</code></pre></div>
+
+<h5 id="_12">星号元组形参<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>    def 函数名(*元组形参名):
+        语句块
+    作用
+        收集多余位置传参
+    说明
+        元组形参一般命名为&#39;agrs&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># 此示例示意星号元组形参</span>
+<span class="k">def</span> <span class="nf">star_tuple_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;实参的个数是：&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+<span class="n">star_tuple_args</span><span class="p">()</span>
+<span class="n">star_tuple_args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">star_tuple_args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span> <span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">star_tuple_args</span><span class="p">(</span><span class="s1">&#39;dasda&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>练习</strong></p>
+<div class="highlight"><pre><span></span><code>1.写一个函数，mysum 可以传入任意个实参的数字，返回所有实参的和
+        def mysum(*args):
+            return sum(args)
+        print(mysum(1, 2, 3, 4))    #10
+        print(mysum(1, 2, 3, 4, 5, 6))  #21
+
+2.已知内建函数max帮助文档为help(max)
+        max(iterable, *[, default=obj, key=func]) -&gt; value
+        max(arg1, arg2, *args, *[, key=func]) -&gt; value
+
+      仿造max写一个mymax函数，功能要求与max完全相同（不允许用max）
+      print(mymax([6, 8, 3, 5]))    # 8
+      print(mymax(100, 200))        #200
+      print(mymax(1, 3, 5, 9, 7))   #9  
+</code></pre></div>
+
+<h5 id="_13">命名关键字形参<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>【【 *是位置形参和关键字行参的分隔符】】
+
+    语法
+        def 函数名(*, 命名关键字形参)：
+            语句块
+        def 函数名(*args, 命名关键字形参):
+            语句块
+    作用
+        强制所有的参数必须用关键字传参或字典关键字传参
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#   此示例示意命名关键字形参</span>
+
+<span class="c1"># def 函数名(*, 命名关键字形参)：</span>
+<span class="c1">#             语句块</span>
+<span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c =&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d =&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="c1"># print(fun(3, 4))    #出错</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">fun2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>    <span class="c1"># *是位置形参和关键字行参的分隔符</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="n">fun2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># def 函数名(*args, 命名关键字形参):</span>
+<span class="c1">#     语句块</span>
+<span class="k">def</span> <span class="nf">fun3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="n">fun3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+
+<h5 id="_14">双星号字典形参<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>    语法
+        def 函数名(**字典形参名):
+            语句块
+    作用
+        收集多余的关键字形参
+    说明
+        字典形参名一般命名为 kwargs
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#   此示例示意双星号字典形参</span>
+<span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;关键字形参的个数为：&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">fun</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;yangwenjun&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s1">&#39;温馨家园&#39;</span><span class="p">)</span>
+
+<span class="n">fun</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;BBBB&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">d</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fun</span><span class="p">()</span>
+</code></pre></div>
+
+<h3 id="_15">函数的参数说明<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>位置形参，缺省参数，星号元组形参，双星号字典形参，命名关键字形参可以混合使用</p>
+<div class="codehilite"><pre><span></span><code>函数参数自左至右的顺序为：
+    1. 位置形参
+    2. 星号元组形参
+    3. 命名关键字形参
+    4. 双星号字典形参
+
+示例
+    def fn(a, b, *args, c, **kwargs):
+        pass
+    fn(100, 200, 300, 400, d=&#39;D&#39;, e=&#39;E&#39;, c=&#39;C&#39;)
+</code></pre></div>
+
+
+<h3 id="_16">思考题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>查看&gt;&gt;&gt;help(print) 猜想print函数的参数列表是如何定义的
+print(*args, sep=&#39; &#39;,end=&#39;\n&#39;)
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../python%E9%9B%86%E5%90%88/" title="8. 集合" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                8. 集合
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../python%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="10. 作用域" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                10. 作用域
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
