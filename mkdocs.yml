@@ -1,7 +1,25 @@
 site_name: 杨小哥博客
 
+# theme: 
+#   name: material  # 安装pip install mkdocs mkdocs-material
 
-# theme: readthedocs
+theme:
+  name: material
+  # custom_dir: mkdocs-material/material
+  language: 'zh'
+  logo: logo.jpg
+  # favicon: favicon.ico
+
+extra:
+  search:  # 支持中文搜索
+    language: 'jp'
+
+
+site_favicon: favicon.ico
+site_author: 杨小哥
+repo_name: github.com/yiouejv/blog
+repo_url: https://github.com/yiouejv/blog
+site_description: 杨小哥博客,yiouejv,python,python学习,mysql,数据库,游戏开发,skynet,数据结构,数据结构与算法,算法,lua,linux
 
 
 nav:
@@ -106,3 +124,30 @@ nav:
   
   - 待学:
     - 待学记录: wait.md
+
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde

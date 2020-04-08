@@ -4,8 +4,9 @@
 
 
 ### 本电子书制作和写作方式
-使用 mkdocs 和 markdown 构建。  
-markdown 语法参考：http://xianbai.me/learn-md/article/about/readme.html
+使用 mkdocs 和 markdown, mkdocs-material 构建。   
+markdown 语法参考：<http://xianbai.me/learn-md/article/about/readme.html>  
+mkdocs-material 官网: <https://squidfunk.github.io/mkdocs-material/>  
 
 安装依赖：
 ```sh
