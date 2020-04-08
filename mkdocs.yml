@@ -77,6 +77,7 @@ nav:
       - 21. 面向对象编程: 
           - 基本语法: python/面向对象编程.md
           - 继承派生: python/继承派生.md
+          - 运算符重载: python/python运算符重载.md
       - 22. 迭代器（高级）: python/迭代器（高级）.md
       - 补充知识点: python/补充知识点.md
     - django: 
