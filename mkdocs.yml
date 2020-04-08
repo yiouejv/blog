@@ -1,14 +1,10 @@
 site_name: 杨小哥博客
 
-# theme: 
-#   name: material  # 安装pip install mkdocs mkdocs-material
-
 theme:
-  name: material
-  # custom_dir: mkdocs-material/material
+  name: material  # 安装pip install mkdocs mkdocs-material
   language: 'zh'
   logo: logo.jpg
-  # favicon: favicon.ico
+  favicon: favicon.ico
 
 extra:
   search:  # 支持中文搜索
