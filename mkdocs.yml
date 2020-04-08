@@ -107,6 +107,9 @@ nav:
       - 10. CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
       - 几个django 2.2和mysql使用的坑: drf/几个django 2.2和mysql使用的坑.md
       - Django2 DEBUG=False后静态文件无法加载: django/Django2 DEBUG=False后静态文件无法加载.md
+  - MySQL:
+      - 1. 数据库概述: 数据库/mysql/数据库概述.md
+      - 2. 数据类型: 数据库/mysql/数据类型.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
     - subl使用备注: tools/subl使用备注.md
