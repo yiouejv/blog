@@ -1343,13 +1343,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    外键约束（foreign key）
+  </a>
+  
+    <nav class="md-nav" aria-label="外键约束（foreign key）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    级联动作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     索引
   </a>
   
@@ -1373,13 +1393,6 @@
           <li class="md-nav__item">
   <a href="#primary-key" class="md-nav__link">
     主键索引（primary key）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#foreign-key" class="md-nav__link">
-    外键（foreign key）
   </a>
   
 </li>
@@ -1416,6 +1429,18 @@
   <li class="md-nav__item">
     <a href="../%E8%B0%83%E4%BC%98%E5%92%8C%E4%BA%8B%E5%8A%A1/" title="7. 调优和事务" class="md-nav__link">
       7. 调优和事务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/" title="8. python3数据库编程" class="md-nav__link">
+      8. python3数据库编程
     </a>
   </li>
 
@@ -1686,13 +1711,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    外键约束（foreign key）
+  </a>
+  
+    <nav class="md-nav" aria-label="外键约束（foreign key）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    级联动作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     索引
   </a>
   
@@ -1716,13 +1761,6 @@
           <li class="md-nav__item">
   <a href="#primary-key" class="md-nav__link">
     主键索引（primary key）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#foreign-key" class="md-nav__link">
-    外键（foreign key）
   </a>
   
 </li>
@@ -1772,7 +1810,73 @@
     <span class="n">course</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span> <span class="k">default</span> <span class="s1">&#39;Python&#39;</span>
 <span class="p">);</span>
 </code></pre></div></p>
-<h3 id="_2">索引<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="foreign-key">外键约束（foreign key）<a class="headerlink" href="#foreign-key" title="Permanent link">&para;</a></h4>
+<p>定义: 让当前表的字段值在另一张表的范围内去选择</p>
+<p>语法格式
+<div class="highlight"><pre><span></span><code><span class="k">foreign</span> <span class="k">key</span><span class="p">(</span><span class="err">参考字段名</span><span class="p">)</span>
+<span class="k">references</span> <span class="err">主表（被参考字段名）</span>
+<span class="k">on</span> <span class="k">delete</span> <span class="err">级联动作</span>
+<span class="k">on</span> <span class="k">update</span> <span class="err">级联动作</span><span class="p">;</span>
+</code></pre></div></p>
+<p>使用规则</p>
+<ol>
+<li>主表、从表字段数据类型要一致  </li>
+<li>主表： 被参考字段是主键  </li>
+</ol>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="err">表</span><span class="mi">1</span><span class="err">：缴费信息表（财务）</span>
+    <span class="n">id</span>  <span class="err">姓名</span>     <span class="err">班级</span>      <span class="err">缴费金额</span>
+    <span class="mi">1</span>   <span class="err">唐伯虎</span>   <span class="n">AID07</span>     <span class="mi">300</span>
+    <span class="mi">2</span>   <span class="err">点秋香</span>   <span class="n">AID07</span>     <span class="mi">300</span>
+
+   <span class="k">create</span> <span class="k">table</span> <span class="nf">bjtab</span><span class="p">(</span>
+<span class="o">-&gt;</span> <span class="n">stu_id</span> <span class="kt">int</span><span class="p">,</span>
+<span class="o">-&gt;</span> <span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="o">-&gt;</span> <span class="n">money</span> <span class="kt">smallint</span><span class="p">);</span>
+
+    <span class="k">insert</span> <span class="k">into</span> <span class="n">jftab</span> <span class="k">values</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;唐伯虎&#39;</span><span class="p">,</span> <span class="s1">&#39;AID07&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;点秋香&#39;</span><span class="p">,</span> <span class="s1">&#39;AID07&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+
+
+<span class="err">表</span><span class="mi">2</span><span class="err">：学生信息表（班主任）</span>
+   <span class="n">stu_id</span>    <span class="err">姓名</span>     <span class="err">缴费金额</span>
+   <span class="mi">3</span>        <span class="err">祝枝山</span>     <span class="mi">300</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="nf">bjtab</span><span class="p">(</span>
+<span class="n">stu_id</span> <span class="kt">int</span><span class="p">,</span>
+<span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="n">money</span> <span class="kt">smallint</span><span class="p">,</span>
+<span class="k">foreign</span> <span class="k">key</span><span class="p">(</span><span class="n">stu_id</span><span class="p">)</span> <span class="k">references</span> <span class="nf">jftab</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="k">on</span> <span class="k">delete</span> <span class="k">cascade</span>
+<span class="k">on</span> <span class="k">update</span> <span class="k">cascade</span>
+<span class="p">)</span> <span class="k">character</span> <span class="kt">set</span> <span class="n">utf8</span><span class="p">;</span>
+</code></pre></div></p>
+<p>删除外键<br />
+<div class="highlight"><pre><span></span><code><span class="k">alter</span> <span class="k">table</span> <span class="err">表名</span> <span class="k">drop</span> <span class="k">foreign</span> <span class="k">key</span> <span class="err">外键名</span><span class="p">;</span>
+</code></pre></div></p>
+<p>外键名的查看方式：
+<div class="highlight"><pre><span></span><code><span class="k">show</span> <span class="k">create</span> <span class="k">table</span> <span class="err">表名</span><span class="p">;</span>
+</code></pre></div></p>
+<p>已有表添加外键<br />
+<div class="highlight"><pre><span></span><code><span class="k">alter</span> <span class="k">table</span> <span class="err">表名</span>　<span class="k">add</span> <span class="k">foreign</span> <span class="k">key</span><span class="p">(</span><span class="n">stu_id</span><span class="p">)</span> <span class="k">references</span> <span class="nf">jftab</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">on</span> <span class="k">delete</span> <span class="err">级联动作</span>　<span class="k">on</span> <span class="k">update</span> <span class="err">级联动作</span><span class="p">;</span>
+</code></pre></div></p>
+<h5 id="_2">级联动作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>cascade<br />
+    数据级联删除，级联更新（参考字段）  </p>
+</li>
+<li>
+<p>restrict(默认)<br />
+    从表中有相关联记录，不允许主表操作  </p>
+</li>
+<li>
+<p>set null<br />
+    主表删除\更新时，从表相关联记录字段值为NULL  </p>
+</li>
+</ol>
+<h3 id="_3">索引<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>定义: 对数据库中表的一列或多列的值进行排序的一种结构（Btree）</p>
 <p>优点: 加快数的检索速度</p>
 <p>缺点: <br />
@@ -1895,8 +1999,6 @@
 <span class="mi">2</span><span class="p">.</span> <span class="err">删除主键</span>
     <span class="k">alter</span> <span class="k">table</span> <span class="err">表名</span> <span class="k">drop</span> <span class="k">primary</span> <span class="k">key</span><span class="p">;</span>
 </code></pre></div>
-
-<h4 id="foreign-key">外键（foreign key）<a class="headerlink" href="#foreign-key" title="Permanent link">&para;</a></h4>
                 
               
               
