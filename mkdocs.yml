@@ -112,6 +112,9 @@ nav:
       - 2. 数据类型: 数据库/mysql/数据类型.md
       - 3. 表操作: 数据库/mysql/表操作.md
       - 4. 查询: 数据库/mysql/查询.md
+      - 5. 约束索引: 数据库/mysql/约束索引.md
+      - 6. 数据备份与恢复: 数据库/mysql/数据备份与恢复.md
+      - 7. 调优和事务: 数据库/mysql/调优和事务.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
     - subl使用备注: tools/subl使用备注.md
