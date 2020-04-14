@@ -94,6 +94,7 @@ nav:
           - 运算符重载: python/python运算符重载.md
       - 22. 迭代器（高级）: python/迭代器（高级）.md
       - 补充知识点: python/补充知识点.md
+      - 虚拟环境: python/虚拟环境.md
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
       - 2. django中的路由: django/2_django中的路由.md
