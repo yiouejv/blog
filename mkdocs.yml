@@ -121,6 +121,7 @@ nav:
   - MongoDB:
       - 1. 开启之前: 数据库/mongodb/开启之前.md
       - 2. 基本概念和数据类型: 数据库/mongodb/基本概念和数据类型.md
+      - 3. shell文档: 数据库/mongodb/shell文档.md
   - 工具:
     - linux操作系统: tools/linux操作系统.md
     - subl使用备注: tools/subl使用备注.md
