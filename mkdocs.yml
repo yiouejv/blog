@@ -95,11 +95,16 @@ nav:
           - 运算符重载: python/python运算符重载.md
       - 22. 迭代器（高级）: python/迭代器（高级）.md
       - 补充知识点: python/补充知识点.md
-      - 虚拟环境: python/虚拟环境.md
-      - 调取阿里云短信api发送短信: python/调取阿里云短信api发送短信.md
     - python 库: 
        - os.path: python/常见路径操作.md
        - datetime: python/日期和时间.md
+    - python 相关: 
+      - 虚拟环境: python/虚拟环境.md
+      - 调取阿里云短信api发送短信: python/调取阿里云短信api发送短信.md
+      - DFA敏感词过滤算法的python实现: python/DFA敏感词过滤算法的python实现.md
+      - pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用: python/pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用.md
+      - 完全卸载Python for ubuntu: python/完全卸载Python for ubuntu.md
+      
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
       - 2. django中的路由: django/2_django中的路由.md

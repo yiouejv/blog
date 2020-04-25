@@ -111,6 +111,14 @@ git add README
 ### git checkout
 1. git checkout -- < file >, <span style="color: red;">请务必记得 git checkout -- < file > 是一个危险的命令</span>。 你对那个文件在本地的任何修改都会消失——Git 会用最近提交的版本覆盖掉它。 除非你确实清楚不想要对那个文件的本地修改了，否则请不要使用这个命令。
 
+### git stash
+1. git stash: 创建保存临时工作区
+- git stash list: 查看保存的工作区
+- git stash apply stash@{1}: 应用哪个工作区
+- git stash pop: 应用上一个工作区并且删除
+- git stash drop stash@{0}: 删除指定的工作区
+- git stash clear: 删除所有的工作区
+
 
 ### git remote
 1. 运行 git remote 命令, 它会列出你指定的每一个远程服务器的简写。
