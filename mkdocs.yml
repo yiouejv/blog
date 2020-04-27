@@ -104,6 +104,8 @@ nav:
       - DFA敏感词过滤算法的python实现: python/DFA敏感词过滤算法的python实现.md
       - pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用: python/pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用.md
       - 完全卸载Python for ubuntu: python/完全卸载Python for ubuntu.md
+      - python计算金额decimal常用操作: python/python计算金额decimal常用操作.md
+      - python实现MD5加密: python/python实现MD5加密.md
       
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
@@ -121,6 +123,7 @@ nav:
       - Django2 DEBUG=False后静态文件无法加载: django/Django2 DEBUG=False后静态文件无法加载.md
       - Django之密码的加密和解密: django/Django之密码的加密和解密.md
       - 自定义过滤器和自定义标签: django/自定义过滤器和自定义标签.md
+      - 扩展自定义manage命令: python/Django扩展自定义manage命令.md
   - php:
     - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
     - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
@@ -142,8 +145,9 @@ nav:
       - input checked 全选: 前端相关/input_checked_全选.md
       - 实现图片懒加载: 前端相关/使用scrollreveal实现图片懒加载.md
   - 工具:
-    - linux操作系统: tools/linux操作系统.md
-    - subl使用备注: tools/subl使用备注.md
+    - linux 操作系统: tools/linux操作系统.md
+    - subl 使用备注: tools/subl使用备注.md
+    - shell 语言编程: tools/shell 语言编程.md
     - git:
       - 使用git: tools/git/use_git.md
       - unpack-objects failed: tools/git/unpack-objects.md
