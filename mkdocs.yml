@@ -19,8 +19,14 @@ site_description: 杨小哥博客,yiouejv,python,python学习,mysql,数据库,�
 
 
 nav:
+  - Coding Interview University:
+    - readme: Coding Interview University/readme.md
+    - 必备知识: Coding Interview University/必备知识.md
+    - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
+    
   - 算法:
-    - 数据结构(C语言版)].严蔚敏_吴伟民:
+
+    - 数据结构.严蔚敏_吴伟民:
       - 1. linux 编程环境搭建: 算法/c_data_struct/linux_编程环境搭建.md
       - 2. 绪论: 算法/c_data_struct/绪论.md
 
