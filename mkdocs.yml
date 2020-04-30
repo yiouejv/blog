@@ -23,7 +23,7 @@ nav:
     - readme: Coding Interview University/readme.md
     - 必备知识: Coding Interview University/必备知识.md
     - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
-    
+
   - 算法:
 
     - 数据结构.严蔚敏_吴伟民:
@@ -133,7 +133,7 @@ nav:
   - php:
     - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
     - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
-  - MySQL:
+  - mysql:
       - 1. 数据库概述: 数据库/mysql/数据库概述.md
       - 2. 数据类型: 数据库/mysql/数据类型.md
       - 3. 表操作: 数据库/mysql/表操作.md
@@ -143,10 +143,14 @@ nav:
       - 7. 调优和事务: 数据库/mysql/调优和事务.md
       - 8. python3数据库编程: 数据库/mysql/python3数据库编程.md
       - 9. 补充知识: 数据库/mysql/补充知识.md
-  - MongoDB:
+  - mongodb:
       - 1. 开启之前: 数据库/mongodb/开启之前.md
-      - 2. 基本概念和数据类型: 数据库/mongodb/基本概念和数据类型.md
-      - 3. shell文档: 数据库/mongodb/shell文档.md
+      - 2. 基本概念: 数据库/mongodb/基本概念.md
+      - 3. 数据类型: 数据库/mongodb/数据类型.md
+      - 4. shell文档: 数据库/mongodb/shell文档.md
+      - 5. 索引聚合: 数据库/mongodb/索引聚合.md
+      - 6. 补充知识: 数据库/mongodb/补充知识.md
+      - 7. python操作mongodb: 数据库/mongodb/python操作mongodb.md
   - 前端相关:
       - input checked 全选: 前端相关/input_checked_全选.md
       - 实现图片懒加载: 前端相关/使用scrollreveal实现图片懒加载.md

@@ -42,6 +42,12 @@ field 查找的域
 ```mongo
 db.collection.find()　　－－－－＞　select * from table
 ```
+通过find查找结果，可以使用序列号获取具体某一项
+```mongo
+获取查找结果中的第二项
+db.class.find({},{_id:0, hobby:0})[1]
+```
+
 ##### findOne()
 findOne(query, field)
 功能: 查找第一条符合条件的文档   
@@ -159,7 +165,7 @@ $type
     db.ccc.find({name:{$type:2}},{_id:0})
 ```
 
-### 查找结果的操作函数
+##### 查找结果的操作函数
 ```mongo
 db.collection.distinct(field)
 功能
@@ -210,43 +216,20 @@ sort({field:1/-1})
     # 按照年龄升序排序，年龄相同时按照分数升序排序
     db.ccc.find({},{_id:0}).sort({age:1, score: 1})
 ```
+练习
 
-###  删除文档
-mysql:
-```mysql
-delete from 表名 where 条件;
-删除字段
-    alter table 表名 drop 字段名;
-```
-
-mongodb:
-```mongo
-db.collection.remove(query, justOne)
-功能
-    删除文档
-参数
-    query 用法同查找
-    justOne  布尔值
-            默认为false表示删除所有符合条件的文档，设置为true则表示只删除一条文档
-示例
-    删除所有不存在sex域的文档
-        db.ccc.remove({sex:{$exists: false}})
-    删除一条name为'阿宝'的文档
-        db.ccc.remove({name:{$eq:'阿宝'}}, true)
-    删除ccc集合中所有文档
-        db.ccc.remove({})
-```
-
-### 练习
 1. 创建数据名称 grade
 2. 创建集合　class
 3. 集合中插入若干文档，文档格式
-```mongo
-{name:'zhangsan', age:10, sex:'m', hobby:['a', 'b']}
-```
-年龄范围: 6-15   
-爱好选择: draw sing dance basketball football pingpong computer   
-每个同学选择2-5项   
+
+    {name:'zhangsan', age:10, sex:'m', hobby:['a', 'b']}
+
+    年龄范围: 6-15   
+
+    爱好选择: draw sing dance basketball football pingpong computer   
+
+    每个同学选择2-5项   
+
 4. 查找练习
 ```mongo
 查看班级所有学生信息
@@ -281,7 +264,8 @@ db.collection.remove(query, justOne)
     db.class.find({$and:[{$or:[{age:{$gt:16}}, {age:{$lt:7}}]}, {hobby:{$size:2}}]}, {_id:0})
 ```
 
-#### 答案
+答案
+
 ```
 创建数据库
     use grade
@@ -297,6 +281,33 @@ db.collection.remove(query, justOne)
     {name:'百合', age:18, sex:'w', hobby:['dance', 'computer', 'basketball', 'football']},
     ])
 ```
+
+###  删除文档
+#### mysql
+```mysql
+delete from 表名 where 条件;
+删除字段
+    alter table 表名 drop 字段名;
+```
+
+#### mongodb
+```mongo
+db.collection.remove(query, justOne)
+功能
+    删除文档
+参数
+    query 用法同查找
+    justOne  布尔值
+            默认为false表示删除所有符合条件的文档，设置为true则表示只删除一条文档
+示例
+    删除所有不存在sex域的文档
+        db.ccc.remove({sex:{$exists: false}})
+    删除一条name为'阿宝'的文档
+        db.ccc.remove({name:{$eq:'阿宝'}}, true)
+    删除ccc集合中所有文档
+        db.ccc.remove({})
+```
+
 
 ### 修改文档
 #### mysql
@@ -327,4 +338,115 @@ update(query, update, upsert, multi)
         db.class.update({name:'小陈'}, {$set:{sex:'男'}}, true)
     将［所有］女性的年龄改为18
         db.class.update({sex:'女'}, {$set:{age:18}}, true, true)
+```
+##### 修改操作符(修改器)
+```
+$set
+    修改一个域的值
+
+    当文档中不存在的时候会自动增加一个域
+
+$unset
+    删除一个域
+
+$rename
+    将性别改成gender
+        db.class.update({},{$rename:{sex:'gender'}},false,true)
+
+$setOnInsert
+    如果使用update插入了文档，则将修改器内容作为插入文档的一部分
+        db.class.update({name:'Jame'}, {$set:{age:18}, $setOnInsert:{gender:'男'}}, true)
+
+$inc
+    加法修改器
+        将所有年龄小于17的人的年龄加1
+            db.class.update({age:{$lt:17}},{$inc:{age:1}}, false, true)
+
+$mul
+    乘法修改器
+        将所有年龄乘以两倍
+            db.class.update({},{$mul:{age:2}},false,true)
+
+$min
+    如果筛选文档的指定域值小于min值则不修改，大于min值则修改为min值
+        所有人的如果年龄大于10则修改为10
+            db.class.update({},{$min:{age:10}}, false,true)
+
+$max
+    如果筛选文档的指定域值大于max值则不修改，小于max值则修改为max值
+        所有人的如果年龄小于15则修改为15
+            db.class.update({},{$max:{age:15}}, false,true)
+
+数组修改器
+$push
+    向数组中添加一项
+         db.class1.update({name:'小红'},{$push:{score:100}})
+
+$pushAll
+    向数组中添加多项
+        db.class1.update({name:'小乔'},{$pushAll:{score:[100,99]}})
+
+$pull
+    从数组中删除一项
+        db.class1.update({name:'小红'},{$pull:{score:100}})
+
+$pullAll
+    向数组中删除多项
+        db.class1.update({name:'小乔'},{$pullAll:{score:[100,99]}})
+
+$each
+    对多个值逐个进行操作
+        分别插入99，10
+        db.class1.update({name:'小乔'},{$push:{socre:{$each:[99, 10]}}})
+
+$position
+    指定插入位置
+        db.class1.update({name:'小明'},{$push:{score:{$each:[67], $position:1}}})
+
+$sort
+    数组排序
+    将含有score的文档score数组排序
+        db.class1.update({},{$push:{score:{$each:[],$sort:1}}}, false, true)
+$pop
+    弹出一项
+        1表示弹出最后一项，-1表示弹出第一项
+
+        弹出小乔的最后一项
+            db.class1.update({name:'小乔'},{$pop:{score:1}})
+
+$addToSet
+    向数组中添加一项，但是不能添加重复的内容
+        给小刚添加一项,如果数组中有88则不添加
+            db.class1.update({name:'小刚'}, {$addToSet:{score:88}})
+···
+```
+
+练习
+```
+1. 将小红年龄改为12岁,兴趣爱好变为跳舞画画
+    db.exe.update({'name': '小红'}, {$set:{'hobby': ['跳舞', '画画']}})
+2. 追加小明爱好唱歌
+    db.exe.update({'name':'小明'},{$push:{'hobby':'唱歌'}})
+3. 追加小王兴趣爱好吹牛,打篮球
+    db.exe.update({'name':'小王'}, {$pushAll:{'hobby':['吹牛', '打篮球']}})
+4. 小李兴趣多了跑步和唱歌,但是要确保和以前不重复
+    #db.exe.update({'name':'小李'}, {$addToSet:{$each:['唱歌', '跳舞']}})
+5. 将班级所有男同学年龄加1
+    db.exe.update({sex:'男'}, {$inc:{age:1}}, false, true)
+6. 删除小明的sex属性
+    db.exe.update({'name':'小明'},{$unset:{sex:''}})
+7. 修改小刘的年龄为15, 如果不存在该同学则添加,同时套添加兴趣爱好和性别男
+    db.exe.update({'name':'小刘'},{$set:{age:15},$setOnInsert:{sex:'男', hobby:['跳舞']}})
+8. 删除小李兴趣中的第一项
+    db.exe.update({'name':'小李'}, {$unset: {'hobby.0':''}})
+9. 删除小红爱好中画画和跳舞
+    db.exe.update({'name':'小红'}, {$pullAll: {hobby:['画画','跳舞']}})
+
+db.exe.insert([
+    {'name': '小红', 'age': 18, 'sex': '女', 'hobby': ['跳舞']},
+    {'name': '小明', 'age': 17, 'sex': '男', 'hobby': []},
+    {'name': '小王', 'age': 19, 'sex': '男', 'hobby': []},
+    {'name': '小李', 'age': 18, 'sex': '男', 'hobby': ['唱歌']},
+    {'name': '小刘', 'age': 16, 'sex': '男', 'hobby': ['唱歌']}
+])
 ```
