@@ -24,6 +24,9 @@ nav:
     - 必备知识: Coding Interview University/必备知识.md
     - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
 
+  - 算法导论(第三版):
+    - 插入排序: 算法导论/插入排序.md
+
   - 算法:
 
     - 数据结构.严蔚敏_吴伟民:
