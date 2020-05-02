@@ -19,21 +19,19 @@ site_description: 杨小哥博客,yiouejv,python,python学习,mysql,数据库,�
 
 
 nav:
-  - Coding Interview University:
-    - readme: Coding Interview University/readme.md
-    - 必备知识: Coding Interview University/必备知识.md
-    - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
+  # - Coding Interview University:
+  #   - readme: Coding Interview University/readme.md
+  #   - 必备知识: Coding Interview University/必备知识.md
 
-  - 算法导论(第三版):
-    - 插入排序: 算法导论/插入排序.md
+  # - 算法导论(第三版):
+  #   - 插入排序: 算法导论/插入排序.md
 
-  - 算法:
+  # - 算法:
 
-    - 数据结构.严蔚敏_吴伟民:
-      - 1. linux 编程环境搭建: 算法/c_data_struct/linux_编程环境搭建.md
-      - 2. 绪论: 算法/c_data_struct/绪论.md
+  #   - 数据结构.严蔚敏_吴伟民:
+  #     - 1. linux 编程环境搭建: 算法/c_data_struct/linux_编程环境搭建.md
+  #     - 2. 绪论: 算法/c_data_struct/绪论.md
 
-    - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
     # - leetcode:
     #   - 数组:
     #     - 6.Z字形变换: leetcode/数组/6.Z字形变换.md 
@@ -47,20 +45,27 @@ nav:
     #     - 23. 合并K个排序链表(可以优化): leetcode/链表/23. 合并K个排序链表(可以优化).md 
     #     - 24. 两两交换链表中的节点: leetcode/链表/24. 两两交换链表中的节点.md 
     #     - 206. 反转链表: leetcode/链表/206. 反转链表.md 
-    - 滑动窗口原理: 算法/滑动窗口原理.md
-    - 排序算法: 
-      - 1. 排序算法时间复杂度: 算法/排序算法时间复杂度.md
-      - 2. 基本排序算法: 算法/排序算法.md
-      - 3. 分治法和归并排序: 算法/分治法和归并排序.md
-      - 4. 快速排序: 算法/快速排序.md
-    - 位运算: 算法/位运算.md
-    - 递归: 算法/递归.md
-    - 1. 复杂度分析-上: 算法/复杂度分析-上.md
-    - 2. 复杂度分析-下: 算法/复杂度分析-下.md
-    - 3. 数组: 算法/数组.md
-    - 4. 链表-上: 算法/链表-上.md
-    - 5. 链表-下: 算法/链表-下.md
-    - 6. 栈: 算法/栈.md
+    # - 滑动窗口原理: 算法/滑动窗口原理.md
+    # - 排序算法: 
+    #   - 1. 排序算法时间复杂度: 算法/排序算法时间复杂度.md
+    #   - 2. 基本排序算法: 算法/排序算法.md
+    #   - 3. 分治法和归并排序: 算法/分治法和归并排序.md
+    #   - 4. 快速排序: 算法/快速排序.md
+    # - 位运算: 算法/位运算.md
+    # - 递归: 算法/递归.md
+    # - 1. 复杂度分析-上: 算法/复杂度分析-上.md
+    # - 2. 复杂度分析-下: 算法/复杂度分析-下.md
+    # - 3. 数组: 算法/数组.md
+    # - 4. 链表-上: 算法/链表-上.md
+    # - 5. 链表-下: 算法/链表-下.md
+    # - 6. 栈: 算法/栈.md
+
+  - 数据结构和算法:
+    - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
+    - 数组: 数据结构和算法/数组.md
+    - 链表: 数据结构和算法/链表.md
+    - 排序: 
+      - 选择排序: 数据结构和算法/选择排序.md
 
   - lua:
     - lua 表的构造: lua/表的构造.md
@@ -171,6 +176,7 @@ nav:
   
   - 其他:
     - 怎么搭建一个VPN: 其他/怎么搭建一个VPN.md
+    - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
 
   - 待学:
     - 待学记录: wait.md
