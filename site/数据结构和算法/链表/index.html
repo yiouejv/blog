@@ -305,18 +305,30 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../%E6%A0%88/" title="栈" class="md-nav__link">
+      栈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
     
-    <label class="md-nav__link" for="nav-1-4">
+    <label class="md-nav__link" for="nav-1-5">
       排序
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="排序" data-md-level="2">
-      <label class="md-nav__title" for="nav-1-4">
+      <label class="md-nav__title" for="nav-1-5">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
         </span>
@@ -2133,6 +2145,9 @@
 
 
     <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">True</span>
@@ -2159,6 +2174,25 @@
 
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;link list is empty&quot;</span><span class="p">)</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__iter</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">value</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">node</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">return</span> <span class="n">res</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">res</span>
 
 
 <span class="k">def</span> <span class="nf">test_linklist</span><span class="p">():</span>
@@ -2176,26 +2210,27 @@
     <span class="n">ll</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
     <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>
 
     <span class="n">ll</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
     <span class="n">ll</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
     <span class="n">ll</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
-    <span class="n">ll</span><span class="o">.</span><span class="n">left_append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-
+    <span class="k">assert</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">ll</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 
-    <span class="k">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">test_linklist</span><span class="p">()</span>
 </code></pre></div>
                 
               
@@ -2230,13 +2265,13 @@
           </a>
         
         
-          <a href="../%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" title="选择排序" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E6%A0%88/" title="栈" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                选择排序
+                栈
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

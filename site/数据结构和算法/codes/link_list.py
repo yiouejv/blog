@@ -52,6 +52,9 @@ class LinkList(object):
 
 
 	def find(self, value):
+		if self.head is None:
+			return False
+
 		for v in self:
 			if v == value:
 				return True
@@ -78,6 +81,25 @@ class LinkList(object):
 
 		return -1
 
+	def pop(self):
+		if self.tail == None:
+			raise Exception("link list is empty")
+
+		res = None
+		for node in self.__iter():
+			print(node)
+			if node.next == self.tail:
+				res = self.tail.value
+				node.next = None
+				self.tail = node
+				self.length -= 1
+				return res
+
+		res = self.tail.value
+		self.tail = None
+		self.head = None
+		self.length -= 1
+		return res
 
 
 def test_linklist():
@@ -95,23 +117,24 @@ def test_linklist():
 	ll.delete(1)
 	assert(len(ll)==4)
 	assert(list(ll)==[2, 3, 4, 5])
+	assert(ll.pop()==5)
 
 	ll.append(6)
-	assert(len(ll)==5)
-	assert(list(ll)==[2, 3, 4, 5, 6])
+	assert(len(ll)==4)
+	assert(list(ll)==[2, 3, 4, 6])
 
 	ll.delete(6)
-	assert(len(ll)==4)
-	assert(list(ll)==[2, 3, 4, 5])
+	assert(len(ll)==3)
+	assert(list(ll)==[2, 3, 4])
 
 	ll.delete(3)
-	assert(list(ll)==[2, 4, 5])
+	assert(list(ll)==[2, 4])
 
-	ll.left_append(0)
-	assert(len(ll)==4)
-	assert(list(ll)==[0, 2, 4, 5])
-
+	assert(ll.pop()==4)
+	assert(ll.pop()==2)
+	assert(len(ll)==0)
 	assert(ll.find(0))
-	assert(ll.find(100))
 
-	assert(0)
+
+if __name__ == '__main__':
+	test_linklist()
