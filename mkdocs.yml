@@ -179,6 +179,7 @@ nav:
       - unpack-objects failed: tools/git/unpack-objects.md
     - docker:
       - 容器时代的引领者: docker/容器时代的引领者.md
+      - Docker 的前世今生: docker/Docker 的前世今生.md
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md

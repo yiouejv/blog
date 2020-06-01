@@ -437,3 +437,4 @@ http://localhost:9999/tinyid/id/nextIdSimple?bizType=test&token=0f673adf80504e2e
 返回结果:  4,5,6,7,8,9,10,11,12,13
 ```
 
+<img src="../../images/gzh.png" style="width: 100%;">

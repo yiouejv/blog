@@ -19,7 +19,7 @@
     
     
       
-        <title>数据结构和算法思维导图.md - 杨小哥博客</title>
+        <title>Docker 的前世今生 - 杨小哥博客</title>
       
     
     
@@ -79,7 +79,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              数据结构和算法思维导图.md
+              Docker 的前世今生
             
           </span>
         </div>
@@ -1724,10 +1724,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       工具
@@ -1839,10 +1841,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5" checked>
     
     <label class="md-nav__link" for="nav-9-5">
       docker
@@ -1866,7 +1870,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/%E5%AE%B9%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E5%BC%95%E9%A2%86%E8%80%85/" title="容器时代的引领者" class="md-nav__link">
+    <a href="../%E5%AE%B9%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E5%BC%95%E9%A2%86%E8%80%85/" title="容器时代的引领者" class="md-nav__link">
       容器时代的引领者
     </a>
   </li>
@@ -1876,11 +1880,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../docker/Docker%20%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" title="Docker 的前世今生" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker 的前世今生
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Docker 的前世今生" class="md-nav__link md-nav__link--active">
       Docker 的前世今生
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    容器技术的发展
+  </a>
+  
+    <nav class="md-nav" aria-label="容器技术的发展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chroot" class="md-nav__link">
+    chroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    Namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cgroups-lxc" class="md-nav__link">
+    cgroups 和 LXC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 的发展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2093,14 +2176,48 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    重点掌握
+    容器技术的发展
+  </a>
+  
+    <nav class="md-nav" aria-label="容器技术的发展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chroot" class="md-nav__link">
+    chroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    Namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cgroups-lxc" class="md-nav__link">
+    cgroups 和 LXC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 的发展
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    数据结构和算法思维导图
+    总结
   </a>
   
 </li>
@@ -2117,7 +2234,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/算法/数据结构和算法思维导图.md.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/yiouejv/blog/edit/master/docs/docker/Docker 的前世今生.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -2125,12 +2242,116 @@
                   
                 
                 
-                  <h1>数据结构和算法思维导图.md</h1>
+                  <h1>Docker 的前世今生</h1>
                 
-                <h2 id="_1">重点掌握<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>10 个数据结构：数组、链表、栈、队列、散列表、二叉树、堆、跳表、图、Trie 树；</p>
-<p>10 个算法：递归、排序、二分查找、搜索、哈希算法、贪心算法、分治算法、回溯算法、动态规划、字符串匹配算法。</p>
-<h2 id="_2">数据结构和算法思维导图<img alt="" src="../images/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.jpg" /><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+                <p>Docker 入门，共 3 篇，将带大家进入 Docker 的世界。
+首先了解 Docker 的发展历程，</p>
+<p>然后快速掌握 Docker 的基本使用；</p>
+<p>Docker 版本及内核兼容性选择是这部分的重点内容。大家如果在生产环境中需要使用 Docker 的话，建议重点关注这一篇。</p>
+<p>下面我们就进入第一篇的内容。</p>
+<p>Docker 在大多数人眼中几乎是容器（container）的代名词，即使是现在我也常会听到有人说“我在服务器上启动了 N 个 docker 在跑 XX 服务” 之类的话。</p>
+<p>我们来看看为何 Docker 能成为容器的代名词，引领容器的时代。</p>
+<h3 id="_1">容器技术的发展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="chroot">chroot<a class="headerlink" href="#chroot" title="Permanent link">&para;</a></h4>
+<p>在我看来，要梳理容器技术的发展，最早可以追溯到 1979 年，那时候 chroot 系统调用首次问世。</p>
+<p>之后 1982 年 chroot 机制被移植到了 BSD 系统上，再后来便是我们所熟知的 Linux 系统上的 chroot 了。</p>
+<p>我们有时会使用 chroot 改变某进程的根目录，使它不能访问该目录之外的其他目录。</p>
+<p>这和我们在一个容器内的感觉很像了。事实上在几年前确实有人用一百多行的 bash 利用 chroot 写了一个模拟 Docker 创建容器的实现，称之为 bocker , 有兴趣的读者可以去看看该项目的代码。</p>
+<p>这里我们来介绍一个实际使用 chroot 创建隔离环境的例子：</p>
+<p>比方说我们想创建一个 Debian 的隔离环境，那可以使用 chroot 将 Debian 的 rootfs 根文件系统作为新进程的根。</p>
+<p>至于 rootfs 如何获得，我们这里用 Docker 来完成，但这不是本节的重点，可以暂时忽略它，在以后的章节中我们会详细介绍。</p>
+<div class="highlight"><pre><span></span><code># 创建一个空文件夹
+(MoeLove) ➜  ~ mkdir chroot-dir
+(MoeLove) ➜  ~ cd chroot-dir
+# 使用 Docker 来提取 Debian 的 rootfs
+(MoeLove) ➜  chroot-dir docker save -o debian.tar debian:buster                                          
+(MoeLove) ➜  chroot-dir ls
+debian.tar
+(MoeLove) ➜  chroot-dir tar -xf debian.tar 
+(MoeLove) ➜  chroot-dir ls
+098963abf3c3b87b8114ff67d164097dfac2d5659e39f9beb5604db91585f375.json  debian.tar     repositories
+0f28619fe69181d3af529d56692f1362b7a7c8a6bf8dc9ab0d6d4f9ef9b0004d       manifest.json
+(MoeLove) ➜  chroot-dir mkdir -p debian
+(MoeLove) ➜  chroot-dir tar -C debian -xf 0f28619fe69181d3af529d56692f1362b7a7c8a6bf8dc9ab0d6d4f9ef9b0004d/layer.tar  
+(MoeLove) ➜  chroot-dir ls debian
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre></div>
+
+<p>经过上述步骤，就拿到了 Debian 的 rootfs，接下来看看 chroot 的能力：</p>
+<div class="highlight"><pre><span></span><code># 使用 debian 文件夹作为容器的根
+(MoeLove) ➜  chroot-dir sudo chroot debian /bin/bash -i
+[sudo] tao 的密码：
+root@localhost:/# whoami 
+root
+root@localhost:/# cat /etc/os-release 
+PRETTY_NAME=&quot;Debian GNU/Linux 10 (buster)&quot;
+NAME=&quot;Debian GNU/Linux&quot;
+VERSION_ID=&quot;10&quot;
+VERSION=&quot;10 (buster)&quot;
+VERSION_CODENAME=buster
+ID=debian
+HOME_URL=&quot;https://www.debian.org/&quot;
+SUPPORT_URL=&quot;https://www.debian.org/support&quot;
+BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;
+</code></pre></div>
+
+<p>此时我们就已经在一个“容器”内了，来看下使用这个“容器”能做些什么。</p>
+<p>首先看看当前“容器”内的路由表：</p>
+<div class="highlight"><pre><span></span><code>root@localhost:/# mkdir -p /sys
+root@localhost:/# mount -t sysfs sys /sys
+root@localhost:/# ip r
+default via 192.168.0.1 dev wlp2s0 proto dhcp metric 600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+192.168.0.0/24 dev wlp2s0 proto kernel scope link src 192.168.0.108 metric 600 
+192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown
+</code></pre></div>
+
+<p>另外，还可以将 /proc 也挂载进去：</p>
+<div class="highlight"><pre><span></span><code>root@localhost:/# mkdir -p /proc
+root@localhost:/# mount -t proc proc /proc
+# 这里是随意找了一个进程进行查看
+root@localhost:/# ls -al  /proc/31730/ns/pid
+lrwxrwxrwx. 1 1000 1000 0 Jul 29 16:47 /proc/31730/ns/pid -&gt; &#39;pid:[4026531836]&#39;
+</code></pre></div>
+
+<p>可以看到在这个“容器”内，可以访问到主机上的进程信息，这表示没有任何的进程隔离，带来的危险是我们甚至可以在这个“容器”内杀掉主机上的进程，或者通过“容器”来攻击主机。</p>
+<p>为了能更好的解决这个问题，接下来出现了另一个技术：Namespace。</p>
+<h4 id="namespace">Namespace<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h4>
+<p>Namespace 是在 2002 年由 Linux 2.4.19 开始加入内核的特性，它的主要作用是做了一层抽象和隔离，使得在 namespace 中的进程 / 进程组可以看起来拥有自己的独立资源，具体的“资源”表现形式取决于给它赋予了哪些 namespace。</p>
+<p>随着 2013 年 Linux 3.8 中 user namespace 的引入，对于我们现在所熟知的容器所需的全部 namespace 就都实现了：mnt、pid、net、ipc、uts、user 和 cgroup 对于这些 Namespace 和 Docker 的关系，我们在以后的章节中都会深入学习，这里先对 Namespace 做下介绍，便于大家了解容器技术的发展。</p>
+<p>我们可以通过三个系统调用直接操作 Namespace，这三个系统调用分别是：</p>
+<ul>
+<li>clone，可以通过传递不同 namespace 的标志来为新的（子）进程指定其所属的 namespace；</li>
+<li>unshare，允许一个进程（或线程）取消当前与其他进程（或线程）共享的执行上下文；</li>
+<li>setns，进入文件描述符指定的 namespace。</li>
+</ul>
+<p>知道了这些基础知识后，我们回到前面“容器”的内容中。</p>
+<p>我们在前面 chroot 的例子中看到没能做到进程隔离，现在来试试看用 namespace 完成该需求。</p>
+<div class="highlight"><pre><span></span><code>(MoeLove) ➜  ~ sudo unshare -fp --mount-proc -n
+[sudo] tao 的密码：
+[root@localhost]/home/tao# ps -a
+  PID TTY          TIME CMD
+    1 pts/15   00:00:00 zsh
+   33 pts/15   00:00:00 ps
+</code></pre></div>
+
+<p>这里很明显，我们当前所在进程的 PID 为 1 并且看不到宿主机上的其他进程，达到了基础的隔离效果。</p>
+<h4 id="cgroups-lxc">cgroups 和 LXC<a class="headerlink" href="#cgroups-lxc" title="Permanent link">&para;</a></h4>
+<p>另一条关键的时间线在 2008 年，cgroups 进入 Linux 2.6.24 后，基于它并且瞄准容器世界的一个项目诞生了。</p>
+<p>Linux Container （LXC）结合了 namespace 和 cgroups 等技术，目标就是要创造出运行在 Linux 系统中，并且隔离性良好的容器环境。</p>
+<p>LXC 的发布在 2008 年，但值得注意的是 cgroups 最初是由 Google 的工程师开发的，最早的记录是在 2006 年，事实上当时 Google 确实也在做类似的容器化项目。</p>
+<h3 id="docker">Docker 的发展<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>时间一晃而过，就到了 2013 年的 PyCon 上，在这次大会上 Docker 正式面世。而它当时其实也只是构建在 LXC 之上的一个工具，屏蔽掉了 LXC 的使用细节，让用户可以一句 docker run 命令行便创建出自己的容器环境。</p>
+<p><strong>同时，它允许用户将容器环境打包成为一个 Docker 镜像进行分发，这也大大降低了用户使用的门槛。</strong> Docker 镜像分发可以说是 Docker 成功的一个关键要素了。</p>
+<p>另一个关键要素，我认为是开源生态，Docker 在首次亮相之后不久，就完全开源了，吸引了来自世界各地开发者的关注和积极贡献。</p>
+<p>2014 年 Docker 发布 1.0 正式进入生产就绪的状态。在此之前它也将 LXC 逐步从它的底层移除，换成了自己实现的 libcontainer。</p>
+<p><strong><em>此后 Docker 便成为了风靡技术界的新热潮。</em></strong></p>
+<p>再后来也出现过 Swarm Mesos 和 Kubernetes 等众多容器编排系统争夺市场份额的情况，但是随着时间的推移，Kubernetes 成为了事实上的标准，国内外各个公司也都在推进 Kubernetes 的落地和实施。而 Docker 作为容器运行时，也正是极其关键的一环。</p>
+<h3 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>从最先的 chroot 到后来的 namespace 和 cgroups 等，再到后来的 LXC 和 Docker 等技术的出现，这都是在容器技术领域的一种探索和前进。</p>
+<p><img src="../../images/Fl18g-XI2KOYh90RzM-KBzOBmEKV"></p>
+<p>当然，我这里只列出了我认为最核心和关键的内容，事实上当时技术圈除了这条主干之外，也有着很多支线剧情，比如从各类 PaaS （Platform as a Service）厂商的竞争到全面拥抱 Docker ，这些内容也从侧面来反映出了 Docker 的火热。</p>
+<p><img src="../../images/gzh.png" style="width: 100%"></p>
                 
               
               
@@ -2145,6 +2366,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../%E5%AE%B9%E5%99%A8%E6%97%B6%E4%BB%A3%E7%9A%84%E5%BC%95%E9%A2%86%E8%80%85/" title="容器时代的引领者" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                容器时代的引领者
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../%E7%90%86%E8%B4%A2/%E5%9F%BA%E9%87%91%E7%90%86%E8%B4%A2/" title="基金理财" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                基金理财
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
