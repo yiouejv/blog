@@ -181,6 +181,7 @@ nav:
       - 容器时代的引领者: docker/容器时代的引领者.md
       - Docker 的前世今生: docker/Docker 的前世今生.md
       - Docker 的基本使用: docker/Docker 的基本使用.md
+      - Docker 版本及内核兼容性选择: docker/Docker 版本及内核兼容性选择.md
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md
