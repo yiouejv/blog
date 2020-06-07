@@ -128,6 +128,7 @@ nav:
       - 完全卸载Python for ubuntu: python/完全卸载Python for ubuntu.md
       - python计算金额decimal常用操作: python/python计算金额decimal常用操作.md
       - python实现MD5加密: python/python实现MD5加密.md
+      - 基于Pytest框架的自动化测试开发实践: python/基于Pytest框架的自动化测试开发实践.md
       
     - django: 
       - 1. django介绍及安装: django/1_django介绍及安装.md
