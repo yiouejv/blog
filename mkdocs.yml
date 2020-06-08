@@ -183,6 +183,7 @@ nav:
       - Docker 的前世今生: docker/Docker 的前世今生.md
       - Docker 的基本使用: docker/Docker 的基本使用.md
       - Docker 版本及内核兼容性选择: docker/Docker 版本及内核兼容性选择.md
+      - 容器生命周期管理（上）: docker/容器生命周期管理（上）.md
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md
