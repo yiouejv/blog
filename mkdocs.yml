@@ -11,7 +11,7 @@ extra:
     language: 'jp'
 
 
-site_favicon: favicon.ico
+# site_favicon: favicon.ico
 site_author: 杨小哥
 repo_name: github.com/yiouejv/blog
 repo_url: https://github.com/yiouejv/blog
@@ -59,6 +59,8 @@ nav:
     # - 4. 链表-上: 算法/链表-上.md
     # - 5. 链表-下: 算法/链表-下.md
     # - 6. 栈: 算法/栈.md
+  - leetcode:
+    - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
 
   - 数据结构和算法:
     - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
