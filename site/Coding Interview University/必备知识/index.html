@@ -18,10 +18,20 @@
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.1">
     
     
-      
-        <title>必备知识 - 杨小哥博客</title>
-      
-    
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
       
@@ -1986,6 +1996,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="容器资源管理" class="md-nav__link">
+      容器资源管理
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2211,53 +2233,52 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/Coding Interview University/必备知识.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                  <h1>必备知识</h1>
-                
-                <h3 id="clang">clang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h3>
+    
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/Coding Interview University/必备知识.md" title="编辑此页" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+      </a>
+    
+    
+      
+    
+    
+      <h1>必备知识</h1>
+      <div style="font-size: 14px; color: dimgrey;">
+        <span>微信关注: aiwo930</span><br>
+        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
+      </div>
+    
+    <h3 id="clang">clang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h3>
 <p>Clang（发音为/ˈklæŋ/类似英文单字clang[1]） 是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了LLVM作为其后端，而且由LLVM2.6开始，一起发布新版本。它的目标是提供一个GNU编译器套装（GCC）的替代品，支持了GNU编译器大多数的编译设置以及非官方语言的扩展。作者是克里斯·拉特纳（Chris Lattner），在苹果公司的赞助支持下进行开发，而源代码许可是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。</p>
 <p>Clang项目包括Clang前端和Clang静态分析器等。</p>
 <p>这个软件项目在2005年由苹果电脑发起，是LLVM编译器工具集的前端（front-end），目的是输出代码对应的抽象语法树（Abstract Syntax Tree, AST），并将代码编译成LLVM Bitcode。接着在后端（back-end）使用LLVM编译成平台相关的机器语言 。Clang支持C、C++、Objective C。</p>
 <p>在Clang语言中，使用Stmt来代表statement。Clang代码的单元（unit）皆为语句（statement），语法树的节点（node）类型就是Stmt。另外Clang的表达式（Expression）也是语句的一种，Clang使用Expr来代表Expression，Expr本身继承自Stmt。节点之下有子节点列表（sub-node-list）。</p>
 <p>Clang本身性能优异，其生成的AST所耗用掉的内存仅仅是GCC的20%左右。FreeBSD操作系统自2014年1月发行的10.0版本开始将Clang/LLVM作为默认编译器</p>
 <p>测试证明Clang编译Objective-C代码时速度为GCC的3倍[4]，还能针对用户发生的编译错误准确地给出建议</p>
-                
-              
-              
-                
-
+    
+    <img src="../../images/gzh.png" style="width: 100%">
 
               
+  
+
+
+
             </article>
           </div>
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="">
+         
+         
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+
     </div>
     
       <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>

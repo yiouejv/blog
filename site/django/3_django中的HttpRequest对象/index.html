@@ -18,10 +18,20 @@
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.1">
     
     
-      
-        <title>3. HttpRequest对象 - 杨小哥博客</title>
-      
-    
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
       
@@ -2073,6 +2083,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="容器资源管理" class="md-nav__link">
+      容器资源管理
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2341,16 +2363,16 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/django/3_django中的HttpRequest对象.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                <h1 id="djangohttprequest">django中的HttpRequest对象<a class="headerlink" href="#djangohttprequest" title="Permanent link">&para;</a></h1>
+    
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/django/3_django中的HttpRequest对象.md" title="编辑此页" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+      </a>
+    
+    
+      
+    
+    
+    <h1 id="djangohttprequest">django中的HttpRequest对象<a class="headerlink" href="#djangohttprequest" title="Permanent link">&para;</a></h1>
 <h2 id="httprequest">什么是HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">&para;</a></h2>
 <p>HttpRequest 对请求对象的封装， 里面封装的是请求过程中的所有信息，在Django中HttpRequest 被封装成<code>request</code>对象并封装到视图处理函数中，在调用视图时自动导入</p>
 <h2 id="httprequest_1">HttpRequest 中的主要内容<a class="headerlink" href="#httprequest_1" title="Permanent link">&para;</a></h2>
@@ -2407,70 +2429,58 @@
 <p>SERVER_NAME - 服务器的主机名。</p>
 <p>SERVER_PORT - 服务器的端口（作为字符串）。</p>
 <p>除了CONTENT_LENGTH和之外CONTENT_TYPE，如上所述，请求中的任何HTTP头都将转换为META键，方法是将所有字符转换为大写，用下划线替换任何连字符并HTTP_在名称中添加前缀。因此，例如，调用的标头X-Bender将映射到META密钥 HTTP_X_BENDER。</p>
-                
-              
-              
-                
-
+    
+    <img src="../../images/gzh.png" style="width: 100%">
 
               
+  
+
+
+
             </article>
           </div>
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
-        
-          <a href="../2_django%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%94%B1/" title="2. django中的路由" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                2. django中的路由
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../4_django%E4%B8%AD%E7%9A%84session%E5%92%8Ccookie/" title="4. session和cookie" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                4. session和cookie
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="">
+         
+           <a href="../2_django%E4%B8%AD%E7%9A%84%E8%B7%AF%E7%94%B1/" title="2. django中的路由" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   上一页
+                 </span>
+                 2. django中的路由
+               </div>
+             </div>
+           </a>
+         
+         
+           <a href="../4_django%E4%B8%AD%E7%9A%84session%E5%92%8Ccookie/" title="4. session和cookie" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   下一页
+                 </span>
+                 4. session和cookie
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+             </div>
+           </a>
+         
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+
     </div>
     
       <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>

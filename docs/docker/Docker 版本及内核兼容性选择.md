@@ -211,5 +211,4 @@ Linux 3.19 恰好是 3.x 系列的最后一个版本，两个月后 4.0 便发�
 相关内容：
 > <a href="https://github.com/moby/moby/pull/32691">A new upstream project to break up Docker into independent components</a>
 
-<img src="../../images/gzh.png" style="width: 100%">
 

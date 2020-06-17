@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    {% if page.edit_url %}
+      <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+        {% include ".icons/material/pencil.svg" %}
+      </a>
+    {% endif %}
+    {% block source %}
+      {% if page and page.meta and page.meta.source %}
+        {% include "partials/source-link.html" %}
+      {% endif %}
+    {% endblock %}
+    {% if not "\x3ch1" in page.content %}
+      <h1>{{ page.title | default(config.site_name, true)}}</h1>
+      <div style="font-size: 14px; color: dimgrey;">
+        <span>微信关注: aiwo930</span><br>
+        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
+      </div>
+    {% endif %}
+    {{ page.content }}
+    {% if page and page.meta %}
+      {% if page.meta.git_revision_date_localized or
+            page.meta.revision_date
+      %}
+        {% include "partials/source-date.html" %}
+      {% endif %}
+    {% endif %}
+    <img src="../../images/gzh.png" style="width: 100%">
+{% endblock %}
+{% block disqus %}
+  {% include "partials/integrations/disqus.html" %}
+{% endblock %}
+
+
+{% block footer %}
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="{{ lang.t('footer.title') }}">
+         {% if page.previous_page %}
+           <a href="{{ page.previous_page.url | url }}" title="{{ page.previous_page.title | striptags }}" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               {% include ".icons/material/arrow-left.svg" %}
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   {{ lang.t("footer.previous") }}
+                 </span>
+                 {{ page.previous_page.title }}
+               </div>
+             </div>
+           </a>
+         {% endif %}
+         {% if page.next_page %}
+           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   {{ lang.t("footer.next") }}
+                 </span>
+                 {{ page.next_page.title }}
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               {% include ".icons/material/arrow-right.svg" %}
+             </div>
+           </a>
+         {% endif %}
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+{% endblock %}

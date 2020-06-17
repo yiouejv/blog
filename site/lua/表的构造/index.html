@@ -18,10 +18,20 @@
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.1">
     
     
-      
-        <title>lua 表的构造 - 杨小哥博客</title>
-      
-    
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
       
@@ -2026,6 +2036,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="容器资源管理" class="md-nav__link">
+      容器资源管理
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2251,18 +2273,22 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/lua/表的构造.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                  <h1>lua 表的构造</h1>
-                
-                <h2 id="_1">表的构造<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+    
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/lua/表的构造.md" title="编辑此页" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+      </a>
+    
+    
+      
+    
+    
+      <h1>lua 表的构造</h1>
+      <div style="font-size: 14px; color: dimgrey;">
+        <span>微信关注: aiwo930</span><br>
+        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
+      </div>
+    
+    <h2 id="_1">表的构造<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>构造器是创建和初始化表的表达式。表是Lua特有的功能强大的东西。最简单的构造函数是{}，用来创建一个空表。可以直接初始化数组: </p>
 <div class="highlight"><pre><span></span><code><span class="n">days</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Sunday&quot;</span><span class="p">,</span> <span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span><span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturday&quot;</span><span class="p">}</span> 
 </code></pre></div>
@@ -2339,70 +2365,58 @@
 <p>a = {[1]="red", [2]="green", [3]="blue",} </p>
 <p><strong>在构造函数中域分隔符逗号（","）可以用分号（";"）替代，通常我们使用分号用来分割不同类型的表元素。</strong> </p>
 <p>{x=10, y=45; "one", "two", "three"}</p>
-                
-              
-              
-                
-
+    
+    <img src="../../images/gzh.png" style="width: 100%">
 
               
+  
+
+
+
             </article>
           </div>
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
-        
-          <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E7%8B%84%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89/" title="狄克斯特拉算法" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                狄克斯特拉算法
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../select%E5%87%BD%E6%95%B0/" title="lua select 函数" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                lua select 函数
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="">
+         
+           <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E7%8B%84%E5%85%8B%E6%96%AF%E7%89%B9%E6%8B%89/" title="狄克斯特拉算法" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   上一页
+                 </span>
+                 狄克斯特拉算法
+               </div>
+             </div>
+           </a>
+         
+         
+           <a href="../select%E5%87%BD%E6%95%B0/" title="lua select 函数" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   下一页
+                 </span>
+                 lua select 函数
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+             </div>
+           </a>
+         
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+
     </div>
     
       <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>

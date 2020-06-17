@@ -18,10 +18,20 @@
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.1">
     
     
-      
-        <title>Django2 DEBUG=False后静态文件无法加载 - 杨小哥博客</title>
-      
-    
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
       
@@ -2035,6 +2045,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="容器资源管理" class="md-nav__link">
+      容器资源管理
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2267,18 +2289,22 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/django/Django2 DEBUG=False后静态文件无法加载.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                  <h1>Django2 DEBUG=False后静态文件无法加载</h1>
-                
-                <p>出现的问题根本原因是：当我们在开发django应用时如果设置了 DEBUG = True，那么django便会自动帮我们对静态文件进行路由；
+    
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/django/Django2 DEBUG=False后静态文件无法加载.md" title="编辑此页" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+      </a>
+    
+    
+      
+    
+    
+      <h1>Django2 DEBUG=False后静态文件无法加载</h1>
+      <div style="font-size: 14px; color: dimgrey;">
+        <span>微信关注: aiwo930</span><br>
+        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
+      </div>
+    
+    <p>出现的问题根本原因是：当我们在开发django应用时如果设置了 DEBUG = True，那么django便会自动帮我们对静态文件进行路由；
 但是当我们设置DEBUG = False后，这一功能便没有了，此时静态文件就会出现加载失败的情况，想要让静态文件正常显示，
 我们就需要配置静态文件服务了。</p>
 <p>参考官方文档 <a href="https://docs.djangoproject.com/en/2.0/howto/static-files/">https://docs.djangoproject.com/en/2.0/howto/static-files/</a></p>
@@ -2298,70 +2324,58 @@
     <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^static/(?P&lt;path&gt;.*)$&#39;</span><span class="p">,</span> <span class="n">static</span><span class="o">.</span><span class="n">serve</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;document_root&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">STATIC_ROOT</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
-                
-              
-              
-                
-
+    
+    <img src="../../images/gzh.png" style="width: 100%">
 
               
+  
+
+
+
             </article>
           </div>
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
-        
-          <a href="../../drf/%E5%87%A0%E4%B8%AAdjango%202.2%E5%92%8Cmysql%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/" title="几个django 2.2和mysql使用的坑" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                几个django 2.2和mysql使用的坑
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../Django%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86/" title="Django之密码的加密和解密" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                Django之密码的加密和解密
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="">
+         
+           <a href="../../drf/%E5%87%A0%E4%B8%AAdjango%202.2%E5%92%8Cmysql%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/" title="几个django 2.2和mysql使用的坑" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   上一页
+                 </span>
+                 几个django 2.2和mysql使用的坑
+               </div>
+             </div>
+           </a>
+         
+         
+           <a href="../Django%E4%B9%8B%E5%AF%86%E7%A0%81%E7%9A%84%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86/" title="Django之密码的加密和解密" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   下一页
+                 </span>
+                 Django之密码的加密和解密
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+             </div>
+           </a>
+         
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+
     </div>
     
       <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>

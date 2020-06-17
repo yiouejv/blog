@@ -18,10 +18,20 @@
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.0.1">
     
     
-      
-        <title>容器生命周期管理（上） - 杨小哥博客</title>
-      
-    
+  <style type="text/css">
+      /*.md-sidebar {
+          width: 15.1rem !important;
+      }
+      .md-content {
+          margin-left: 15.1rem !important;
+      }
+      .md-grid {
+          max-width: 65rem !important;
+      }
+*/
+  </style>
+  <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
       
@@ -2089,6 +2099,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="容器资源管理" class="md-nav__link">
+      容器资源管理
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2375,18 +2397,22 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/yiouejv/blog/edit/master/docs/docker/容器生命周期管理（上）.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                  </a>
-                
-                
-                  
-                
-                
-                  <h1>容器生命周期管理（上）</h1>
-                
-                <p>这是本专栏的第二部分：容器篇，共 6 篇，帮助大家由浅入深地认识和掌握容器。这一篇和下一篇，我会为你介绍容器生命周期管理相关的内容，带你掌握容器生命周期。下面我们一起进入第一篇的内容，主要涉及容器状态的变化。</p>
+    
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/docker/容器生命周期管理（上）.md" title="编辑此页" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+      </a>
+    
+    
+      
+    
+    
+      <h1>容器生命周期管理（上）</h1>
+      <div style="font-size: 14px; color: dimgrey;">
+        <span>微信关注: aiwo930</span><br>
+        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
+      </div>
+    
+    <p>这是本专栏的第二部分：容器篇，共 6 篇，帮助大家由浅入深地认识和掌握容器。这一篇和下一篇，我会为你介绍容器生命周期管理相关的内容，带你掌握容器生命周期。下面我们一起进入第一篇的内容，主要涉及容器状态的变化。</p>
 <p>在第一部分第二篇《Docker 的基本使用》中，我为你介绍了 Docker 的基本使用，包括使用 <code>docker run</code> 启动一个容器，使用 <code>docker exec</code> 进入一个正在运行的容器。那你有没有考虑过容器的整个生命周期是什么样的？当我们不使用它的时候，它是什么状态？</p>
 <p>我们启动一个 Redis 的容器作为示例。</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>MoeLove<span class="o">)</span> ➜  ~ docker run -d redis
@@ -2544,71 +2570,58 @@ fffb13b75e22        redis               &quot;docker-entrypoint.s…&quot;   36 
 <p><img src="../../images/d9800710-edc4-11e9-ab14-29de3b498e07"></p>
 <p>其中 Dead 和 Removing 状态本篇未涉及，我将在下篇与你分享容器生命周期管理的剩余部分。</p>
 <p>本篇的内容相对简单，但需要非常熟悉，建议多实践，会更利于后续专栏内容的学习。</p>
-<p><img src="../../images/gzh.png" style="width: 100%;"></p>
-                
-              
-              
-                
-
+    
+    <img src="../../images/gzh.png" style="width: 100%">
 
               
+  
+
+
+
             </article>
           </div>
         </div>
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
-        
-          <a href="../Docker%20%E7%89%88%E6%9C%AC%E5%8F%8A%E5%86%85%E6%A0%B8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%80%89%E6%8B%A9/" title="Docker 版本及内核兼容性选择" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                Docker 版本及内核兼容性选择
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../%E5%AE%B9%E5%99%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="容器生命周期管理（下）" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                容器生命周期管理（下）
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-      
+
+     <div class="md-footer-nav">
+       <nav class="md-footer-nav__inner md-grid" aria-label="">
+         
+           <a href="../Docker%20%E7%89%88%E6%9C%AC%E5%8F%8A%E5%86%85%E6%A0%B8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%80%89%E6%8B%A9/" title="Docker 版本及内核兼容性选择" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   上一页
+                 </span>
+                 Docker 版本及内核兼容性选择
+               </div>
+             </div>
+           </a>
+         
+         
+           <a href="../%E5%AE%B9%E5%99%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" title="容器生命周期管理（下）" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   下一页
+                 </span>
+                 容器生命周期管理（下）
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+             </div>
+           </a>
+         
+ 		</nav>
+	</div>
+		<div style="background-color: #000; height: 70px; margin-top: 50px;">
+			
+		</div>
+
     </div>
     
       <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>

@@ -183,4 +183,3 @@ Docker 一直以易用性著称，且 Docker 也一直很注意用户体验，�
 
 Docker 的其他知识，后续章节中会通过实践加深入原理的方式，逐层递进，带你掌握 Docker 的核心知识！
 
-<img src="../../images/gzh.png" style="width: 100%">

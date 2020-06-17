@@ -154,4 +154,3 @@ LXC 的发布在 2008 年，但值得注意的是 cgroups 最初是由 Google �
 
 当然，我这里只列出了我认为最核心和关键的内容，事实上当时技术圈除了这条主干之外，也有着很多支线剧情，比如从各类 PaaS （Platform as a Service）厂商的竞争到全面拥抱 Docker ，这些内容也从侧面来反映出了 Docker 的火热。
 
-<img src="../../images/gzh.png" style="width: 100%">
