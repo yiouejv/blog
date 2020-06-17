@@ -29,10 +29,6 @@
     {% endblock %}
     {% if not "\x3ch1" in page.content %}
       <h1>{{ page.title | default(config.site_name, true)}}</h1>
-      <div style="font-size: 14px; color: dimgrey;">
-        <span>微信关注: aiwo930</span><br>
-        <span>不积跬步无以至千里，不积小流无以成江海，小钱也能成为你的原始积累。</span>
-      </div>
     {% endif %}
     {{ page.content }}
     {% if page and page.meta %}
