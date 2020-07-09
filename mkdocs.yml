@@ -72,6 +72,9 @@ nav:
         - c++ 简介: cpp/c++_简介.md
         - c++ 环境设置: cpp/环境设置.md
         - c++ 基本语法: cpp/基本语法.md
+        - c++ 变量作用域: cpp/变量作用域.md
+        - c++ 常量: cpp/常量.md
+        - c++ 修饰符类型: cpp/修饰符类型.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
