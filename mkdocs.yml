@@ -16,7 +16,6 @@ extra:
 site_author: 杨小哥
 repo_name: github.com/yiouejv/blog
 repo_url: https://github.com/yiouejv/blog
-site_description: 杨小哥博客,yiouejv,python,python学习,mysql,数据库,游戏开发,skynet,数据结构,数据结构与算法,算法,lua,linux
 
 
 nav:
@@ -68,6 +67,11 @@ nav:
     - 面试流程: 剑指offer/面试流程.md
 
   - 编程语言:
+    - c++:
+      - 基本语法:
+        - c++ 简介: cpp/c++_简介.md
+        - c++ 环境设置: cpp/环境设置.md
+        - c++ 基本语法: cpp/基本语法.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
