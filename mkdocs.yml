@@ -75,6 +75,7 @@ nav:
         - c++ 变量作用域: cpp/变量作用域.md
         - c++ 常量: cpp/常量.md
         - c++ 修饰符类型: cpp/修饰符类型.md
+        - c++ 存储类: cpp/存储类.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
