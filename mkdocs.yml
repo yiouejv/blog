@@ -80,6 +80,7 @@ nav:
         - c++ 数字: cpp/数字.md
         - c++ 数组: cpp/数组.md
         - c++ 字符串: cpp/字符串.md
+        - c++ 指针: cpp/指针.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
