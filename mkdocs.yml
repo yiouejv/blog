@@ -83,6 +83,8 @@ nav:
         - c++ 指针: cpp/指针.md
         - c++ 引用: cpp/引用.md
         - c++ 日期和时间: cpp/日期和时间.md
+        - c++ 基本的输入输出: cpp/基本的输入输出.md
+        - c++ 数据结构: cpp/数据结构.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
