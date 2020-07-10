@@ -81,6 +81,8 @@ nav:
         - c++ 数组: cpp/数组.md
         - c++ 字符串: cpp/字符串.md
         - c++ 指针: cpp/指针.md
+        - c++ 引用: cpp/引用.md
+        - c++ 日期和时间: cpp/日期和时间.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
