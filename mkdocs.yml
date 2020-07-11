@@ -87,6 +87,7 @@ nav:
         - c++ 数据结构: cpp/数据结构.md
       - 面向对象:
         - c++ 类和对象: cpp/类和对象.md
+        - c++ 继承: cpp/继承.md
 
     - python:
       - python 语法: 
