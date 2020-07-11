@@ -85,6 +85,9 @@ nav:
         - c++ 日期和时间: cpp/日期和时间.md
         - c++ 基本的输入输出: cpp/基本的输入输出.md
         - c++ 数据结构: cpp/数据结构.md
+      - 面向对象:
+        - c++ 类和对象: cpp/类和对象.md
+
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
@@ -217,6 +220,7 @@ nav:
       # - 容器生命周期管理（下）: docker/容器生命周期管理（下）.md
       # - 容器资源管理: docker/容器资源管理.md
       # - 深入剖析容器: docker/深入剖析容器.md
+    - Windows下强制删除文件或文件夹: tools/Windows下强制删除文件或文件夹.md
   - 理财:
     - 基金理财: 理财/基金理财.md
     - 股票理财: 理财/股票理财.md
