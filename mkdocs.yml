@@ -93,7 +93,15 @@ nav:
         - c++ 数据抽象: cpp/数据抽象.md
         - c++ 数据封装: cpp/数据封装.md
         - c++ 接口: cpp/接口.md
-
+      - 高级教程:
+        - c++ 文件和流: cpp/文件和流.md
+        - c++ 异常处理: cpp/异常处理.md
+        - c++ 动态内存: cpp/动态内存.md
+        - c++ 命名空间: cpp/命名空间.md
+        - c++ 模板: cpp/模板.md
+        - c++ 预处理器: cpp/预处理器.md
+        - c++ 信号处理: cpp/信号处理.md
+        - c++ 多线程: cpp/多线程.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
