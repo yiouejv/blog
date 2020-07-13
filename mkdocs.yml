@@ -91,6 +91,7 @@ nav:
         - c++ 重载运算符和重载函数: cpp/重载运算符和重载函数.md
         - c++ 多态: cpp/多态.md
         - c++ 数据抽象: cpp/数据抽象.md
+        - c++ 数据封装: cpp/数据封装.md
 
     - python:
       - python 语法: 
