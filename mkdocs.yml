@@ -65,9 +65,11 @@ nav:
     - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
   - 剑指offer:
     - 面试流程: 剑指offer/面试流程.md
+    - 编程语言: 剑指offer/编程语言.md
 
   - 编程语言:
     - c++:
+      - c++ 中的细节点: cpp/细节.md
       - 基本语法:
         - c++ 简介: cpp/c++_简介.md
         - c++ 环境设置: cpp/环境设置.md
@@ -160,8 +162,6 @@ nav:
         - Django之密码的加密和解密: django/Django之密码的加密和解密.md
         - 自定义过滤器和自定义标签: django/自定义过滤器和自定义标签.md
         - 扩展自定义manage命令: python/Django扩展自定义manage命令.md
-
-
     - lua:
       - skynet:
         - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
@@ -176,7 +176,6 @@ nav:
       - lua 打印表: lua/lua 打印表.md
       - lua 解析json数据: lua/解析json数据.md
       - lua 工作中要注意的点: lua/工作中要注意的点.md
-
     - php:
       - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
       - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
