@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -337,9 +342,40 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3.1 数组
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
     <a href="./" title="3.1 数组" class="md-nav__link md-nav__link--active">
       3.1 数组
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    关键点1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2761,6 +2797,36 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    关键点1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -2779,8 +2845,15 @@
     <p>数组可以说是最简单的一种数据结构，它占据一块连续的内存并按照顺序存储数据。</p>
 <p>创建数组时，需要先指定数组容器的大小，然后根据大小分配内存。</p>
 <p>由于数组的内存是连续的，于是可以根据下标在O(1)时间读写任何元素，因此它的时间效率很高。</p>
-<p><strong>实现简单的哈希表</strong>，根据数组时间效率高的优点，用数组来实现简单的哈希表，把数组的下标设为哈希表的键，数组元素为哈希表的值，
+<p><strong>根据数组时间效率高的优点, 实现简单的哈希表</strong>，用数组来实现简单的哈希表，把数组的下标设为哈希表的键，数组元素为哈希表的值，
 有了这样的哈希表，我们可以在O(1)时间内查找。</p>
+<p><strong>为了解决数组空间效率不高的问题</strong>，人们又设计实现了多种动态数组，比如c++中的STL中的vector，为了避免浪费，先为数组开辟较小的空间，然后往数组中添加数组。
+当数组的数据超过数组容量时，我们再重新分配一块更大的空间(c++ 中vector 为之前的两倍，python list也为之前的两倍)，把之前的数据复制到新数组中，再把之前的内存释放。
+这对时间性能有负面影响，因此使用动态数组时要尽量减少改变数组容量大小的次数。</p>
+<h3 id="1">关键点1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>在c/c++中，数组和指针是既相关又有区别的概念，当我们声明一个数组时，其数组的名字也是一个指针，该指针指向数组的第一个元素。我们可以用指针来访问数组。 
+c/c++没有记录数组的大小，因此在访问数组元素时，程序员要确保没有超出数组的边界。</p>
+<p>运行下面代码，请问输出什么？</p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
