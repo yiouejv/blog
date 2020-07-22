@@ -107,6 +107,7 @@ nav:
         - c++ 信号处理: cpp/信号处理.md
         - c++ 多线程: cpp/多线程.md
       - 基础进阶:
+        - const: cpp/const.md
         - static: cpp/static.md
     - python:
       - python 语法: 
