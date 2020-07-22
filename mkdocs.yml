@@ -69,6 +69,7 @@ nav:
     - 2. 编程语言（未完，学cpp多线程）: 剑指offer/编程语言.md
     - 3. 数据结构:
       - 3.1 数组: 剑指offer/数组.md
+      - 3.2 字符串: 剑指offer/字符串.md
 
   - 编程语言:
     - c++:
@@ -90,7 +91,6 @@ nav:
         - c++ 日期和时间: cpp/日期和时间.md
         - c++ 基本的输入输出: cpp/基本的输入输出.md
         - c++ 数据结构: cpp/数据结构.md
-      - 面向对象:
         - c++ 类和对象: cpp/类和对象.md
         - c++ 继承: cpp/继承.md
         - c++ 重载运算符和重载函数: cpp/重载运算符和重载函数.md
@@ -98,7 +98,6 @@ nav:
         - c++ 数据抽象: cpp/数据抽象.md
         - c++ 数据封装: cpp/数据封装.md
         - c++ 接口: cpp/接口.md
-      - 高级教程:
         - c++ 文件和流: cpp/文件和流.md
         - c++ 异常处理: cpp/异常处理.md
         - c++ 动态内存: cpp/动态内存.md
@@ -107,6 +106,8 @@ nav:
         - c++ 预处理器: cpp/预处理器.md
         - c++ 信号处理: cpp/信号处理.md
         - c++ 多线程: cpp/多线程.md
+      - 基础进阶:
+        - static: cpp/static.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
