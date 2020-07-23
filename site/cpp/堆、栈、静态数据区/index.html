@@ -467,13 +467,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    五大内存分区
+    类内静态成员为什么不能给定义？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    五大内存分区
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     明确区分堆与栈
   </a>
   
@@ -548,7 +555,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     变量存储在内存的什么地方？
   </a>
   
@@ -2918,13 +2925,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    五大内存分区
+    类内静态成员为什么不能给定义？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    五大内存分区
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     明确区分堆与栈
   </a>
   
@@ -2999,7 +3013,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     变量存储在内存的什么地方？
   </a>
   
@@ -3027,7 +3041,10 @@
     
       <h1>c++ 堆、栈、静态数据区</h1>
     
-    <h3 id="_1">五大内存分区<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+    <h3 id="_1">类内静态成员为什么不能给定义？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>定义一个变量则一定会给其开辟一个空间（即使不初始化、赋值也是如此），正如类中的普通成员变量，我仍以整型说明，当其被定义于类中时，就是表明此类需要一个整型的空间，所以每创建一个类对象时，就会给该对象相应的大小。
+static变量是存储于全局数据区，与类对象（对象中包括成员变量）的存储位置并不相同，所以在类中不是定义（不给其空间）。</p>
+<h3 id="_2">五大内存分区<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。</p>
 <ul>
 <li>
@@ -3046,7 +3063,7 @@
 <p>常量存储区: 这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改（当然，你要通过非正当手段也可以修改，而且方法很多）。</p>
 </li>
 </ul>
-<h3 id="_2">明确区分堆与栈<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">明确区分堆与栈<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="o">=</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="p">}</span>
 </code></pre></div>
 
@@ -3174,7 +3191,7 @@
 
 <h4 id="extern">extern 存储类指明符<a class="headerlink" href="#extern" title="Permanent link">&para;</a></h4>
 <p>一般用在工程文件中。在一个工程文件中因为有多个程序文件，当某一个变量在一个程序文件中定义了之后，如果在另一个程序文件中予以定义， 就会出现重复定义变量的错误。使用extern存储类型指明符就可以指出在该文件外部已经定义了这个变量。extern变量的作用域是整个程序。</p>
-<h3 id="_3">变量存储在内存的什么地方？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">变量存储在内存的什么地方？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>变量可以存储在内存的不同地方，这依赖于它们的生成期。在函数上部定义的变量（全局变量或static外部变量）和在函数内部定义的static变量，其生存期就是程序运行的全过程。这些变量被存储在数据段(Data Segment)中。数据段是在内存中为这些变量留出的一段大小固定的空间，它分为二部分，一部分用来初始化变量，另一部分用来存放未初始化的变量。</p>
