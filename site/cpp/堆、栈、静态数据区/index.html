@@ -96,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              c++ 接口
+              c++ 堆、栈、静态数据区
             
           </span>
         </div>
@@ -433,11 +433,131 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../%E5%A0%86%E3%80%81%E6%A0%88%E3%80%81%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E5%8C%BA/" title="c++ 堆、栈、静态数据区" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        c++ 堆、栈、静态数据区
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="c++ 堆、栈、静态数据区" class="md-nav__link md-nav__link--active">
       c++ 堆、栈、静态数据区
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    五大内存分区
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    明确区分堆与栈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    static用来控制变量的存储方式和可见性
+  </a>
+  
+    <nav class="md-nav" aria-label="static用来控制变量的存储方式和可见性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    static的内部机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    static的优势
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++变量的存储类
+  </a>
+  
+    <nav class="md-nav" aria-label="C++变量的存储类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto" class="md-nav__link">
+    auto 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    register 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_3" class="md-nav__link">
+    static 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extern" class="md-nav__link">
+    extern 存储类指明符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    变量存储在内存的什么地方？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -445,12 +565,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-3" type="checkbox" id="nav-4-1-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1-3" type="checkbox" id="nav-4-1-3">
     
     <label class="md-nav__link" for="nav-4-1-3">
       基本语法
@@ -736,56 +854,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        c++ 接口
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="c++ 接口" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../%E6%8E%A5%E5%8F%A3/" title="c++ 接口" class="md-nav__link">
       c++ 接口
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    抽象类的实例
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    设计策略
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2845,14 +2918,89 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    抽象类的实例
+    五大内存分区
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    设计策略
+    明确区分堆与栈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    static用来控制变量的存储方式和可见性
+  </a>
+  
+    <nav class="md-nav" aria-label="static用来控制变量的存储方式和可见性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static_1" class="md-nav__link">
+    static的内部机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_2" class="md-nav__link">
+    static的优势
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++变量的存储类
+  </a>
+  
+    <nav class="md-nav" aria-label="C++变量的存储类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto" class="md-nav__link">
+    auto 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    register 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_3" class="md-nav__link">
+    static 存储类指明符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extern" class="md-nav__link">
+    extern 存储类指明符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    变量存储在内存的什么地方？
   </a>
   
 </li>
@@ -2869,7 +3017,7 @@
             <article class="md-content__inner md-typeset">
               
     
-      <a href="https://github.com/yiouejv/blog/edit/master/docs/cpp/接口.md" title="编辑此页" class="md-content__button md-icon">
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/cpp/堆、栈、静态数据区.md" title="编辑此页" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
       </a>
     
@@ -2877,93 +3025,171 @@
       
     
     
-      <h1>c++ 接口</h1>
+      <h1>c++ 堆、栈、静态数据区</h1>
     
-    <p>接口描述了类的行为和功能，而不需要完成类的特定实现。</p>
-<p>C++ 接口是使用抽象类来实现的，抽象类与数据抽象互不混淆，数据抽象是一个把实现细节与相关的数据分离开的概念。</p>
-<p>如果类中至少有一个函数被声明为纯虚函数，则这个类就是抽象类。纯虚函数是通过在声明中使用 "= 0" 来指定的，如下所示：</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Box</span>
-<span class="p">{</span>
-   <span class="k">public</span><span class="o">:</span>
-      <span class="c1">// 纯虚函数</span>
-      <span class="k">virtual</span> <span class="kt">double</span> <span class="n">getVolume</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="k">private</span><span class="o">:</span>
-      <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>      <span class="c1">// 长度</span>
-      <span class="kt">double</span> <span class="n">breadth</span><span class="p">;</span>     <span class="c1">// 宽度</span>
-      <span class="kt">double</span> <span class="n">height</span><span class="p">;</span>      <span class="c1">// 高度</span>
-<span class="p">};</span>
+    <h3 id="_1">五大内存分区<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。</p>
+<ul>
+<li>
+<p>栈: 就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。</p>
+</li>
+<li>
+<p>堆: 就是那些由new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</p>
+</li>
+<li>
+<p>自由存储区: 就是那些由malloc等分配的内存块，他和堆是十分相似的，不过它是用free来结束自己的生命的。</p>
+</li>
+<li>
+<p>全局/静态存储区: 全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区（未初始化的变量都被初始化成0或空串，C中也一样）。</p>
+</li>
+<li>
+<p>常量存储区: 这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改（当然，你要通过非正当手段也可以修改，而且方法很多）。</p>
+</li>
+</ul>
+<h3 id="_2">明确区分堆与栈<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="o">=</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="p">}</span>
 </code></pre></div>
 
-<p>设计抽象类（通常称为 ABC）的目的，是为了给其他类提供一个可以继承的适当的基类。抽象类不能被用于实例化对象，它只能作为接口使用。如果试图实例化一个抽象类的对象，会导致编译错误。</p>
-<p>因此，如果一个 ABC 的子类需要被实例化，则必须实现每个虚函数，这也意味着 C++ 支持使用 ABC 声明接口。如果没有在派生类中重写纯虚函数，就尝试实例化该类的对象，会导致编译错误。</p>
-<p>可用于实例化对象的类被称为具体类。</p>
-<h3 id="_1">抽象类的实例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>请看下面的实例，基类 Shape 提供了一个接口 getArea()，在两个派生类 Rectangle 和 Triangle 中分别实现了 getArea()：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<p>上面这条短短的一句话就包含了堆与栈，看到new，我们首先就应该想到，我们分配了一块堆内存，那么指针p呢？他分配的是一块栈内存，所以这句话的意思就是：在栈内存中存放了一个指向一块堆内存的指针p。</p>
+<p>在程序会先确定在堆中分配内存的大小，然后调用operator new分配内存，然后返回这块内存的首地址，放入栈中，他在VC6下的汇编代码如下：</p>
+<div class="highlight"><pre><span></span><code>00401028 push 14h
 
+0040102A call operator new (00401060)
+
+0040102F add esp,4
+
+00401032 mov dword ptr [ebp-8],eax
+
+00401035 mov eax,dword ptr [ebp-8]
+
+00401038 mov dword ptr [ebp-4],eax
+</code></pre></div>
+
+<p>这里，我们为了简单并没有释放内存，那么该怎么去释放呢？是delete p么？哦，错了，应该是delete []p，这是为了告诉编译器：我删除的是一个数组，VC6就会根据相应的Cookie信息去进行释放内存的工作。</p>
+<p>好了，我们回到我们的主题：堆和栈究竟有什么区别？</p>
+<p><strong>主要的区别由以下几点：</strong></p>
+<ol>
+<li>
+<p>管理方式不同；</p>
+<p>对于栈来讲，是由编译器自动管理，无需我们手工控制；对于堆来说，释放工作由程序员控制，容易产生memory leak。</p>
+</li>
+<li>
+<p>空间大小不同；</p>
+<p>一般来讲在32位系统下，堆内存可以达到4G的空间，从这个角度来看堆内存几乎是没有什么限制的。但是对于栈来讲，一般都是有一定的空间大小的。</p>
+</li>
+<li>
+<p>能否产生碎片不同；</p>
+<p>对于堆来讲，频繁的new/delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。对于栈来讲，则不会存在这个 问题，因为栈是先进后出的队列，他们是如此的一一对应，以至于永远都不可能有一个内存块从栈中间弹出，在他弹出之前，在他上面的后进的栈内容已经被弹出。</p>
+</li>
+<li>
+<p>生长方向不同；</p>
+<p>对于堆来讲，生长方向是向上的，也就是向着内存地址增加的方向；对于栈来讲，它的生长方向是向下的，是向着内存地址减小的方向增长</p>
+</li>
+<li>
+<p>分配方式不同；</p>
+<p>堆都是动态分配的，没有静态分配的堆。 <br />
+栈有2种分配方式：静态分配和动态分配。静态分配是编译器完成的，比如局部变量的分配。动态分配由alloca函数进行分配，但是栈的动态分配和堆是不同的，他的动态分配是由编译器进行释放，无需我们手工实现。</p>
+</li>
+<li>
+<p>分配效率不同；</p>
+<p>栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的 效率比较高。<br />
+堆则是C/C++函数库提供的，它的机制是很复杂的，例如为了分配一块内存，库函数会按照一定的算法（具体的算法可以参考数据结构/操作系 统）在堆内存中搜索可用的足够大小的空间，如果没有足够大小的空间（可能是由于内存碎片太多），就有可能调用系统功能去增加程序数据段的内存空间，这样就 有机会分到足够大小的内存，然后进行返回。 <br />
+显然，堆的效率比栈要低得多。</p>
+</li>
+</ol>
+<p><span style="color: red;">
+从这里我们可以看到，堆和栈相比，由于大量 new/delete的使用，容易造成大量的内存碎片；由于没有专门的系统支持，效率很低；由于可能引发 用户态和核心态的切换，内存的申请，代价变得更加昂贵。所以栈在程序中是应用最广泛的，就算是函数的调用也利用栈去完成，函数调用过程中的参数，返回地 址，EBP和局部变量都采用栈的方式存放。所以，我们推荐大家尽量用栈，而不是用堆。 <br />
+虽然栈有如此众多的好处，但是由于和堆相比不是那么灵活，有时候分配大量的内存空间，还是用堆好一些。
+</span></p>
+<h3 id="static">static用来控制变量的存储方式和可见性<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<p>函数内部定义的变量，在程序执行到它的定义处时，编译器为它在栈上分配空间，函数在栈上分配的空间在此函数执行结束时会释放掉。</p>
+<p>这样就产生了一个问题: </p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>如果想将函数中此变量的值保存至下一次调用时，如何实现？</p>
+</div>
+<p>最容易想到的方法是定义一个全局的变量，但定义为一个全局变量有许多缺点，最明显的缺点是破坏了此变量的访问范围（使得在此函数中定义的变量，不仅仅受此函数控制）。</p>
+<h4 id="static_1">static的内部机制<a class="headerlink" href="#static_1" title="Permanent link">&para;</a></h4>
+<p>静态数据成员要实际地分配空间，故不能在类的声明中定义（只能声明数据成员）。类声明只声明一个类的“尺寸和规格”，并不进行实际的内存分配，所以在类声明中写成定义是错误的。</p>
+<p>它也不能在头文件中类声明的外部定义，因为那会造成在多个使用该类的源文件中，对其重复定义。</p>
+<p>static被引入以告知编译器，将变量存储在程序的静态存储区而非栈上空间，静态数据成员按定义出现的先后顺序依次初始化，注意静态成员嵌套时，要保证所嵌套的成员已经初始化了。消除时的顺序是初始化的反顺序。</p>
+<h4 id="static_2">static的优势<a class="headerlink" href="#static_2" title="Permanent link">&para;</a></h4>
+<p>可以节省内存，因为它是所有对象所公有的，因此，对多个对象来说，静态数据成员只存储一处，供所有对象共用。
+静态数据成员的值对每个对象都是一样，但它的值是可以更新的。只要对静态数据成员的值更新一次，保证所有对象存取更新后的相同的值，这样可以提高时间效率。</p>
+<p>(1)类的静态成员函数是属于整个类而非类的对象，所以它没有this指针，这就导致了它仅能访问类的静态数据和静态成员函数。<br />
+(2)不能将静态成员函数定义为虚函数。<br />
+(3)由于静态成员声明于类中，操作于其外，所以对其取地址操作，就多少有些特殊，变量地址是指向其数据类型的指针，函数地址类型是一个“nonmember函数指针”。<br />
+(4)由于静态成员函数没有this指针，所以就差不多等同于nonmember函数，结果就产生了一个意想不到的好处：成为一个callback函数，使得我们得以将C++和C-based X Window系统结合，同时也成功的应用于线程函数身上。<br />
+(5)static并没有增加程序的时空开销，相反她还缩短了子类对父类静态成员的访问时间，节省了子类的内存空间。<br />
+(6)静态数据成员是静态存储的，所以必须对它进行初始化。<br />
+(7)静态成员初始化与一般数据成员初始化不同:  </p>
+<div class="codehilite"><pre><span></span><code>- 初始化在类体外进行，而前面不加static，以免与一般静态变量或对象相混淆；
+- 初始化时不加该成员的访问权限控制符private，public等；
+　　- 初始化时使用作用域运算符来标明它所属类；
+- 所以我们得出静态数据成员初始化的格式： &lt;数据类型&gt;&lt;类名&gt;::&lt;静态数据成员名&gt;=&lt;值&gt;
+</code></pre></div>
+
+
+<p>(8) 为了防止父类的影响，可以在子类定义一个与父类相同的静态变量，以屏蔽父类的影响。这里有一点需要注意：我们说静态成员为父类和子类共享，但我们有重复定义了静态成员，这会不会引起错误呢？不会，我们的编译器采用了一种绝妙的手法：name-mangling 用以生成唯一的标志。</p>
+<p><strong>static的可见性将在以下内容有覆盖</strong></p>
+<h3 id="c">C++变量的存储类<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<p>内存中供用户使用的存储空间分为代码区与数据区两个部分。 变量存储在数据区，数据区又可分为静态存储区与动态存储区。 </p>
+<p>静态存储是指在程序运行期间给变量分配固定存储空间的方式。如全局变量存放在静态存储区中，程序运行时分配空间，程序运行完释放。 </p>
+<p>动态存储是指在程序运行时根据实际需要动态分配存储空间的方式。 如形式参数存放在动态存储区中，在函数调用时分配空间，调用完成释放。 </p>
+<p>对于静态存储方式的变量可在编译时初始化，默认初值为O或空字符。对动态存储方式的变量如不赋初值，则它的值是一个不确定的值。 </p>
+<p><strong>四种存储类</strong></p>
+<p>自动(auto)、寄存器(register)、静态(static)及外部(extern)</p>
+<p>静态存储类别与外部存储类别变量存放在静态存储区 <br />
+自动存储类别变量存放在动态存储区 <br />
+寄存器存储类别直接送寄存器    </p>
+<h4 id="auto">auto 存储类指明符<a class="headerlink" href="#auto" title="Permanent link">&para;</a></h4>
+<p>用于说明具有局部作用域的变量，它表示变量具有局部（自动）生成期，但由于它是所有局部作用域变量说明的缺省存储类指明符，所以使用得很 少。要注意的是，所有在函数内部定义的变量都是局部变量，函数内部定义的变量其作用域只在函数内部。它的生存期为该函数运行期间，一旦离开这个函数或这个 函数终止，局部变量也随之消失。</p>
+<h4 id="register">register 存储类指明符<a class="headerlink" href="#register" title="Permanent link">&para;</a></h4>
+<p>当声明了这个指明符后，编译程序将尽可能地为该变量分配CPU内部的寄存器作为变量的存储单元，以加快运行速度。注意，寄存器与存储器是 不同的。寄存器一般在CPU内部，而存储器一般指外部的（比如内存条），CPU内部的寄存器其运算速度是很高的。当寄存器已分配完毕，就自动地分配一个外部的内存。它的作用等价于auto，也只能用于局部变量和函数的参量说明。</p>
+<h4 id="static_3">static 存储类指明符<a class="headerlink" href="#static_3" title="Permanent link">&para;</a></h4>
+<p>表示变量具有静态生成期。 static变量的的特点是它离开了其作用域后，其值不会消失。 当回到该作用域之后又可以继续使用这个static变量的值。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 利用static变量统计调用函数的次数</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt; </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="c1">// 基类</span>
-<span class="k">class</span> <span class="nc">Shape</span> 
+<span class="kt">int</span> <span class="nf">two</span><span class="p">();</span> <span class="cm">/*函数原型说明*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-   <span class="c1">// 提供接口框架的纯虚函数</span>
-   <span class="k">virtual</span> <span class="kt">int</span> <span class="n">getArea</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="kt">void</span> <span class="nf">setWidth</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span>
-   <span class="p">}</span>
-   <span class="kt">void</span> <span class="nf">setHeight</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="n">height</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="k">protected</span><span class="o">:</span>
-   <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
-   <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
-<span class="p">};</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">two</span><span class="p">();</span> <span class="cm">/*a的值等于1*/</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">two</span><span class="p">();</span> <span class="cm">/*a的值等于2*/</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">two</span><span class="p">();</span> <span class="cm">/*a的值等于3*/</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">;</span>
 
-<span class="c1">// 派生类</span>
-<span class="k">class</span> <span class="nc">Rectangle</span><span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">two</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-   <span class="kt">int</span> <span class="n">getArea</span><span class="p">()</span>
-   <span class="p">{</span> 
-      <span class="k">return</span> <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">);</span> 
-   <span class="p">}</span>
-<span class="p">};</span>
-<span class="k">class</span> <span class="nc">Triangle</span><span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-   <span class="kt">int</span> <span class="n">getArea</span><span class="p">()</span>
-   <span class="p">{</span> 
-      <span class="k">return</span> <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span> 
-   <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-   <span class="n">Rectangle</span> <span class="n">Rect</span><span class="p">;</span>
-   <span class="n">Triangle</span>  <span class="n">Tri</span><span class="p">;</span>
-
-   <span class="n">Rect</span><span class="p">.</span><span class="n">setWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-   <span class="n">Rect</span><span class="p">.</span><span class="n">setHeight</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-   <span class="c1">// 输出对象的面积</span>
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Total Rectangle area: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Rect</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-   <span class="n">Tri</span><span class="p">.</span><span class="n">setWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-   <span class="n">Tri</span><span class="p">.</span><span class="n">setHeight</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-   <span class="c1">// 输出对象的面积</span>
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Total Triangle area: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">Tri</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
-
-   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/*定义了一个局部的static变量*/</span>
+    <span class="n">b</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>从上面的实例中，我们可以看到一个抽象类是如何定义一个接口 getArea()，两个派生类是如何通过不同的计算面积的算法来实现这个相同的函数。</p>
-<h3 id="_2">设计策略<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>面向对象的系统可能会使用一个抽象基类为所有的外部应用程序提供一个适当的、通用的、标准化的接口。然后，派生类通过继承抽象基类，就把所有类似的操作都继承下来。</p>
-<p>外部应用程序提供的功能（即公有函数）在抽象基类中是以纯虚函数的形式存在的。这些纯虚函数在相应的派生类中被实现。</p>
-<p>这个架构也使得新的应用程序可以很容易地被添加到系统中，即使是在系统被定义之后依然可以如此。</p>
+<h4 id="extern">extern 存储类指明符<a class="headerlink" href="#extern" title="Permanent link">&para;</a></h4>
+<p>一般用在工程文件中。在一个工程文件中因为有多个程序文件，当某一个变量在一个程序文件中定义了之后，如果在另一个程序文件中予以定义， 就会出现重复定义变量的错误。使用extern存储类型指明符就可以指出在该文件外部已经定义了这个变量。extern变量的作用域是整个程序。</p>
+<h3 id="_3">变量存储在内存的什么地方？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>变量可以存储在内存的不同地方，这依赖于它们的生成期。在函数上部定义的变量（全局变量或static外部变量）和在函数内部定义的static变量，其生存期就是程序运行的全过程。这些变量被存储在数据段(Data Segment)中。数据段是在内存中为这些变量留出的一段大小固定的空间，它分为二部分，一部分用来初始化变量，另一部分用来存放未初始化的变量。</p>
+</li>
+<li>
+<p>在函数内部定义的auto变量（没有用关键字static定义的变量）的生成期从程序开始执行其所在的程序块代码时开始，到程序离开该程序块时为止。 作为函数参数的变量只在调用该函数期间存在。这些变量被存储在栈(stack)中。栈是内存中的一段空间，开始很小，以后逐渐自动变大，直到达到某个预定义的界限。</p>
+</li>
+<li>
+<p>当用malloc等函数给指针分配一个地址空间的时候，这个分配的内存块位于一段名为“堆（heap）”的内存空间中。堆开始时很小，但调用malloc或clloc等内存分配函数时它就会增大。堆可以和数据段或栈共用一个内存段，也可以有它自己的内存段，这完全取决于编译选项和操作系统。与栈相似，堆也有一个增长界限，并且决定这个界限的规则与栈相同。</p>
+</li>
+</ol>
+<p><hr>
+<span style="font-size: 14px;">
+    文章参考: <a href="https://www.cnblogs.com/hanyonglu/archive/2011/04/12/2014212.html">https://www.cnblogs.com/hanyonglu/archive/2011/04/12/2014212.html</a>
+</span></p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
@@ -2981,7 +3207,7 @@
      <div class="md-footer-nav">
        <nav class="md-footer-nav__inner md-grid" aria-label="">
          
-           <a href="../%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85/" title="c++ 数据封装" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+           <a href="../%E7%BB%86%E8%8A%82/" title="c++ 中的细节点" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
              <div class="md-footer-nav__button md-icon">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
              </div>
@@ -2990,19 +3216,19 @@
                  <span class="md-footer-nav__direction">
                    上一页
                  </span>
-                 c++ 数据封装
+                 c++ 中的细节点
                </div>
              </div>
            </a>
          
          
-           <a href="../%E6%96%87%E4%BB%B6%E5%92%8C%E6%B5%81/" title="c++ 文件和流" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+           <a href="../c%2B%2B_%E7%AE%80%E4%BB%8B/" title="c++ 简介" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
              <div class="md-footer-nav__title">
                <div class="md-ellipsis">
                  <span class="md-footer-nav__direction">
                    下一页
                  </span>
-                 c++ 文件和流
+                 c++ 简介
                </div>
              </div>
              <div class="md-footer-nav__button md-icon">
