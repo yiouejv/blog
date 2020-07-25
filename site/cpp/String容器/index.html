@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#string" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              String容器
+              STL string容器
             
           </span>
         </div>
@@ -386,10 +391,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       编程语言
@@ -411,10 +418,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
     
     <label class="md-nav__link" for="nav-5-1">
       c++
@@ -916,10 +925,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1-5" type="checkbox" id="nav-5-1-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1-5" type="checkbox" id="nav-5-1-5" checked>
     
     <label class="md-nav__link" for="nav-5-1-5">
       STL
@@ -953,11 +964,104 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../STL String容器.md" title="STL String容器" class="md-nav__link">
-      STL String容器
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        STL string容器
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="STL string容器" class="md-nav__link md-nav__link--active">
+      STL string容器
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string 的构造函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_1" class="md-nav__link">
+    string 对象属性
+  </a>
+  
+    <nav class="md-nav" aria-label="string 对象属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capacity" class="md-nav__link">
+    容量 capacity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserve" class="md-nav__link">
+    修改容量 reserve()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length-size" class="md-nav__link">
+    长度 length(), 字符个数 size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resize" class="md-nav__link">
+    resize()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_2" class="md-nav__link">
+    string 查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_3" class="md-nav__link">
+    string 修改
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2849,12 +2953,97 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string 的构造函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_1" class="md-nav__link">
+    string 对象属性
+  </a>
+  
+    <nav class="md-nav" aria-label="string 对象属性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capacity" class="md-nav__link">
+    容量 capacity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserve" class="md-nav__link">
+    修改容量 reserve()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length-size" class="md-nav__link">
+    长度 length(), 字符个数 size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resize" class="md-nav__link">
+    resize()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_2" class="md-nav__link">
+    string 查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string_3" class="md-nav__link">
+    string 修改
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
     
-      <a href="https://github.com/yiouejv/blog/edit/master/docs/cpp/String容器.md" title="编辑此页" class="md-content__button md-icon">
+      <a href="https://github.com/yiouejv/blog/edit/master/docs/cpp/string容器.md" title="编辑此页" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
       </a>
     
@@ -2862,9 +3051,168 @@
       
     
     
-      <h1>String容器</h1>
+      <h1>STL string容器</h1>
     
-    
+    <h3 id="string">string 的构造函数<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// string(size_type length, char ch)</span>
+    <span class="c1">// 源码: typedef size_t size_type;  unsign int</span>
+    <span class="n">string</span> <span class="n">str1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str1</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// string(const char* str)</span>
+    <span class="n">string</span> <span class="n">str2</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str2</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str2</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// string(const char* str, size_type length)</span>
+    <span class="n">string</span> <span class="n">str3</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str3</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str3</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// string(const char* str, size_type index, size_type length)</span>
+    <span class="n">string</span> <span class="n">str4</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str4</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str4</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// sting(const sting&amp; str)</span>
+    <span class="n">string</span> <span class="n">str5</span><span class="p">(</span><span class="n">str4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str5</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">str5</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="string_1">string 对象属性<a class="headerlink" href="#string_1" title="Permanent link">&para;</a></h3>
+<h4 id="capacity">容量 capacity()<a class="headerlink" href="#capacity" title="Permanent link">&para;</a></h4>
+<p>和编译器有关系</p>
+<ul>
+<li>如果声明字符串的字符少于15个，则容量为15</li>
+<li>每次溢出则多申请16个字符空间。</li>
+</ul>
+<h4 id="reserve">修改容量 reserve()<a class="headerlink" href="#reserve" title="Permanent link">&para;</a></h4>
+<ul>
+<li>只能使容量变大，不能变小</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">;</span>                         
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     <span class="c1">// 15</span>
+    <span class="n">str</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     <span class="c1">// 15</span>
+    <span class="n">str</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     <span class="c1">// 31</span>
+    <span class="n">str</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     <span class="c1">// 31</span>
+    <span class="n">str</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>     <span class="c1">// 47</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>小于等于 15, 则不变，多余15，则按溢出处理</li>
+</ul>
+<p>总结: 调用之后，15-31-47-63 ...</p>
+<h4 id="length-size">长度 length(), 字符个数 size()<a class="headerlink" href="#length-size" title="Permanent link">&para;</a></h4>
+<h4 id="resize">resize()<a class="headerlink" href="#resize" title="Permanent link">&para;</a></h4>
+<p>重新设置字符个数</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot;length: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+        <span class="o">&lt;&lt;</span> <span class="s">&quot;size: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+        <span class="o">&lt;&lt;</span> <span class="s">&quot;capacity: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">str</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+        <span class="o">&lt;&lt;</span> <span class="s">&quot;length: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+        <span class="o">&lt;&lt;</span> <span class="s">&quot;size: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span>
+        <span class="o">&lt;&lt;</span> <span class="s">&quot;capacity: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>输出
+<div class="highlight"><pre><span></span><code>str: abcdefg length: 7 size: 7 capacity: 15
+str: abc length: 3 size: 3 capacity: 15
+</code></pre></div></p>
+<h3 id="string_2">string 查询<a class="headerlink" href="#string_2" title="Permanent link">&para;</a></h3>
+<p>输出整个字符串</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>输出单个字符</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="string_3">string 修改<a class="headerlink" href="#string_3" title="Permanent link">&para;</a></h3>
+<p>修改指定元素</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">);</span>
+    <span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;s&#39;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">str</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="sc">&#39;m&#39;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>insert()
+<div class="highlight"><pre><span></span><code><span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">insert</span><span class="p">(</span><span class="n">size_type</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="n">basic_string</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">);</span>  <span class="c1">// index 位置插入str</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">insert</span><span class="p">(</span><span class="n">size_type</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span>          <span class="c1">// index 位置插入字符串</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">insert</span><span class="p">(</span><span class="n">size_type</span> <span class="n">index1</span><span class="p">,</span> <span class="k">const</span> <span class="n">basic_string</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">index2</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">num</span><span class="p">);</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">insert</span><span class="p">(</span><span class="n">size_type</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">num</span><span class="p">);</span>          <span class="c1">// 插入前几个</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">insert</span><span class="p">(</span><span class="n">size_type</span> <span class="n">index</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">num</span><span class="p">,</span> <span class="n">charch</span><span class="p">);</span>          <span class="c1">// 插入n个ch</span>
+</code></pre></div></p>
+<p>append()
+<div class="highlight"><pre><span></span><code><span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">append</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">);</span>  <span class="c1">// 尾巴通过一个对象拼接</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">append</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span>          <span class="c1">// 尾巴通过一个字符串拼接</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">append</span><span class="p">(</span><span class="k">const</span> <span class="n">basic_string</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">index</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">len</span><span class="p">);</span>          <span class="c1">// 尾巴通过一个字符串字符串对象的某一段拼接</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">append</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">num</span><span class="p">);</span>          <span class="c1">// 拼接字符串前几个</span>
+<span class="n">basic_string</span> <span class="o">&amp;</span> <span class="n">append</span><span class="p">(</span><span class="n">size_type</span> <span class="n">num</span><span class="p">,</span> <span class="kt">char</span> <span class="n">ch</span><span class="p">);</span>          <span class="c1">// 拼接num个字符</span>
+</code></pre></div></p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
@@ -2882,6 +3230,34 @@
      <div class="md-footer-nav">
        <nav class="md-footer-nav__inner md-grid" aria-label="">
          
+           <a href="../STL%20%E7%AE%80%E4%BB%8B/" title="STL 简介" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+             </div>
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   上一页
+                 </span>
+                 STL 简介
+               </div>
+             </div>
+           </a>
+         
+         
+           <a href="../../python/python%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D/" title="1. python相关介绍" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+             <div class="md-footer-nav__title">
+               <div class="md-ellipsis">
+                 <span class="md-footer-nav__direction">
+                   下一页
+                 </span>
+                 1. python相关介绍
+               </div>
+             </div>
+             <div class="md-footer-nav__button md-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+             </div>
+           </a>
          
  		</nav>
 	</div>
