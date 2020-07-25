@@ -61,6 +61,7 @@ nav:
     # - 6. 栈: 算法/栈.md
 
   - 当前所学: wait.md
+  - 电子书: 电子书.md
   - leetcode:
     - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
   - 剑指offer:
@@ -70,6 +71,7 @@ nav:
     - 3. 数据结构:
       - 3.1 数组: 剑指offer/数组.md
       - 3.2 字符串: 剑指offer/字符串.md
+      - 3.3 链表: 剑指offer/链表.md
 
   - 编程语言:
     - c++:
@@ -110,6 +112,9 @@ nav:
       - 基础进阶:
         - const: cpp/const.md
         - static: cpp/static.md
+      - STL:
+        - STL 简介: cpp/STL 简介.md
+        - STL String容器: cpp/STL String容器.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
