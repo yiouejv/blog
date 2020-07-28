@@ -3050,6 +3050,53 @@
 </div>
 <p>通常打印是一个只读操作，我们不希望打印时修改内容。假设面试官也要求不能改变链表的结构。</p>
 <p>接下来我们想到解决这个问题肯定要遍历链表。 遍历的顺序是从头到尾，可输出的顺序确是从尾到头，也就是说，第一个遍历的节点最后一个输出，而最后一个面试的节点要第一个输出。这就是典型的”先进后出“，我们可以用栈实现这种循序。每经过一个节点的时候，把该节点放到栈中。当遍历完整个链表后，再从栈顶开始逐个输出节点的值。</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<ol>
+<li>栈实现
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">PrintLinkReversed</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">Head</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">Head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">nodes</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">cur</span><span class="p">);</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">nodes</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="n">nodes</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>递归实现
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">PrintLinkReversed</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">Head</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">PrintLinkReversed</span><span class="p">(</span><span class="n">Head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Head</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+上面的基于递归的代码看起来简洁，但是有一个问题，当链表非常长的时候，就会导致函数调用的层级很深，从而有可能导致函数调用栈溢出。</li>
+</ol>
+<p><a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/PrintListReversed1.cpp">PrintListReversed1.cpp</a></p>
+<p><a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/PrintListReversed2.cpp">PrintListReversed2.cpp</a></p>
+</div>
+<p>本题考点</p>
+<ul>
+<li>考查应聘者对单向链表的理解和编程能力</li>
+<li>考查应聘者对循环，递归和栈3个相互关联的概念的理解</li>
+</ul>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
