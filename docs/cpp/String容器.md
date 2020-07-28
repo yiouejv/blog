@@ -182,3 +182,174 @@ basic_string & append(const basic_string &str, size_type index, size_type len); 
 basic_string & append(const char *str, size_type num);          // 拼接字符串前几个
 basic_string & append(size_type num, char ch);          // 拼接num个字符
 ```
+
+### string 重新赋值
+
+= 赋值， string对象或字符串
+
+\>\> 输入
+
+assign()
+```c++
+basic_string& assign(const basic_string &str);  // 以str赋值
+basic_string& assign(const char *str);  // 以字符串赋值
+basic_string& assign(const basic_string &str, size_type index, size_type len);  // 以str赋值
+basic_string& assign(const char *str, size_type num);  // 字符串前几个赋值
+basic_string& assign(size_type num, char ch);  // num个ch赋值
+```
+
+### string 删除
+
+```c++
+basic_string &erase(size_type index=0, size_type num=npos);  // 删除指定位置开始指定个数
+```
+
+### string 比较
+
+```c++
+a < b return 1, a == b return 0, a > b return -1
+int compare(const basic_string& str);  // 比较两个对象
+int compare(const char* str);  // 比较一个对象和字符串
+int compare(size_type index, size_type length, const basic_string& str);  // 本对象的一段，跟参数3的对象进行比较
+int compare(size_type index, size_type length, const basic_string& str, size_type index2, size_type length2);
+```
+
+### string 复制
+
+```c++
+size_type copy(char* str, size_type num, size_type index)  // 将对象中的某一段复制进一个字符数组中
+```
+
+### string 查找子串
+
+```c++
+size_type find(const basic_string& str, size_type index);  // 从指定位置开始查找str
+size_type find(const char* str, size_type index);  // 指定位置查找字符串
+size_type find(const char* str, size_type index, size_type length);  // 指定段查找str
+size_type find(char ch, size_type index);  // 指定位置查找字符
+```
+
+### string 返回子串
+
+```c++
+substr(size_type index, size_type num=npos);  // 返回指定位置的子串
+```
+
+### string 交换
+
+```c++
+swap(basic_string& str);  // 交换两个对象的内容
+```
+
+### string 的迭代器
+
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, const char* argv[])
+{
+	string str("abcdefg");
+	string::iterator iter = str.begin();
+	// 迭代器迭代
+	for (iter; iter < str.end(); iter++)
+	{
+		cout << *iter << ' ';
+	}
+
+	cout << endl;
+	// char * 迭代
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		cout << str[i] << ' ';
+	}
+	return 0;
+}
+```
+说明：
+
+- str.begin() 返回字符串首地址的迭代器
+- str.end()  返回字符串尾地址的迭代器
+
+由以上代码可知，iter相当于char* 类型的指针
+!!!question
+	为什么还要用迭代器，而不直接用char* 指针？
+
+!!!answer
+	迭代器是要和算法进行链接的，它适用于所有的迭代器，即一个通用类型的指针，或者是智能指针。
+
+迭代器失效
+
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, const char* argv[])
+{
+	string str("abcdefg");
+	string::iterator iter = str.begin();
+	cout << iter[2] << endl;
+
+	str.append(18, 'a');
+	//cout << iter[2] << endl;  // 报错，迭代器失效
+
+	iter = str.begin();
+	cout << iter[2] << endl;
+
+	return 0;
+}
+```
+
+**string 重新申请空间的时候，迭代器就会失效，需要重新指定一下**
+
+### for_each()
+
+```c++
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+void func(char c)
+{
+	cout << c << ' ';
+}
+
+int main(int argc, const char* argv[])
+{
+	string str("abcdefg");
+	for_each(str.begin(), str.end(), func);
+	return 0;
+}
+```
+for_each 函数属于STL算法里的函数
+
+### sort()
+
+```c++
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+void func(char c)
+{
+	cout << c << ' ';
+}
+
+int main(int argc, const char* argv[])
+{
+	string str("adaszxwesdfas");
+	sort(str.begin(), str.end());
+	for_each(str.begin(), str.end(), func);
+
+	cout << endl;
+	sort(str.begin(), str.end(), greater<char>());
+	for_each(str.begin(), str.end(), func);
+	return 0;
+}
+```
+
+其中 greater 为仿函数
