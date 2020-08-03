@@ -502,6 +502,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    面试题13: 机器人的运动范围
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3009,6 +3016,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    面试题13: 机器人的运动范围
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3065,6 +3079,89 @@
 <ul>
 <li>考查应聘者对回溯法的理解，通常在二维矩阵上找路径这类问题都可以应用回溯法解决</li>
 <li>考查应聘者对数组的编程能力，我们一般都把矩阵看成一个二维数组，只有对数组的特性充分了解，才有可能快速，正确的实现回溯法的代码</li>
+</ul>
+<h3 id="13">面试题13: 机器人的运动范围<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>地上有一个 m 行 n 列的方格。 一个机器人从坐标(0, 0) 的格子开始移动，它每次可以向左，右，上，下移动一格，但不能进入坐标和列坐标的数位之和大于k的格子; 例如，当k为18时，机器人能够进入方格(35, 37)，因为3+5+3+7=18, 但它不能进入方格(35, 38), 因为3+5+3+8=19，请问该机器人能够到达多少个格子？</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>和前面的题目类似，这个方格可以看成一个m*n的矩阵，同样，在这个矩阵中，除边界上的格子之外，其他格子都有4个相邻的格子。 机器人从坐标开始移动，当它准备进入坐标(i, j)的格子时，通过检查坐标的数位和来判断机器人是否能够进入。 如果机器人能够进入坐标(i, j) 的格子，则再继续判断它周围的四个格子，因此，我们可以用如下的代码来回溯。</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">pointLessK</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">k</span> <span class="o">-=</span> <span class="p">(</span><span class="n">r</span> <span class="o">%</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">r</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">k</span> <span class="o">-=</span> <span class="p">(</span><span class="n">c</span> <span class="o">%</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">c</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">RobotActionRangeCore</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">matrix</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">row</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">col</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">visited</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">row</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">col</span>
+        <span class="o">&amp;&amp;</span> <span class="n">visited</span><span class="p">[</span><span class="n">r</span> <span class="o">*</span> <span class="n">col</span> <span class="o">+</span> <span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">pointLessK</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">visited</span><span class="p">[</span><span class="n">r</span> <span class="o">*</span> <span class="n">col</span> <span class="o">+</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="c1">// 上下左右四个方向能走到则一直递归</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="n">RobotActionRangeCore</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">RobotActionRangeCore</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">RobotActionRangeCore</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">RobotActionRangeCore</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">visited</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">getRobotActionRange</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">matrix</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="n">exception</span><span class="p">(</span><span class="s">&quot;InValid Params&quot;</span><span class="p">);</span>
+
+    <span class="kt">int</span><span class="o">*</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">row</span> <span class="o">*</span> <span class="n">col</span><span class="p">];</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">row</span> <span class="o">*</span> <span class="n">col</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">RobotActionRangeCore</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">visited</span><span class="p">);</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">visited</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>完整代码： <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/RobotActionRange.cpp">机器人移动范围</a> </p>
+</div>
+<p>测试用例</p>
+<ul>
+<li>功能测试，多行多列，k位正数</li>
+<li>边界值测试，只有一行，或只有一列，k 等于0</li>
+<li>特殊输入测试，k为负数</li>
+</ul>
+<p>本题考点</p>
+<ul>
+<li>对回溯法的理解，通常物体或者人在二维方格运动这类的问题都可以用回溯法解决</li>
+<li>数组编程能力的考查</li>
 </ul>
     
     <img src="../../images/gzh.png" style="width: 100%">

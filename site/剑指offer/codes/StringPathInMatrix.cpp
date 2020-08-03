@@ -1,230 +1,180 @@
 #include <iostream>
-#include <string>
 #include <cassert>
 using namespace std;
 
-bool hasPathCore(char* matrix, string& str, size_t strIndex, const int row, const int col, int r, int c, bool* boolMatrix);
-
-
-bool hasPath(string& str, char* matrix, const int row, const int col)
+bool pointLessK(int r, int c, int k)
 {
-    bool result = false;
-
-    if (matrix == nullptr)
+    if (r < 0 || c < 0)
         return false;
 
-    if (str == "")
+    if (k < 0)
         return true;
 
-    // bool值矩阵，用来判断某个字符是否被路径包含
-    bool* boolMatrix = new bool[row * col];
-    memset(boolMatrix, true, row * col);
-
-    for (int r = 0; r < row; ++r)
+    while (r > 0)
     {
-        for (int c = 0; c < col; ++c)
-            if (hasPathCore(matrix, str, 0, row, col, r, c, boolMatrix))
-            {
-                result = true;
-                break;
-            }
-            else
-                continue;
+        k -= (r % 10);
+        r /= 10;
+    }
+    if (k < 0)
+        return false;
+
+    while (c > 0)
+    {
+        k -= (c % 10);
+        c /= 10;
     }
 
-    delete[] boolMatrix;
-    return result;
+    if (k < 0)
+        return false;
+    return true;
 }
 
-bool hasPathCore(char* matrix, string& str, size_t strIndex, const int row, const int col, int r, int c, bool* boolMatrix)
+int RobotActionRangeCore(const int k, int* matrix, const int row, const int col, int r, int c, int* visited)
 {
-
-    if (str[strIndex] == '\0')
-        return true;
-
-    bool hasPath = false;
-
+    int count = 0;
     if (r >= 0 && r < row && c >= 0 && c < col
-        && matrix[r * col + c] == str[strIndex]
-        && boolMatrix[r * col + c] )
+        && visited[r * col + c] == 0 && pointLessK(r, c, k)
+        )
     {
-        boolMatrix[r * col + c] = false;
-        strIndex++;
+        count++;
+        visited[r * col + c] = 1;
 
-        hasPath = (
-            hasPathCore(matrix, str, strIndex, row, col, r - 1, c, boolMatrix) ||
-            hasPathCore(matrix, str, strIndex, row, col, r, c + 1, boolMatrix) ||
-            hasPathCore(matrix, str, strIndex, row, col, r + 1, c, boolMatrix) ||
-            hasPathCore(matrix, str, strIndex, row, col, r, c - 1, boolMatrix)
-        );
-
-        if (!hasPath)
-        {
-            strIndex--;
-            boolMatrix[r * col + c] = true;
-        }
+        // 上下左右四个方向能走到则一直递归
+        count = count + RobotActionRangeCore(k, matrix, row, col, r-1, c, visited)
+            + RobotActionRangeCore(k, matrix, row, col, r, c+1, visited)
+            + RobotActionRangeCore(k, matrix, row, col, r+1, c, visited)
+            + RobotActionRangeCore(k, matrix, row, col, r, c-1, visited);
     }
-    return hasPath;
+    return count;
 }
+
+int getRobotActionRange(int k, int* matrix, int row, int col)
+{
+    if (matrix == nullptr || row < 1 || col < 1)
+        throw exception("InValid Params");
+
+    int* visited = new int[row * col];
+    memset(visited, 0, row * col * sizeof(int));
+    int count = RobotActionRangeCore(k, matrix, row, col, 0, 0, visited);
+    delete[] visited;
+    return count;
+}
+
+
+// 测试pointLessK
+void testPointLessK()
+{
+    assert(pointLessK(0, 0, 0) == true);
+    assert(pointLessK(0, 1, 1) == true);
+    assert(pointLessK(1, 0, 1) == true);
+    assert(pointLessK(2, 2, 5) == true);
+    assert(pointLessK(2, 2, 3) == false);
+    assert(pointLessK(20, 2, 5) == true);
+    assert(pointLessK(20, 2, 3) == false);
+}
+
 
 /*
-    a b e g
-    c f c s
-    j d e h
-
-    bfce true
-    abfb false
-    bfde true
+    空指针测试
 */
 void test1()
 {
-    string str("bfce");
-    string str2("abfb");
-    string str3("bfde");
-    const int row = 3;
-    const int col = 4;
-    char matrix[row * col] = { 'a', 'b', 't', 'g', 'c', 'f', 'c', 's', 'j', 'd', 'e', 'h' };
-
-    assert(hasPath(str, matrix, row, col) == true);
-    assert(hasPath(str2, matrix, row, col) == false);
-    assert(hasPath(str3, matrix, row, col) == true);
+    const int k = 0;
+    const int row = 0;
+    const int col = 0;
+    int* matrix = nullptr;
+    try
+    {
+        getRobotActionRange(k, matrix, row, col);
+    }
+    catch (const std::exception&)
+    {
+        cout << "nullptr vaild passed";
+    }
 }
 
 
 /*
-    空指针
+    矩阵只有一个元素
 */
 void test2()
 {
-    string str("bfce");
-    string str2("abfb");
-    string str3("bfde");
-    const int row = 3;
-    const int col = 4;
-    char* matrix = nullptr;
+    const int row = 1;
+    const int col = 1;
+    int matrix[row * col] = { 0 };
 
-    assert(hasPath(str, matrix, row, col) == false);
-    assert(hasPath(str2, matrix, row, col) == false);
-    assert(hasPath(str3, matrix, row, col) == false);
+    const int k1 = 0;
+    assert(getRobotActionRange(k1, matrix, row, col) == 1);
+    const int k2 = 1;
+    assert(getRobotActionRange(k2, matrix, row, col) == 1);
 }
 
-/*
-    a
 
-    a true
-    b false
-    ab false
+/*
+    矩阵有两个元素
 */
 void test3()
 {
-    string str("a");
-    string str2("b");
-    string str3("ab");
-    const int row = 1;
-    const int col = 1;
-    char matrix[row * col] = { 'a' };
+    // 两行一列
+    const int row1 = 2;
+    const int col1 = 1;
+    int matrix[row1 * col1] = { 0 };
 
-    assert(hasPath(str, matrix, row, col) == true);
-    assert(hasPath(str2, matrix, row, col) == false);
-    assert(hasPath(str3, matrix, row, col) == false);
+    const int k1 = 0;
+    assert(getRobotActionRange(k1, matrix, row1, col1) == 1);
+    const int k2 = 1;
+    assert(getRobotActionRange(k2, matrix, row1, col1) == 2);
+
+    // 一行两列
+    const int row2 = 1;
+    const int col2 = 2;
+    int matrix2[row2 * col2] = { 0 };
+
+    const int k3 = 0;
+    assert(getRobotActionRange(k3, matrix2, row2, col2) == 1);
+    const int k4 = 1;
+    assert(getRobotActionRange(k4, matrix2, row2, col2) == 2);
 }
 
-/*
-    a b
 
-    a true
-    ab true
-    abc false
-    b true
+/*
+    矩阵有12个元素，矩阵下标位数为一位
 */
 void test4()
 {
-    string str("a");
-    string str2("b");
-    string str3("abc");
-    string str4("ab");
-    const int row = 1;
-    const int col = 2;
-    char matrix[row * col] = { 'a', 'b' };
+    const int row = 3;
+    const int col = 4;
+    int matrix[row * col] = { 0 };
 
-    assert(hasPath(str, matrix, row, col) == true);
-    assert(hasPath(str2, matrix, row, col) == true);
-    assert(hasPath(str3, matrix, row, col) == false);
-    assert(hasPath(str4, matrix, row, col) == true);
+    const int k1 = 1;
+    assert(getRobotActionRange(k1, matrix, row, col) == 3);
+    const int k2 = 5;
+    assert(getRobotActionRange(k2, matrix, row, col) == 12);
 }
 
 /*
-    a b 
-    c f
-
-    ab true
-    bf true
-    cf true
-    ac true
-    abf true
-    abfc true
-    abfd false
+    矩阵下标位数大于1位
 */
 void test5()
 {
-    string str("ab");
-    string str2("bf");
-    string str3("cf");
-    string str4("ac");
-    string str5("abf");
-    string str6("abfc");
-    string str7("abfd");
-    const int row = 2;
-    const int col = 2;
-    char matrix[row * col] = { 'a', 'b', 'c', 'f' };
+    const int row = 20;
+    const int col = 20;
+    int matrix[row * col] = { 0 };
 
-    assert(hasPath(str, matrix, row, col) == true);
-    assert(hasPath(str2, matrix, row, col) == true);
-    assert(hasPath(str3, matrix, row, col) == true);
-    assert(hasPath(str4, matrix, row, col) == true);
-    assert(hasPath(str5, matrix, row, col) == true);
-    assert(hasPath(str6, matrix, row, col) == true);
-    assert(hasPath(str7, matrix, row, col) == false);
+    const int k1 = 1;
+    assert(getRobotActionRange(k1, matrix, row, col) == 3);
+    const int k2 = 15;
+    assert(getRobotActionRange(k2, matrix, row, col) == 359);
 }
 
-/*
-    a a a a a
-    a a a a a
-  
-    aa true
-    aaa true
-    aaaa true
-    aaaaa true
-    aaaaaa true
-    aaaaaaaaaa true
-*/
-void test6()
-{
-    string str("a");
-    string str2("aa");
-    string str3("aaa");
-    string str4("aaaa");
-    string str5("aaaaa");
-    string str6("aaaaaaaaaa");
-    const int row = 2;
-    const int col = 5;
-    char matrix[row * col] = { 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a' };
 
-    assert(hasPath(str, matrix, row, col) == true);
-    assert(hasPath(str2, matrix, row, col) == true);
-    assert(hasPath(str3, matrix, row, col) == true);
-    assert(hasPath(str4, matrix, row, col) == true);
-    assert(hasPath(str5, matrix, row, col) == true);
-    assert(hasPath(str6, matrix, row, col) == true);
-}
-
-int main(int argc, char const* argv[])
+int main(int argc, char const argv[])
 {
+    testPointLessK();
     test1();
     test2();
     test3();
     test4();
     test5();
-    test6();
     return 0;
 }
