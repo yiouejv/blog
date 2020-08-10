@@ -576,6 +576,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    面试题19: 正则表达式匹配
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    面试题20: 表示数值的字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    面试题21: 调整数组顺序使奇数位于偶数前面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码的鲁棒性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-k" class="md-nav__link">
+    面试题22: 链表中倒数第k个节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    面试题23: 链表中环的入口节点
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3125,6 +3167,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    面试题19: 正则表达式匹配
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    面试题20: 表示数值的字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    面试题21: 调整数组顺序使奇数位于偶数前面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码的鲁棒性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-k" class="md-nav__link">
+    面试题22: 链表中倒数第k个节点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    面试题23: 链表中环的入口节点
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3298,6 +3382,104 @@
 参考代码： <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/deleteDuplication.cpp">删除有序链表里重复的节点</a></p>
 </div>
 <p><img src="../../images/微信截图_20200810143022.png"></p>
+<h3 id="19">面试题19: 正则表达式匹配<a class="headerlink" href="#19" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200810144047.png"></p>
+<h3 id="20">面试题20: 表示数值的字符串<a class="headerlink" href="#20" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200810162917.png"></p>
+<h3 id="21">面试题21: 调整数组顺序使奇数位于偶数前面<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200810165758.png"></p>
+<h3 id="_4">代码的鲁棒性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="22-k">面试题22: 链表中倒数第k个节点<a class="headerlink" href="#22-k" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200810170210.png"></p>
+<p><div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Node</span><span class="o">*</span> <span class="nf">tailKNode</span><span class="p">(</span><span class="n">Node</span> <span class="o">**</span><span class="n">pHead</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pHead</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="o">*</span><span class="n">pHead</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="o">*</span> <span class="n">head</span> <span class="o">=</span> <span class="o">*</span><span class="n">pHead</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">preNode</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">kNode</span> <span class="o">=</span> <span class="n">preNode</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">kNode</span> <span class="o">=</span> <span class="n">kNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">kNode</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">kNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">preNode</span> <span class="o">=</span> <span class="n">preNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">kNode</span> <span class="o">=</span> <span class="n">kNode</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">preNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+参考代码： <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/tailKNode.cpp">链表中倒数第k个节点</a></p>
+<p><img src="../../images/微信截图_20200810173858.png"></p>
+<h3 id="23">面试题23: 链表中环的入口节点<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200810174430.png"></p>
+<p><img src="../../images/微信截图_20200810194130.png"></p>
+<p><img src="../../images/微信截图_20200810194148.png"></p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Node</span><span class="o">*</span> <span class="nf">linkListCircleStartNode</span><span class="p">(</span><span class="n">Node</span><span class="o">**</span> <span class="n">pHead</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pHead</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="o">*</span><span class="n">pHead</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="o">*</span> <span class="n">head</span> <span class="o">=</span> <span class="o">*</span><span class="n">pHead</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="c1">// 判断是否存在环</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">p1</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">p2</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>  <span class="c1">// 不存在环</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="c1">// 判断环的长度</span>
+    <span class="kt">int</span> <span class="n">circleLength</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">circleLength</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 再利用两个指针找到环的入口</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">pBefore</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">pAfter</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">circleLength</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">pAfter</span> <span class="o">=</span> <span class="n">pAfter</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">pBefore</span> <span class="o">!=</span> <span class="n">pAfter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">pBefore</span> <span class="o">=</span> <span class="n">pBefore</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">pAfter</span> <span class="o">=</span> <span class="n">pAfter</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">pBefore</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>完整代码： <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/linkListCircleStartNode.cpp">链表中环的入口节点</a> </p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 

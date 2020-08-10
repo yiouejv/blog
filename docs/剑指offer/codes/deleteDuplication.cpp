@@ -43,7 +43,7 @@ void deleteDuplication(Node** pHead)
             curNode->next = curNode->next->next;
             delete waitDelete;
         }
-        else 
+        else
         {
             preNode = preNode->next;
             curNode = preNode->next;
@@ -136,12 +136,40 @@ void test5()
     deleteDuplication(&head);
 }
 
+void test6()
+{
+    Node* head = new Node;
+    head->value = 1;
+
+    Node* p1 = new Node;
+    p1->value = 1;
+    head->next = p1;
+
+    Node* p2 = new Node;
+    p2->value = 1;
+    p1->next = p2;
+
+    Node* p3 = new Node;
+    p3->value = 1;
+    p2->next = p3;
+
+    Node* p4 = new Node;
+    p4->value = 1;
+    p3->next = p4;
+
+    Node* p5 = new Node;
+    p5->value = 1;
+    p4->next = p5;
+    deleteDuplication(&head);
+}
+
 int main(int argc, char const* argv[])
 {
-    test1();
-    test2();
-    test3();
-    test4();
-    test5();
+    // test1();
+    // test2();
+    // test3();
+    // test4();
+    // test5();
+    // test6();
     return 0;
 }
