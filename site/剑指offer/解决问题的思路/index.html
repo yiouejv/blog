@@ -560,6 +560,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    面试题29: 顺时针打印矩阵
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-min" class="md-nav__link">
+    面试题30: 包含min函数的栈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    面试题31: 栈的压入，弹出序列
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3081,6 +3102,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    面试题29: 顺时针打印矩阵
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-min" class="md-nav__link">
+    面试题30: 包含min函数的栈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    面试题31: 栈的压入，弹出序列
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3106,8 +3148,8 @@
     <p><img src="../../images/微信截图_20200811160913.png"></p>
 <p><img src="../../images/微信截图_20200811160955.png"></p>
 <p><img src="../../images/微信截图_20200811161142.png"></p>
-<p><img src="../../images/微信截图_20200811161231.png"></p>
 <h3 id="27">面试题27: 二叉树的镜像<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200811161231.png"></p>
 <p><img src="../../images/微信截图_20200813194022.png"></p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">Node</span>
 <span class="p">{</span>
@@ -3171,6 +3213,52 @@
 
 <p>完整代码： <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/symmetricTree.cpp">对称的二叉树</a>    </p>
 <p><img src="../../images/微信截图_20200817142319.png"></p>
+<h3 id="29">面试题29: 顺时针打印矩阵<a class="headerlink" href="#29" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200817143341.png"></p>
+<h3 id="30-min">面试题30: 包含min函数的栈<a class="headerlink" href="#30-min" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200817145754.png"></p>
+<p><img src="../../images/微信截图_20200817145817.png"></p>
+<p><img src="../../images/微信截图_20200817145833.png"></p>
+<p><img src="../../images/微信截图_20200817145858.png"></p>
+<p><img src="../../images/微信截图_20200817145937.png"></p>
+<h3 id="31">面试题31: 栈的压入，弹出序列<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/微信截图_20200817192358.png"></p>
+<p><img src="../../images/微信截图_20200817192454.png"></p>
+<p><img src="../../images/微信截图_20200817192513.png"></p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">isPopOrder</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">pushVector</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">popVector</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pushVector</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">popVector</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stackTemp</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">pushVectorIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">popVectorIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">stackTemp</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">pushVector</span><span class="p">[</span><span class="n">pushVectorIndex</span><span class="o">++</span><span class="p">]);</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">popVectorIndex</span> <span class="o">&lt;</span> <span class="n">popVector</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">stackTemp</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="n">popVector</span><span class="p">[</span><span class="n">popVectorIndex</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">pushVectorIndex</span> <span class="o">&gt;=</span> <span class="n">pushVector</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="n">stackTemp</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">pushVector</span><span class="p">[</span><span class="n">pushVectorIndex</span><span class="o">++</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">stackTemp</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">!=</span> <span class="n">popVector</span><span class="p">[</span><span class="n">popVectorIndex</span><span class="p">])</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="n">stackTemp</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">popVectorIndex</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">stackTemp</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>完整代码：  <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/isPopOrder.cpp">栈的压入，弹出序列</a>     </p>
+<p><img src="../../images/微信截图_20200817194914.png"></p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
