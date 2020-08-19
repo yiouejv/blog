@@ -589,6 +589,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    面试题33: 二叉搜索树的后序遍历序列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    面试题34: 二叉树中和为某一值的路径
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3138,6 +3152,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    面试题33: 二叉搜索树的后序遍历序列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    面试题34: 二叉树中和为某一值的路径
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3275,8 +3303,8 @@
 <p>完整代码：  <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/isPopOrder.cpp">栈的压入，弹出序列</a>     </p>
 <p><img src="../../images/微信截图_20200817194914.png"></p>
 <h3 id="32">面试题32: 从上到下打印二叉树<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p><img src="../../images/QQ截图20200819110406"></p>
-<p><img src="../../images/QQ截图20200819110452"></p>
+<p><img src="../../images/QQ截图20200819110406.png"></p>
+<p><img src="../../images/QQ截图20200819110452.png"></p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">Node</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
@@ -3317,7 +3345,100 @@
 </code></pre></div>
 
 <p>参考代码: <a href="https://github.com/yiouejv/blog/blob/master/docs/%E5%89%91%E6%8C%87offer/codes/printBTreeOfLayer.cpp">从上到下打印二叉树</a></p>
-<p><img src="../../images/QQ截图20200819110618"></p>
+<p><img src="../../images/QQ截图20200819110618.png"></p>
+<h3 id="33">面试题33: 二叉搜索树的后序遍历序列<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/QQ截图20200819160118.png"></p>
+<p><img src="../../images/QQ截图20200819160142.png"></p>
+<p><img src="../../images/QQ截图20200819160157.png"></p>
+<p><div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">isSequenceOfBST</span><span class="p">(</span><span class="kt">int</span> <span class="n">sequence</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sequence</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">root</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">root</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">root</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">left</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">isSequenceOfBST</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+
+    <span class="kt">bool</span> <span class="n">right</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">isSequenceOfBST</span><span class="p">(</span><span class="n">sequence</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">length</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="n">right</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<img src="../../images/QQ截图20200819160348.png"></p>
+<p><img src="../../images/QQ截图20200819160407.png"></p>
+<h3 id="34">面试题34: 二叉树中和为某一值的路径<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p><img src="../../images/QQ截图20200819170603.png"></p>
+<p><img src="../../images/QQ截图20200819170619.png"></p>
+<p><img src="../../images/QQ截图20200819170636.png"></p>
+<p><img src="../../images/QQ截图20200819170659.png"></p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">pLeft</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">pRight</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">findPath</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">pNode</span><span class="p">,</span> <span class="kt">int</span> <span class="n">expectSum</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vectorPath</span><span class="p">,</span> <span class="kt">int</span> <span class="n">curSum</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">findPath</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">pRoot</span><span class="p">,</span> <span class="kt">int</span> <span class="n">expectSum</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vectorPath</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">curSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">findPath</span><span class="p">(</span><span class="n">pRoot</span><span class="p">,</span> <span class="n">expectSum</span><span class="p">,</span> <span class="n">vectorPath</span><span class="p">,</span> <span class="n">curSum</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">findPath</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">pNode</span><span class="p">,</span> <span class="kt">int</span> <span class="n">expectSum</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vectorPath</span><span class="p">,</span> <span class="kt">int</span> <span class="n">curSum</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pNode</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">vectorPath</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span>
+    <span class="n">curSum</span> <span class="o">+=</span> <span class="n">pNode</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+    <span class="c1">// 如果路径上的节点的和等于 expectSum</span>
+    <span class="c1">// 则打印出路径</span>
+    <span class="kt">bool</span> <span class="n">isLeaf</span> <span class="o">=</span> <span class="n">pNode</span><span class="o">-&gt;</span><span class="n">pLeft</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">pNode</span><span class="o">-&gt;</span><span class="n">pRight</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">curSum</span> <span class="o">==</span> <span class="n">expectSum</span> <span class="o">&amp;&amp;</span> <span class="n">isLeaf</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">vectorPath</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="n">iter</span> <span class="o">!=</span> <span class="n">vectorPath</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">iter</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">iter</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 继续查找左右子节点</span>
+    <span class="n">findPath</span><span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">pLeft</span><span class="p">,</span> <span class="n">expectSum</span><span class="p">,</span> <span class="n">vectorPath</span><span class="p">,</span> <span class="n">curSum</span><span class="p">);</span>
+    <span class="n">findPath</span><span class="p">(</span><span class="n">pNode</span><span class="o">-&gt;</span><span class="n">pRight</span><span class="p">,</span> <span class="n">expectSum</span><span class="p">,</span> <span class="n">vectorPath</span><span class="p">,</span> <span class="n">curSum</span><span class="p">);</span>
+
+    <span class="c1">// 在返回父节点之前，在路径上删除当前节点</span>
+    <span class="n">vectorPath</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><img src="../../images/QQ截图20200819170827.png"></p>
+<p><img src="../../images/QQ截图20200819170845.png"></p>
     
     <img src="../../images/gzh.png" style="width: 100%">
 
