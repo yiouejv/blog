@@ -189,6 +189,7 @@ nav:
       - skynet:
         - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
         - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
+        - 3. skynet 设计综述: skynet/设计综述.md
       - lua 表的构造: lua/表的构造.md
       - lua select 函数: lua/select函数.md
       - lua 面向对象: lua/opp.md
