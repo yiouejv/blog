@@ -61,7 +61,7 @@ nav:
     # - 5. 链表-下: 算法/链表-下.md
     # - 6. 栈: 算法/栈.md
 
-  - 当前所学: wait.md
+  #- 当前所学: wait.md
   - 电子书: 电子书.md
   - leetcode:
     - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
@@ -187,20 +187,23 @@ nav:
         - 自定义过滤器和自定义标签: django/自定义过滤器和自定义标签.md
         - 扩展自定义manage命令: python/Django扩展自定义manage命令.md
     - lua:
-      - skynet:
-        - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
-        - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
-        - 3. skynet 设计综述: skynet/设计综述.md
-      - lua 表的构造: lua/表的构造.md
-      - lua select 函数: lua/select函数.md
-      - lua 面向对象: lua/opp.md
-      - lua pairs和ipairs: lua/pairs和ipairs.md
-      - lua 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
-      - lua 协程实现生产者消费者: lua/协程实现生产者消费者.md
-      - lua 单链表: lua/lua 实现单链表.md
-      - lua 打印表: lua/lua 打印表.md
-      - lua 解析json数据: lua/解析json数据.md
+      - 用法记录:
+        - skynet:
+          - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
+          - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
+          - 3. skynet 设计综述: skynet/设计综述.md
+        - lua 表的构造: lua/表的构造.md
+        - lua select 函数: lua/select函数.md
+        - lua 面向对象: lua/opp.md
+        - lua pairs和ipairs: lua/pairs和ipairs.md
+        - lua 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
+        - lua 协程实现生产者消费者: lua/协程实现生产者消费者.md
+        - lua 单链表: lua/lua 实现单链表.md
+        - lua 打印表: lua/lua 打印表.md
+        - lua 解析json数据: lua/解析json数据.md
+
       - lua 工作中要注意的点: lua/工作中要注意的点.md
+      - 二读lua5.3参考手册: lua/二读lua5.3参考手册.md
     - php:
       - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
       - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
