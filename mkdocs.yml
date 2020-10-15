@@ -61,7 +61,7 @@ nav:
     # - 5. 链表-下: 算法/链表-下.md
     # - 6. 栈: 算法/栈.md
 
-  #- 当前所学: wait.md
+  - 当前所学: wait.md
   - 电子书: 电子书.md
   - leetcode:
     - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
@@ -123,11 +123,13 @@ nav:
       - 基础进阶:
         - const: cpp/const.md
         - static: cpp/static.md
+        - this: cpp/this.md
       - STL:
         - STL 简介: cpp/STL 简介.md
         - STL string容器: cpp/String容器.md
         - STL vector容器: cpp/vector容器.md
         - STL list容器: cpp/list容器.md
+        - STL deque容器: cpp/deque容器.md
     - python:
       - python 语法: 
         - 1. python相关介绍: python/python相关介绍.md
@@ -245,6 +247,10 @@ nav:
   - 前端相关:
       - input checked 全选: 前端相关/input_checked_全选.md
       - 实现图片懒加载: 前端相关/使用scrollreveal实现图片懒加载.md
+  - 逆向:
+    - 1_进制_寄存器_汇编指令: 逆向/1_进制_寄存器_汇编指令.md
+    - 1_1_进制的本质: 逆向/1_1_进制的本质.md
+
   - 工具:
     - linux 操作系统: tools/linux操作系统.md
     - subl 使用备注: tools/subl使用备注.md
