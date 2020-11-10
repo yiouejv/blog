@@ -124,6 +124,7 @@ nav:
         - const: cpp/const.md
         - static: cpp/static.md
         - this: cpp/this.md
+        - inline: cpp/inline.md
       - STL:
         - STL 简介: cpp/STL 简介.md
         - STL string容器: cpp/String容器.md
@@ -278,10 +279,13 @@ nav:
   - 其他:
     - 怎么搭建一个VPN: 其他/怎么搭建一个VPN.md
     - 怎么搭建一个samba服务: 其他/怎么搭建一个samba服务.md
+    - Ubuntu 20.04修改ip地址: 其他/Ubuntu 20.04修改ip地址.md
     - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
     - 分布式 ID 的 9 种生成方式: 其他/分布式 ID 的 9 种生成方式.md
     - windows网络共享: 其他/windows网络共享.md
     - 原码, 反码, 补码 详解: 其他/原码, 反码, 补码 详解.md
+  - 刷笔试题: 刷笔试题.md
+
 
 
 
