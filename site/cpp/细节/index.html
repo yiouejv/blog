@@ -699,6 +699,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    空类为什么会占一个字节的大小
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3516,6 +3523,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    空类为什么会占一个字节的大小
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3842,6 +3856,9 @@
     <span class="n">a</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
+
+<h3 id="_10">空类为什么会占一个字节的大小<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>所谓类的实例化就是在内存中分配一块地址．（空类同样可以被实例化），每个实例在内存中都有一个独一无二的地址，为了达到这个目的，编译器往往会给一个空类隐含的加一个字节，这样空类在实例化后在内存得到了独一无二的地址．因为如果空类不隐含加一个字节的话，则空类无所谓实例化了（因为类的实例化就是在内存中分配一块地址。 继承这个类后这个类大小就优化为0了。这就是所谓的空白基类最优化。</p>
     
     <img src="../../images/gzh.png" style="width: 100%;display: block;margin: 0 auto;">
 
