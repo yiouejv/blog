@@ -125,6 +125,7 @@ nav:
         - static: cpp/static.md
         - this: cpp/this.md
         - inline: cpp/inline.md
+        - sizeof: cpp/sizeof.md
       - STL:
         - STL 简介: cpp/STL 简介.md
         - STL string容器: cpp/String容器.md
