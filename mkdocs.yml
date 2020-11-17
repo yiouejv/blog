@@ -127,7 +127,7 @@ nav:
         - sizeof: cpp/sizeof.md
         - 纯虚函数和抽象类: cpp/纯虚函数和抽象类.md
         - vptr_vtable: cpp/vptr_vtable.md
-        
+
       - STL:
         - STL 简介: cpp/STL 简介.md
         - STL string容器: cpp/String容器.md
@@ -217,6 +217,7 @@ nav:
   
   - 数据结构和算法:
     - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
+    - 基本概念: 算法/基本概念.md
     - 二分查找: 数据结构和算法/二分查找.md
     - 排序: 
       - 选择排序: 数据结构和算法/选择排序.md
