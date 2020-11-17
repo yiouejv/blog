@@ -63,8 +63,7 @@ nav:
 
   #- 当前所学: wait.md
   - 电子书: 电子书.md
-  - leetcode:
-    - 14. 最长公共前缀: leetcode/14. 最长公共前缀.md
+  - leetcode: https://github.com/95CXY/leetcode
   - 剑指offer:
     - 0. 面试题: 剑指offer/面试题.md
     - 1. 面试流程: 剑指offer/面试流程.md
@@ -127,6 +126,8 @@ nav:
         - inline: cpp/inline.md
         - sizeof: cpp/sizeof.md
         - 纯虚函数和抽象类: cpp/纯虚函数和抽象类.md
+        - vptr_vtable: cpp/vptr_vtable.md
+        
       - STL:
         - STL 简介: cpp/STL 简介.md
         - STL string容器: cpp/String容器.md

@@ -46,8 +46,13 @@
 2. git status --short 得到一种格式更为紧凑的输出
 
 ### git add
+
 1. 跟踪一个未跟踪的文件。
 2. 将跟踪的文件放入暂存区
+
+- git add -A  提交所有变化
+- git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+- git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
 
 
 ### .gitignore
