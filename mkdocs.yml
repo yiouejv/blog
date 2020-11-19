@@ -127,6 +127,7 @@ nav:
         - sizeof: cpp/sizeof.md
         - 纯虚函数和抽象类: cpp/纯虚函数和抽象类.md
         - vptr_vtable: cpp/vptr_vtable.md
+        - virtual: cpp/virtual.md
 
       - STL:
         - STL 简介: cpp/STL 简介.md
