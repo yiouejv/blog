@@ -1,17 +1,30 @@
 template <class T>
-class ListNode() {
+class ListNode {
+public:
 	T val;
-	ListNode* next;
-	ListNode(T x) : val(x), next(NULL) {}
+	ListNode<T>* next;
+	ListNode(const T &val);
+	~ListNode();
+};
+
+template <class T>
+ListNode<T>::ListNode(const T& val) {
+	this->val = val;
+	next = NULL;
 }
 
 template <class T>
-class list() {
+ListNode<T>::~ListNode() {
+	
+}
+
+template <class T>
+class List {
 public:
-	list();
-	~list();
+	List();
+	~List();
 	bool push_back(const T &val);
-	bool push_front(const T&val);
+	bool push_front(const T &val);
 	T pop_back();
 	T pop_front();
 	bool remove(const T &val);
@@ -21,27 +34,27 @@ public:
 	T back();
 	bool empty();
 private:
-	head = NULL;
-	tail = NULL;
+	ListNode<T>* head = NULL;
+	ListNode<T>* tail = NULL;
 };
 
 template <class T>
-list() {}
+List<T>::List() {}
 
 template <class T>
-~list() {
+List<T>::~List() {
 	delete[] this->head;
 }
 
 template <class T>
-bool list<T>::empty() {
+bool List<T>::empty() {
 	return this->head == NULL;
 }
 
 
 template <class T>
-bool list<T>::push_back(const T &val) {
-	ListNode<T>* node = new ListNode(val);
+bool List<T>::push_back(const T &val) {
+	ListNode<T>* node = new ListNode<T>(val);
 	if (node == NULL) return false;
 
 	if (this->head == NULL) {
@@ -56,8 +69,8 @@ bool list<T>::push_back(const T &val) {
 }
 
 template <class T>
-bool list<T>::push_front(const T &val) {
-	ListNode<T>* node = new ListNode(val);
+bool List<T>::push_front(const T& val) {
+	ListNode<T>* node = new ListNode<T>(val);
 	if (node == NULL) return false;
 
 	if (this->head == NULL) {
@@ -72,14 +85,14 @@ bool list<T>::push_front(const T &val) {
 }
 
 template <class T>
-T list<T>::pop_front() {
+T List<T>::pop_front() {
 	if (this->empty()) {
-		throw("list is empty!");
+		throw("List is empty!");
 	}
 
 	T ret = this->head->val;
 
-	ListNode<T> *waitDelete = this->head;
+	ListNode<T>* waitDelete = this->head;
 	this->head = this->head->next;
 	waitDelete->next = NULL;
 	delete waitDelete;
@@ -89,58 +102,70 @@ T list<T>::pop_front() {
 
 
 template <class T>
-T list<T>::pop_back() {
+T List<T>::pop_back() {
 	if (this->empty()) {
-		throw("list is empty!");
+		throw("List is empty!");
 	}
 
 	T ret = this->tail->val;
 
-	ListNode<T> *cur = this->head;
+	ListNode<T>* cur = this->head;
 	while (cur->next != this->tail) {
 		cur = cur->next;
 	}
 
-	ListNode<T> *waitDelete = this->tail;
+	ListNode<T>* waitDelete = this->tail;
 	this->tail = cur;
+	cur->next = NULL;
 	delete waitDelete;
+	if (this->tail == NULL) this->head = NULL;
 	return ret;
 }
 
 template <class T>
-T list<T>::front() {
+T List<T>::front() {
 	if (this->empty()) {
-		throw("list is empty!");
+		throw("List is empty!");
 	}
 	return this->head->val;
 }
 
 template <class T>
-T list<T>::back() {
+T List<T>::back() {
 	if (this->empty()) {
-		throw("list is empty");
+		throw("List is empty");
 	}
 	return this->tail->val;
 }
 
 template <class T>
-void list<T>::remove(const T &val) {
-	if (this->empty()) return;
+bool List<T>::remove(const T& val) {
+	if (this->empty()) return false;
 
-	ListNode<int> *cur = this->head;
+	ListNode<T>* cur = this->head;
 	while (cur != NULL && cur->val == val) {
-		ListNode<T> *waitDelete = cur;
+		ListNode<T>* waitDelete = cur;
 		cur = cur->next;
 		waitDelete->next = NULL;
 		delete waitDelete;
 	}
 	this->head = cur;
-
+	ListNode<T>* pre = cur;
+	cur = cur->next;
 
 	while (cur != NULL) {
 		if (cur->val == val) {
-			ListNode<T> *waitDelete = cur;
-
+			ListNode<T>* waitDelete = cur;
+			cur = cur->next;
+			waitDelete->next = NULL;
+			delete waitDelete;
+		}
+		else {
+			pre = cur;
+			cur = cur->next;
 		}
 	}
+	pre->next = NULL;
+	this->tail = pre;
+	return true;
 }
