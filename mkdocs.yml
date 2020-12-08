@@ -215,6 +215,8 @@ nav:
 
       - lua 工作中要注意的点: lua/工作中要注意的点.md
       - 二读lua5.3参考手册: lua/二读lua5.3参考手册.md
+      - lua和c++交互: https://github.com/yiouejv/lua_and_cpp
+      - skynet源码阅读: https://github.com/yiouejv/skynet_source_code_read
     - php:
       - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
       - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
@@ -251,6 +253,7 @@ nav:
     - 数据的存储和排列: 计算机组成原理/数据的存储和排列.md
     - 浮点数的表示: 计算机组成原理/浮点数的表示.md
     - 主存储器: 计算机组成原理/主存储器.md
+    - 高速缓冲存储器: 计算机组成原理/高速缓冲存储器.md
 
   - 数据库:
     - mysql:
