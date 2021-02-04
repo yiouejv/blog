@@ -61,217 +61,203 @@ nav:
     # - 5. 链表-下: 算法/链表-下.md
     # - 6. 栈: 算法/栈.md
 
-  #- 当前所学: wait.md
-  - 电子书: 电子书.md
   - leetcode: https://github.com/95CXY/leetcode
-  - 剑指offer:
-    - 0. 面试题: 剑指offer/面试题.md
-    - 1. 面试流程: 剑指offer/面试流程.md
-    - 2. 编程语言（未完，学cpp多线程）: 剑指offer/编程语言.md
-    - 3. 数据结构:
-      - 3.1 数组: 剑指offer/数组.md
-      - 3.2 字符串: 剑指offer/字符串.md
-      - 3.3 链表: 剑指offer/链表.md
-      - 3.4 树: 剑指offer/树.md
-      - 3.5 栈和队列: 剑指offer/栈和队列.md
-    - 4. 算法和数据操作:
-      - 4.1 递归和循环: 剑指offer/递归和循环.md
-      - 4.2 查找和排序: 剑指offer/查找和排序.md
-      - 4.3 回溯法: 剑指offer/回溯法.md
-      - 4.4 动态规划与贪婪算法: 剑指offer/动态规划与贪婪算法.md
-      - 4.5 位运算: 剑指offer/位运算.md
-    - 5. 书写高质量的代码: 剑指offer/书写高质量的代码.md
-    - 6. 解决问题的思路: 剑指offer/解决问题的思路.md
+  - c++: https://github.com/yiouejv/C-CPlusPlusNewWorld
 
-  - 编程语言:
-    - c++: https://github.com/yiouejv/C-CPlusPlusNewWorld
-    - python:
-      - python 语法: 
-        - 1. python相关介绍: python/python相关介绍.md
-        - 2. python基础语法: python/python基础语法.md
-        - 3. 字符串: python/python字符串.md
-        - 4. 循环: python/python循环.md
-        - 5. 列表: python/python列表.md
-        - 6. 元组: python/python元组.md
-        - 7. 字典: python/python字典.md
-        - 8. 集合: python/python集合.md
-        - 9. 函数: python/python函数.md
-        - 10. 作用域: python/python作用域.md
-        - 11. 高阶函数: python/python高阶函数.md
-        - 12. 递归: python/python递归.md
-        - 13. 装饰器: python/python装饰器.md
-        - 14. 模块: python/python模块.md
-        - 15. 包: python/python包.md
-        - 16. 异常: python/python异常.md
-        - 17. 迭代器和生成器: python/python迭代器和生成器.md
-        - 18. 字节串和字节数组: python/字节串和字节数组.md
-        - 19. 文件读写: python/文件读写.md
-        - 20. 字符编码: python/字符编码.md
-        - 21. 面向对象编程: 
-            - 基本语法: python/面向对象编程.md
-            - 继承派生: python/继承派生.md
-            - 运算符重载: python/python运算符重载.md
-        - 22. 迭代器（高级）: python/迭代器（高级）.md
-        - 补充知识点: python/补充知识点.md
-      - python 库: 
-         - os.path: python/常见路径操作.md
-         - datetime: python/日期和时间.md
-      - python 相关: 
-        - 虚拟环境: python/虚拟环境.md
-        - 调取阿里云短信api发送短信: python/调取阿里云短信api发送短信.md
-        - DFA敏感词过滤算法的python实现: python/DFA敏感词过滤算法的python实现.md
-        - pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用: python/pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用.md
-        - 完全卸载Python for ubuntu: python/完全卸载Python for ubuntu.md
-        - python计算金额decimal常用操作: python/python计算金额decimal常用操作.md
-        - python实现MD5加密: python/python实现MD5加密.md
-        - 基于Pytest框架的自动化测试开发实践: python/基于Pytest框架的自动化测试开发实践.md
-        
-      - django: 
-        - 1. django介绍及安装: django/1_django介绍及安装.md
-        - 2. django中的路由: django/2_django中的路由.md
-        - 3. HttpRequest对象: django/3_django中的HttpRequest对象.md
-        - 4. session和cookie: django/4_django中的session和cookie.md
-        - 5. django中的模板: django/5_django中的模板.md
-        - 6. django中的模型: django/6_django中的模型.md
-        - 7. 模型中的关系映射: django/7_django模型中的关系映射.md
-        - 8. 自带的后台管理: django/8_django自带的后台管理.md
-        - 9. django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
-        - 10. CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
-        - 11. REST framework APIView 总结: drf/REST_framework_APIView_总结.md
-        - 几个django 2.2和mysql使用的坑: drf/几个django 2.2和mysql使用的坑.md
-        - Django2 DEBUG=False后静态文件无法加载: django/Django2 DEBUG=False后静态文件无法加载.md
-        - Django之密码的加密和解密: django/Django之密码的加密和解密.md
-        - 自定义过滤器和自定义标签: django/自定义过滤器和自定义标签.md
-        - 扩展自定义manage命令: python/Django扩展自定义manage命令.md
-    - lua:
-      - 用法记录:
-        - skynet:
-          - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
-          - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
-          - 3. skynet 设计综述: skynet/设计综述.md
-        - lua 表的构造: lua/表的构造.md
-        - lua select 函数: lua/select函数.md
-        - lua 面向对象: lua/opp.md
-        - lua pairs和ipairs: lua/pairs和ipairs.md
-        - lua 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
-        - lua 协程实现生产者消费者: lua/协程实现生产者消费者.md
-        - lua 单链表: lua/lua 实现单链表.md
-        - lua 打印表: lua/lua 打印表.md
-        - lua 解析json数据: lua/解析json数据.md
+  - 学习笔记:
 
-      - lua 工作中要注意的点: lua/工作中要注意的点.md
-      - 二读lua5.3参考手册: lua/二读lua5.3参考手册.md
-      - lua和c++交互: https://github.com/yiouejv/lua_and_cpp
-      - skynet源码阅读: https://github.com/yiouejv/skynet_source_code_read
-    - php:
-      - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
-      - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
-  
-  - 数据结构和算法:
-    - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
-    - 基本概念: 数据结构和算法/基本概念.md
-    - 线性表: 数据结构和算法/线性表.md
-    - 二分查找: 数据结构和算法/二分查找.md
-    - 排序: 
-      - 选择排序: 数据结构和算法/选择排序.md
-      - 快速排序: 数据结构和算法/快速排序.md
-      - 归并排序: 数据结构和算法/归并排序.md
-    - 数组: 数据结构和算法/数组.md
-    - 链表: 数据结构和算法/链表.md
-    - 栈: 数据结构和算法/栈.md
-    - 队列: 数据结构和算法/队列.md
-    - 哈希表: 数据结构和算法/哈希表.md
-    - 图和广度优先搜索: 数据结构和算法/图和广度优先搜索.md
-    - 狄克斯特拉算法: 数据结构和算法/狄克斯特拉.md
-  - 计算机组成原理:
-    - 计算机的性能指标: 计算机组成原理/计算机的性能指标.md
-    - 数据的表示和运算: 计算机组成原理/数据的表示和运算.md
-    - BCD码: 计算机组成原理/BCD码.md
-    - 字符和字符串表示: 计算机组成原理/字符和字符串表示.md
-    - 数据校验: 计算机组成原理/数据校验.md
-    - 定点数表示: 计算机组成原理/定点数表示.md
-    - 原码反码移码: 计算机组成原理/原码反码移码.md
-    - 移位运算: 计算机组成原理/移位运算.md
-    - 定点数加法: 计算机组成原理/定点数加法.md
-    - 定点数乘法: 计算机组成原理/定点数乘法.md
-    - 定点数除法: 计算机组成原理/定点数除法.md
-    - 强制类型转换: 计算机组成原理/强制类型转换.md
-    - 数据的存储和排列: 计算机组成原理/数据的存储和排列.md
-    - 浮点数的表示: 计算机组成原理/浮点数的表示.md
-    - 主存储器: 计算机组成原理/主存储器.md
-    - 高速缓冲存储器: 计算机组成原理/高速缓冲存储器.md
-    - 虚拟存储系统: 计算机组成原理/虚拟存储系统.md
-    - 指令系统: 计算机组成原理/指令系统.md
-    - CPU的功能和基本结构: 计算机组成原理/CPU的功能和基本结构.md
-    - 指令周期的数据流: 计算机组成原理/指令周期的数据流.md
-  - 操作系统: https://github.com/yiouejv/C-CPlusPlusNewWorld/blob/main/00.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/operation_system.xmind
+    - 剑指offer:
+      - 0. 面试题: 剑指offer/面试题.md
+      - 1. 面试流程: 剑指offer/面试流程.md
+      - 2. 编程语言（未完，学cpp多线程）: 剑指offer/编程语言.md
+      - 3. 数据结构:
+        - 3.1 数组: 剑指offer/数组.md
+        - 3.2 字符串: 剑指offer/字符串.md
+        - 3.3 链表: 剑指offer/链表.md
+        - 3.4 树: 剑指offer/树.md
+        - 3.5 栈和队列: 剑指offer/栈和队列.md
+      - 4. 算法和数据操作:
+        - 4.1 递归和循环: 剑指offer/递归和循环.md
+        - 4.2 查找和排序: 剑指offer/查找和排序.md
+        - 4.3 回溯法: 剑指offer/回溯法.md
+        - 4.4 动态规划与贪婪算法: 剑指offer/动态规划与贪婪算法.md
+        - 4.5 位运算: 剑指offer/位运算.md
+      - 5. 书写高质量的代码: 剑指offer/书写高质量的代码.md
+      - 6. 解决问题的思路: 剑指offer/解决问题的思路.md
 
-  - 数据库:
-    - mysql:
-        - 1. 数据库概述: 数据库/mysql/数据库概述.md
-        - 2. 数据类型: 数据库/mysql/数据类型.md
-        - 3. 表操作: 数据库/mysql/表操作.md
-        - 4. 查询: 数据库/mysql/查询.md
-        - 5. 约束索引: 数据库/mysql/约束索引.md
-        - 6. 数据备份与恢复: 数据库/mysql/数据备份与恢复.md
-        - 7. 调优和事务: 数据库/mysql/调优和事务.md
-        - 8. python3数据库编程: 数据库/mysql/python3数据库编程.md
-        - 9. 补充知识: 数据库/mysql/补充知识.md
-    - mongodb:
-        - 1. 开启之前: 数据库/mongodb/开启之前.md
-        - 2. 基本概念: 数据库/mongodb/基本概念.md
-        - 3. 数据类型: 数据库/mongodb/数据类型.md
-        - 4. shell文档: 数据库/mongodb/shell文档.md
-        - 5. 索引聚合: 数据库/mongodb/索引聚合.md
-        - 6. 补充知识: 数据库/mongodb/补充知识.md
-        - 7. python操作mongodb: 数据库/mongodb/python操作mongodb.md
-  - 前端相关:
-      - input checked 全选: 前端相关/input_checked_全选.md
-      - 实现图片懒加载: 前端相关/使用scrollreveal实现图片懒加载.md
-  - 逆向:
-    - 1_进制_寄存器_汇编指令: 逆向/1_进制_寄存器_汇编指令.md
-    - 1_1_进制的本质: 逆向/1_1_进制的本质.md
+    - 编程语言:
+      - python:
+        - python 语法: 
+          - 1. python相关介绍: python/python相关介绍.md
+          - 2. python基础语法: python/python基础语法.md
+          - 3. 字符串: python/python字符串.md
+          - 4. 循环: python/python循环.md
+          - 5. 列表: python/python列表.md
+          - 6. 元组: python/python元组.md
+          - 7. 字典: python/python字典.md
+          - 8. 集合: python/python集合.md
+          - 9. 函数: python/python函数.md
+          - 10. 作用域: python/python作用域.md
+          - 11. 高阶函数: python/python高阶函数.md
+          - 12. 递归: python/python递归.md
+          - 13. 装饰器: python/python装饰器.md
+          - 14. 模块: python/python模块.md
+          - 15. 包: python/python包.md
+          - 16. 异常: python/python异常.md
+          - 17. 迭代器和生成器: python/python迭代器和生成器.md
+          - 18. 字节串和字节数组: python/字节串和字节数组.md
+          - 19. 文件读写: python/文件读写.md
+          - 20. 字符编码: python/字符编码.md
+          - 21. 面向对象编程: 
+              - 基本语法: python/面向对象编程.md
+              - 继承派生: python/继承派生.md
+              - 运算符重载: python/python运算符重载.md
+          - 22. 迭代器（高级）: python/迭代器（高级）.md
+          - 补充知识点: python/补充知识点.md
+        - python 库: 
+           - os.path: python/常见路径操作.md
+           - datetime: python/日期和时间.md
+        - python 相关: 
+          - 虚拟环境: python/虚拟环境.md
+          - 调取阿里云短信api发送短信: python/调取阿里云短信api发送短信.md
+          - DFA敏感词过滤算法的python实现: python/DFA敏感词过滤算法的python实现.md
+          - pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用: python/pandas.DataFrame对行和列求和、添加新行和列，apply函数的使用.md
+          - 完全卸载Python for ubuntu: python/完全卸载Python for ubuntu.md
+          - python计算金额decimal常用操作: python/python计算金额decimal常用操作.md
+          - python实现MD5加密: python/python实现MD5加密.md
+          - 基于Pytest框架的自动化测试开发实践: python/基于Pytest框架的自动化测试开发实践.md
+          
+        - django: 
+          - 1. django介绍及安装: django/1_django介绍及安装.md
+          - 2. django中的路由: django/2_django中的路由.md
+          - 3. HttpRequest对象: django/3_django中的HttpRequest对象.md
+          - 4. session和cookie: django/4_django中的session和cookie.md
+          - 5. django中的模板: django/5_django中的模板.md
+          - 6. django中的模型: django/6_django中的模型.md
+          - 7. 模型中的关系映射: django/7_django模型中的关系映射.md
+          - 8. 自带的后台管理: django/8_django自带的后台管理.md
+          - 9. django视图之CBV的基本使用: drf/1.django视图之CBV的基本使用.md
+          - 10. CBV中解决csrf认证的问题: drf/2.CBV中解决csrf认证的问题.md
+          - 11. REST framework APIView 总结: drf/REST_framework_APIView_总结.md
+          - 几个django 2.2和mysql使用的坑: drf/几个django 2.2和mysql使用的坑.md
+          - Django2 DEBUG=False后静态文件无法加载: django/Django2 DEBUG=False后静态文件无法加载.md
+          - Django之密码的加密和解密: django/Django之密码的加密和解密.md
+          - 自定义过滤器和自定义标签: django/自定义过滤器和自定义标签.md
+          - 扩展自定义manage命令: python/Django扩展自定义manage命令.md
+      - lua:
+        - 用法记录:
+          - skynet:
+            - 1. 并发编程和并行编程: skynet/并发编程和并行编程.md
+            - 2. skynet 基于 Actor 模式的开源框架: skynet/skynet 基于 Actor 模式的开源框架.md
+            - 3. skynet 设计综述: skynet/设计综述.md
+          - lua 表的构造: lua/表的构造.md
+          - lua select 函数: lua/select函数.md
+          - lua 面向对象: lua/opp.md
+          - lua pairs和ipairs: lua/pairs和ipairs.md
+          - lua 错误处理 pcall & xpcall: lua/错误处理 pcall & xpcall.md
+          - lua 协程实现生产者消费者: lua/协程实现生产者消费者.md
+          - lua 单链表: lua/lua 实现单链表.md
+          - lua 打印表: lua/lua 打印表.md
+          - lua 解析json数据: lua/解析json数据.md
 
-  - 工具:
-    - linux 操作系统: tools/linux操作系统.md
-    - subl 使用备注: tools/subl使用备注.md
-    - shell 语言编程: tools/shell 语言编程.md
-    - git:
-      - 使用git: tools/git/use_git.md
-      - unpack-objects failed: tools/git/unpack-objects.md
-    # - docker:
-      # - 容器时代的引领者: docker/容器时代的引领者.md
-      # - Docker 的前世今生: docker/Docker 的前世今生.md
-      # - Docker 的基本使用: docker/Docker 的基本使用.md
-      # - Docker 版本及内核兼容性选择: docker/Docker 版本及内核兼容性选择.md
-      # - 容器生命周期管理（上）: docker/容器生命周期管理（上）.md
-      # - 容器生命周期管理（下）: docker/容器生命周期管理（下）.md
-      # - 容器资源管理: docker/容器资源管理.md
-      # - 深入剖析容器: docker/深入剖析容器.md
-    - Windows下强制删除文件或文件夹: tools/Windows下强制删除文件或文件夹.md
-  - 理财:
-    - 基金理财: 理财/基金理财.md
-    - 股票理财: 理财/股票理财.md
-    - 白手起家的百万富翁的秘密: 理财/白手起家的百万富翁的秘密.md
-    - 自选股: 理财/自选股.md
-  
-  - 其他:
-    - Ubuntu 20.04修改ip地址: 其他/Ubuntu 20.04修改ip地址.md
-    - Ubuntu 20.04 安装和卸载MySQL8: 其他/Ubuntu20.04 安装和卸载MySQL8.md
+        - lua 工作中要注意的点: lua/工作中要注意的点.md
+        - 二读lua5.3参考手册: lua/二读lua5.3参考手册.md
+        - lua和c++交互: https://github.com/yiouejv/lua_and_cpp
+        - skynet源码阅读: https://github.com/yiouejv/skynet_source_code_read
+      - php:
+        - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
+        - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
+
+    - 数据结构和算法:
+      - 数据结构和算法思维导图: 算法/数据结构和算法思维导图.md
+      - 基本概念: 数据结构和算法/基本概念.md
+      - 线性表: 数据结构和算法/线性表.md
+      - 二分查找: 数据结构和算法/二分查找.md
+      - 排序: 
+        - 选择排序: 数据结构和算法/选择排序.md
+        - 快速排序: 数据结构和算法/快速排序.md
+        - 归并排序: 数据结构和算法/归并排序.md
+      - 数组: 数据结构和算法/数组.md
+      - 链表: 数据结构和算法/链表.md
+      - 栈: 数据结构和算法/栈.md
+      - 队列: 数据结构和算法/队列.md
+      - 哈希表: 数据结构和算法/哈希表.md
+      - 图和广度优先搜索: 数据结构和算法/图和广度优先搜索.md
+      - 狄克斯特拉算法: 数据结构和算法/狄克斯特拉.md
+    - 计算机组成原理:
+      - 计算机的性能指标: 计算机组成原理/计算机的性能指标.md
+      - 数据的表示和运算: 计算机组成原理/数据的表示和运算.md
+      - BCD码: 计算机组成原理/BCD码.md
+      - 字符和字符串表示: 计算机组成原理/字符和字符串表示.md
+      - 数据校验: 计算机组成原理/数据校验.md
+      - 定点数表示: 计算机组成原理/定点数表示.md
+      - 原码反码移码: 计算机组成原理/原码反码移码.md
+      - 移位运算: 计算机组成原理/移位运算.md
+      - 定点数加法: 计算机组成原理/定点数加法.md
+      - 定点数乘法: 计算机组成原理/定点数乘法.md
+      - 定点数除法: 计算机组成原理/定点数除法.md
+      - 强制类型转换: 计算机组成原理/强制类型转换.md
+      - 数据的存储和排列: 计算机组成原理/数据的存储和排列.md
+      - 浮点数的表示: 计算机组成原理/浮点数的表示.md
+      - 主存储器: 计算机组成原理/主存储器.md
+      - 高速缓冲存储器: 计算机组成原理/高速缓冲存储器.md
+      - 虚拟存储系统: 计算机组成原理/虚拟存储系统.md
+      - 指令系统: 计算机组成原理/指令系统.md
+      - CPU的功能和基本结构: 计算机组成原理/CPU的功能和基本结构.md
+      - 指令周期的数据流: 计算机组成原理/指令周期的数据流.md
+    - 操作系统: https://github.com/yiouejv/C-CPlusPlusNewWorld/blob/main/00.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/operation_system.xmind
+
+    - 数据库:
+      - mysql:
+          - 1. 数据库概述: 数据库/mysql/数据库概述.md
+          - 2. 数据类型: 数据库/mysql/数据类型.md
+          - 3. 表操作: 数据库/mysql/表操作.md
+          - 4. 查询: 数据库/mysql/查询.md
+          - 5. 约束索引: 数据库/mysql/约束索引.md
+          - 6. 数据备份与恢复: 数据库/mysql/数据备份与恢复.md
+          - 7. 调优和事务: 数据库/mysql/调优和事务.md
+          - 8. python3数据库编程: 数据库/mysql/python3数据库编程.md
+          - 9. 补充知识: 数据库/mysql/补充知识.md
+      - mongodb:
+          - 1. 开启之前: 数据库/mongodb/开启之前.md
+          - 2. 基本概念: 数据库/mongodb/基本概念.md
+          - 3. 数据类型: 数据库/mongodb/数据类型.md
+          - 4. shell文档: 数据库/mongodb/shell文档.md
+          - 5. 索引聚合: 数据库/mongodb/索引聚合.md
+          - 6. 补充知识: 数据库/mongodb/补充知识.md
+          - 7. python操作mongodb: 数据库/mongodb/python操作mongodb.md
+
+    - 前端相关:
+        - input checked 全选: 前端相关/input_checked_全选.md
+        - 实现图片懒加载: 前端相关/使用scrollreveal实现图片懒加载.md
+
+    - 逆向:
+      - 1_进制_寄存器_汇编指令: 逆向/1_进制_寄存器_汇编指令.md
+      - 1_1_进制的本质: 逆向/1_1_进制的本质.md
+
+    - 理财:
+      - 基金理财: 理财/基金理财.md
+      - 股票理财: 理财/股票理财.md
+      - 白手起家的百万富翁的秘密: 理财/白手起家的百万富翁的秘密.md
+
+    - 工具:
+      - linux 操作系统: tools/linux操作系统.md
+      - subl 使用备注: tools/subl使用备注.md
+      - shell 语言编程: tools/shell 语言编程.md
+      - git:
+        - 使用git: tools/git/use_git.md
+        - unpack-objects failed: tools/git/unpack-objects.md
+
+  - 解决问题记录:
+    - Windows下强制删除文件: tools/Windows下强制删除文件或文件夹.md
+    - windows网络共享: 其他/windows网络共享.md
+    - Ubuntu20.04修改ip地址: 其他/Ubuntu 20.04修改ip地址.md
+    - Ubuntu20.04安装MySQL8: 其他/Ubuntu20.04 安装和卸载MySQL8.md
     - 怎么搭建一个VPN: 其他/怎么搭建一个VPN.md
     - 怎么搭建一个samba服务: 其他/怎么搭建一个samba服务.md
-    - 浮点数的二进制表示(IEEE 754标准): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
-    - 分布式 ID 的 9 种生成方式: 其他/分布式 ID 的 9 种生成方式.md
-    - windows网络共享: 其他/windows网络共享.md
-    - 原码, 反码, 补码 详解: 其他/原码, 反码, 补码 详解.md
-
-  - 刷笔试题:
-    - 刷笔试题1: 刷笔试题/刷笔试题.md
-    - 刷笔试题2: 刷笔试题/刷笔试题2.md
-    - 刷笔试题3: 刷笔试题/刷笔试题3.md
-
-
-
+    - 浮点数的二进制表示(IEEE754): Coding Interview University/浮点数的二进制表示(IEEE 754标准).md
+    - 分布式ID的9种生成方式: 其他/分布式 ID 的 9 种生成方式.md
+    - 原码,反码,补码详解: 其他/原码, 反码, 补码 详解.md
 
 markdown_extensions:
   - admonition
