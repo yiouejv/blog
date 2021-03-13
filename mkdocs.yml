@@ -20,47 +20,6 @@ repo_url: https://github.com/yiouejv/blog
 
 
 nav:
-  # - Coding Interview University:
-  #   - readme: Coding Interview University/readme.md
-  #   - 必备知识: Coding Interview University/必备知识.md
-
-  # - 算法导论(第三版):
-  #   - 插入排序: 算法导论/插入排序.md
-
-  # - 算法:
-
-  #   - 数据结构.严蔚敏_吴伟民:
-  #     - 1. linux 编程环境搭建: 算法/c_data_struct/linux_编程环境搭建.md
-  #     - 2. 绪论: 算法/c_data_struct/绪论.md
-
-    # - leetcode:
-    #   - 数组:
-    #     - 6.Z字形变换: leetcode/数组/6.Z字形变换.md 
-    #     - 11. 盛最多水的容器: leetcode/数组/11. 盛最多水的容器.md 
-    #     - 26.删除排序数组中的重复项: leetcode/数组/26.删除排序数组中的重复项.md 
-    #     - 27.移除元素: leetcode/数组/27.移除元素.md
-    #     - 35. 搜索插入位置: leetcode/数组/35. 搜索插入位置.md
-    #   - 链表:
-    #     - 19. 删除链表的倒数第N个节点: leetcode/链表/19. 删除链表的倒数第N个节点.md 
-    #     - 21. 合并两个有序链表: leetcode/链表/21. 合并两个有序链表.md 
-    #     - 23. 合并K个排序链表(可以优化): leetcode/链表/23. 合并K个排序链表(可以优化).md 
-    #     - 24. 两两交换链表中的节点: leetcode/链表/24. 两两交换链表中的节点.md 
-    #     - 206. 反转链表: leetcode/链表/206. 反转链表.md 
-    # - 滑动窗口原理: 算法/滑动窗口原理.md
-    # - 排序算法: 
-    #   - 1. 排序算法时间复杂度: 算法/排序算法时间复杂度.md
-    #   - 2. 基本排序算法: 算法/排序算法.md
-    #   - 3. 分治法和归并排序: 算法/分治法和归并排序.md
-    #   - 4. 快速排序: 算法/快速排序.md
-    # - 位运算: 算法/位运算.md
-    # - 递归: 算法/递归.md
-    # - 1. 复杂度分析-上: 算法/复杂度分析-上.md
-    # - 2. 复杂度分析-下: 算法/复杂度分析-下.md
-    # - 3. 数组: 算法/数组.md
-    # - 4. 链表-上: 算法/链表-上.md
-    # - 5. 链表-下: 算法/链表-下.md
-    # - 6. 栈: 算法/栈.md
-
   - leetcode: https://github.com/95CXY/leetcode
   - c++: https://github.com/yiouejv/C-CPlusPlusNewWorld
 
@@ -247,6 +206,9 @@ nav:
       - git:
         - 使用git: tools/git/use_git.md
         - unpack-objects failed: tools/git/unpack-objects.md
+
+  - 读书笔记:
+    - lua程序设计第四版: lua程序设计第四版/lua程序设计第四版.md
 
   - 解决问题记录:
     - Windows下强制删除文件: tools/Windows下强制删除文件或文件夹.md
