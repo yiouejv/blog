@@ -130,3 +130,27 @@ function insert(str, pos, s)
 end
 ```
 
+-------------------------
+
+### 安全访问
+
+确认某个库中存在某个函数，如果我们确定这个库确实存在，那么可以直接使用`if lib.foo then ...`, 否则就得使用形如`if lib and lib.foo then ...` 的表达式，当表的嵌套变得比较深时，这种写法就很容易出错。
+
+例如:
+
+```lua
+zip = company and company.director and
+    company.director.address and company.director.address.zipcode
+```
+
+这种写法不仅冗长而且低效，该写法在一次成功的访问中对表进行了6次访问，而非3次访问。
+
+lua 的话可以这么写
+
+```lua
+E = {}
+zip = (((company or E).director or E).address or E).zipcode
+```
+
+
+
