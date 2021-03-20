@@ -123,6 +123,7 @@ nav:
         - 二读lua5.3参考手册: lua/二读lua5.3参考手册.md
         - lua和c++交互: https://github.com/yiouejv/lua_and_cpp
         - skynet源码阅读: https://github.com/yiouejv/skynet_source_code_read
+        - lua实现游戏中的事件触发机制: lua/lua实现游戏中的事件触发机制.md
       - php:
         - 安装pdo_mysql 扩展: php/安装pdo_mysql扩展.md
         - 部署php及安装相关插件: php/部署php项目及安装php相关插件.md
