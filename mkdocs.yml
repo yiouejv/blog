@@ -209,9 +209,11 @@ nav:
         - unpack-objects failed: tools/git/unpack-objects.md
 
   - 读书笔记:
-    - lua程序设计第四版: lua程序设计第四版/lua程序设计第四版.md
+    - lua程序设计第四版:
+      - 00. 知识点: lua程序设计第四版/lua程序设计第四版.md
+      - 07. chapter 07 exercise: lua程序设计第四版/chapter 07 exercise.md
     - C++Primer 5e:
-      - 第一章开始: C++Primer 5e/第一章开始.md
+      - 01. 第一章开始: C++Primer 5e/第一章开始.md
 
   - 解决问题记录:
     - Windows下强制删除文件: tools/Windows下强制删除文件或文件夹.md
