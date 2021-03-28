@@ -36,32 +36,6 @@ userdata 类型允许把任意的C语言数据保存在lua语言变量中。    
 `nil` 是一种只有一个nil值的类型，主要用来与其他所有值进行区分。 lua语言使用nil来表示`non-value`的情况。
 
 ----------------------------
-
-
-练习:
-
-- 运行阶乘的示例并观察，如果输入负数，程序会出什么问题？修改。
-
-```lua
-function fact(n)
-    if n == 0 then return 1 end
-    return n*fact(n-1);
-end
-
-print("enter a number:")
-
-a = io.read("*n");
-
-print(fact(a))
-```
-无限递归导致栈溢出，改成 `if n <= 0 then return 1 end`
-
-- 请编写一个可以打印出脚本名称的程序。
-
-```lua
-print(arg[0])
-```
-
 编译器在运行代码前会创建一个名为`arg`的表，索引0中保存脚本名，索引1保存第一个参数，以此类推。
 
 - 八皇后问题。
